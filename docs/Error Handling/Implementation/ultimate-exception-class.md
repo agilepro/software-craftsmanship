@@ -1,0 +1,69 @@
+#  Ultimate Java Exception Class
+
+This is the third in a series about translatable exceptions (see [Translatable Error Messages](https://agiletribe.purplehillsbooks.com/2019/01/05/translatable-error-messages/)).  This post is about the class JSONException which contains the required features.
+
+## Requirements
+
+The java class must:
+
+*   Extend java.lang.Exception so that is can be used anywhere an exception can be used
+*   Have the ability to chain together, each exception carrying a ’cause’ exception
+*   Has templates and a variable number of parameter data values to substitute in to explain the problem to allow localization.  (See [Translatable Error Messages](https://agiletribe.purplehillsbooks.com/2019/01/05/translatable-error-messages/) )
+*   Has constructors with variable parameters to make it easy to construct with the template and parameters (See [Variable Arguments for Messages](https://agiletribe.purplehillsbooks.com/2019/01/07/variable-arguments-for-messages/) )
+*   Can be serialized to JSON together with other exception classes that might be in the chain. (See [JSON Translatable Error Messages](https://agiletribe.purplehillsbooks.com/2019/01/06/json-translatable-error-messages/) )
+*   A method to convert JSON representation back to a chain of exception objects. (See [Exception Receiving](https://agiletribe.purplehillsbooks.com/2019/01/08/exception-receiving/) )
+
+The class is called JSONException and it is available as open source at GitHub.  See the source with this link:  [JSONException source](https://github.com/agilepro/mendocino/blob/master/src/com/purplehillsbooks/json/JSONException.java).  
+You can access the documentation at: [JSONException documentation](http://purplehillsbooks.com/purpleDoc/com/purplehillsbooks/json/JSONException.html).
+
+## Constructors
+
+There are four constructors:
+
+```java
+new JSONException( template, param0, param1, ... )
+new JSONException( template, cause, param0, param1, ... )
+new JSONException( message )
+new JSONException( message, cause)
+```
+
+
+The first is a translatable exception thrown as a initial problem report, and the second is a translatable exception thrown from a catch block in order to add context to the earlier exceptions linked into a chain.   The third and fourth are like the first two, but don’t have data values to be substituted into the message which must then explain the problems without any data substitutions in it.
+
+## Streaming as JSON
+
+The exception objects can be converted to JSON using the following static method:
+
+```java
+JSONObject convertToJSON(Throwable e, String context)
+```
+
+
+Note that this method takes any throwable object and converts it.  It also follows the chain of cause links, converting the entire chain into a JSON error object to send back as the response to a web service request that went wrong.
+
+## Receiving and Throwing
+
+There is a static method that takes a JSONObject, and converts it, as best possible, back to a chain of exception objects which can then be thrown.
+
+```java
+Exception convertJSONToException(JSONObject error);
+```
+
+
+## Tracing to Log
+
+Some convenient method are provided that make it easy to write exceptions to the log file after converting to JSON.  Once you are used to the JSON format it is reasonable to want to see that format everywhere for consistency and to make it easy to debug a chain of web service calls.
+
+```java
+void traceConvertedException(PrintStream out, JSONObject errOb)
+void traceConvertedException(Writer w, JSONObject errOb) 
+JSONObject traceException(PrintStream out, Throwable e, String context)
+JSONObject traceException(Throwable e, String context)
+JSONObject traceException(Writer w, Throwable e, String context)
+```
+
+
+## Open Source
+
+The class is freely available for use as part of the Purple Hills Books utility library.   You can pull the source from GitHub, or else you can download a jar file from [http://purplehillsbooks.com/dist/purple/](http://purplehillsbooks.com/dist/purple/)  
+If you find any problems, please report as an issue on GitHub.

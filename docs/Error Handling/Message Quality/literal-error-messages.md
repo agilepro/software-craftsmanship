@@ -1,0 +1,61 @@
+#  Error messages should be very literal
+
+We all struggle with the correct wording for error messages. It is not easy. But I ran across an example today that should help understanding
+
+## Situation
+
+A method in a REST-style API was parsing the POSTed JSON object. A very good pattern is that the parts of the object that were required were tested and an error message sent back if a required part was missing. This is easy to do. If a command requires a parameter, then test that the parameter exists, and return a reasonable explanation of what when wrong. 
+
+The operation in question expects a JSON array named “activities” to be in the posted object. The operation is designed to work on those entries, and so if they are not there, the entire call is pointless. The code was this:
+
+```java
+if (!input.has("activities")) {
+    throw new Exception("Specify at least one activity to perform operation");
+}
+
+```
+
+
+OK, so far so good, but lets consider that error message. Imagine that you know nothing about how the code works. Imagine you are a programmer someone else using the REST API. You understand it is an operation on a bunch of activities, you code it up, you think you have coded it correctly, you run it in a test. You get back this message:
+
+```java
+"You must specify at least one activity to perform operation"
+
+```
+
+
+The first question you are going to have is: how do I specify at least one activity? It doesn’t tell you. Maybe you did specify the activities, but you mispelled “activities” (e.g. “actvities”) or maybe you thought the array was simply named “activity”. From your point of view, you _have_ specified at least one activity. The error message doesn’t really tell you what is wrong. It says what your goals was — and you might know that — but your failure in how to specify the activities is not clear. How frustrating.
+
+## A Better Error Message
+
+The test being done was that a field named “activities” needed to exist. Imagine how things would be different with this code:
+
+```java
+if (!input.has("activities")) {
+    throw new Exception("An array named 'activities' is required");
+}
+
+```
+
+
+This actually says a lot more. It says you need an array of activities to work on, and it tells you the name of the array that it is expecting. Now, if you had thought the name of the array was “activity” you would clearly understand the problem. If you simply misspelled it you would find it as well.
+
+## Deeper Meaning
+
+The old error message said you _need_ to specify at least one activity, without actually knowing whether you did this or not. That was not in fact what it was testing. The code was only testing that a data member existed. It did not verify that the contents of the member was properly formed to be called an activity. It did not actually test whether the array has any members. It could have been an empty array, and that would be no activities to work on, but it did not test for this. 
+
+The programmer was translating up to a _higher contextual level_. The operation needs to operate on a set of activities. There is a data member to represents those activities, so please be sure to deliver activities. However, this translation up to the meaning of the error does not help resolve the error. Because it implies something that it really does not test for, the error message can be confusing. One might even say deceptive. 
+
+It also made some assumptions about the problem. The error message made the assumption that if you did not include a data member named “activities” then the programmer simply didn’t know that activities needed to be specified. We don’t have enough evidence to conclude this. All we really know is that a specific data member with a specific name is missing.
+
+## Conclusion
+
+The recommendation is to avoid generalizing, and abstracting to a different level of meaning. If you expect a field named “foo”, simply say that foo is needed and not found. If you a test that start date must be before end date fails, then don’t report that the duration must be a non-negative value! Simply say that start date must be before end date. 
+
+:::tip[Key Takeaway]
+
+The error message should be as direct a translation of the check being done into words as possible.
+
+:::
+
+This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/), [Poor Error Msg](https://agiletribe.purplehillsbooks.com/category/poor-error-msg/) and tagged [errors](https://agiletribe.purplehillsbooks.com/tag/errors/), [exceptions](https://agiletribe.purplehillsbooks.com/tag/exceptions/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2015/12/12/error-messages-should-be-very-literal/ "Permalink to Error messages should be very literal").

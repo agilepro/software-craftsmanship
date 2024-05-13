@@ -1,0 +1,155 @@
+#  Specifying Business Hours
+
+Long ago I worked on a project where we needed to specify the hours that a business was going to be open, and to account for all the various difficulties around holidays and other special days. This is what we came up with and it still stands today.
+
+:::warning[Update Needed]
+
+Since this was written an entire new Java date and time package was created that incorporates many of the suggestions here, and this post needs to be updated to take that into consideration.
+
+:::
+
+## Problem Statement
+
+*   Certain automated events need to happen during business hours, and avoid firing outside of business hours.
+*   Different parts of the organization, as well as different users, may be located in different time zones and countries. Business Calendars need to be able to take into account national holidays in any country.
+*   We need to be able to tell, in an automated way, what hours are within business hours, and what hours are not.
+
+## Functional Overview
+
+This feature allows a user to create a “Business Calendar” which specifies working days, and working hours on those days.  
+
+A business day is counted as any day that has working hours on it, regardless of the number of hours on that day.  
+
+Many organizations will need only a single business calendar when all the people have a single “home”. This does not mean that all the users need to be at a single location – it is somewhat more subtle than this. Consider an organization based in Boston. The company may have any number of people in the field, but those people are used to the business rules being set according to Boston time, just as stock brokers across the company are used to the Stock Market hours being set to New York time. A field person located in California will simply get used to the fact that work is controlled by the time zone in Boston. They may or may not work on those hours, but if the company has a business rule like this, the field person must meet it regardless of whether they are in California or traveling Australia. This is not a limitation of the system, but simply noting that many organizations will find a single calendar sufficient for most uses of timers.  
+
+Some organizations, on the other hand, will have separate organizations in different locations with different working hours. Companies spread across state or international boundaries will have different working hours and holiday dates. We need to support any number of business calendars. Each working context wil specify the calendar that it uses.
+
+## Defining the Business Calendar
+
+The Business Calendar is probably stored in a file on the server. This is an implementation detail but the discussion below will express things in terms of there being a file. The name of the calendar is the name of that file. Consider it to be a text file, like a properties file, which is read and understood by the server.  
+The calendar file is composed of name = value pairs. (See, Calendar Syntax section.).
+
+*   EVERYDAY: This is used to define the “default” business hours which apply to every day that has not been modified by a more specific setting below.
+*   SUN, MON, TUE, WED, THU, FRI, SAT: these allow the setting of a “default” business hours for a particular day of the week. This will override the everyday setting for that day of the week. No hours specified means that that day of the week is not a working day.
+*   (DATE): the business hours for specific date can be entered. This overrides any settings for everyday or for that day of the week. Again, a setting of no hours means that that day is not a working day, probably because it is a holiday (or vacation time for individual calendar)
+
+The business hours of a day should be represented as “startTime, endTime”. If there is any break during the day, then it can be represented as “startTime, time1; time2, endTime”. All the lines in calendar end with a semicolon.
+
+*   CALENDAR\_END: The calendar can include any number of years into the future. This setting tells the system the last day that this calendar is valid for. If a timer business calculation ends up going past this date, then the server throws an exception and notifies this to the administrator that the calendar needs to be extended
+*   TIMEZONE: This represents the time zone of the calendar in terms of hours from GMT.
+*   DST: To specify the day light savings time offset. “Day Light Savings Time” can be specified as “=DST(Time offset)”
+
+Let us consider the following calendar:
+
+```
+EVERYDAY=8:00,17:30;
+SAT=8:00,12:00;
+SUN=;
+2002/01/01=;
+2002/02/18=;
+2002/05/27=;
+2002/07/04=;
+2002/09/02=;
+2002/11/28=;
+2002/11/29=;
+2002/12/01=8:00, 12:30; 15:30,17:30;
+2002/12/22=8:00,12:00;
+2002/12/25=;
+2002/12/26=;
+2002/12/27=;
+2002/12/28=;
+2002/12/29=;
+2002/12/30=;
+2002/12/31=;
+2002/04/21=DST(+1);
+2002/10/21=DST(0);
+CALENDAR_END=12/31/2002;
+TIMEZONE=-8:00;
+```
+
+
+In the above calendar, the RHS for some of the dates are left empty, meaning that those days are holidays.  
+The time zone is set to “-8:00” that means it is 8:00 hours behind of the “Greenwich Mean Time (GMT)” which is the correct setting for Pacific Time (California). Time zones that are not on hour intervals are supported.  
+Daylight Savings Time starts on April 21 with an offset of +1, and ends on October 21 on and after which the offset is 0. The offset is a modifier to the time zone, meaning that during daylight savings time in California, the time is 7 hours behind GMT.  
+In the above calendar, on 12/01/2002 the business hours are from 8:00am to 12:30pm and 15:30pm to 17:30pm.
+
+## Calculating Based on Calendars
+
+Time Settings:
+
+
+
+|Operation |Meaning |
+|---------|------------------------------|
+|AT | To set the absolute time of the day.|
+|AT(16:30:00) | Timer is set to 4:30pm on that day.|
+|CT | To set the business time relative to the closing time of the day. Typically  you will use negative hours with closing time in order to calculate a relative time before closing time.|
+|CT(00) | at the closing time.|
+|CT(-02:00:00) | 2 hrs before the closing time.|
+|OT | To set the business time relative to the opening time of the day.|
+|OT(00) | at the opening time.|
+|OT(02:00:00) | 2 hrs after the opening time.|
+|BT | To set the business time relative to the current time of the day.|
+|BT(04:30:00) | after 4 & 1/2 business hours from the current time.|
+|BT(-02:00) | 2 business hours earlier.|
+|BT(00) | Use this to ‘search forward’ to the next business time, without changing the time if the current time is not a business time. You may need this if different business days have different hours.|
+|BT(-00) | Use this to ‘search backward’ to the last previous business time. Has no effect if the current time is already during business time.|
+
+
+Day Settings:
+
+
+|Operation |Meaning |
+|---------|------------------------------|
+|BD |To set the business days.|
+|BD(4) |Four business days from today.|
+|BD(0) |same day if it is a business day, else the next day.|
+|BD(-0) |same day if it is a business day, else the previous day.|
+|RD |To set the relative days from the current day.|
+|RD(7) |after one week.|
+|RD(-1)| one day earlier.|
+|WD |To set the days of the week.|
+|WD(1) |Sunday of that week.|
+|WD(6) |Friday of that week.|
+|WN |To set the next week day after today.|
+|WN(1) |the next Sunday after today.|
+|RM |To set the relative months in the future. If the month does not have enough days to be the same day then the day will be the last day of the month.|
+|RM(3) |after the 3 months.|
+|DM |To the exact day of the month.|
+|DM(1) |the first day of that month.|
+|DM(-1) |the last day of the month.|
+|BM |To set the exact business day of the month.|
+|BM(1) |the first business day of that month.|
+|BM(-1) |the last business day of the month.|
+|DY |To set the day of the year.|
+|DY(1) |the first day of the year.|
+|DY(-1) |the last day of the year.|
+|BY |To set the business day of the year.|
+|BY(1) |the first business day of the year.|
+|BY(-1) |the last business day of the year.|
+
+## Special Consideration for Midnight Shifts
+
+A typical business day will have the opening time sometime after midnight, and the closing time before midnight, and all business hours will occur within one calendar day. Some organizations work at other times which create some unique problems for the calendar. Imagine a company that has a shift that works from 10pm (22:00) to 4am (4:00) the following morning. It might be possible to include this in the calendar as:
+
+```
+EVERYDAY: 00:00,04:00; 22:00,24:00;
+```
+
+
+This looks like two blocks of time. What is worse is that opening time is midnight, and closing time is midnight, with a long 18 hour lunch break – rather inconvenient for many of the calculations.  
+To handle this situation we will allow the hours of a “day” to be outside of the normal 24 hour range. If the work which starts on a Monday evening at 10pm is to be associated with Monday, the value might be entered in the calendar as:
+
+```
+EVERYDAY: 22:00,28:00;
+```
+
+
+While 28:00 looks like a funny time, the math works out correctly, and the “closing time” for Monday ends up being Tuesday morning at 4am. It is still 6 hours of business time, but the business day calculations come out differently when defined this way. Conversely, if the time starting Monday evening is considered to be part of Tuesday, then the entry might be made this way:
+
+```
+EVERYDAY: -2:00,4:00;
+```
+
+
+Again the negative time looks funny, but it simply means that the “opening time” for Tuesday is Monday at 10pm.

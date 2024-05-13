@@ -1,0 +1,15 @@
+#  Jungles and Ski Gloves
+
+Programming is an act of design, and in order for a programmer to do the job, they need to have a thorough understanding of the actual customer and actual situation.  An abstraction will not do, otherwise, it is like asking someone who lives in a jungle to design a pair of ski gloves.  
+
+The main foolishness that managements often makes in running software development organizations is to think that the programmers just need to be given a design to implement, and that they will be able to implement a software project from the given requirements document.  
+
+They often mistakenly view the act of programming as that of manufacturing.  Thus if you have a design for a ski glove, you might easily ask a factory located in a jungle to manufacture it.  However programming is not manufacturing.  Programming is pure design.  The program is simply an expression of what the computer should do in response to all the input.  Once the computer program is completed (the interaction fully designed) the software can be “manufactured” by simply distributing copies.  
+
+So in our analogy, the programmers sitting in the jungle are designing a ski glove.  But imagine someone who has never been skiing before, trying to anticipate what kinds of features you would need in a ski glove.  You simply can’t design a ski glove without actually trying it out on the ski hill and seeing what works and what does not work.  Specialized equipment often has features that someone inexperienced in the sport would find surprising.  **_It would be pure foolishness to expect a jungle dweller to design a good ski glove._**  
+ 
+The event that prompted this, was a software development team on one continent that was designing software interactions for customer on another continent which they had never met, never talked to, and never have even observed the working environment.  Basically, the programmers have no real understanding of the customer.  Yet they are asked to design a program that will respond and interact with them in a way that the customer finds natural.  This is impossible.   What is worse, is that team was invited to attend a meeting with the customer prepared specifically to get a better understanding, but they felt that the travel budget would be too much, and so they simply decided not to come.  They are jungle dwellers who refuse to even visit a ski hill, and yet still believe they can design a ski glove.  
+
+To be fair, the programmers understand how handicapped they are, and so they mostly decline to make any fixes or enhancements at all.  But their management has no clue that they are asking these programmers to do the impossible: design a ski glove while living in a jungle.
+
+This entry was posted in [Design](https://agiletribe.purplehillsbooks.com/category/design/), [Uncategorized](https://agiletribe.purplehillsbooks.com/category/uncategorized/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2017/03/04/jungles-and-ski-gloves/ "Permalink to Jungles and Ski Gloves").
