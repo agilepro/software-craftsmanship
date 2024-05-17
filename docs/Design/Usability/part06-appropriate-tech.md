@@ -1,3 +1,8 @@
+---
+id: appropriate-tech-for-ui
+title: Appropriate Technology
+---
+
 #  Appropriate Technology for UI
 
 There is general agreement that a Graphical User Interface (GUI) is a superior way to interact with a program, however a GUI is not always the best way.  We need to learn to use “appropriate technology” that is, the right technology at the right situation.

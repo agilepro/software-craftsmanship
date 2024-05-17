@@ -1,6 +1,17 @@
+---
+id: splash-screens
+title: Splash Screen Trouble
+---
+
 #  Splash Screen Trouble
 
-Whoever invented “Splash Screens” should be strung up and publicly humiliated.  The whole idea wreaks of “linear thinking” and misses the whole point about what a windowing system is all about.
+Whoever invented “Splash Screens” should be publicly humiliated.  It is a piece of shamelss self promotion, however the specific way implemented detract from the desired effect.
+
+:::tip[Key Takeaway]
+
+Splash graphics are annoying after the first few times.  Try to avoid them for the sake of the steady user.
+
+:::
 
 ## Definition
 

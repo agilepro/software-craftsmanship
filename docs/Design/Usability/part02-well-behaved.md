@@ -1,3 +1,7 @@
+---
+id: usability-is-well-behaved
+title: Being Well-Behaved
+---
 #  Usability Means Well-Behaved, even when the User Isn't
 
 Users of a program found that sometimes, when they went to log in, they did not get a place to enter the username & password.  Instead of the normal login prompt, they got a blank screen, and it was completely impossible to login. Sounds like a bad bug that needs to be fixed immediately, but the development team response was even more surprising: this was the user’s fault!  

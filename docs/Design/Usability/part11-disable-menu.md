@@ -1,3 +1,8 @@
+---
+id: dont-disable-ui-elements
+title: Don’t Disable UI Elements
+---
+
 #  #32 Don’t Disable UI Elements
 
 The concept of “**disabling**” a user interface element seems like a good idea to let users know that a particular action is not available. The problem is that most implementations made a disabled element _completely dead and unreactive_.  This is a problem for any user learning to use the program.  The dead element gives no indication of _why_ it is dead.  There is no way for the user to find out!  The user just has to “_just know_” why it is dead.   The most important aspect of a good user interface is that it help people _learn_ how to use it, and that means eliminating things that users have to “_just know_” ahead of time. Such elements should _never_ be completely dead, instead, they should produce a message explaining why the function can not be used at that time. 

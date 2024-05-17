@@ -1,4 +1,6 @@
-#  #2 Good Book: Clean Code
+#  Book Reviews
+
+## Clean Code by Robert C Martin
 
 I want to bring you attention to an excellent book about the “craft of programming”. It is called “Clean Code” by Robert C Martin. Actually this book is a collaboration of a number of authors who contributed to make a set of rules to live by when coding. I have to say that all the rules they give make a whole lot of sense, one of the best, and most sensible collections of coding rules I have seen in many years. It covers guidelines for code structure, vertical and horizontal formatting, variable naming, class structure, method structure, data structure, test driven development, and many more topics.  
 

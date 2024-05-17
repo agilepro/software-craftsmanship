@@ -1,3 +1,8 @@
+---
+id: jumping-through-hoops
+title: Not Jumping Through Hoops
+---
+
 #  Usability Means Not Jumping Through Hoops
 
 The image of being forced to jump through hoops is one of being required to take arbitrary actions in arbitrary orders just to satisfy some goals that are either unseen or at least not in the interest of the user. Some software is like that.  You have to perform functions that you don’t want to do, that you know you are going to get rid of, in order to satisfy some internal constraint of the software.  
@@ -18,7 +23,7 @@ There is a requirement that the arrows that come out of a kind of node have name
 
 Or worse, in some cases it actually throws away the user’s work.  In some cases you can attempt to move an arrow from one node to another.  If that would cause a name conflict on the destination node, then the edit is thrown away (!), the arrow is returned to the original position an error message appears, slaps you on the wrist, and explains that if you want to move the arrow, you will have to _rename it first_(!), and then move it.  Or go and rename the other arrow first, and then move the first.  OR else move the other arrow away, and then you can move this one.  All of these requirements are just so that at each step in the editing you can prove that the diagram is valid.  
 
-![CheckArrowName2](usability-jumping-hoops-img1.png)  
+![CheckArrowName2](part03-hoops-img1.png)  
 
 Above is a screen shot from the program actually programmed to do this.  The error message is actually part of a product, and some programmer actually thought this was a good idea.  The action is to move Arrow1, which causes the problem, but there are several recourses: rename the arrow being moved, rename the other arrow, move or delete the other arrow.  The user can address these problems when necessary.  But this program design throws away the action of the user (dragging the arrow), forces the user to make another change, and then to re-perform the drag action.  How annoying.  
 

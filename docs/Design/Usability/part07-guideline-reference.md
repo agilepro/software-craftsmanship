@@ -1,3 +1,8 @@
+---
+id: usability-guidelines
+title: UI Guideline Resources
+---
+
 #  UI Guideline Resources
 
 Every good development team creates guideline for the implementation of the user interface, so that the implementation is consistent.  A consistent meaning helps users to understand more easily what is meant by a particular arrangement of UI elements.  

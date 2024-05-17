@@ -1,4 +1,9 @@
-#  Usability is not Independent of Programming
+---
+id: usability-and-programming
+title: Dependent upon Programming
+---
+
+#  Usability is Dependent upon Programming
 
 The discussion came up of how to improve usability of the system.  One position was to hire a usability expert to draw us a specification of a highly user friendly system, and then deliver that to the development team to implement it. I disagreed, and claim this will not work, and this post is my explanation.
 

@@ -1,30 +1,43 @@
+---
+id: dont-lose-input
+Title: Don’t Erase Wrong Input
+---
+
 #  Don’t Erase Wrong Input
 
 Data validation is a tricky area for usability.   On one hand you help the user by catching possible error early.  On the other hand, the validation check can not be perfect, so there are important errors to avoid.
+
+:::tip[Key Takeaway]
+
+A user entering a wrong value take effort and the wrong value should be preserved as much as possible.  Often a wrong value can be converted to a correct value far easier than typing the entire thing in again.
+
+:::
 
 ## Scenario
 
 I was reviewing some code functionality today, and encountered this, a dialog box that allows you to enter parameters that are later used to contact a remote server to upload or download.   Entering the URL is critical, so I asked for some validation to let the user know if they were entering the wrong value.   The input dialog was like this:
 
-![](dont-lose-input-img1.png)
+![](part12-losing-input-img1.png)
 
 The URL an be long, and in this case I purposefully entered a bad value just to see if the validation was working.   Clicking in the top box (leaving the URL box) I get the following:
 
-![](dont-lose-input-img2.png)
+![](part12-losing-input-img2.png)
 
 Then, when I click OK on that, I come back to this.   My URL is gone!
 
-![](dont-lose-input-img3.png)
+![](part12-losing-input-img3.png)
 
 ## Criticism
 
 The problem should be obvious: I need to now type the entire URL again, even though only one character was wrong!  What I would like to do, is to go back and change that one character.   Maybe one of my fat fingers just hit an extra key.
 
-> Warn, but don’t obliterate.
+:::tip[Key Takeaway]
+
+Warn the user about an invalid entry, but don’t obliterate it.
+
+:::
 
 The value I typed was admittedly wrong, but still it should not be erased!   Data input is always an incremental affair.   Enter a few, enter a bit, check it, enter some more.   Asking someone to enter an entirely correct form, on the very first time, and every time, without any mistakes is too much to ask.
-
-> Warn, but don’t prevent.
 
 Validation should warn about a problem, but then allow the user to go ahead.  Even though this value is wrong according to the validation rule, there is a possibility that the rule is the thing that is wrong.  So, just in case, allow the user to continue!   The user should even be able to [save a file that is invalid](https://agiletribe.purplehillsbooks.com/2019/10/09/let-me-save-incomplete-files/) if they need to.  Warn, but don’t prevent.   Allow the user to proceed after the warning if they wish.
 

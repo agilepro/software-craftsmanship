@@ -1,4 +1,15 @@
+---
+id: usability-is-flavor
+title: The Flavor of a Meal
+---
+
 #  Usability is like the Flavor of a Meal
+
+:::tip[Key Takeaway]
+
+Usability is like the flavor of a meal: it depends strongly on the ingredients and the kind of meal.  You can not apply any flavor on any meal, and yet you still the challenge is to make the flavor pleasing.
+
+:::
 
 We talk about usability of software as if it was something separate from the software itself.  There are usability experts, and there are programmers who openly claim to not be very good at user interface.  And yet, usability is affected by many deep aspects of the software, and it is important that all programmers on a project be aware of the usability goals of the entire project. 
 

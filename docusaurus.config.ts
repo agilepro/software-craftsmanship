@@ -132,398 +132,393 @@ const config: Config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          // /docs/oldDoc -> /docs/newDoc
-          {
-            from: '/2007/foo',
-            to: '/docs/Coding/checked-exceptions/',
-          },
           {
             from: '/2011/09/29/1-dont-make-content-free-comments/',
             to: '/docs/Coding/Syntax Conventions/content-free-comments',
           },
           {
             from: '/2011/09/30/2-good-book-clean-code/',
-            to: '/docs/intro/',
+            to: '/docs/clean-code-book',
           },
           {
             from: '/2011/10/01/3-exception-catch-blocks/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Implementation/exception-catch-blocks',
           },
           {
             from: '/2011/10/02/4-avoiding-broken-builds/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Build/avoid-broken-build',
           },
           {
             from: '/2011/10/03/5-avoiding-bugs-caused-by-multiple-programmers/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Source Management/avoiding-multiple-coder-bugs',
           },
           {
             from: '/2011/10/04/6-team-member-obligations/',
-            to: '/docs/intro/',
+            to: '/docs/Management/developer-obligations',
           },
           {
             from: '/2011/10/05/7-functions-returning-collections-should-never-return-null/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/collection-functions-never-null',
           },
           {
             from: '/2011/10/06/8-the-go-parameter/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/go-parameter',
           },
           {
             from: '/2011/10/08/9-avoid-big-bang-changes/',
-            to: '/docs/intro/',
+            to: '/docs/Management/avoid-big-bang-changes',
           },
           {
             from: '/2011/10/10/10-indicate-what-happens-when-function-cant-do-what-it-is-asked-to-do/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Implementation/indicate-method-failure',
           },
           {
             from: '/2011/10/12/11-more-on-encoding/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/encoding',
           },
           {
             from: '/2011/10/14/12-context-path-and-browser-redirecting/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/browser-redirection',
           },
           {
             from: '/2011/10/16/working-around-javas-ssl-limitations/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/java-ssl-limitations',
           },
           {
             from: '/2011/10/16/13-always-replicate-fix-to-the-trunk/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Source Management/replicate-fix-to-trunk',
           },
           {
             from: '/2011/10/18/14-never-catch-and-continue/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/never-catch-and-continue',
           },
           {
             from: '/2011/10/20/15-branch-handling-with-fixes/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Source Management/branch-handling-with-fixes',
           },
           {
             from: '/2011/10/25/16-avoid-overloading-methods/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/dont-overload-methods',
           },
           {
             from: '/2011/10/26/17-program-logic-error/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/program-logic-error',
           },
           {
             from: '/2011/10/27/18-dont-use-tab-characters/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/tabs-are-evil',
           },
           {
             from: '/2011/10/29/19-reduce-cognitive-load/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/reduce-cognitive-load',
           },
           {
             from: '/2011/10/31/20-dont-document-deprecated-code/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/dont-doc-deprecated-code',
           },
           {
             from: '/2011/11/01/21-avoid-ternary-conditional-operator/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/avoid-ternary-operator',
           },
           {
             from: '/2011/11/02/22-avoid-multi-purpose-methods/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/avoid-multi-purpose-methods',
           },
           {
             from: '/2011/11/03/23-utf-8-encoding/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/utf-8',
           },
           {
             from: '/2011/11/19/sprinkling-trim-through-the-code/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/usage-of-trim',
           },
           {
             from: '/2011/12/20/never-convert-exception-to-string-before-display-time/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Implementation/never-convert-exception-to-string',
           },
           {
             from: '/2011/12/31/waterfall-method-fails-to-account-for-unseen-benefits/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Agile/waterfall-fails-benefits',
           },
           {
             from: '/2012/01/05/installer-design-principles/',
-            to: '/docs/intro/',
+            to: '/docs/Design/installer-design-principles',
           },
           {
             from: '/2012/01/28/learning-to-iterate/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Agile/learning-to-iterate',
           },
           {
             from: '/2012/01/29/all-or-nothing-is-a-poor-planning-technique/',
-            to: '/docs/intro/',
+            to: '/docs/Management/all-or-nothing',
           },
           {
             from: '/2012/01/31/reading-between-the-lines/',
-            to: '/docs/intro/',
+            to: '/docs/Management/lines-as-measure-of-done',
           },
           {
             from: '/2012/02/21/poor-error-msg-missing-context/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Examples/missing-context',
           },
           {
             from: '/2012/03/01/the-perfect-development-center/',
-            to: '/docs/intro/',
+            to: '/docs/Management/perfect-dev-environment',
           },
           {
             from: '/2012/03/23/26-never-suppress-warnings/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Build/never-suppress-warnings',
           },
           {
             from: '/2012/03/23/27-a-proper-module-does-not-need-a-config-file/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/modules-and-configuration',
           },
           {
             from: '/2012/03/26/xml-schema-validation-or-not/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/xml-validation',
           },
           {
             from: '/2012/03/28/the-error-message-is-the-documentation/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/error-message-is-documentation',
           },
           {
             from: '/2012/03/28/hating-splash-screens/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/splash-screens',
           },
           {
             from: '/2012/03/31/usability-is-not-independent-of-programming/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/usability-and-programming',
           },
           {
             from: '/2012/04/02/26-dont-add-methods-and-classes-that-you-dont-need/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/unnecessary-classes-and-methods',
           },
           {
             from: '/2012/04/05/two-is-not-better-than-one/',
-            to: '/docs/intro/',
+            to: '/docs/Design/two-not-better-than-one',
           },
           {
             from: '/2012/04/14/27-dont-declare-variables-at-the-top/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/variables-at-the-top',
           },
           {
             from: '/2012/04/17/28-avoid-test-script-fever/',
-            to: '/docs/intro/',
+            to: '/docs/Testing/test-script-fever',
           },
           {
             from: '/2012/04/23/dont-fear-rewriting-new-code/',
-            to: '/docs/intro/',
+            to: '/docs/Management/dont-fear-rewrite',
           },
           {
             from: '/2012/04/30/more-complex-code-need-agile-approach-more/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Agile/complex-projects-need-agile-more',
           },
           {
             from: '/2012/05/08/growing-software-like-a-plant/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Agile/growing-software',
           },
           {
             from: '/2012/05/08/partial-agile-no-such-thing/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Agile/partial-agile',
           },
           {
             from: '/2012/05/17/classic-date-drift-case-study/',
-            to: '/docs/intro/',
+            to: '/docs/Management/date-drift',
           },
           {
             from: '/2012/06/12/securing-against-cross-site-request-forgery/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/cross-site-request-forgery',
           },
           {
             from: '/2012/06/21/appropriate-technology-for-ui/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/appropriate-tech-for-ui',
           },
           {
             from: '/2012/07/06/29-eliminate-dead-code/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/eliminate-dead-code',
           },
           {
             from: '/2012/07/25/configuring-date-format/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Dates and Time/date-formatting',
           },
           {
             from: '/2012/07/25/module-initialization/',
-            to: '/docs/intro/',
+            to: '/docs/Design/proper-module-initialization',
           },
           {
             from: '/2012/08/13/documentation-and-legal-contracts/',
-            to: '/docs/intro/',
+            to: '/docs/Documentation/write-docs-not-contracts',
           },
           {
             from: '/2012/08/17/avoid-session-variable-abuse/',
-            to: '/docs/intro/',
+            to: '/docs/Design/session-variable-usage',
           },
           {
             from: '/2012/08/21/not-all-bugs-deserve-the-same-handling/',
-            to: '/docs/intro/',
+            to: '/docs/Management/not-all-bugs-handled-same',
           },
           {
             from: '/2012/08/23/waste-asking-whether-to-fix-a-bug/',
-            to: '/docs/intro/',
+            to: '/docs/Management/waste-of-asking-whether-to-fix',
           },
           {
             from: '/2012/10/02/keep-javadoc-with-java-source/',
-            to: '/docs/intro/',
+            to: '/docs/Documentation/doc-by-developers',
           },
           {
             from: '/2012/10/10/is-the-ui-team-broken/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/respond-to-users',
           },
           {
             from: '/2012/10/14/use-realistic-user-scenarios/',
-            to: '/docs/intro/',
+            to: '/docs/Testing/realistic-user-scenarios#a-realistic-scenario',
           },
           {
             from: '/2012/10/14/proper-module-initialization/',
-            to: '/docs/intro/',
+            to: '/docs/Design/proper-module-initialization',
           },
           {
             from: '/2012/10/14/factor-expensive-expressions-out-of-loops/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/factor-expensive-statements-out',
           },
           {
             from: '/2012/10/21/trasparency-advantage/',
-            to: '/docs/intro/',
+            to: '/docs/Design/transparency',
           },
           {
             from: '/2012/10/23/email-testing-mode/',
-            to: '/docs/intro/',
+            to: '/docs/Testing/email-testing-mode',
           },
           {
             from: '/2012/11/01/we-dont-need-programmers-we-only-need-designers/',
-            to: '/docs/intro/',
+            to: '/docs/Design/programming-is-design',
           },
           {
             from: '/2012/11/14/quest-for-stability/',
-            to: '/docs/intro/',
+            to: '/docs/Design/quest-for-stability',
           },
           {
             from: '/2012/11/23/the-only-class-you-need-for-csv-files/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Examples/class-for-csv',
           },
           {
             from: '/2012/11/25/dont-disable-ui-elements/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/dont-disable-ui-elements',
           },
           {
             from: '/2012/12/01/sso-what-is-it/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/what-is-sso',
           },
           {
             from: '/2012/12/02/keep-it-simple-factory/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/keep-it-simple-factory',
           },
           {
             from: '/2012/12/08/email-address-is-your-id/',
-            to: '/docs/intro/',
+            to: '/docs/Protocols/email-is-your-id',
           },
           {
             from: '/2012/12/31/eliminate-exceptional-cases-before-the-main-logic/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/test-exceptional-conditions-first',
           },
           {
             from: '/2013/01/03/sort-include-statements-in-alphabetical-order/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/sort-import-statements',
           },
           {
             from: '/2013/01/14/timers-common-misunderstandings/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Dates and Time/timer-misconceptions',
           },
           {
             from: '/2013/01/22/ui-guideline-resources/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/usability-guidelines',
           },
           {
             from: '/2013/02/12/dont-suffer-poor-names/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/name-well',
           },
           {
             from: '/2013/02/13/essential-cvs/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Source Management/cvs-essentials',
           },
           {
             from: '/2013/02/14/the-purpose-of-error-reporting/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/purpose-of-error-reporting',
           },
           {
             from: '/2013/02/15/gathering-error-report-information/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/gathering-error-information',
           },
           {
             from: '/2013/02/20/catch-and-continue-apache-chemistry/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Examples/apache-chemestry',
           },
           {
             from: '/2013/02/21/exceptions-speak-about-the-context-they-are-thrown-from/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Message Quality/message-is-about-context',
           },
           {
             from: '/2013/02/22/26-hints-for-agile-software-development/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Agile/agile-26-hints',
           },
           {
             from: '/2013/02/23/file-path-manipulation/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/file-path-manipulation',
           },
           {
             from: '/2013/03/06/improving-the-code-through-installation-manual-analysis/',
-            to: '/docs/intro/',
+            to: '/docs/Design/installation-manual-analysis',
           },
           {
             from: '/2013/03/15/letter-to-someone-considering-switching-from-waterfall-to-agile/',
-            to: '/docs/intro/',
+            to: '/docs/Management/Agile/waterfall-to-agile',
           },
           {
             from: '/2013/03/26/usability-means-well-behaved-even-when-the-user-isnt/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/usability-is-well-behaved',
           },
           {
             from: '/2013/04/04/method-exception-signature/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Implementation/method-exception-signature',
           },
           {
             from: '/2013/05/30/usability-means-not-jumping-through-hoops/',
-            to: '/docs/intro/',
+            to: '/docs/Design/Usability/jumping-through-hoops',
           },
           {
             from: '/2013/06/12/discuss-each-bug-report-only-once/',
-            to: '/docs/intro/',
+            to: '/docs/Management/discuss-bug-once',
           },
           {
             from: '/2013/06/14/always-use-a-brace-even-if-not-needed/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Syntax Conventions/always-use-brace',
           },
           {
             from: '/2013/07/16/designing-the-build/',
-            to: '/docs/intro/',
+            to: '/docs/Management/proper-build-goals',
           },
           {
             from: '/2013/07/17/xml-should-be-streamed-and-never-stringed/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Streams vs Strings/streaming-xml',
           },
           {
             from: '/2013/07/18/surprising-outrageous-file-handling/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Streams vs Strings/surprising-file-handling',
           },
           {
             from: '/2013/08/24/error-message-should-be-clear-plain-and-direct/',
-            to: '/docs/intro/',
+            to: '/docs/Error Handling/Message Quality/clear-plain-direct',
           },
           {
             from: '/2013/10/08/dont-abuse-singleton-pattern/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Optimization/singleton',
           },
           {
             from: '/2014/01/07/proper-stream-patterns/',
-            to: '/docs/intro/',
+            to: '/docs/Coding/Streams vs Strings/proper-stream-patterns',
           },
           {
             from: '/2014/01/13/robust-web-application-initialization/',
-            to: '/docs/intro/',
+            to: '/docs/Design/robust-application-init',
           },
           {
             from: '/2014/01/17/storing-date-values-in-files/',
