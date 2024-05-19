@@ -1,11 +1,15 @@
 ---
 id: usability-and-programming
 title: Dependent upon Programming
+tags:
+- design
+- usability
+- user interface
 ---
 
 #  Usability is Dependent upon Programming
 
-The discussion came up of how to improve usability of the system.  One position was to hire a usability expert to draw us a specification of a highly user friendly system, and then deliver that to the development team to implement it. I disagreed, and claim this will not work, and this post is my explanation.
+The discussion came up of how to improve usability of the system.  One position was to hire a usability expert to draw us a specification of a highly user friendly system, and then deliver that to the development team to implement it. There are several reasons why that will not work.
 
 **Setting:** We have a development team that is competent in programming the system using all the normal software engineering techniques.  When the product management team asks for a feature, it is implemented in a predictable amount of time, and when delivered it does exactly what it it was defined to do.  
 
@@ -55,10 +59,10 @@ Good user interfaces and good usability can not be designed independently from t
 
 ## Resources
 
-[Usability in Software Design](http://msdn.microsoft.com/en-us/library/ms997577.aspx) – a good article from Microsoft that gives a good overview of the situation.  
-[Usability 101: Introduction to Usability](http://www.useit.com/alertbox/20030825.html) – From Jacob Nielsen, co-founder of Nielsen-Norman, This is the article to give to your boss or anyone else who doesn’t have much time, but needs to know the basic usability facts.  
-[Why doing user observations first is wrong](http://www.jnd.org/dn.mss/why_doing_user_observations_first_is_wrong.html) – Don Norman explains why usability is not an “up front” operation, but something that must be tested later.
+* [Usability in Software Design](http://msdn.microsoft.com/en-us/library/ms997577.aspx) – a good article from Microsoft that gives a good overview of the situation.  
+* [Usability 101: Introduction to Usability](http://www.useit.com/alertbox/20030825.html) – From Jacob Nielsen, co-founder of Nielsen-Norman, This is the article to give to your boss or anyone else who doesn’t have much time, but needs to know the basic usability facts.  
+* [Why doing user observations first is wrong](http://www.jnd.org/dn.mss/why_doing_user_observations_first_is_wrong.html) – Don Norman explains why usability is not an “up front” operation, but something that must be tested later.
 
-> All of us usability theorists have long argued for iterative design, trying to get rid of the lengthy, inflexible linear project schedules that stymie flexibility and change, that slows up projects. Instead, we have championed iterative design, with frequent, rapid prototyping and frequent, rapid test.
+  *  > All of us usability theorists have long argued for iterative design, trying to get rid of the lengthy, inflexible linear project schedules that stymie flexibility and change, that slows up projects. Instead, we have championed iterative design, with frequent, rapid prototyping and frequent, rapid test.
 
-[Peter Merholz Speaks with Don Norman](http://vimeo.com/2963837) – Entertaining interview with the Don Norman, inventor of the term “User Experience”
+* [Peter Merholz Speaks with Don Norman](http://vimeo.com/2963837) – Entertaining interview with the Don Norman, inventor of the term “User Experience”

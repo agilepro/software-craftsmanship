@@ -1,3 +1,6 @@
+---
+  title: HttpServletRequest Path
+---
 #  HttpServletRequest Path Decoding
 
 The documentation on HttpServletRequest is very poor, and this fills in a critical set of facts that you need to know to write a TomCat application.  

@@ -1,3 +1,6 @@
+---
+  title: Estimations
+---
 #  Estimations – the eternal software problem
 
 This post argues “[Why We Should Stop Estimating](https://www.linkedin.com/pulse/article/20140814174922-5227623-why-we-should-stop-estimating)” completely in software projects. It is very problematic.  

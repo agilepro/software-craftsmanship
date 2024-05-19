@@ -28,3 +28,22 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+h1 {
+  font-weight: 300;
+  color:#5a3200;
+}
+h2 {
+  font-weight: 300;
+  color:#5a3200;
+}
+h3 {
+  font-weight: 300;
+}
+
+.theme-doc-sidebar-container {
+  background-color: #f8f2ec;
+}
+.navbar {
+  xbackground-color: #f2fbf7;
+}

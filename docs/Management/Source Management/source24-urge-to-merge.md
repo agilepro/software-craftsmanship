@@ -1,3 +1,6 @@
+---
+  id: urge-to-merge
+---
 #  The Urge to Merge
 
 Concurrent development of software in a team relies on being able to merge the changes from each person successfully.  Experienced developers will already know this, but there are theoretical limits on how effective merging can be.  

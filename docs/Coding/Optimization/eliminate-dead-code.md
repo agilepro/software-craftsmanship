@@ -1,4 +1,4 @@
-#  #29 Eliminate Dead Code
+#  Eliminate Dead Code
 
 Keep a clean house, and do not let dead code lie around.  It is more expensive than you think.  This should be obvious to us all, just like it is obvious to clean the dishes after dinner, but not everyone is so diligent.
 

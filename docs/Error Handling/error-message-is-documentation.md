@@ -1,3 +1,6 @@
+---
+  title: Message is Documentation
+---
 #  The Error Message IS Documentation for Code
 
 Another example of content free documentation below: documentation that is a waste of screen space even to display it on the screen.  Here the issue is a development team so enamored with Documentation (with a capital D) that they really want to do a complete job to document everything, that they are blind to a better approach.  The real goal of any software development should be to _eliminate the need for documentation in the first place_

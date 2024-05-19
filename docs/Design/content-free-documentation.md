@@ -1,3 +1,9 @@
+---
+id: content-free-documentation
+title: Content Free Documentation
+tags:
+- documentation
+---
 #  Content Free Documentation
 
 I was trying to use an open source tool, and reading the documentation, I was frustrated by more content free documentation.  Here is the example.  

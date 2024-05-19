@@ -1,10 +1,22 @@
 ---
 id: usability-is-well-behaved
 title: Being Well-Behaved
+tags:
+- design
+- usability
+- user interface
 ---
 #  Usability Means Well-Behaved, even when the User Isn't
 
 Users of a program found that sometimes, when they went to log in, they did not get a place to enter the username & password.  Instead of the normal login prompt, they got a blank screen, and it was completely impossible to login. Sounds like a bad bug that needs to be fixed immediately, but the development team response was even more surprising: this was the user’s fault!  
+
+:::tip[Key Takeaway]
+
+Usability does not demand that the program be fully functionality in all possible situations, but it does demand that it be well behaved in all situations.  
+
+Users hate products that require the user to follow a very narrow winding path, when any deviation from that path results in failure.  This is almost the definition of unusable.
+
+:::
 
 It took quite a while to isolate what caused the problem, and that was that the browser window had been sized down to around 600 pixels wide.  That is small for a screen, but a lot of people like to put two browsers on the screen, each taking half, so it is really not that unusual to have browsers that narrow. 
 
@@ -44,13 +56,3 @@ How do you convince people that good usability means that the program is a **saf
 The program should not be expected to be used in one particularly, strictly defined way.  Different people use things differently, and they are hard to predict.  More importantly, people need to experiment with the product to get it to do what they need.  A product that expects that people are not allowed to experiment will never be used for much beyond exactly the examples in the manual.  
 
 The documentation is not a legal contract that outlines how the user may and may not use the product.  Writing a program that expects the user to read the documentation, and then never deviate from a prescribed path, is a perfect recipe for unfriendly and unusable products.  Users should be able to use a product without reading the manual.
-
-:::tip[Key Takeaway]
-
-Usability does not demand that the program support full functionality in all possible situations, but it does demand that it be well behaved in all situations.  
-
-Users hate products that require the user to follow a very narrow winding path, when any deviation from that path results in failure.  This is almost the definition of unusable.
-
-:::
-
-This entry was posted in [Design](https://agiletribe.purplehillsbooks.com/category/design/) and tagged [design](https://agiletribe.purplehillsbooks.com/tag/design/), [usability](https://agiletribe.purplehillsbooks.com/tag/usability/), [user interface](https://agiletribe.purplehillsbooks.com/tag/user-interface/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2013/03/26/usability-means-well-behaved-even-when-the-user-isnt/ "Permalink to Usability Means Well-Behaved, even when the User Isn't").

@@ -1,3 +1,6 @@
+---
+  id: excessive-branching
+---
 #  Avoid Excessive Branching
 
 Creating and maintaining many branches causes technical debt and increases risk of bugs.  Agile practitioners already know that technical debt is that accumulation of unfinished work can cause projects to be late late late.  Building up a lot of technical debt is a problem because the debt needs to be payed before you can ship.  One way that debt can be accumulated is by profligate use of branches.  Avoid that at all costs!

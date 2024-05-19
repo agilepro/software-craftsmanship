@@ -1,3 +1,10 @@
+---
+id: handling-dates
+title: Handling Dates
+tags:
+- design
+- dates
+---
 #  Handling Dates
 
 In a globally distributed system, there are some key patterns for handling dates so that they work reliably, performantly, and are unlikely to be misused by developers.  Oddly, a number of new classes were added to Java which should be avoided.

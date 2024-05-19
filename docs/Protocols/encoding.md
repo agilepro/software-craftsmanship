@@ -1,4 +1,4 @@
-#  #11 More on Encoding
+#  Character Encoding
 
 One other note about encoding. It is so difficult to talk about encoding because it is logically very confusing, because it is so difficult to “see” the encoding, because any kind of display always involves translations into other encodings. 
 

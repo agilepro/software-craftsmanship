@@ -1,4 +1,4 @@
-#  #23 UTF-8 Encoding
+#  UTF-8 Encoding Always
 
 Wondering what encoding to use for your web pages?  Wonder no longer.  Always use UTF-8 encoding.  It is the single best encoding, supports the most characters, the most languages, and is available on every browser.  That is all you need to know: always use UTF-8.
 

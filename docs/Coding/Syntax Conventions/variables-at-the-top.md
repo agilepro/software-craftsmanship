@@ -1,4 +1,7 @@
-#  #27 Don't Declare Variables at the Top
+---
+  title: Variables at the Top
+---
+#  Don't Declare Variables at the Top
 
 Somewhere long ago you attended a course that said that all variables should be declared at the top of the method.  Modern languages allow you to declare the variable at the point in the code that it is initialized and this is a significant advantage.  However, the outdated idea of declaring all variables at the top of the method persists.  This post explains why this is a bad idea.
 

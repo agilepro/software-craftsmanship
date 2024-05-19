@@ -1,4 +1,4 @@
-#  The Only Class You Need for CSV Files
+#  CSV Class
 
 A “Comma Separated Value” file is a pretty simple and straightforward concept.  You have N values on a line, each separated by a comma.  Obviously you have to do something special if the value has a comma or a CR character in it, and that is to put them in quotes, and that means you have to handle quote characters specially.  CSV are so common that many times have gone to look for a standard library to read them.  
 

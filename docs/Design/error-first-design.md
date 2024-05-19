@@ -1,3 +1,10 @@
+---
+id: error-first-design
+title: Error-First Design
+tags:
+- error first design
+- exceptions
+---
 #  Error-First Design in JSON/REST/AngularJS integration
 
 You have heard about “mobile-first” when creating your UI, but there is something you should do before you start designing the UI:  you should design the error handling/display mechanism first.

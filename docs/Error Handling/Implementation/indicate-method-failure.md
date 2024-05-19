@@ -1,4 +1,7 @@
-#  #10 Indicate what happens when function can't return value
+---
+  title: What Happens On Failure
+---
+#  Indicate what happens when function can't return value
 
 There are many functions which take a value, go and look for something, and return an object. If the object is found it is returned, but if it is not found, what do you do?  There are two possibilities, either return a null, or throw an exception.  Often, there is justification for having two methods: one that returns a null, and one that throws an exception.  But how do you tell them apart?  This post suggests a possible naming convention.  
 

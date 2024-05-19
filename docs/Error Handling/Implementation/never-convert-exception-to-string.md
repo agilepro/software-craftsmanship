@@ -1,4 +1,7 @@
-#  #25 Never Convert Exception to String before Display Time
+---
+  title: Converting to String
+---
+#  Never Convert Exception to String before Display Time
 
 Proper handling of exceptions means that you keep it as an Exception object through all processes, particularly wrapping with another exception.  A common error I see programmers doing is to convert the Exception to a String and use that as part of a new Exception for rethrowing.  Don’t do this.  Preserve the Exception as an object until you are ready to display it to the user.  
 
@@ -10,10 +13,9 @@ The following code is an example of how NOT to create that wrapped exception:
 
 ```java
 catch (Exception e) {
-    throw new Exception("Detailed description of context. "+e.toString());
+    throw MyException.newBasic("Detailed description of context. %s", e.toString());
 }
 ```
-
 
 The problem here that the exception is converted to a string, and then concatenated onto the description of the context for the problem. Here are the problems with converting to a string:
 
@@ -27,7 +29,7 @@ The corrected code would be like this:
 
 ```java
 catch (Exception e) {
-    throw new Exception("Detailed description of context.",e);
+    throw MyException.newWrap("Detailed description of context.", e);
 }
 ```
 

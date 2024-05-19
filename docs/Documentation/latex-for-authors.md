@@ -1,3 +1,8 @@
+---
+id: latex-for-authors
+title: LaTeX Essentials
+---
+
 #  What an Author needs to know about LaTeX
 
 This post is for authors who choose a publisher who likes to use LaTeX for layout, and want to make changes to the marked up source directly.  It is quite easy to edit LaTeX files, as long as you just know a few things to avoid.  Here is the minimum you need to know to be effective at editing the content.  
@@ -16,32 +21,35 @@ This is
 a paragraph
 on multiple
 lines.
-
 ```
 
 
 ## Special Characters
 
-You are free to include most characters in your text.  There are just ten special ones you need to be careful about.  These are  $, \%, #, \\, \{, \}, ^, \_, ~, and &.   If you want one of these characters to appear in your text, you need to put a backslash before them.  For a **$** to appear, you must type **\\$** into the source. Thus, use  \\$, \\%, #, \\, \{, \}, \\^, \_, \\~, and \\&.
+You are free to include most characters in your text.  There are just ten special ones you need to be careful about.  These are  `$`, `%`, `#`, `\`, `{`, `}`, `^`, `\`, `~`, and `&`.   If you want one of these characters to appear in your text, you need to put a backslash before them.  For a `$` to appear, you must type `\$` into the source. Thus, use  `\$`, `\%`, `\#`, `\\`, `\{`, `\}`, `\^`, `\_`, `\~`, and `\&`.
 
 ## Commands
 
 When you first look at a LaTeX source file, you will probably immediately notice commands in an among the text, and these commands start with a backslash.   The general form is backslash, then command name, then open curley brace, some text, and close curley brace.  The following are some commands that you might see:
 
-*   \\chapter\{Chapter Titles are Important\}
-*   \\section\{The Section Title\}
-*   \\index\{Newton, Issac\}
-*   \\begin\{quote\}
-*   \\end\{quote\}
-*   \\emph\{This phrase will print in italics\}
+```
+\chapter{Chapter Titles are Important}
+\section{The Section Title}
+\index{Newton, Issac}
+\begin{quote}
+\end{quote}
+\emph{This phrase will print in italics}
+```
 
 The first starts a new chapter, and the text in the curley braces is the title of the new chapter.  The second starts a section, again the section title in the braces.  The third will cause an index entry in the index to point back to this location in the book.  The fourth and fifth are placed around block quotes.  The sixth will make a span of text to be set in italic font.  Some commands have no parameters, some have multiple parameters, and some have optional parameters in square brackets:
 
-*   \\newline
-*   \\addtokomafont\{chapterprefix\}\{\\raggedleft\}
-*   \\setmainfont\[Ligatures=\{Common,TeX\}, Numbers=\{OldStyle\}\]\{Palatino Linotype\}
+```
+\newline
+\addtokomafont{chapterprefix}{\raggedleft}
+\setmainfont[Ligatures={Common,TeX}, Numbers={OldStyle}]{Palatino Linotype}
+```
 
-One important think to know is that commands without any braces will consume any white space after them.  To avoid this put a pair of braces with nothing between after the command.  Thus **\\newline{}** and **\\newline** are the same thing, except the latter will consume the white space and it will be as there was no space there. For the most part, stay away from the complicated instructions.  Those are not likely to have any significant content text in them.
+One important think to know is that commands without any braces will consume any white space after them.  To avoid this put a pair of braces with nothing between after the command.  Thus `\newline{}` and `\newline` are the same thing, except the latter will consume the white space and it will be as there was no space there. For the most part, stay away from the complicated instructions.  Those are not likely to have any significant content text in them.
 
 ## Quote Characters
 
@@ -59,7 +67,7 @@ You should not use the double-quote character (") at all, and you can not use th
 
 LaTeX has three kinds of dashes.  
 
-* *The shorted is a simple hyphen which appears between words to make a single hyphenated  word.  To do this use a single hyphen character as you would normally expect. 
+* The short is a simple hyphen which appears between words to make a single hyphenated  word.  To do this use a single hyphen character as you would normally expect. 
 * An N-Dash is a bit longer, and is used to specify a range of things, such as pages 32–35.  For an N-Dash use two hyphens together.  
 * An M-Dash is a longer dash that is used to separate a part of a sentence from another part.  For this use three hyphen in a row. 
 
@@ -71,7 +79,6 @@ Please read pages 3, 12--15, and 20--23
 Mr. Jobs---no relation to Steve Jobs---was the first in line.
 ```
 
-It is pretty straight-forward.
 
 ## Conclusion
 

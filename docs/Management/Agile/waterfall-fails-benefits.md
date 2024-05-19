@@ -1,4 +1,7 @@
-#  Waterfall method fails to account for unseen benefits
+---
+  title: Waterfall Method
+---
+#  Waterfall Method fails to account for unseen benefits
 
 My epiphany for today comes from working with a team dedicated to developing software using a waterfall methodology, and how there is a decision patterns that leads teams to produce _worse_ code.  
 

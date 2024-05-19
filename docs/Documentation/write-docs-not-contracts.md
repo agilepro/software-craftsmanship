@@ -1,6 +1,13 @@
-#  Write Documentation, not Legal Contracts
+#  Good Documentation
 
 I recently encountered an effort where a customer had decided to use some unanticipated web page functionality that conflicted with the working of the product.  There was no way to rewrite the product to allow that exact customer modification.  The result was to write a warning in the manual, but the warning chosen was not very helpful.  
+
+:::tip[Key Takeaway]
+
+Don't write as if documentation is a legal contract.  Write documentation that helps the user accomplish tasks.  
+
+:::
+
 
 Any system that allows developers to extend it, will have certain ways that the developer might decide to extend it, but which is incompatible with the system.  In this case the developer wanted to hook into some web page events which were already being used.  When they did hook into them, they defeated the system functionality, and things did not work right.  
 

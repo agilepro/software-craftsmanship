@@ -1,4 +1,4 @@
-#  26 Hints for Agile Software Development
+#  26 Agile Hints
 
 I collect nuggets of wisdom on various topics. Recently I have been going over the topic of Agile software development; what really matters?  Below is a list of 26 key principles to guide an agile software development team.
 

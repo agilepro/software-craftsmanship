@@ -1,4 +1,8 @@
-#  Configuring Date Format
+---
+  id: date-formatting
+---
+
+#  Date Value Display
 
 There is endless discussion on how to format dates on the web, but most of this discussion is completely useless because it ignores the real world issue: different users want to see dates differently.  No single date format will be suitable to everyone.  This post is how to structure your product so that everyone sees the date values formatted as they would like to see them.
 

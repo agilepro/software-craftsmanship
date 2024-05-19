@@ -610,7 +610,7 @@ const config: Config = {
           },
           {
             from: '/2015/06/10/jsonrest-api-handling-dates/',
-            to: '/docs/Design/handling-dates',
+            to: '/docs/Coding/Dates and Time/handling-dates',
           },
           {
             from: '/2015/06/11/create-on-update-pattern-for-angularjs-applications/',
@@ -886,7 +886,7 @@ const config: Config = {
           },
           {
             from: '/2022/11/10/handling-dates/',
-            to: '/docs/Design/handling-dates',
+            to: '/docs/Coding/Dates and Time/handling-dates',
           },
           {
             from: '/2022/12/03/holographic-testing-technique/',
@@ -955,6 +955,10 @@ const config: Config = {
           {
             from: '/2024/02/11/past-fads-of-java/',
             to: '/docs/past-fads-of-java',
+          },
+          {
+            from: '/2011/09/04/goals/',
+            to: '/docs/intro',
           },
         ],
       },

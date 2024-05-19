@@ -1,3 +1,10 @@
+---
+id: grounding-design
+title: Grounding Design for the Real World
+tags:
+- design
+- practice
+---
 #  Grounding Design for the Real World
 
 One common rabbit hole that programmers often fall into is creating designs for abstract capabilities that then prove to be useless in real life. To avoid this, we must focus on concrete real-world examples when designing capabilities. 
@@ -35,5 +42,3 @@ In isolation, those seem like obscure, but vaguely useful features.  But, when 
 ## Finally
 
 I am not sure how well these examples motivate my point.  Most of you get the main message, which is to use REAL WORLD user stories.  Consider what a real person has to do, and walk through a complete real world process.   Look out for, and avoid, scenarios that start in the middle and encompass only part of a real story.  Avoid treating the component as if it stood on its own.  Consider the whole system.  Assess the value of a change only when the entire scenario is considered.   This will help ground your design in real work necessary actions.
-
-This entry was posted in [Design](https://agiletribe.purplehillsbooks.com/category/design/), [practice](https://agiletribe.purplehillsbooks.com/category/practice/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2017/07/17/grounding-design-for-the-real-world/ "Permalink to Grounding Design for the Real World").

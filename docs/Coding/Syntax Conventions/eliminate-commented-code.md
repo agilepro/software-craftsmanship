@@ -1,6 +1,9 @@
-#  Never leave 'commented code' in the source
+---
+  title: Commented-Out Code
+---
+#  Never leave 'Commented Code' in the Source
 
-Comments in code are good. But not when they consist of old code that has been commented out of the live code. Git rid of that.
+Comments in code are good. But not when they consist of old code that has been commented out of the live code. Get rid of that waste.
 
 ## Situation
 

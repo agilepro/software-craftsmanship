@@ -1,4 +1,7 @@
-#  #15 Branch Handling with Fixes
+---
+  id: branch-handling-with-fixes
+---
+#  Branch Handling with Fixes
 
 This is really a management issue, not a coding issue. In short: when a bug is fixed on a branch, it should be at the same time (or immediately after) fixed in the trunk. The logic should be obvious, but I found out recently that some development teams are NOT following this guideline.This post is an attempt to lay out the logic of why a software development team must follow this.
 

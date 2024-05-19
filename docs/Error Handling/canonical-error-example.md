@@ -1,3 +1,6 @@
+---
+  title: Canonical Error Example
+---
 #  Canonical Execution Error Example 
 
 If we are going to talk about error messages, we need to flesh out a typical computation scenario within which an error occurs.  I use this example in other places to talk about possible error messages.

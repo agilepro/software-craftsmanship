@@ -1,3 +1,7 @@
+---
+  id: git-essentials
+  title: GIT Accented Characters
+---
 #  GIT: Accented Characters in Filenames
 
 If you are using file names with non-ASCII characters in them, then Git will sometimes behave funny.  There are some commands to know about.

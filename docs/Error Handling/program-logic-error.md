@@ -1,4 +1,4 @@
-#  #17 Program Logic Error
+#  Program Logic Error
 
 Not all exceptions are the same, and when writing a program, it is important to be mindful of whether the root cause of an exception is the programmer, or possibly environment or user data.  The latter type of exception can reasonably occur in a production environment, and so needs a translatable message.  But errors of the programmer can not happen in production, and thus should be handled differently.
 

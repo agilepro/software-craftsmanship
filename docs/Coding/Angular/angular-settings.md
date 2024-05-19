@@ -1,15 +1,17 @@
-#  Angular Settings: ng-options
+#  Settings
 
-The documentation on Angular expressions is so sketchy that I really can’t work out what it means, so I have “decoded” what they say, and here is the two useful cases.  
-ng-options is an attribute on a select element that generates the options according to data that you have already in your model.
+The documentation on Angular expressions is vague and unclear.  I have “decoded” what they say, and here is the two useful cases.  
+
+**ng-options** is an attribute on a select element that generates the options according to data that you have already in your model.
 
 ## The Simplest Case
 
 There are three things to consider: the LIST of source objects, how these are displayed, and the value that gets assigned into the resulting variable.  Consider the following simple case:
 
-```
+```js
 $scope.colors= ["red", "yellow", "green", "blue", "orange", "purple"];
 $scope.selectedColor = "red";
+
 <select ng-options="y for y in colors" ng-model="selectedColor "></select>
 ```
 
@@ -20,7 +22,7 @@ This is the absolutely simplest case with an array of strings values.   The “
 
 It is quite a bit more common to have a list of objects which have names, and to want to select one of them.
 
-```
+```js
 $scope.schools = [
     {name:"Berkeley", cost:40000, value:10},
     {name:"Stanford", cost:60000, value:12}

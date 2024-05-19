@@ -1,4 +1,4 @@
-#  #27 A Proper Module does NOT need a Config File
+#  Module and Config File
 
 It is common for a system or a program to have a config file: that is a file that holds a bunch of settings that can be adjusted by the administrator or user to get desired effect.  A code module, that is designed to be embedded into a running program and is designed to be reused in multiple programs, should NEVER require a configuration file.  
 

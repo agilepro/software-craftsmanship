@@ -1,4 +1,13 @@
-#  Always use a brace even if not needed
+---
+  id: always-use-brace
+  title: Always use a Brace
+  tags:
+  - Syntax
+  - Coding
+  - Code Style
+  - Indenting
+---
+#  Always use a Brace Even if Not Needed
 
 In C, C++, Java, and other languages, you use curley-braces — '\{' and '\}' — to indicate the start and the end of a block of code.  However, the braces are optional if the block is only a single line.  This is an option you should never use.  Always use the brace, even if it is a single line.
 
@@ -45,5 +54,3 @@ It is not a huge difference.  Here are the reasons:
 If you are not entirely convinced by the arguments above, then I understand.   We are of course talking coding style here, not fundamental right and wrong, so it is possible, even common, for people to hold different opinions, and still be able to write reliable code.  In this case we worry about maintainability of the code.  A programmer learns to read code, and reading faster depends upon having fewer unusual things in the code. Regularity and uniformity of the code makes the code faster to read, and therefor easier to maintain.  Uniformity helps to prevent errors.  So, for the sake of picking one arbitrary choice over another, choose to put the braces in. 
 
 _Once you get used to it, all of the arguments above will make more sense._
-
-This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/) and tagged [code style](https://agiletribe.purplehillsbooks.com/tag/code-style/), [indenting](https://agiletribe.purplehillsbooks.com/tag/indenting/), [source](https://agiletribe.purplehillsbooks.com/tag/source/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2013/06/14/always-use-a-brace-even-if-not-needed/ "Permalink to Always use a brace even if not needed").

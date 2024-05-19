@@ -1,4 +1,5 @@
-#  BibTeX: What Authors Need To Know
+#  BibTeX Essentials
+
 Books and article with cite other references.  LaTeX will format the references (bibliography) section quite well and quite automatically as long as it is given a BibTeX file to read the information from.   If you have a list of references that you want to cite, here is how to structure this as a BibTeX file.
 
 ## Citing a Reference

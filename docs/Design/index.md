@@ -1,3 +1,9 @@
+---
+id: design
+title: Design
+tags:
+- design
+---
 # Design
 
 Design is the domain of product managers.  It is performed most oten by people who do not do the implementation, however it is strongly informed by the implementation reality.  Design is a synthesis from the customer needs and the technical possibilities.

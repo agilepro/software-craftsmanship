@@ -1,3 +1,6 @@
+---
+  title: All-or-Nothing
+---
 #  All-or-Nothing is a poor planning technique
 
 I work with a large development group.  Every 6 to 9 months we go through a planning phase.  What follow is a curious ritual that I will recount in detail, that end up in a project that is deemed excellently planned by the engineers and managers, even though the resulting software product is summarily disliked by the customers.  It is all based on the theory that perfect software requires a perfect plan.

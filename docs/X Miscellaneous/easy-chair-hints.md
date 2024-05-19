@@ -1,4 +1,4 @@
-#  Not-So-EasyChair Hints
+#  EasyChair: Not So Easy
 
 There is a conference management system called [**EasyChair**](https://www.easychair.org/) which many of the academic conferences use to manage the submission to the conference, the reviewing of the submissions, and the selection of the papers to be included.  It is tried and true, but it has one of the worst user interfaces you are likely to ever experience.  This post is the result of my struggle to get it set up for an event.
 

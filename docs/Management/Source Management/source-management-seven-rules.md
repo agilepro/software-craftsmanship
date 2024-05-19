@@ -1,4 +1,7 @@
-#  Source Management – 7 Rules
+---
+  title: 7 Rules for Source Management
+---
+#  7 Rules for Source Management
 
 Those new to a source code management system tend to make a few predictable mistakes. These 7 rules are helpful to be learned right away and form a good practice from the beginning. I also have seen some experienced programmers who could benefit from following these rules.
 

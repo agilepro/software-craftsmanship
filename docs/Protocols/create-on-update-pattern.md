@@ -1,3 +1,6 @@
+---
+  title: Create-On-Update Pattern
+---
 #  Create-On-Update Pattern for AngularJS Applications
 
 This is a suggestion for how to design the JSON/REST protocol between the Angular application and the server, to handle creation of items easily and conveniently.  Use a special ID value to indicate that the object does not exist on the server, and update like normal.  The server detects this and creates it on demand.

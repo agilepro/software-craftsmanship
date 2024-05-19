@@ -21,12 +21,10 @@ It is just as easy to write the following:
 
 ```java
 catch (Exception e) {
-    throw new Exception("System init is unable to read parameters from "
-        +paramFile+" for user "+currentUser, e);
+    throw MyException.newWrap("System init is unable to read parameters from %s "
+        + "for user %s", e, paramFile, currentUser);
 }
-
 ```
-
 
 First, the message is imporoved to give more information about the specific situation. What part of the system is failing, and what parameters are you talking about, and who is this being done for. The data values yuo include depend on the method that is doing the throwing, and you should include whatever specific are readily available in that method, so that the receiver of the message has a clue about where this was thrown from.
 
@@ -39,7 +37,7 @@ Another example looked like this:
 ```java
 catch (Exception e) {
     System.out.println("File not found: "+file+", because "+e.toString());
-    throw new Exception("File not found: "+file, e);
+    throw MyException.newWrap("File not found: %s", e, file);
 }
 
 ```
@@ -55,9 +53,8 @@ When you catch and exception, wrap, and rethrow don’t unnecessarily copy the m
 
 ```java
 catch (Exception e) {
-    throw new Exception("File not found: "+file+", because "+e, e);
+    throw MyException.newBasic("File not found: %s, because %s", file, e.getMessage());
 }
-
 ```
 
 
@@ -65,7 +62,7 @@ The above code will convert the causing exception into a string and put it into 
 
 ```java
 catch (Exception e) {
-    throw new Exception("File not found: "+file, e);
+    throw MyException.newWrap("File not found: %s", e, file);
 }
 
 ```
@@ -90,7 +87,7 @@ In case you were thinking that `finally` clauses are OK to throw an exception fr
 If you don’t trust the system will handle your thrown exceptions, then TEST it! Put a gratuitous throw (one that always throws an exception) into the code compile and test. The exception should be delivered to the user, and it should be recorded in the log as well. This should happen no matter where you throw the exception from. Once you have the confidence that the exception is being caught at the right spot, that the user is informed, and that the entry is in the log, you can then confidently use the exception mechanism properly.
 
 ```java
-throw new Exception("Testing that a throw from routine XYZ is delivered to "
+throw MyException.newBasic("Testing that a throw from routine XYZ is delivered to "
    + "the user and traced in the log file.");
 
 ```

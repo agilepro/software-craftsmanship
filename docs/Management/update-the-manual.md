@@ -1,3 +1,6 @@
+---
+  title: Answer by Updating Manual
+---
 #  Answer Question by Updating Manual
 
 Writing code, writing the manual, supporting the product, and testing the code all go hand-in-hand.  When I get a question on the product, it is an opportunity to improve the manual  

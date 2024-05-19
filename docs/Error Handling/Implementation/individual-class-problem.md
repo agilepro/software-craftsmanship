@@ -1,6 +1,15 @@
-#  Individual Exception Classes are Monstrously Overweight
+---
+  title: Individual Exception Classes
+---
+#  Individual Exception Classes are Overweight
 
 My last post was you can avoid a lot of waste in a project by recognizing program logic errors, and keeping the exception being thrown very lightweight. In this post I talk about a particularly heavy exception, the individual exception class, which is constructed to communicate just one thing. They are just too heave for most use, and here is why.
+
+:::tip[Key Takeaway]
+
+Never create a class when a simple string will do just as well.
+
+:::
 
 ## What is an Individual Exception Class?
 
@@ -10,14 +19,14 @@ Let me give you an example. I found this in a real live open source project rece
 
 ```java
 /*******************************************************************************
- * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *       http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -25,13 +34,12 @@ Let me give you an example. I found this in a real live open source project rece
 package com.company.engine.product.api;
 public class NoXxxxFileInUploadException extends IllegalArgumentException{
     private static final long serialVersionUID = 3410221492413480890L;
-    public static final String MESSAGE = &quot;Expected one Xxxx file and optionally&quot;
-        +&quot; one image file but no file with a Xxxx extension was found&quot;;
+    public static final String MESSAGE = "Expected one Xxxx file and optionally"
+        +" one image file but no file with a Xxxx extension was found";
     public NoXxxxFileInUploadException() {
         super();
     }
 }
-
 ```
 
 
@@ -41,11 +49,10 @@ There you have it, 27 lines of text to maintain to say one thing: a file with th
 
 The question in front of us: why not just throw a POJLE (Plain Old java.lang.Exception) object that has a string in it? Compare these two throw statements:
 
-```
+```java
 throw new NoXxxxFileInUploadException();
-throw new Exception(&quot;Expected one Xxxx file and optionally one image file&quot;
-   +&quot; but no file with a Xxxx extension was found&quot;);
-
+throw new Exception("Expected one Xxxx file and optionally one image file "
+   + "but no file with a Xxxx extension was found");
 ```
 
 
@@ -75,8 +82,3 @@ I have created exception classes for projects, usually only one per project, wit
 
 It is smarter to make it as easy as possible to allow programmers to communicate as good a message as possible to the user. This will reduce the cost of developing the code, reduce the cost of maintaining the code base, and improve the quality of the messages and therefor improve the quality of the program overall.
 
-:::tip[Key Takeaway]
-
-Never create a class when a simple string will do just as well.
-
-:::

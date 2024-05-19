@@ -1,4 +1,4 @@
-#  #26 Don't add Methods and Classes that you don't need.
+#  Unnecessary Methods & Classes
 
 This should be obvious, but it is a rule that is violated quite often. This is one corollary to the YAGNI (You Aren’t Gonna Need It) Principle.    This post discusses that there is a proper time to do things, and it is a waste to do them ahead of time.  
 

@@ -1,4 +1,8 @@
-#  Storing Date Values in Files
+---
+  id: storing-dates-in-files
+  name: Date Value Storage
+---
+#  Date Value Storage
 
 XML and JSON files store and transport data.  What is the best way to store a Date-Time value? Always, always, always use the integer epoch format: the number of milliseconds since Jan 1, 1970 UTC. This post tells you why.
 

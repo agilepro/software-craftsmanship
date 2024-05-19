@@ -1,4 +1,8 @@
-#  Constant Abuse
+---
+  id: constant-abuse-1
+  title: Constant Abuse 1
+---
+#  Constant Abuse 1
 
 Constants can be useful, but constants can also be abused making code hard to read because you always have to go look somewhere else in the code just to understand what you are reading. This post is about a clear example of how constants can be used to make code much harder to maintain, particularly when they are arbitrary symbolic representations of something that is already supposed to act as a constant symbolic value.  
 

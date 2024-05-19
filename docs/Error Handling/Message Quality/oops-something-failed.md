@@ -1,3 +1,6 @@
+---
+  title: Not Vague
+---
 #  "Oops something failed" is NOT acceptable error message
 
 I try to keep track of real-life situations where poor error messages appear. That happened again today. This message was displayed to the user:  

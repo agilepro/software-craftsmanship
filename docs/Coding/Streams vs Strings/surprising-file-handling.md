@@ -1,4 +1,4 @@
-#  Surprising outrageous file handling
+#  File Handling Antipattern
 
 I don’t usually focus on bad examples of code (because there are so many ways to do it wrong they are rarely repeated) but here I found a particular pattern that was pernicious and repeated all through the code, indicating that at least one development thought this was a really good idea.  It isn’t.  
 Here is the code, do you see the problems?

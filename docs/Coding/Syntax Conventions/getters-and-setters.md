@@ -1,3 +1,6 @@
+---
+  title: Getters & Setters Unneeded
+---
 #  When Getters and Setters are not Needed
 
 Getter and setters (also called accessors and mutators) are small pieces of code that run to provide a value stored in the object instead of accessing it directly.  Sometimes they are good, sometimes bad, this post explores which is which.

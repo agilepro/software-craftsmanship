@@ -1,4 +1,7 @@
-#  #13 Always Replicate Fix to the Trunk
+---
+  id: replicate-fix-to-trunk
+---
+#  Always Replicate Fix to the Trunk
 
 We try to avoid having multiple versions of a product under maintenance at a time, but every product shipped to real customers has to offer support of the version that the customer has.  This post offer guidance around handling of bug fixes in a multi-branch development environment.  
 

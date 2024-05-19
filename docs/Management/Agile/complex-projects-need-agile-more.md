@@ -1,3 +1,6 @@
+---
+  title: Complex Projects
+---
 #  Complex Projects need Agile MORE than Smaller Projects
 
 I met another Japanese executive last week who said “An Agile approach may be fine for other projects, but our software is big and complex, and because of that we have to use Waterfall approach.”  This is the exact opposite from the truth:  the larger and more complex the code, the _greater_ the need for an agile, iterative approach.

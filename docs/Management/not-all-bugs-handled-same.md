@@ -1,4 +1,4 @@
-#  Not all Bugs Deserve the Same Handling
+#  Handle Bugs Appropriately
 
 It is good to put in place standards for handling reported problem, but the process is not the same for all bugs.  Some deserve careful elaborate process, while others should just be snuffed and move on.  
 

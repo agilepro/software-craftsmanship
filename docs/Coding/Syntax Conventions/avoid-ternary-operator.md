@@ -1,4 +1,8 @@
-#  #21 Avoid Ternary Conditional Operator (? :)
+---
+  id: avoid-ternary-operator
+  title: Avoid Ternary Operator
+---
+#  Avoid Ternary Conditional Operator (? :)
 
 There is a Java conditional operator, known as the ternary conditional operator, which is often used in entirely inappropriate situations that make poor code.  Abuse of this operator is so common that I advise avoiding it completely unless you know really what it is doing.  Actually there are cases where it works OK, but in many situations it creates larger, slower code.  
 

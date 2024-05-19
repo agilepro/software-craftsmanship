@@ -1,4 +1,4 @@
-#  Never Use StringTokenizer
+#  Avoid StringTokenizer
 
 You should **Never Use StringTokenizer**.  That is a strong statement.  It is a bit of an exaggeration.  But in my experience, every case where StringTokenizer has been used that I have seen, has been an abuse of the original concept, and ended up in larger, more complex, and harder to maintain code.  
 
@@ -161,7 +161,7 @@ Another use of StringTokenizer.
 StringTokenizer st = new StringTokenizer(decodedUserPass, ":");
 int numTokens = st.countTokens();
 if (numTokens != 2) {
-    throw new Exception("Invalid username and password in header");
+    throw MyException.newBasic("Invalid username and password in header");
 }
 String userName = st.nextToken();
 String passwd = st.nextToken();
@@ -173,7 +173,7 @@ This is correctly written in the sense that it is efficiently written and there 
 ```java
 int pos = decodedUserPass.indexOf(":");
 if (pos < 0) {
-    throw new Exception("Invalid username and password in header");
+    throw MyException.newBasic("Invalid username and password in header");
 }
 String userName = decodedUserPass.substring(0,pos);
 String passwd = decodedUserPass.substring(0,pos+1);

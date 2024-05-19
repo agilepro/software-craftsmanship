@@ -1,4 +1,4 @@
-#  #7 Functions Returning Collections, should never return null
+#  Collection Functions never return null
 
 A function that returns a collection, such as a list of all files in a folder, all sections on a page, or all attachments on a web site, should never return null.  It is a simple rule, and if followed reduces the complexity of the calling code.
 

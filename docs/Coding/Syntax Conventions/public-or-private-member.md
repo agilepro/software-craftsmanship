@@ -1,3 +1,6 @@
+---
+  title: Public vs. Private
+---
 #  Public or Private Member Variables?
 
 When is it OK to make member variables public?  

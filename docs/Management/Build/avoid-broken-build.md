@@ -1,4 +1,4 @@
-#  #4 Avoiding Broken Builds
+#  Avoiding Broken Builds
 
 Poor coding practices and bad habits can cause build breakage.  There is a simple procedure that can almost completely eliminate the risk of broken builds.  
 Here is the procedure for checking in code:

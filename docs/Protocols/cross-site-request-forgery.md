@@ -1,3 +1,6 @@
+---
+  title: Cross-site Request Forgery
+---
 #  Securing against Cross-site Request Forgery
 
 There is a type of attack (CSRF) that every form post is susceptible to.  User 1 is logged into a site A and has a valid session.  User 2 then sends an email message with a form post to site A, or a link to a rogue web page with a form post to site A.   Since the session is maintained in cookies, this new form post will be accepted by the server as a valid part of the current session. In this way, User 2 can make User 1 make changes in the Site A that User 1 was not expecting.

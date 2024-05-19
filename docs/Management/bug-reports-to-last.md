@@ -1,3 +1,6 @@
+---
+  title: Bug Reports that Last
+---
 #  Write Bug Reports that Last
 
 Encountered a bug report that cited a problem in “the new build.”   That is not good enough, because every week will bring a new “new build.”  

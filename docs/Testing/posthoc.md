@@ -1,3 +1,6 @@
+---
+  title: Testing Email Senders
+---
 #  PostHoc: Testing Apps that Send Email
 
 I have developed a utility program that is extremely useful for testing and demonstrating applications that send email.  It is called **Post Hoc**.   As far as your application is concerned, it is an SMTP server, but it comes with a built in user interface to let you see and inspect the email that was sent.  Without any fuss.

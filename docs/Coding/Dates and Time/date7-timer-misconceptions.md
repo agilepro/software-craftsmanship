@@ -1,6 +1,9 @@
-#  Timers: Common Misunderstandings
+---
+  id: timer-misconceptions
+---
+#  Timers: Misunderstandings
 
-At some point you will be asked to implement a timer — something that displays the amount of time that is elapsing.  It can be a count-up timer showing the total times that something has been happening.  Or it might be a count-down timer showing the amount of time remaining to complete a particular task.  Most programmers will make some key mistakes the first time they attempt this.  I am rather shocked and amazed at how many incorrect examples you can find if you scan the internet.
+At some point you may be asked to implement a timer — something that displays the amount of time that is elapsing.  It can be a count-up timer showing the total times that something has been happening.  Or it might be a count-down timer showing the amount of time remaining to complete a particular task.  Most programmers will make some key mistakes the first time they attempt this.  I am rather shocked and amazed at how many incorrect examples you can find if you scan the internet.
 
 **Don’t track the current time** – The biggest mistake that programmers make is to think they need a variable to hold the current time and then to write code to increment that variable every second, e.g. something called “elapsedSeconds” which they maintain. The problem is that you can schedule code to be called every second, but there is no guarantee of exactly when that code will be called.  
 Here is an example of the **wrong** way to do it:

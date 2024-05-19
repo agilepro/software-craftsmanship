@@ -1,4 +1,7 @@
-#  #9 Avoid "Big Bang" Changes
+---
+  title: Big Bang Changes
+---
+#  Avoid "Big Bang" Changes
 
 There always comes times when program needs to be changed, and some existing classes need to change roles.This post talks about strategies to avoid making a big change all at once.  The problem with a big change, is that when doing the change in isolation of other developers, you run a significant risk of clash and ultimately bugs.  Here are some techniques to make all changes, no matter the size, implemented incrementally.  
 

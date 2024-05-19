@@ -1,4 +1,4 @@
-#  #24 Sprinkling "trim" through the code
+#  Gratuitous Logic
 
 One bad practice I have seen on many occasions is the use of trim() statements throughout the code.  This is a poor coding practice, and it is an indicator of disorganized code.
 

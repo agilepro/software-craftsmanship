@@ -1,4 +1,7 @@
-#  #14 Never Catch and Continue
+---
+  title: Catch & Continue
+---
+#  Never Catch and Continue
 
 I ran across a body of code that is using a spectacularly evil coding pattern. This is not evil that presents itself as a devil with horns and pitchfork, but rather this is a wolf in sheep’s clothing. It is an evil pattern that looks so reasonable, and I bet most readers will look at it and initially ask “What is wrong with that?”  
 Here is a sample block of code exhibiting the pattern:

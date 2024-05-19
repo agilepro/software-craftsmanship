@@ -1,3 +1,7 @@
+---
+  id: brainless-getters-and-setters
+  title: Getters & Setters Brainless
+---
 #  Brainless Getters & Setters are a Waste
 
 Someone long ago set a pattern that all members should have a getter and setter method.  Some are persuaded that this is OO and this is encapsulation, so a lot of inexperienced programmers do this by default.  But this is a problem.

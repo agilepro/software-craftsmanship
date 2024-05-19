@@ -1,4 +1,8 @@
-#  #5 Avoiding Bugs Caused By Multiple Programmers
+---
+  id: avoiding-multiple-coder-bugs
+  title: Multiple Programmers
+---
+#  Avoiding Bugs Caused By Multiple Programmers
 
 Teams of programmers can avoid unexpected logical problems in the code by working together on one version of the code, and by avoiding working in solitude.  The longer that individuals work separately, the greater the chance of such logical problems developing.  **Continuous integration** is a practice that avoids this risk simply by refreshing and merging often, usually at least once a day.  
 

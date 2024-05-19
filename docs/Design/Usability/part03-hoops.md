@@ -1,6 +1,10 @@
 ---
 id: jumping-through-hoops
 title: Not Jumping Through Hoops
+tags:
+- design
+- usability
+- user interface
 ---
 
 #  Usability Means Not Jumping Through Hoops

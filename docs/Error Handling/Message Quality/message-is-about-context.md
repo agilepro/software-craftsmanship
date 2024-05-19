@@ -1,3 +1,6 @@
+---
+  title: Context of Throw
+---
 #  Exceptions Speak about the Context they are Thrown From
 
 Programmers often make the mistake of assuming that an exception being caught will be an exception that they have seen during testing.  Programmers often underestimate the large variety of exceptions that might occur.  Based on this misunderstanding, programmers will make poor assumptions about what exceptional situation might be occurring, and then jump to an invalid conclusion about the problem the code has encountered, and as a result produce a poor, inaccurate error message. This can easily be avoided if you understand proper usage of exceptions.
@@ -11,7 +14,7 @@ public void methodX() {
         methodY();
     }
     catch (Exception e) {
-        throw new Exception("Could not do methodY", e);
+        throw MyException.newWrap("Could not do methodY", e);
     }
 }
 ```
@@ -24,7 +27,7 @@ public void methodX() {
         methodY();
     }
     catch (Exception e) {
-        throw new Exception("Could not do methodX", e);
+        throw MyException.newWrap("Could not do methodX", e);
     }
 }
 ```
@@ -36,13 +39,13 @@ Let me explain why.  The exception is being thrown from methodX, so we know for
 ```java
 public void methodX(String s) {
     if (s.length()<=5) {
-        throw new Exception("methodX requires a string longer than 5 characters);
+        throw MyException.newBasic("methodX requires a string longer than 5 characters);
     }
     try {
         methodY();
     }
     catch (Exception e) {
-        throw new Exception("Could not do methodX", e);
+        throw MyException.newWrap("Could not do methodX", e);
     }
 }
 ```
@@ -67,7 +70,7 @@ public static String quoteURIPathComponent(String s, boolean quoteSlash) {
         // fake scheme so that a colon is not mistaken as a scheme
         uri = new URI("x", s, null);
     } catch (Exception e) {
-        throw new Exception("Illegal characters in: " + s, e);
+        throw MyException.newWrap("Illegal characters in: %s", e, s);
     }
     String r = uri.toASCIIString().substring(2); // remove x:
     // quote some additional reserved characters to be safe
@@ -89,7 +92,7 @@ There is no situation where this message is useful!  If the problem really is t
 This exception should simply be:
 
 ```java
-throw new Exception("Unable to quoteURIPathComponent on the value: "+s, e);
+throw MyException.newWrap("Unable to quoteURIPathComponent on the value: %s", e, s);
 ```
 
 This message does two things.  It clearly states that the quoteURIPathComponent method was not able to do its job.  It also includes a copy of the value that might be causing the offending problem.  We can not know for sure that s had anything to do with the problem, but it costs very little to include it, and it might help the user solve the problem.

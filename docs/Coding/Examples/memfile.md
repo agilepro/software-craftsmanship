@@ -1,4 +1,4 @@
-#  The Magic of MemFile
+#  MemFile Class
 
 In the [Purple Utilities Library](http://purplehillsbooks.com/purpleDoc/) is a class called [MemFile](http://purplehillsbooks.com/purpleDoc/index.html?com/purplehillsbooks/streams/MemFile.html) which you can efficiently stream into and out of. Learn to use it properly can increase the efficiency of your programs when reading and writing data.
 

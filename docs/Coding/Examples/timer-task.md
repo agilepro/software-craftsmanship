@@ -1,4 +1,4 @@
-#  Java TimerTask Implementation Pattern
+#  TimerTask Pattern
 
 When implementing a TimerTask class, there are a couple of things to remember.
 

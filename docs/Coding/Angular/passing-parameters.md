@@ -1,7 +1,6 @@
-#  Parsing Parameters – AngularJS Tip
+#  Parsing Parameters
 
-I recently got up to speed on AngularJS and I must admit it is pretty amazing.  Probably should give an overview but I don’t have time for that today.  This post is specifically some Java code to parse parameters that can be passed in links between pages allowing for a natural page-flow behavior.  
-For easy reference, here is the final code for parsing the parameters:
+Here are some JS code fragments to parse parameters that can be passed in links between pages allowing for a natural page-flow behavior.  For easy reference, here is the final code for parsing the parameters:
 
 ```js
 function parsePageParams() {

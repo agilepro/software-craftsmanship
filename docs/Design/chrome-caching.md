@@ -1,3 +1,11 @@
+---
+id: chrome-caching
+title: Caching for Chrome
+tags:
+- caching
+- chrome browser
+---
+
 #  Caching for Chrome
 
 One of the biggest questions I see posted on internet discussion boards is “Why didn’t Chrome get the recent file?”  By default, Chrome is more aggressive on it’s caching than either Mozilla or IE.  Here are some answers to these questions.

@@ -1,4 +1,4 @@
-#  Lambda vs. Loop in Java
+#  Lambda vs. Loop
 
 There are two ways to walk through a list of values: one is the old-fashioned loop and the other is the new-fangled object streams which use a lambda to iterate through a list.  Which to use? Let’s explore the reasons for using one or the other.
 

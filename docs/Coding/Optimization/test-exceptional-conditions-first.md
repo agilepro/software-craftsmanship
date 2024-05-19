@@ -1,4 +1,4 @@
-#  #33 Eliminate Exceptional Cases before the Main Logic
+#  Test Errors before Logic
 
 When writing code, you naturally want the code to be readable so it can be maintained easily.  Generally, you try to [reduce the cognitive load](https://agiletribe.purplehillsbooks.com/2011/10/29/19-reduce-cognitive-load/), and one recommendation is to handle exception cases that might occur up front, in a small, localized block of code, before falling through to the main block of logic.  
 
@@ -18,8 +18,8 @@ if ("registerNewAction".equals(mode)) {
         emailHandler.sendEmail(userId,profReq);
         response.sendRedirect("?openid.mode=confirmationKey");
     }else{
-        throw new Exception ("The id supplied ("+userId
-            +") does not appear to be a valid email address.");
+        throw MyException.newBasic("The id supplied (%s) does not appear"
+        + " to be a valid email address.", userId);
     }
     return;
 }
@@ -31,8 +31,8 @@ Assume that the logic is correct in the code above, you can see that the logic i
 if ("registerNewAction".equals(mode)) {
     String userId = reqParam("registerEmail");
     if (!emailHandler.validate(userId)) {
-        throw new Exception ("The id supplied ("+userId
-            +") does not appear to be a valid email address.");
+        throw MyException.newBasic("The id supplied (%s) "+
+            +"does not appear to be a valid email address.", userId);
     }
     profReq = emailHandler.createReq(2, userId, getTime());
     emailHandler.sendEmail(userId,profReq);

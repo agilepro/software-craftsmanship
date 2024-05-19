@@ -1,3 +1,11 @@
+---
+id: abstraction-and-encapsulation
+title: Abstraction and Encapsulation
+tags:
+- design
+- abstraction
+- encapsulation
+---
 #  Abstraction and Encapsulation
 
 Abstraction and encapsulation are opposite sides of the same coin, and essential to good object oriented software design.  Why the, is there a tendency of some programmers to go in exactly the opposite direction?  This trend and its implication is discussed below.

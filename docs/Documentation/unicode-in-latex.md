@@ -1,4 +1,4 @@
-#  Adding Unicode Characters to LaTeX documents
+#  LaTeX Unicode Characters
 
 While typesetting a travel diary, I wanted to include place names in their local language using their local script.  The book is written entirely in English, and have only a standard text editor, without any exotic script support.  I can look up the local name of the city online, but cutting and pasting can be a challenge, here is how to do it.
 

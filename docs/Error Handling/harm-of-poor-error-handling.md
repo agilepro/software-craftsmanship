@@ -1,4 +1,4 @@
-# What is the Harm?
+# Costs to Developers
 
 This document is to give a concrete example of how a developer is harmed when error handling is done poorly.  While the total harm is modest -- amounting to a waste of a few hours of work -- it is important to note that doing it correctly would take much less than a few hours.  Generally, a few minutes of diligence can save hours of debugging later.
 

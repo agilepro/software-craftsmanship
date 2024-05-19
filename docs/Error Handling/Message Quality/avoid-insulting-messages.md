@@ -1,4 +1,7 @@
-#  Don't Write Insulting Error Messages
+---
+  title: Insulting the User
+---
+#  Avoid Insulting the User
 
 Error messages are incredibly important in communicating to the user when something happened that the program was not designed to handle.  Programmers usually write these messages, and there are common pitfalls to avoid. 
 

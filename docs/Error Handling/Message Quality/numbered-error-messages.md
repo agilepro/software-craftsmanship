@@ -1,4 +1,7 @@
-#  Numbered Error Messages Do Not Work 
+---
+  title: More than a Number
+---
+#  Error Messages should be More than a Number 
 
 As part of a series of posts about error messages, this post covers a very specific claim: a single error message picked from a list of error messages is a bad idea and produces poor error reporting.  We start with the canonical example, and show how no single error message will be useful to the users.  It would be far too costly to maintain the full list of all possible problem combinations in a single list.
 

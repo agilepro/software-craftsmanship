@@ -1,4 +1,4 @@
-#  #8 The "go" parameter
+#  The "go" Parameter
 
 Web pages can be designed to be **reusable** like subroutines that go and do something for the user, and then return. For example, the login may need more information, redirecting to a page to prompt for that information, and when done return to the page you were on. These pages need to be designed to be able to redirect correctly back to the original. This post proposes a convention to use to make all such pages work the same way.  
 

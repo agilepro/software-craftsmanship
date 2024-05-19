@@ -1,4 +1,4 @@
-#  Correctly Converting Integer to String
+#  Converting Integer to String
 
 Learn to use Integer.toString(i) when you need a string that represents an integer.  This is always the most efficient way to convert, and it avoids some bad habits that can be expensive.  
 

@@ -1,3 +1,6 @@
+---
+  title: Java Servlet URL Parsing
+---
 #  Java Servlet URL Parsing Best Practice
 
 I write Java servlets a lot, and every single time I waste time trying to get the URL value that the servlet was invoked with in the right way.  The methods provided on HTTPServletRequest simply are no the right ones for all situation.  I am documenting here how to find the proper URL and parse it.
@@ -91,7 +94,7 @@ This, then, is the proper way to parse the query value after URLDecoding:
 public static String[] parseNameValue(String qParam) throws Exception {
     int pos = qParam.indexOf("=");
     if (pos<=0) {
-        throw new Exception("can't find equals symbol between name and value");
+        throw MyException.newBasic("can't find equals symbol between name and value");
     }
     String[] ret = new String[2];
     ret[0] = qParam.substring(0,pos);

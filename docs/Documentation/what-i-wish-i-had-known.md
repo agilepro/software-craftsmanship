@@ -1,4 +1,4 @@
-#  LaTeX:  What I wish I had known, Part 1
+#  LaTeX Hints
 
 I do a lot of writing, and I switched recently from a variety of word processors etc. to LaTeX. It is free, well supported, and does a great job of typesetting books. But for a normal business user with a normal experience in WYSIWYG word processors there are some big surprises. Here is what I wish I knew before starting that journey.
 

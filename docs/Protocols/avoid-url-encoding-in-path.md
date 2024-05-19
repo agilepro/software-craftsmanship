@@ -1,3 +1,6 @@
+---
+  title: URL-Encoding REST Path
+---
 #  Avoid URL-Encoding REST path tokens
 
 Standard are nice, but sometimes a misguided implementation attempting to protect people completely invalidates the benefit.  

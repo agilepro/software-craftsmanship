@@ -1,4 +1,4 @@
-#  Letter to Someone Considering Switching from Waterfall to Agile
+#  Switching to Agile
 
 If you have a development team, and you are considered switching from waterfall to Agile.  And particularly  if in your organization you have no people who have worked on an agile project for a year or more, there you must pay heed to these recommendations.  
 

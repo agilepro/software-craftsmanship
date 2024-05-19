@@ -1,4 +1,4 @@
-#  #3 Exception Catch Blocks
+#  Exception Catch Blocks
 
 Exception handling must be done correctly so that the problems are accurately reported, and so that problems can be addressed quickly and effectively. Poorly coded exception handling causes a risk that will not be noticed until there is a critical customer problem.  Then it is too late. Common kinds of mistakes include:
 

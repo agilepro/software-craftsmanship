@@ -2,6 +2,13 @@
 
 This is the third in a series about translatable exceptions (see [Translatable Error Messages](https://agiletribe.purplehillsbooks.com/2019/01/05/translatable-error-messages/)).  This post is about the class JSONException which contains the required features.
 
+:::warning
+
+needs update
+
+:::
+
+
 ## Requirements
 
 The java class must:

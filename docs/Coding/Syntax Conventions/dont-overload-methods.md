@@ -1,4 +1,7 @@
-#  #16 Avoid Overloading Methods
+---
+  title: Overloaded Methods
+---
+#  Avoid Overloading Methods
 
 One of the things that programmers learn with object oriented programming is that you can overload methods. That is, have the same method with differing parameters.  This can be convenient sometimes, but most of the time, it is an exceedingly bad idea.  
 Recently, I was using a code library, and a particular class had all of these overloaded methods.

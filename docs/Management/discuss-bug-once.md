@@ -1,3 +1,6 @@
+---
+  title: Discuss Only Once
+---
 #  Discuss Each Bug Report Only Once
 
 Run your team in an action oriented way.  Sometimes, the same bug gets discussed over and over, and this represents a waste, particularly when they are discussed in a group.  Be mindful of this, and while it is not entirely possible in all cases, try to discuss a bug once and only once.

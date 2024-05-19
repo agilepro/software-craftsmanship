@@ -1,3 +1,6 @@
+---
+  title: Clear, Plain, Direct
+---
 #  Error Message should be clear, plain, and direct
 
 This post is about a real error message I received and puzzled through.  Luckily, because I was working with open source code, I was able to see a copy of the source, and only then did I understand what the message meant.  An error message should not require you to know and understand the source, in order to understand the message, and I think this is the root of the mistake that many programmers make.

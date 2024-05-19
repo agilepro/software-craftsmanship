@@ -1,4 +1,7 @@
-#  Don't Suffer Poor Names
+---
+  title: Good Names
+---
+#  Use Good Names
 
 You know the problem: you write a method for one purpose and give it a name.  Later, it become useful for something else, or maybe you change it slightly to accommodate another use, or maybe some names change elsewhere making the current name obsolete.  You have all seen code where someone says that the name “is historical” or traditional.  This post is to say with conviction that that history is NOT interesting, and get rid of it.  Get a good IDE and change those names to be correct.
 

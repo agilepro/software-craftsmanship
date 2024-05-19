@@ -1,3 +1,6 @@
+---
+  id: git-branching
+---
 #  Git Branching
 
 I found a lot of the documentation is incomplete and only useful to those who already know how to do it.  Plus, they usually are based on unrealistic scenarios.  Here are the notes that are useful to me to make and control branches.

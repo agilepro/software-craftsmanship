@@ -1,4 +1,4 @@
-#  #22 Avoid Multi-purpose Methods
+#  Avoid Multi-purpose Methods
 
 This post is about the tendency to make a single method which does a lot of things depending upon the parameters sent in.  A method should not have multiple purposes, but should have a single purpose, and that purpose should be clearly named in the method name.  I have an example, and I show how it can be improved.
 

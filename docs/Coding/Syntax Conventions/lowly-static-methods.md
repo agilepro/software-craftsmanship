@@ -1,3 +1,6 @@
+---
+  title: Lowly Static Method
+---
 #  Don't Fear the Lowly Static Method
 
 When people first learn object oriented programming (is there any other way) they seem to want to abandon all non-member methods (such as static methods) as being anti-object-oriented. This is foolish. There are times for objects, and times for static methods.
@@ -17,7 +20,7 @@ class Utilities {
              props.load(fis);
         }
         catch (Exception e) {
-             throw new Exception("Unable to load properties from "+file,e);
+             throw MyException.newWrap("Unable to load properties from %s", e, file);
         }
         finally {
             if (fis != null) {
@@ -57,7 +60,7 @@ class PropertyFileReader {
              props.load(fis);
         }
         catch (Exception e) {
-             throw new Exception("Unable to load properties from "+file,e);
+             throw MyException.newWrap("Unable to load properties from %s", e, file);
         }
         finally {
             if (fis != null) {

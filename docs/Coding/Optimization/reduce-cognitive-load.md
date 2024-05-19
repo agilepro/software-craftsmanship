@@ -1,4 +1,4 @@
-#  #19 Reduce Cognitive Load
+#  Reduce Cognitive Load
 
 Deeply nested IF statements can be hard for the brain to unwind and process correctly.  In many cases, the branch statements are selecting for a single, or a small set of conditions for which processing will be done, and outside of those conditions nothing will be done.  Given this, the code can be structured to avoid complexity, make it easier to understand, and less costly to maintain.
 

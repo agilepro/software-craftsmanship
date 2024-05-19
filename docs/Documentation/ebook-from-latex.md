@@ -1,4 +1,4 @@
-#  Making an eBook with LaTeX
+#  LaTeX eBook 
 
 Having completely finished with the layout of my new book using XeLaTeX, I now want to make an eBook.  The error messages with LaTeX are always completely cryptic, so you normally have to debug by adding a single line of source and rebuilding to see if that break anything.   It is slow and tedious work, and this post contains a list of things I discovered using this method.
 

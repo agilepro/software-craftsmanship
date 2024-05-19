@@ -1,4 +1,7 @@
-#  #12 context path and browser redirecting
+---
+  title: Browser Redirection
+---
+#  Context Path and Browser Redirecting
 
 What is the URL to the application? There is one, and that is the one that the user places into the browser in order to access the application. Unfortunately, along the way, the request will pass through many intermediate services which will distort the request headers. Many of the TomCat services designed to provide information about the context of the running application will return incorrect values. Thus we must be very clear on how to get those values correctly and consistently across the application, so that when the browser is forwarded it is always successful.  
 

@@ -1,4 +1,7 @@
-#  Essential CVS
+---
+  id: cvs-essentials
+---
+#  CVS Essentials
 
 I wrote up these cheat notes about 10 years ago, and I still use them today.  Just a short, brief, introductory instructions to using the CVS source management system.  Essentials that you need to get started.
 

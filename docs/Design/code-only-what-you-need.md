@@ -1,3 +1,11 @@
+---
+id: code-only-what-you-need
+title: Code Only What You Need
+tags:
+- coding
+- agile
+---
+
 #  Code Only What You Need
 
 Only commit to code that which needs to committed to code.  Only write what needs to be written.  How hard can that be?  You might be surprised, but there are developers out there that are so enamored with the code design that they implement entirely unnecessary things. The best of intentions is actually a waste when you implement something that is never actually used.

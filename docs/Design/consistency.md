@@ -1,3 +1,11 @@
+---
+id: consistency
+title: Keep Things Consistent
+tags:
+- design
+- consistency
+---
+
 #  Keep Things Consistent
 
 This general design principle does not mean to never change anything, but to consciously create a paradigm where the same things have the same names and are accessed in the same way as much as possible.

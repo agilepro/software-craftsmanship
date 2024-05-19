@@ -1,3 +1,6 @@
+---
+  title: Shipping Test Code
+---
 #  It's OK to Ship Tests with Product
 
 A product is a product, and testing is testing, and they should be kept separate, right?  The thinking goes that consumers would never want to test the product.  Of course they don’t, but they are not the only people in the field. 

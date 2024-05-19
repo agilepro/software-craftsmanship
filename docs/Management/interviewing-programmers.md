@@ -1,4 +1,4 @@
-#  Don't Interview the Engineer
+#  Engineers & Interviews
 
 This post is advice for managers looking to hire good engineers.  If you put a lot of value in the quality of the job interview, you might be selecting for the wrong kind of candidates.
 

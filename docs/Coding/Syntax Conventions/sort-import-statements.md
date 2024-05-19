@@ -1,4 +1,4 @@
-#  #34 Sort Import Statements in Alphabetical Order
+#  Sorting Import Statements
 
 Java programs start with a list of import statements at the top.  There is much debate as to what order they should be put in, with some programmers trying to group similar imports together.  They should simply be in alphabetical order.  
 

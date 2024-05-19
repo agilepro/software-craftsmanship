@@ -40,9 +40,9 @@ The precise way is slightly different.  A timestamp value of 0 is never accepta
 
 ```
 if (docStat.timeRemote==0) {
-    throw new Exception("Program Logic Error: timestamp of remote file "
-       + "is zero for ("+docStat.universalId+") while attempting to "
-       + "download from the remote server.");
+    throw MyException.newBasic("Program Logic Error: timestamp of remote file "
+       + "is zero for (%s) while attempting to "
+       + "download from the remote server.", docStat.universalId);
 }
 ```
 

@@ -1,3 +1,6 @@
+---
+  title: Prefer JSON over XML
+---
 #  Prefer JSON over XML for Data Structures
 
 If you are going to exchange data structures between programs you have many choices.  Of these, JSON is the best choice in general, and specifically a better choice than XML, and this post explains why.

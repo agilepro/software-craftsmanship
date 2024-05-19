@@ -1,4 +1,7 @@
-#  #28 Avoid "Test Script" Fever
+---
+  title: Test Script Fever
+---
+#  Avoid "Test Script" Fever
 
 There is a strange propensity among developers to make tests more complicated than they need to be in the name of flexibility.  Tests don’t need to be flexible, they need to be reliable and maintainable.  I have seen this pattern so many times it is worth a mention here to avoid it.  To understand it, you have to consider a specific example.
 

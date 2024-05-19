@@ -1,4 +1,4 @@
-#  Resetting Passwords the Right Way
+#  Resetting Passwords Correctly
 
 Never send a password through the email. There is never any need to do so. If your program does this for any reason, it is not following the best practice.
 

@@ -1,4 +1,4 @@
-#  #31 Factor Expensive Expressions out of Loops
+#  Optimize Loops
 
 If you are are calling a method on an object, it is not always clear whether it is an expensive operation (takes a long time, lots of CPU power) or an inexpensive operation.  If you have a loop, and you are calling the same method with the same parameters multiple times, you run the risk of making a very expensive mistake. 
 

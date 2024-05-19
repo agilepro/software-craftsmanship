@@ -10,32 +10,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Get Projects Done',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Pragmatic Programming is an effective method to get code running
+        quickly.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Higher Maintainability',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Pragmatic products are easier to maintain because they are 
+        lean on purpose including what is needed and omitting unnecessary frills.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Quality and Reliability',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Pragmatic software uses less code, so it is easier to show that
+        the code is correct, and easier to keep the quality high.
       </>
     ),
   },

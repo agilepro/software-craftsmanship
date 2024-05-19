@@ -1,4 +1,4 @@
-#  #6 Team Member Obligations
+#  Developer Obligations
 
 It is hard to work as one team when your members are spread across the globe. The longer that programmers on those teams work in seclusion, the more technical debt that is built up, and the more time and effort is wasted in paying down that debt.  Here are some steps to avoid problems.  
 

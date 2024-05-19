@@ -1,6 +1,15 @@
-#  #20 Don't Document Deprecated Code
+---
+  title: Deprecated Code
+---
+# Don't Document Deprecated Code
 
 This should be obvious, but I worked with a team where several members thought it was important to document functions which were no longer considered part of the future of the product.  
+
+:::tip[Key Takeaway]
+
+The only documentation on a deprecated method or class, should be a reference to the method or class that replaces it.  Leave the proper documentation to the methods that you are going to maintain and want people to use.
+
+:::
 
 A deprecated method (or class) is one that you don’t want people to use, because you are planning to retire it (get rid of it) some day.  This is your early warning to get people to stop using it, so that when you do eventually remove the function, there will be nobody (at least nobody reasonable) using the method. 
 
@@ -19,13 +28,3 @@ _What is the harm in leaving documentation that is already written?_  Exactly t
 One might argue “_but sometimes people want to know what a method USED to do._”  That was the argument made by these errant developers.  There are source repositories and old releases to tell you what something used to do.  But, the problem is that cost of maintaining this message in a new version of the code is too high, so that someone using an old version of the code might want to read it.  The cost of maintaining things is usually underestimated.  
 
 My feeling that you should run a tight ship: no extra lines, no useless documentation, and no documentation of deprecated methods.  Keep the code trim, and the benefit will pay back over time in increased maintainability and increased clarity of the code.
-
-## Nuggets
-
-:::tip[Key Takeaway]
-
-The only documentation on a deprecated method or class, should be a reference to the method or class that replaces it.  Leave the proper documentation to the methods that you are going to maintain and want people to use.
-
-:::
-
-This entry was posted in [Uncategorized](https://agiletribe.purplehillsbooks.com/category/uncategorized/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2011/10/31/20-dont-document-deprecated-code/ "Permalink to #20 Don't Document Deprecated Code").

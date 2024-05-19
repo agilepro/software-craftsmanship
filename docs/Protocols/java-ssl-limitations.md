@@ -1,3 +1,6 @@
+---
+  title: Java SSL Limitations
+---
 #  Working Around Java's SSL Limitations
 
 The Java run-time environment (JVM) is able to support connections to other servers using SSL, but it has this very inconvenient behavior of refusing to connect to self-signed servers.  A self signed server has the public key necessary to ensure private communications, but does not have a certificate that proves who it is.  In the default mode of operation, when connecting to such a server, Java SSL subsystem with throw an exception and prevent all communications.  But there are good reasons why a service that you want to communicate with privately may not have a certificate, and this post tells you how to accomplish this.

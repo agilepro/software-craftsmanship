@@ -1,4 +1,4 @@
-#  Waste: Asking Whether to Fix a Bug
+#  Simply Fix the Bug
 
 Some parts of our development are outsourced to another company, and the people in charge in our company like to be in control, so they have requested that the outsource company confirm everything they do.  This additional bureaucracy causes a tremendous overhead, where often the effort needed to approve the work, is more than the work itself.  This is  a source of waste that should be eliminated.
 

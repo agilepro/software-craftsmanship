@@ -1,3 +1,6 @@
+---
+  title: Should be Literal
+---
 #  Error messages should be very literal
 
 We all struggle with the correct wording for error messages. It is not easy. But I ran across an example today that should help understanding
@@ -10,9 +13,8 @@ The operation in question expects a JSON array named “activities” to be in t
 
 ```java
 if (!input.has("activities")) {
-    throw new Exception("Specify at least one activity to perform operation");
+    throw MyException.newBasic("Specify at least one activity to perform operation");
 }
-
 ```
 
 
@@ -20,7 +22,6 @@ OK, so far so good, but lets consider that error message. Imagine that you know 
 
 ```java
 "You must specify at least one activity to perform operation"
-
 ```
 
 
@@ -32,11 +33,9 @@ The test being done was that a field named “activities” needed to exist. Ima
 
 ```java
 if (!input.has("activities")) {
-    throw new Exception("An array named 'activities' is required");
+    throw MyException.newBasic("An array named 'activities' is required");
 }
-
 ```
-
 
 This actually says a lot more. It says you need an array of activities to work on, and it tells you the name of the array that it is expecting. Now, if you had thought the name of the array was “activity” you would clearly understand the problem. If you simply misspelled it you would find it as well.
 

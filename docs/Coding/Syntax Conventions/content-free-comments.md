@@ -1,4 +1,7 @@
-#  #1 Don't make content-free comments
+---
+  title: Content-Free Comments
+---
+#  Don't make content-free comments
 
 Avoid the inclusion of “content-free java-doc”. This means that a Java-Doc header is created that has no information content in there. Comments in general should have useful information that is not obvious, or there should be no comment at all. Here is an example:
 

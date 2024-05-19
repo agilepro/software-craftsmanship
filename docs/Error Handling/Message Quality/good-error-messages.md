@@ -1,3 +1,6 @@
+---
+  title: Can Be Easy
+---
 #  Good Error Messages Can Be Easy
 
 Here is an error message I encountered one day.  It is frustrating, because obviously the code was checking something, but it is frustrating because you get no real clues what the problem really was, and a simple change would make the error more accurate and more useful.

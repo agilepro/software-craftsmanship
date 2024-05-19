@@ -1,4 +1,4 @@
-#  #26 Never Suppress Build Warnings
+#  Never Suppress Build Warnings
 
 There are often ways to specify within the code that you want to suppress some or all of the warnings that the compiler might produce.  
 

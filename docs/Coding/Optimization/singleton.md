@@ -1,4 +1,4 @@
-#  Don't Abuse Singleton Pattern
+#  Singleton Pattern
 
 The Singleton Pattern is when you create an object that is designed that there be a single instance of that object in the program. There are times that this pattern is appropriate.  There are also times that it is not appropriate, and a class with static methods is more efficient.  How can you tell when and when not to use the Singleton pattern?
 

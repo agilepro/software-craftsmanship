@@ -1,3 +1,6 @@
+---
+  title: Folders & Organization
+---
 #  Lots of Folders is not More Organized
 
 Making a development project with lots of folders does not mean that the project is more organized.  However, there is a seemingly irresistible desire to make a folder for every possible purpose, and then put the one or two files that fit in there, all in the name of keeping the project organized.  This might make the programmer feel good, but it is a large pain for anyone new who has to join the project or review the source for any reason. 

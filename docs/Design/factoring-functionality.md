@@ -1,3 +1,9 @@
+---
+id: factoring-functionality
+title: Factoring Functionality Who Needs to Know?
+tags:
+- factoring
+---
 #  Factoring Functionality: Who Needs to Know?
 
 There are many ways you can break the functionality of a program into blocks that are manageable: some right, some wrong.  This post promotes a simple principle.  The primary way should be around “who needs to know.”

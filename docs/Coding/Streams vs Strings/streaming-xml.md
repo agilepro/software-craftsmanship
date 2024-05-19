@@ -2,7 +2,13 @@
 
 XML is a text format, and so it is tempting to handle it with the normal String handling capabilities of Java, but there are several reasons that you must never do this.  XML should either be on the disk as a sequence of bytes, or it should be parsed as a DOM tree of decoded string values, but it should never be in a String in its encoded value.  
 
-Really three main reasons:
+:::tip[Key Takeaway]
+
+Never put XML in a string.
+
+:::
+
+Three main reasons:
 
 *   XML describes its own character set encoding
 *   Streams are far more memory efficient than working with strings
@@ -34,7 +40,7 @@ Some programmers fall into the trap of thinking they will do some quick-and-easy
 String recXml = "<mytag>" + recordValue + "</mytag>";
 ```
 
-Everyone knows that the recordValue above needs to be properly encoded, and that is not hard to do.  All you need to do is pass the recordValue to an encoding function.  But is it?  What if the recordValue has XML in it already?  In that case the tags should not be encoded, and the values between the tags are already encoded. 
+The value in `recordValue` above needs to be properly encoded, and that is not hard to do.  All you need to do is pass `recordValue` to an encoding function.  But is it?  What if the recordValue has XML in it already?  In that case the tags should not be encoded, and the values between the tags are already encoded. 
 
 Code that does a lot of this XML manipulation will have two different kinds of string values: those that contain raw values, and those that contain encoded values.  One must be careful to keep track of which is which, and again, that is not hard for a good programmer to do.  
 
@@ -70,13 +76,7 @@ In the end, the problems that can be encountered manipulating XML in strings is 
 
 ## Conclusions
 
-It may sound arrogant or opinionated, but the simple rule is:
-
-:::tip[Key Takeaway]
-
-Never put XML in a string.
-
-:::
+It may sound simplistic, but the rule is: never put XML in a string.
 
 XML is never in characters, only in a byte stream, or in a byte oriented file on the disk.  You parse the XML from a byte stream to a DOM tree, and then use the strings produced properly and correctly.  You update the DOM tree, and stream direcxtly to bytes. There are always options better than putting XML in a string, more efficient, just as convenient, and less error prone.  
 

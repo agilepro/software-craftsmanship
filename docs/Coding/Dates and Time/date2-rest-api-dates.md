@@ -1,4 +1,4 @@
-#  JSON/REST API – Timestamps
+#  Date Value Protocol
 
 In this post, I lay out the reason that you should always transfer dates in a JSON/REST API as an integer epoch value: the number of milliseconds since Jan 1, 1970. If you think it should be anything else, please read on….  
 

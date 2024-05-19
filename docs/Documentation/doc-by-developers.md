@@ -1,3 +1,6 @@
+---
+  title: JavaDoc Essentials
+---
 #  Keep JavaDoc with Java source
 
 This should be obvious, but the advantage of documenting your API directly in the Java source file using a mechanism known as “JavaDoc” is that it is far easier to keep the documentation and the source in sync.   If this is not obvious to you, then read on.  
