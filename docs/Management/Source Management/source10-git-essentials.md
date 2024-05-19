@@ -1,3 +1,6 @@
+---
+  id: git-essentials
+---
 #  GIT Essentials
 
 This post contains a quick reference to the commands you need to know to use Git, the source management system. I assume you already understand the concepts behind source management. This quick reference is to the commands to use. 

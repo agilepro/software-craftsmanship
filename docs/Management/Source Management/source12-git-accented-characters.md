@@ -1,5 +1,5 @@
 ---
-  id: git-essentials
+  id: git-accented-characters
   title: GIT Accented Characters
 ---
 #  GIT: Accented Characters in Filenames

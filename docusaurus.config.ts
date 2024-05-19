@@ -494,7 +494,7 @@ const config: Config = {
           },
           {
             from: '/2013/07/16/designing-the-build/',
-            to: '/docs/Management/proper-build-goals',
+            to: '/docs/Management/Build/proper-build-goals',
           },
           {
             from: '/2013/07/17/xml-should-be-streamed-and-never-stringed/',
@@ -526,7 +526,7 @@ const config: Config = {
           },
           {
             from: '/2014/01/25/not-so-easychair-hints/',
-            to: '/docs/Management/easy-chair-hints',
+            to: '/docs/X Miscellaneous/easy-chair-hints',
           },
           {
             from: '/2014/02/07/public-or-private-member-variables/',
@@ -782,7 +782,7 @@ const config: Config = {
           },
           {
             from: '/2018/06/20/git-accented-characters-in-filenames/',
-            to: '/docs/Documentation/git-accented-characters',
+            to: '/docs/Management/Source Management/git-accented-characters',
           },
           {
             from: '/2018/11/14/constant-abuse-2/',
