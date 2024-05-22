@@ -31,19 +31,23 @@
 
 h1 {
   font-weight: 300;
-  color:#5a3200;
 }
 h2 {
   font-weight: 300;
-  color:#5a3200;
 }
 h3 {
   font-weight: 300;
 }
 
-.theme-doc-sidebar-container {
+[data-theme='light'] .theme-doc-sidebar-container {
   background-color: #f8f2ec;
 }
-.navbar {
-  xbackground-color: #f2fbf7;
+[data-theme='light'] h1 {
+  color:#5a3200;
+}
+[data-theme='light'] h2 {
+  color:#5a3200;
+}
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #000000;
 }

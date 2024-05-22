@@ -40,7 +40,7 @@ Remember that an Exception can have a cause, which in turn can have a cause, for
 ```java
 Exception cause = null;
 for( i=0; i<msg.details.length; i++ ) {
-    Exception newEx = new Exception(msg.details[i], cause);
+    Exception newEx = MyException.newWrap(msg.details[i], cause);
     //other aspects of the conversion here
     cause = newEx;
 }

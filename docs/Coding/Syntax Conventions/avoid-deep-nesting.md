@@ -1,3 +1,11 @@
+---
+  id: avoid-deep-nesting
+  tags:
+  - Coding
+  - Maintenance
+  - Cognitive Load
+  - Code Style
+---
 #  Avoid Deep Conditional Nesting
 
 Simply put: try to make your conditions as flat as possible.  This makes them generally easier for the humans to parse and understand.
@@ -51,4 +59,21 @@ When looking for a bug in the logic, the ability to identify all the relevant ca
 
 So if possible, flatten your boolean logic expressions to be step-like or list-like.
 
-This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/), [practice](https://agiletribe.purplehillsbooks.com/category/practice/) and tagged [development](https://agiletribe.purplehillsbooks.com/tag/development/), [maintainability](https://agiletribe.purplehillsbooks.com/tag/maintainability/), [source](https://agiletribe.purplehillsbooks.com/tag/source/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2016/03/29/avoid-unnecessary-conditional-nesting/ "Permalink to Avoid Unnecessary Conditional Nesting").
+## Use "Continue" statements to reduce cognitive load
+
+
+Below are two code scenarios, one with continue statements, and one without structured as a deeply nested if statement.   This example has only two, but the problem gets more significant the more conditions you have.  The continue statement approach de-clutters the logic by using an approach of elimination:  The code uses each if statement to eliminate non-conforming cases, and the rest of the logic proceeds with the conforming cases.  Any block or loop that is searching for specific conditions for processing can benefit from this approach.
+
+Example with continue statements
+
+![](avoid-deep-nesting-img1.png)
+
+Here is the version with the if blocks extended to the end of the loop:
+
+![](avoid-deep-nesting-img2.png)
+
+To understand the IF statement, you have to see to the end of the block.  This is a relatively small if block, so you can see to the end.  If it goes off the page, that is a different matter.
+
+
+Extending the if statements to the end of the loop is not easier to read or understand.   The IF statement increases cognitive load while reading the contents of it.  An IF statement that does a `continue` allows you to ignore that condition.  The IF eliminates a set of possible inputs, in this case files that are named incorrectly so you can ignore them.  The `continue` formulation allows you to ignore those ignored cases.   The big IF block does not allow you to ignore them:  everything is indented in and you need to consider the condition for the entire block.
+

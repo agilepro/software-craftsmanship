@@ -17,7 +17,6 @@ try {
             logger.warn("Error in closing resource", e);
         }
 }
-
 ```
 
 
