@@ -279,7 +279,7 @@ As it turns out, there is an easy solution: generate a stack trace down to the p
 
 A good exception class will provide a method to generate a trace from the exception throw level down to the level that is calling for the trace to be generated.
 
-Implementation: [A class with trimmed tracing method](https://github.cloud.capitalone.com/RuPol/rule-engine-component/blob/1f593180d4029d11d5bec600ba14add03af2bdd8/src/main/java/com/capitalone/rupol/ruleengine/exception/ComponentException.java#L156)
+Implementation: **example needed**
 
 ## Item E-16: Don't use `Either` class to report errors
 

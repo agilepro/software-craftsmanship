@@ -97,9 +97,9 @@ This matches nicely with the programming concept of an Exception which is a prog
 
 Additional Detail: [The Purpose of Error Reporting](https://agiletribe.purplehillsbooks.com/2013/02/14/the-purpose-of-error-reporting/)
 
-## RulesLab Heritage
+## Self Service Experience
 
-RulesLab aims to create a decision service that is **self-service**.   To do so, we need precise, clear, and actionable error messages returned to the recipient.  Following this practice has allowed the RulesLab authoring environment to be deployed and successfully used with astonishing little time spent support it.  When a user does the wrong thing, a clear error message explains what the system was not able to do.  9 times out of 10 the recipient can correct the request without having to call anyone else.
+To create a **self-service** environment, one needs precise, clear, and actionable error messages returned to the recipient.  Self service applications be deployed and successfully used with astonishing little time spent support it.  When a user does the wrong thing, a clear error message explains what the system was not able to do.  9 times out of 10 the recipient can correct the request without having to call anyone else.
 
 Error messages are part of every user experience, but too often these messages are poor, cryptic, and insulting.   Too often programmers do a half-hearted attempt at writing error messages, mostly because they mistakenly assume that recipients will never see them.  Too often programmers misunderstand the potential that results from writing correct error messages.  Error messages can be the key to usability.  Error messages can help train users, and guide administrators.  
 

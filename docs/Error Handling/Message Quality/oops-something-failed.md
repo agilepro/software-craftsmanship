@@ -1,9 +1,13 @@
 ---
   title: Not Vague
+  tags: 
+  - error message
+  - exception
+  - message quality
 ---
-#  "Oops something failed" is NOT acceptable error message
+#  Unacceptable Error Message
 
-I try to keep track of real-life situations where poor error messages appear. That happened again today. This message was displayed to the user:  
+I try to keep track of real-life situations where poor error messages appear.  This message was displayed to the user:  
 
 ![ElementNotFound](oops-something-failed-img1.png)  
 
@@ -20,5 +24,3 @@ What really hurts is that whatever method threw this exception, whatever method 
 Think about it:  somebody actually wrote an error message “the element not found” and decided that was a sufficient error message!  This is as vague a message as you can write.  Vague messages are unhelpful.  
 
 Well, that is it, I just had to rant a bit.  Just a slight bit more effort, a few more keystrokes, would make this error message so much more useful for finding the underlying problem.
-
-This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/), [Poor Error Msg](https://agiletribe.purplehillsbooks.com/category/poor-error-msg/) and tagged [errors](https://agiletribe.purplehillsbooks.com/tag/errors/), [exceptions](https://agiletribe.purplehillsbooks.com/tag/exceptions/), [usability](https://agiletribe.purplehillsbooks.com/tag/usability/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2014/09/30/oops-something-failed-is-not-acceptable-error-message/ "Permalink to "Oops something failed" is NOT acceptable error message").
