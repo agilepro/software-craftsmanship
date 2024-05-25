@@ -89,6 +89,7 @@ try {
 }
 ```
 
+<!-- TODO: this should be updated to include try resources -->
 
 This version also explicitly gets rid of any temp files that might have been hanging around,and explicitly gets rid of the destination file if it happens to be a round.  This is good coding practice.  There are still some very small windows that a corrupted file could get written and still remain, but it will be astronomically rare.  
 In summary I hope what is clear, is that:

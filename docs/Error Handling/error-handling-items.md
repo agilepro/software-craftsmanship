@@ -116,12 +116,12 @@ To fix the problem, you need both the detail and the context, and this is accomp
             // . . .
         }
         catch (Exception exceptionFromB) {
-            throw ComponentException.newWrap("Unable to perform method A", exceptionFromB);
+            throw MyException.newWrap("Unable to perform method A", exceptionFromB);
         }
     }
 ```
 
-Note that the new ComponentException is constructed passing the causing exception as a construction parameter.  This links the exception objects into a chain so that both are delivered and reported at to the root level.  There could be more levels of nesting in the call path, and the exception might get a wrapper at each level, resulting in a chain of exceptions each explaining part of what went wrong.    Since this correction is needed no matter what exception is thrown, this is an example of Item E-12 to catch the base `Exception` class.
+Note that the new MyException is constructed passing the causing exception as a construction parameter.  This links the exception objects into a chain so that both are delivered and reported at to the root level.  There could be more levels of nesting in the call path, and the exception might get a wrapper at each level, resulting in a chain of exceptions each explaining part of what went wrong.    Since this correction is needed no matter what exception is thrown, this is an example of Item E-12 to catch the base `Exception` class.
 
 "Wrapping an exception can provide extra information to the user by adding your own message (as in the example above), while still preserving the stack trace and message of the original exception. It also allows you to hide the implementation details of your code, which is the most important reason to wrap exceptions." - [Exception-Handling Antipatterns by Tim McCune](https://itblackbelt.wordpress.com/2006/04/17/exception-handling-antipatterns-by-tim-mccune/)
 
@@ -137,7 +137,7 @@ A common anti-pattern is constructing a new exception after converting the old e
    }
    catch (Exception e) {
       // never do this!
-      throw ComponentException.newBasic("Unable to perform method A because "+e.toString());
+      throw MyException.newBasic("Unable to perform method A because "+e.toString());
    }
 ```
 
@@ -158,7 +158,7 @@ Many libraries do not conform to this pattern.  Many libraries have poor excepti
     }
     catch (Exception e) {
         // convert whatever was thrown into a better message
-        throw ComponentException.newWrap("Better explanation including %s and %s", e, param1, param2);
+        throw MyException.newWrap("Better explanation including %s and %s", e, param1, param2);
     }
     // . . .
 ```
@@ -332,7 +332,7 @@ public Account getExistingAccount(String id) {
 public Account getExistingAccountOrFail(String id) {
     Account account = getExistingAccount(id);
     if (account == null) {
-        throw ComponentException.newBasic("The account for '%s' can not be found", id);
+        throw MyException.newBasic("The account for '%s' can not be found", id);
     }
     return account;
 }

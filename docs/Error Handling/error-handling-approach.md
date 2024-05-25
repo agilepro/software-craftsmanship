@@ -13,10 +13,10 @@ If you don't have time to read the entire page, this section summarizes what you
 ```java
 public BigDecimal divide( BigDecimal numerator, BigDecimal denominator ) {
     if (denominator == null) {
-        throw ComponentException.newBasic("divide method needs a non-null denominator");
+        throw MyException.newBasic("divide method needs a non-null denominator");
     }
     if (denominator == 0) {
-        throw ComponentException.newBasic("Unable to divide numbers because denominator is %s", denominator.toString());
+        throw MyException.newBasic("Unable to divide numbers because denominator is %s", denominator.toString());
     }
     // . . . 
     // . . .
@@ -28,7 +28,7 @@ Notice:
 * The exception describes what the whole method failed to do. (E-2)
 * Details about the call, such as parameters, as included in the exception where appropriate(E-3)
 * No display or log is made here. Nothing is written to the log at this level. (E-5)
-* The exception thrown is an untracked exception (here some assumed exception defined in the component called `ComponentException`) so it is not mentioned in the method signature. (E-4)
+* The exception thrown is an untracked exception (here some assumed exception defined in the component called `MyException`) so it is not mentioned in the method signature. (E-4)
 * This method trusts that some other part of the code with catch and display the error in some appropriate way (E-6)
 
 The other situation you need to handle is when you call a method that is reporting an error.  For example, if you call `divide` then that error should say that you can not divide, but we need to add context of what the divide was for.  In this case you add context to the exception by wrapping and rethrowing.
@@ -42,7 +42,7 @@ public boolean isDriverOverAge( int requiredAge, Object person ) {
         // . . . 
         return isOver;
     } catch (Exception e) {
-        throw ComponentException.newWrap("Unable to determine if the driver %s is over age %d", 
+        throw MyException.newWrap("Unable to determine if the driver %s is over age %d", 
                 e, person.name, requiredAge);
     }
 }

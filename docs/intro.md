@@ -15,5 +15,3 @@ I want to keep this blog separate from my “[Collaborative Planning](http://soc
 I expect that the first 20 or 30 posts will be material that I have collected in the past, and need simply a place to be stored.   After that I hope to explore software craftsmanship issues that I encounter in my job of leading software development teams.  
 
 Wish me luck!
-
-This entry was posted in [Uncategorized](https://agiletribe.purplehillsbooks.com/category/uncategorized/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2011/09/04/goals/ "Permalink to Goals").

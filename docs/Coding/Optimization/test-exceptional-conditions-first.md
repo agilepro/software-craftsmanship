@@ -54,15 +54,15 @@ if (test1) {
             doSomethingInValidCase();
         }
         else {
-            throw Exception("test3 failed");
+            throw MyException("test3 failed");
         }
     }
     else {
-        throw Exception("test2 failed");
+        throw MyException("test2 failed");
     }
 }
 else {
-    throw Exception("test1 failed");
+    throw MyException("test1 failed");
 }
 ```
 
@@ -70,13 +70,13 @@ And here is the same logic with a “quick error” approach:
 
 ```java
 if (!test1) {
-    throw Exception("test1 failed");
+    throw MyException("test1 failed");
 }
 if (!test2) {
-    throw Exception("test2 failed");
+    throw MyException("test2 failed");
 }
 if (!test3) {
-    throw Exception("test3 failed");
+    throw MyException("test3 failed");
 }
 doSomethingInValidCase();
 ```

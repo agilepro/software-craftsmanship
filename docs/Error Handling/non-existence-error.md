@@ -1,4 +1,11 @@
-#  Is Non-existence an Error?
+---
+  tags:
+  - Coding
+  - "Null"
+  - Error Handling
+  - Exceptions
+---
+#  Null vs. Error?
 
 You call a method to retrieve information about an object with a  particular ID, but the record does not exist.  Is this an exception?   Or not?  It is hard to answer.
 

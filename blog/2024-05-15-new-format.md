@@ -1,5 +1,4 @@
 ---
-slug: new-format
 title: AgileTribe New Format
 ---
 
