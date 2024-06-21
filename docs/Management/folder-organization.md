@@ -1,7 +1,15 @@
 ---
   title: Folders & Organization
 ---
-#  Lots of Folders is not More Organized
+#  Avoid Creating Lots of File Folders
+
+How do you organized the many files in a project?  Making lots of folders with a few files in each is not any more organized than a few folders with lots of files in each. 
+
+:::tip[Key Takeaway]
+
+In general, the more folders you use, the harder it is for a new programmer on the project to find things.  Grouping by logical category does not help people unfamiliar with the logical categories specific to a project.
+
+:::
 
 Making a development project with lots of folders does not mean that the project is more organized.  However, there is a seemingly irresistible desire to make a folder for every possible purpose, and then put the one or two files that fit in there, all in the name of keeping the project organized.  This might make the programmer feel good, but it is a large pain for anyone new who has to join the project or review the source for any reason. 
 
@@ -52,11 +60,13 @@ First of all, developers get an **A+** for naming the directories logical names.
 “_Because it is more organized this way._” is the response. “_We have a folder for each main concept, and we put the file for those concepts in those folders.  All nice and neat.  Everything in it’s place._”  
 But listen carefully to what comes next:  “_When someone wants to find a file, they just remember the module that file is part of, open the folder, and read the file.  SO easy._”
 
-*   It is so easy only IF the person knows the mapping between the files and the module name they are in.  Case in point, you have to know that “userManager.js” is part of the interstage module.
+*   It is so easy only IF the person knows the mapping between the files and the module name they are in.  Case in point, you have to know that “userManager.js” is part of the interstage module (whatever that is).
 *   If you don’t know this, the folder in between is just a barrier to getting to the file!
 *   To navigate this, you need to know more than just the file name, you have to know what module the file belongs to.
-*   To know this, yuo might need to know the logic behind why a particular file was associated, and when learning the code, when you have no idea what a particular file does, you have no basis to make a logical deduction about that!
-*   This is easy for the original desiger to navigate these folder, because that designer used a logic that was familiar to them, but to a novice this is nothing but a barrier.
+*   To know this, yoe might need to know the logic behind why a particular file was associated, and when learning the code, when you have no idea what a particular file does, you have no basis to make a logical deduction about that!
+*   This is easy for the original designer to navigate these folder, because that designer used a logic that was familiar to them, but to a novice this is nothing but a barrier.
+*   New programmers need to find files by name while they don't have the knowledge of what module a file falls into.
+*   What is happening is that the programmer experienced with the project has forgotten what it is like to not know the logical structure of the project.  It might be easier for the experienced programmer, but an experienced programmer will already know where a file it.  It is the new programmer on the project who should be considered in terms of being able to find things. 
 
 Let’s consider the alternative, and lets put all the files into a single folder.  It would be like this:
 
@@ -98,7 +108,7 @@ The folder might help organize files that are poorly named for their module, but
 ## Resist this Temptation!
 
 Programmers are tempted because they have been brought into projects that were disorganized.  When starting a new project, they seem to think to themselves: “_I am going to make this project so organized that it never can get as disorganized as that Project X!_”  So they try hard to really really organize things by making lots of folders, and putting exactly the right things in the folder.  
-— But this does not make it more organized.  It just makes more folders.  
+But this does not make it more organized.  It just makes more folders.  
 The organization of a project depends upon dividing all the code into chunks that are logically consistent, and by giving everything good, meaningful names.   These are important.  
 Making lots of files folders, and having only 1 or two files in each does NOT make it more organized.
 

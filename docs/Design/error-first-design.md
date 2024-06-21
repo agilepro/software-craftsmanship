@@ -5,9 +5,17 @@ tags:
 - error first design
 - exceptions
 ---
-#  Error-First Design in JSON/REST/AngularJS integration
+#  Error-First Design
 
-You have heard about “mobile-first” when creating your UI, but there is something you should do before you start designing the UI:  you should design the error handling/display mechanism first.
+There is “mobile-first” when creating your UI, but there is something you should do before you start designing the UI:  you should design the error handling/display mechanism first.
+
+:::tip[Key Takeaway]
+
+Start any project by writing code that catches all exceptions and produces a error display or response.  That way you are always guaranteed to see all exceptions that are thrown.
+
+Start all method implementation code to throw "Not implemented yet", and then replace with proper functionality.
+
+:::
 
 ## Situation
 

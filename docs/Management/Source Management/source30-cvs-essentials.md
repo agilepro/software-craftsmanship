@@ -3,7 +3,15 @@
 ---
 #  CVS Essentials
 
-I wrote up these cheat notes about 10 years ago, and I still use them today.  Just a short, brief, introductory instructions to using the CVS source management system.  Essentials that you need to get started.
+:::tip[Key Takeaway]
+
+CVS was a source management system popular from year 1990 to around 2005.  If you are still using that, honestly, you should consider moving to the more standard GIT source management system.
+
+:::
+
+I wrote up these cheat notes years ago, and they are still helpful today if you are using CVS, which I sincerely hope you are not because CVS had some serious limitations that are largely solved in newer systems.  
+
+These notes are short, brief, introductory instructions to using the CVS source management system.  Essentials that you need to get started.
 
 ## 1\. I don’t have any source and I need to get it.
 

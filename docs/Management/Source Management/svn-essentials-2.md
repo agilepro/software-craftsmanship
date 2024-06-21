@@ -2,6 +2,12 @@
 
 Most of what a developer needs to know about SVN is covered in [SVN Essentials](https://agiletribe.purplehillsbooks.com/2014/10/20/svn-essentials/).   However, if you are a project lead, and responsible for a project with multiple releases, you might need to also knows these details about branching and tagging.
 
+:::tip[Key Takeaway]
+
+Subversion is a source management system popular from year 2000 to around 2015.  If you are still using that, honestly, you should consider moving to the more standard GIT source management system.
+
+:::
+
 ## A Word about the SVN Way
 
 I was familiar with a bunch of other SCMSs and had learned branching and tagging there.  The big problems with most such systems is how opaque and confusing they can be.  A tag is a magical thing that can be sued to retrieve code in the future.  A branch is even more confusing, because you can check code in on a branch, and keep it separate from the trunk.  The confusion comes mainly from reusing the location of a piece of source remains the same, when you look at different versions of it.  Imagine you have a project like this:

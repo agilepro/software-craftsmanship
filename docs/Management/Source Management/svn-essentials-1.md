@@ -1,6 +1,12 @@
 #  SVN Essentials
 
-This post contains a quick reference to the commands you need to know to use Subversion (SVN).  I assume you already understand the concepts behind source management.  This quick reference is to the commands to use.
+This post contains a quick reference to the commands you need to know to use Subversion (SVN) for those who already understand the concepts behind source management.  This quick reference is to the commands to use.
+
+:::tip[Key Takeaway]
+
+Subversion is a source management system popular from year 2000 to around 2015.  If you are still using that, honestly, you should consider moving to the more standard GIT source management system.
+
+:::
 
 ## Site Structure
 

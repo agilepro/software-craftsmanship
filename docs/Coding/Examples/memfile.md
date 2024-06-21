@@ -48,7 +48,6 @@ InputStream is = mfm.getInputStream();
 OutputStream is = mfm.getOutputStream();
 Reader is = mfm.getReader();
 Writer is = mfm.getWriter();
-
 ```
 
 
@@ -58,7 +57,6 @@ There are also convenient operations for streaming the entire contents to either
 mf.outToOutputStream(OutputStream)
 mf.outToWriter(Writer)
 mf.outToFile(File)
-
 ```
 
 
@@ -67,7 +65,6 @@ As well as easy ways to read an InputStream or Reader until it ends.
 ```java
 mf.fillWithInputStream(java.io.InputStream in)
 mf.fillWithReader(java.io.Reader in)
-
 ```
 
 
