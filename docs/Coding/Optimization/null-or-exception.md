@@ -57,7 +57,23 @@ I won’t go into a lot of detail on this because I don’t think this pattern i
 
 ## Don’t Catch the Exception
 
-One thing you should NOT do is to implement only the exception returning version, and count on code to catch the exception if they want to do something special for the null case.  The reason this is bad is because there are many different reasons that an exception may fly out of a routine.  The biggest problem is code that catch all exceptions and then continues processing.  This can create code that never dies, throwing exceptions, but continuing to process, sometimes even in loops.  In theory, if you test carefully for exactly the exception involved, then it is possible to implement this, but the pattern is almost always abused and implemented incorrectly.   It is just a really bad pattern that you need to avoid.  Not finding something is not an exception and and exception should never be used to communicate information back to the calling site.  Exceptions should be for things that are exceptional, and just to mediate the shut down of processing and reporting of the unexpected error.  Also, exceptions are far slower than returning null, and take up far more memory.
+One thing you should NOT do is to implement only the exception returning version, and then catch the exception to return null.   For example: 
+
+```java
+// don't do this!
+public Student getStudentOrNull(String id) {
+   try {
+      return getStudentOrFail(String id)
+   }
+   catch (Exception e) {
+      return null;
+   }
+}
+```
+
+The reason this is bad is because there are many different exceptions that may fly out of a routine.  Catching those other exceptions and then continuing is a very bad practice.  This can create code that never dies, throwing exceptions, but continuing to process, sometimes even in loops.  In theory, if you test carefully for exactly the exception involved, then it is possible to implement this, but the pattern is almost always abused and implemented incorrectly.   It is just a really bad pattern that you need to avoid.  
+
+Exceptions should be for things that are exceptional, and treating it like a null return violates that.  Throwing an exception is more expensive than returning null.
 
 ## Language Extension
 

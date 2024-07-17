@@ -1,4 +1,4 @@
-#  Don't Fear Rewriting New Code
+#  Never Fear a Rewrite
 
 The last post [#28 Avoid “Test Script” Fever](https://agiletribe.purplehillsbooks.com/2012/04/17/28-avoid-test-script-fever/) was about simplifying an implementation that was more elaborate than it needed to be.  There was a waterfall-style project in exactly this situation, and leader responded saying “It has already been coded the other way, and if your goal is to save programmer time, rewriting will just waste more time.”   No, it won’t, and this post explains why. 
 

@@ -1,6 +1,14 @@
-#  Gratuitous Logic
+#  Trim only on Input
 
 One bad practice I have seen on many occasions is the use of trim() statements throughout the code.  This is a poor coding practice, and it is an indicator of disorganized code.
+
+:::tip[Key Takeaways]
+
+The spaces on then end if a piece of data is either significant or it is not.  If it is significant, it should never be trimmed off.   If it is not significant, it should be removed as it enters the system, and nowhere else. 
+
+Adding trim statements into the interior of processing unnecessarily adds processing, and it covers up problems elsewhere in the code.
+
+:::
 
 ## public String trim(String input)
 
@@ -39,11 +47,3 @@ It all comes down to understanding whether those spaces on the ends are signific
 Programs are developed incrementally.  One programmer may discover bad at any time.  Even if the proper job is done to hunt down all places that allowed untrimmed values into the system, there is no guarantee that someone might add a new input method that fails to trim values as they come into the system.  
 
 Rather than adding a protective “trim” statement, one should instead add a method that tests the value for correctness, and throws an exception when it is not correct. Instead of covering up the problem, this would immediately alert the operators of the system that something is wrong, and would, in most cases, allow the code to be fixed properly.
-
-:::tip[Key Takeaways]
-
-The spaces on then end if a piece of data is either significant or it is not.  If it is significant, it should never be trimmed off.   If it is not significant, it should be removed as it enters the system, and nowhere else. 
-
-Adding trim statements into the interior of processing unnecessarily adds processing, and it covers up problems elsewhere in the code.
-
-:::

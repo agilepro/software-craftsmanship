@@ -4,7 +4,7 @@ We know that a good error message should contain a spoken language statement exp
 
 :::tip[Key Takeaway]
 
-An error code number associated with an error message is only meaningful only if there is a specific well defined thing that the recipient must do in response to the error code.  Otherwise the error code is meaningless.
+An error code number associated with an error message is meaningful only if there is a specific well defined action that the recipient should do in response to the error code.  Otherwise the error code is meaningless.
 
 :::
 

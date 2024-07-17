@@ -1,6 +1,6 @@
 ---
 id: usability-is-flavor
-title: The Flavor of a Meal
+title: Usability is Like Flavor
 tags:
 - design
 - usability
@@ -60,5 +60,3 @@ Just as flavor is not an “option” in a good meal, usability is not an option
 
 No cook would be foolish enough to think that they can cook a meal without any consideration of the flavor they are producing.
 
-
-This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/), [Design](https://agiletribe.purplehillsbooks.com/category/design/), [practice](https://agiletribe.purplehillsbooks.com/category/practice/) and tagged [usability](https://agiletribe.purplehillsbooks.com/tag/usability/), [user interface](https://agiletribe.purplehillsbooks.com/tag/user-interface/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2014/10/06/usability-is-like-the-flavor-of-a-meal/ "Permalink to Usability is like the Flavor of a Meal").

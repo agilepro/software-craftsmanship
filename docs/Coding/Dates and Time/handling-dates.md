@@ -1,9 +1,9 @@
 ---
-id: handling-dates
-title: Handling Dates
-tags:
-- design
-- dates
+  id: handling-dates
+  title: Handling Dates
+  tags:
+    - design
+    - dates
 ---
 #  Handling Dates
 

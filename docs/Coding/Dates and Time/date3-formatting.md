@@ -1,5 +1,8 @@
 ---
-  id: date-formatting
+id: date-formatting
+tags:
+  - design
+  - dates
 ---
 
 #  Date Value Display

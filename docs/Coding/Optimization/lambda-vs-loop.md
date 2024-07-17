@@ -2,6 +2,14 @@
 
 There are two ways to walk through a list of values: one is the old-fashioned loop and the other is the new-fangled object streams which use a lambda to iterate through a list.  Which to use? Let’s explore the reasons for using one or the other.
 
+:::tip[Key Takeaway]
+
+Avoid Using a Lambda when a Loop would do
+
+Don’t use a complicated solution when a simple one would work better.
+
+:::
+
 ## Avoiding Familiarity Bias
 
 Understand that “**readability is in the eye of the beholder.**”  The personal preference of a given programmer will always depend on what they are used to. If you are used to lambda, your intuition is that that is easier to understand, but if you are used to the loops, then that will be more familiar and easier. To determine which approach is better, he need to set aside any preference based on intuition.  Avoiding that, we need to look carefully at rational reason to decide between the two, and to adopt the best pattern so it then becomes familiar.
@@ -66,24 +74,10 @@ Note, in each case the indenting is forced by the Google Spotless algorithm, and
 
 ## Conclusion
 
-Based on this analysis, we can recommend this guideline:
-
-:::tip[Key Takeaway]
-
-Avoid Using a Lambda when a Loop would do
-
-:::
-
 The straight loop is simpler, and faster, and easier to read ultimately. The loop approach comes out ahead in every way I could think to measure it.  I am always a fan of simpler approach in coding because reducing complexity increases reliability and maintainability.
 
 My mind is open:  I am looking for a case where use of a lambda solves an important problem that the loop does not, however I have not found any yet.  Please let me know if you find a good case where the lambda is better.
 
 Other languages might be different.  In JavaScript there is no good support for loops in this way, and so you are pretty much forced to use the lambda approach.  JavaScript support this kind of functional programming more natively, but it is really the last of loop support that tips the balance.
 
-This also brings us back to the guideline that always stands:
-:::tip[Key Takeaway]
-
-Don’t use a complicated solution when a simple one would work better.
-
-:::
 

@@ -2,6 +2,12 @@
 
 If you have a development team, and you are considered switching from waterfall to Agile.  And particularly  if in your organization you have no people who have worked on an agile project for a year or more, there you must pay heed to these recommendations.  
 
+:::tip[Key Takeaway]
+
+As management, the single most important thing you need to do is to decide to make a customer quality release every two weeks, no exceptions.  Everything else in Agile follows from that.
+
+:::
+
 Dear Project Management,  
 
 I understand you would like to adopt an agile methodology.  This is a very good thing.  You will find that you can develop software that is both higher quality, and can be moved more quickly to meet the needs of customers, or to compete with other vendors.  In fact, I believe if you do not adopt Agile approach, you will not succeed in the marketplace.  
@@ -45,10 +51,5 @@ Everything else derives from this.  This become the driving principle, and the 
 
 Switching to Agile requires that someone is able to MAKE A DECISION to switch to Agile.  Perhaps this is difficult in your organization to do.  I understand that much is decided by consensus, but since nobody has any experience with Agile, you will not get consensus.  If you cannot make this decision and commit to it for more than 1 year, _then don’t even try._ 
 
-:::tip[Key Takeaway]
-
-The only thing you, as management, need to do is to decide to make a customer quality release every two weeks, no exceptions.  Everything else follows from that.
-
-:::
 
 Get on the bike, and pick up your feet.

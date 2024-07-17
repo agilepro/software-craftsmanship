@@ -2,6 +2,12 @@
 
 Learn to use Integer.toString(i) when you need a string that represents an integer.  This is always the most efficient way to convert, and it avoids some bad habits that can be expensive.  
 
+:::tip[Key Takeaway]
+
+The static method Integer.toString(i) is more efficient than concatenating to a string to force the type conversion.
+
+:::
+
 A question was asked on [StackOverflow](http://stackoverflow.com/questions/14712693/best-practices-for-converting-from-int-to-string/14713021):
 
 _I’m working on a project where all conversions from `int` to `String` are done like this:_
@@ -79,5 +85,3 @@ Which is only 5 bytes long, makes only a single method invocation, and does not 
 The use of String.valueOf will be no different than this in efficiency, but I prefer Integer.toString because of the stronger type checking.  
 
 It is not that one need to optimize everything to this level, but learning a few good habits like this will help in the long run.
-
-This entry was posted in [Uncategorized](https://agiletribe.purplehillsbooks.com/category/uncategorized/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2014/05/05/correctly-converting-integer-to-string/ "Permalink to Correctly Converting Integer to String").

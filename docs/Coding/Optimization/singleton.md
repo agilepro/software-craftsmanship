@@ -70,7 +70,7 @@ This is (1) far easier to use, and (2) a slight bit more efficient to execute. �
 
 ## When is Singleton Appropriate?
 
-The singleton pattern is appropriately used when you have an interface and multiple implementations of that interface.  Lets extend this example slightly, and imagine that the system can be configured to either store user information in a XML file, or in a database.  You will also need a Factory class that determines which of several implementations to instantiate, in this case based on system configuration values, and returns the correct, single instance.  
+The singleton pattern is appropriately used when you have an interface and **multiple implementations** of that interface.  Lets extend this example slightly, and imagine that the system can be configured to either store user information in a XML file, or in a database.  You will also need a Factory class that determines which of several implementations to instantiate, in this case based on system configuration values, and returns the correct, single instance.  
 
 It might look something like this:
 

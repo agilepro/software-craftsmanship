@@ -1,3 +1,8 @@
+---
+tags:
+- design
+- dates
+---
 # Date Value Types
 
 Time is expressed as a linear dimension starting in the past and going into the future.  Any given moment is an instant alone that line. A date and/or time is a way of describing that point.  But the description of that point depends on the time zone within which you are communicating.  

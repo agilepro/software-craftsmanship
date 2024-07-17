@@ -1,5 +1,8 @@
 ---
   id: timer-misconceptions
+  tags:
+    - design
+    - dates
 ---
 #  Timers: Misunderstandings
 

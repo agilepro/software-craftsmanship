@@ -4,7 +4,7 @@ XML is a text format, and so it is tempting to handle it with the normal String 
 
 :::tip[Key Takeaway]
 
-Never put XML in a string.
+Never put XML in a string.  Instead, stream data from file or other source directly to the parser.  Stream the DOM directly to output stream.
 
 :::
 

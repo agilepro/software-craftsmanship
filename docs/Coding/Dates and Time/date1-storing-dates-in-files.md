@@ -1,6 +1,9 @@
 ---
   id: storing-dates-in-files
   name: Date Value Storage
+  tags:
+  - design
+  - dates
 ---
 #  Date Value Storage
 
