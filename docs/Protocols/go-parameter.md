@@ -2,10 +2,18 @@
 
 Web pages can be designed to be **reusable** like subroutines that go and do something for the user, and then return. For example, the login may need more information, redirecting to a page to prompt for that information, and when done return to the page you were on. These pages need to be designed to be able to redirect correctly back to the original. This post proposes a convention to use to make all such pages work the same way.  
 
+
+:::tip[Key Takeaway]
+
+To construct a web page that is invoked to do a task, and then returns to the caller, create a parameter (named “go”) that the calling page can use to pass the return address.
+
+:::
+
+
 The convention we have used on a lot of projects is to have a parameter called “go”. The only purpose of this is to provide a location to return to when processing is complete. The go parameter is always a complete web URL, so it simply sends a redirect to the browser with that address. Here is the pattern:
 
 ```java
-String go = ar.reqParam("go");
+String go = request.getParameter("go");
 ....
 response.sendRedirect(go);
 ```
@@ -16,7 +24,8 @@ What about sub-subwindows? It turns out if done properly, there is no problem wi
 
 ### URL values
 
-The go parameter should include the entire fully qualified URL. This means you have to know that URL — the one that the user actually used.  This can sometimes be tricky to get from the J2EE framework.  
+The go parameter should include the entire fully qualified URL. This means you have to know that URL — the one that the user actually used.  This can sometimes be tricky to get from the J2EE framework.
+
 It must be properly encoded. Do this:
 
 ```java
@@ -50,11 +59,3 @@ There are a lot of ways to do this incorrectly:
 *   figure it out from the context: in this case the code “assumes” that because you just logged in, you must want to go to your home page. Not if you were just looking at a project and want to edit it. I have seen elaborate code to try and figure out what just happened in order to redirect you to the proper place. It is far clearer logic to have the calling page pass a go parameter, and then there is no complicated logic.
 
 the point is that passing as a parameter, in the URL, or in the form post parameters, is the only way to accurately store the return value that that particular browser window came from, and the only way to guarantee that the browsing will return to the start location, regardless of what happens on other users and browsers. It even returns correctly if the server is shut down and restarted in between user navigation.  
-
-:::tip[Key Takeaway]
-
-To construct a web page that is invoked to do a task, and then returns to the caller, create a parameter (named “go”) that the calling page can use to pass the return address.
-
-:::
-
-This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/) and tagged [JSP](https://agiletribe.purplehillsbooks.com/tag/jsp/), [web](https://agiletribe.purplehillsbooks.com/tag/web/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2011/10/06/8-the-go-parameter/ "Permalink to #8 The "go" parameter").

@@ -2,6 +2,12 @@
 
 An age-old debate that should not exist.  Tabs are evil.  It is an attractive idea, but poorly implemented, non standardized, unpredictable handling, and so this post enumerates the ways that their cost far outweighs their benefits.
 
+:::tip[Key Takeaway]
+
+Tab characters should never appear in source text files.  Set your editor to write spaces instead of tabs.  Only in this way can you guarantee that indentation will be correct and meaningful in all situations.
+
+:::
+
 ## Tab Characters
 
 The ASCII character #9 is designated a tab character, and the idea was that the occurrence of one of these in a piece of text would advance the horizontal position to the next tab position, harkening back to the time when manual typewriters would have would have little metal pieces that could be inserted into positions along the line, and would physically stop the advancement of the carriage holding the paper.
@@ -22,7 +28,7 @@ There is no problem with “pressing a tab key” on the keyboard in order to li
 
 ## Tools
 
-Some will claim that everything can be configured to allow tabs to be interpreted as 4 characters, but this is not true.  Below are tools which display source incorrectly if that source contains tabs that are supposed to be 4 characters wide.  
+Some will claim that everything can be configured to allow tabs to be interpreted as 4 characters, but this is not true.  Below are tools which display source incorrectly if that source contains tabs that are supposed to be 4 characters wide.
 
 **WinDiff** – can check an entire source tree against another source tree, listing the files that are different, and provides a way to navigate to the files that have changed,and show the differences. It displays tabs as being 8 characters wide, and is not configurable. While WinDiff does not have the best display of the differences, the powerful capability to recurse a source tree and find all files that have changed is unique. You can tell it to ignore files that have names that fit certain patterns, which is nice for exclusion. If you do not use tabs, and use only space characters, then the indentation is always correct.  
 
@@ -42,7 +48,13 @@ Some will claim that everything can be configured to allow tabs to be interprete
 
 **Customers** – We are not the master of all domains: some of our source is delivered to customers. We can decide internally that a tab is 4 characters, but our customers may have chosen a different standard. The source will appear poorly indented to them. If you do not use tabs, and use only space characters, then the indentation is always correct.
 
-### The Flip Side
+### Tools that can be configured
+
+**VS Code** - can be easily configured so that pressing the tab key inserts a number of spaces to the next tab stop.  Tab size is configurable.  VS Code will also optionally treat backspaces as if deleting a whole tab at a time;  if you are at the beginning of a line which is indented, the backspace will delete as many spaces as necessary to get back to the tabs stop before the current position.  All the benefits of tabs without the disadvantages.
+
+**Eclipse** - can be easily configured to insert spaces instead of tabs when you press the tab key.
+
+### Arguments for Tabs
 
 The above goes into detail on how the tab character can be evil, let examine the reasons that programmers usually give for using tabs, in an environment where tab is set to 4 spaces, and source indentation is 4 spaces. The assumption is that the programmer in the controlled environment is using a “professional” text editor that represents a tab as 4 spaces. Those professional text editors have (in all cases I have seen) an option to insert spaces when you press the tab key: enough to move the selected character to the next tabstop. Thus in either case, the line you are working on can be easily indented simply by pressing the tab key. The comparison is then between running this text editor where it inserts a tab character when the tab key is pressed, and where it inserts spaces when the tab key is pressed.  
 
@@ -69,13 +81,7 @@ The conclusion is clear: make then the decision to always indent with spaces, an
 *   [JSPWiki: Why Tabs Are Evil - broken link](http://www.jspwiki.org/wiki/WhyTabsAreEvil)
 *   [Pluralsight: Tabs are Evil - broken link](http://www.pluralsight-training.net/community/blogs/craig/archive/2004/12/08/3775.aspx)
 
-## Nuggets
 
-:::tip[Key Takeaway]
-
-Tab characters should never appear in source text files.  Set your editor to write spaces instead of tabs.  Only in this way can you guarantee that indentation will be correct and meaningful in all situations.
-
-:::
 
 ## Editor Settings
 
