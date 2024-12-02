@@ -3,7 +3,19 @@
 ---
 #  Don't make content-free comments
 
-Avoid the inclusion of “content-free java-doc”. This means that a Java-Doc header is created that has no information content in there. Comments in general should have useful information that is not obvious, or there should be no comment at all. Here is an example:
+Avoid the inclusion of “content-free java-doc”. This means that a Java-Doc header is created that has no information content in there. 
+
+:::tip[Key Takeaway]
+
+It is better to have no comment, than a comment that does not add value and is not helpful in any way.
+
+The comment should **only** contain information that is **not obvious** from the declaration itself.
+
+:::
+
+## Empty Javadoc
+
+Comments in general should have useful information that is not obvious, or there should be no comment at all. Here is an example:
 
 ```java
 /**
@@ -15,7 +27,6 @@ Avoid the inclusion of “content-free java-doc”. This means that a Java-Doc h
 public void sectionDisplayNewUI(AuthRequest ar, NGSection section,
         int displayLevel) throws Exception
 ```
-
 
 The reason I say there is no information is that everyone can plainly see that there are three parameters, and it throws an exception. The comment does not add any information.  
 You might think this is harmless, but it NOT. Every character that is added to a file adds noise. If that character goes to something informative, then the value outweighs the noise. But if there is no additional information, then the added noise is not worth it. If you are reading a file, looking for information, the extra text means you have more places to look.  
@@ -73,12 +84,3 @@ Shorter, simpler, and says everything the first says, without the content-free f
 
 Eclipse, and possible some other IDE environments, automatically add the content-free part of the comment for you.  This should not be a surprise since it just scrapes the code, and produces the format.  This is confirmation that there is really no new information in these pro-forma insertions.  You should however, delete the parts that you do not add to.  That is, either add a real comment to the appropriate place, or delete pro-forma text.  It is a real quandary: it can be very convenient to have the basic framework created for you, but if you have nothing to say there, then deleting that help increase the information content of your source.  The good thing: if you view this as an option to either add a real comment or go to the trouble of deleting it, there is a slightly larger motivation to go ahead and write something meaningful.
 
-## Nuggets
-
-:::tip[Key Takeaway]
-
-It is better to have no comment, than a comment that does not add value  
-
-The comment should **only** contain information that is **not obvious** from the declaration itself.
-
-:::

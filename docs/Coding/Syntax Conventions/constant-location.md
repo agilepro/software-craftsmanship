@@ -1,6 +1,14 @@
 #  Constants Location
 
-Like many aspects of programming, there are competing guidelines on where to define constants in a program, but in my experience, the goal of clean encapsulation is the primary guideline that is important.  Here is why. 
+Like many aspects of programming, there are competing guidelines on where to define constants in a program, but in my experience, the goal of clean [encapsulation](../../Design/encapsulation.md) is the primary guideline that is important.  Here is why. 
+
+:::tip[Key Takeaway]
+
+* If a constant is used only in a single class, then define it inside that class.
+* Define a constant as close to the points of use as possible.
+* Don’t expose constants to parts of the program that don’t need it if possible.
+
+:::
 
 ## Setting
 
@@ -11,19 +19,11 @@ Where to define them?  There are two patterns:
 *   Globally – in a special class just for constants
 *   Locally – in a class near where they are used
 
-The general guidelines are:
-
-> If a constant is used only in a single class, then define it inside that class.
-> 
-> Define a constant as close to the use of the constant as possible.
-> 
-> Don’t expose constants to parts of the program that don’t need it if possible.
-
 If it is used broadly across many classes, then define it either in the most logically associated class, or else in a special class for constants if there is one. Constants used broadly across many modules might be an indication that the software should be refactored to segregate functionality properly.
 
 ## Encapsulation
 
-Encapsulation is the idea that you want to hide the inner workings of a module as much as possible.  Methods should return the results, but keep the detail of how that result was calculated hidden. For example: the method to calculate the area of square should return the area, without exposing how the area is calculated.
+[Encapsulation](../../Design/encapsulation.md) is the idea that you want to hide the inner workings of a module as much as possible.  Methods should return the results, but keep the detail of how that result was calculated hidden. For example: the method to calculate the area of square should return the area, without exposing how the area is calculated.
 
 Encapsulation allows modules to be independent.  Independent modules can be updated and improved more easily.  For example, a module that persists a set of data, might save it in a relational DB today, but if properly encapsulated it could be changed to using No-SQL tomorrow without breaking the code that calls it.
 
@@ -74,19 +74,3 @@ There is a stack exchange answer on “[Good practice to hold Constants in their
 > One of the worst anti-patterns in this regard is having a “constant interface” which is honestly lazy and unclear. Sometimes you come across an interface containing a bunch of random constants thrown together, and classes will implement the interface just to make it easy to refer to the constants. That generally ends up violating [LSP](https://en.wikipedia.org/wiki/Liskov_substitution_principle) and makes it difficult to determine what those constants do.
 
 I remain mystified as to why programmers think that a global class of constants is a good idea.  I assume there is some attraction to “_action at a distance_” the somehow compelling idea that I can press a button here, and have an effect over there.  This is a common psychological principle that is used in James Bond movies, but is a very bad idea that runs counter to the goal of encapsulation.  You really don’t want to define code that that spreads internal details further than they need to be.
-
-## Summary
-
-Good encapsulation and agility demand that:
-
-:::tip[Key Takeaway]
-
-If a constant is used only in a single class, then define it inside that class.
-
-
-Define a constant as close to the points of use as possible.
-
-
-Don’t expose constants to parts of the program that don’t need it if possible.
-
-:::

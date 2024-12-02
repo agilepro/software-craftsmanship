@@ -2,6 +2,12 @@
 
 The value known as **null** and what it means.
 
+:::tip[Take Away]
+
+The token `null` should essentially never be used in a JSON file.  If an attribute does not have a value, omit the attribute.  Lists should never have a null in them.
+
+:::
+
 ## Origin
 
 In most computer programming languages, a variable is implemented as a space in memory where the value will be stored.
@@ -61,6 +67,44 @@ With strings (things surrounded by quotes) there is another option and that is t
 In a strict sense this is not saying that there is no value here. There is a value, but it is a string without any characters. If you think about a phone number, it still means that there is no phone number.
 
 Perhaps an empty string should be considered exactly equivalent with a **null**. All of the systems I have built have always treated an empty string as exactly equal to a **null** because I have never found need to treat these values differently. Again, the code in a program does not need to worry about what the difference means because (if everything is coded consistently) there is no difference.
+
+## Never put a null in a List
+
+Lists contain a number of values.  Null means "this is not a value".  Why would one ever put a non-value into a list?  
+
+Imagine this example:
+
+```json
+"list": [
+  { "name": "object 1" },
+  null,
+  null,
+  { "name": "object 2" }
+]
+```
+
+What is the meaning of those nulls?  There is object 1, then no-value, no-value, and finally object 2.  There are really only two values in the list.  What is the purpose of the no-values?
+
+This issue become more important when we consider the meaning of the list as a whole.  If the null values were omitted, would you still have an equivalent list?  Is this the same list, or a different list?
+
+```json
+"list": [
+  { "name": "object 1" },
+  { "name": "object 2" }
+]
+```
+
+What about a list with only 5 nulls in it, is it an empty list?  Are these equivalent?
+
+```json
+[ null, null, null, null, null ]  ?=  [] 
+```
+
+To consider the list with and without the nulls is an invitation for bugs.  Having multiple ways to represent the same thing is a waste.  Better to simply omit the null values always for lists in JSON.  
+
+In an environment where values are mapped to memory locations, some might argue that the list is actually four spaces long, and two of the spaces are empty.  What value is there of recording that the second space was null?  How is this different than no spaces being null?
+
+In JSON there is need to allocate a space for the nulls.  Elimination makes the message smaller and faster with no loss of information.  Beyond efficiency, the semantics are unclear as to what this null within a list _means_ and how to recipients of the message are expected to properly deal with it, which can lead to bugs and failures.
 
 ## Additional Reasoning for the Hesitant
 
