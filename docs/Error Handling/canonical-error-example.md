@@ -102,3 +102,18 @@ Having the date parsing fail is a problem that is highly detailed, but if all yo
 Also, the program can not just continue.  Without the birth date, there are important decisions that can not be made.  We should not just use a “default” birth date, because that would not meet the requirements of the methods involved.  So we have hit a condition that the program MUST stop processing.  A correct answer can not be returned, and so returning anything normally would be a problem.
 
 In most programming languages an exception will allow a programmatic way to stop the process and jump out of the entire stack of processing.  Those details however are in the discussion of this call stack.
+
+
+## Which Error Message?
+
+Of the five error messages that are delivered, which one do you display to the user?
+
+![](canonical-error-example-img2.png)
+
+While it would be excellent to pick the one thing that succinctly tells the user what to do.  For example a single sentence.  It is in practice not possible to do that.  We know what went wrong, but we don't know why this wrong data was supplied.  In general an error can be avoided in several different ways, and without understanding the motivation of the caller, we don't know which one they would like.
+
+If you pick one, it will satisfy some cases, but in other cases they will be disappointed.  If the user does not get the right error message, it means they might have to call support.  It is safer to provide all the error messages on the screen.
+
+Some people worry that this will be too much information.  That depends on how good your error messages are, but typically we are talking about a line of text for each, and in this case 5 lines.  In my experience users do not complain as long as the error message actually solves their problem.  They complain when the error message does not solve their problem.  My experience is that users are no overwhelmed with five lines of text, but only when the text provided fails to solve their problem.
+
+The conclusion is that the best thing is to display all five of these messages.  This gives the caller the greatest chance of having their problem resolved, and thereby the greatest chance of being satisfied.

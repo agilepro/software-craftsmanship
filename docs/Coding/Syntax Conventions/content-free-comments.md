@@ -77,7 +77,6 @@ The @return annotation tells you that this method returns a string.  But everyo
 public String getUserKey();
 ```
 
-
 Shorter, simpler, and says everything the first says, without the content-free fluff.
 
 ## Update

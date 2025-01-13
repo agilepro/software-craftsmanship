@@ -7,7 +7,9 @@ This should be obvious, but I worked with a team where several members thought i
 
 :::tip[Key Takeaway]
 
-The only documentation on a deprecated method or class, should be a reference to the method or class that replaces it.  Leave the proper documentation to the methods that you are going to maintain and want people to use.
+Deprecated methods are only there to support existing code. Documentation is needed only for writing new code.
+
+The only documentation on a deprecated method or class, should be a reference to the method or class that replaces it.  Leave the proper documentation to the methods that people are writing new programs against.
 
 :::
 
