@@ -43,7 +43,7 @@ If you expect a class to be a base class for other classes, then you need to thi
 
 ## 4      Members that Represent the ID
 
-Some objects have an id that is used to uniquely identify them.  These objects should have their ID set when they are constructed, and the ID should not be able to be changed.  It is not important to ever be able to reuse these objects to hold new instances … instead construct a new object with the new Id passed in the constructor.  The members that hold the ID clearly must be private in order to assure that they never change.
+Some objects have an id that is used to uniquely identify them.  These objects should have their ID set when they are constructed, and the ID should not be able to be changed.  It is not important to ever be able to reuse these objects to hold new instances . . . instead construct a new object with the new Id passed in the constructor.  The members that hold the ID clearly must be private in order to assure that they never change.
 
 ## 5      Simple Containers
 

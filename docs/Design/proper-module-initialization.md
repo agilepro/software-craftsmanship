@@ -12,7 +12,7 @@ It may even be the case that an initialization parameter 5.0 needs to be slightl
 
 ## Solution
 
-Experienced developers are not going to be surprised…  
+Experienced developers are not going to be surprised. . .  
 Initialization should be from a Java Properties object, which is a hashtable of name/value pairs.  We document the named values that can be set.  If any setting is missing, a suitable default is provided.  Any additional settings that it does not know about is ignored.  
 
 Properties objects can be serialized into a configuration file.  A second configuration option is to pass in the File object that identifies a configuration file for the module.  It must be a File object, which means it specifies the full path, to the exact file.  This allows the application hosting the module to put the configuration file anywhere it deems appropriate.

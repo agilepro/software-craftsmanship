@@ -17,7 +17,7 @@ Is this good? Is this bad? The visual indication is clearly good. By why do you 
 
 I can’t count the number of times a user has exclaimed: “oh that’s why I can’t use that function, I never knew I just had to . . .”  Or they have told me “I tried to do it, but the menu was disabled and I don’t know why . . .”  
 
-**Example:** You see an icon that looks like a printer, and you want to print, but the icon is disabled.  Why is it disabled?  There could be many reasons, but a dead icon simply does not tell you.  It might be something simple, like you have to select a default printer.  Or it might be an indication that the network is down. Or it may be that you need a newer printer driver that supports a particular capability.  Hunting for the reason can take hours and lot of guess work.  Go to the manual or the online help and search “disabled print icon” and you probably don’t turn up much. Generally you have to do trial and error changes to the system until something re-enables the icon. How long this takes depends on how much you know about the internals of the system … many users simply give up.
+**Example:** You see an icon that looks like a printer, and you want to print, but the icon is disabled.  Why is it disabled?  There could be many reasons, but a dead icon simply does not tell you.  It might be something simple, like you have to select a default printer.  Or it might be an indication that the network is down. Or it may be that you need a newer printer driver that supports a particular capability.  Hunting for the reason can take hours and lot of guess work.  Go to the manual or the online help and search “disabled print icon” and you probably don’t turn up much. Generally you have to do trial and error changes to the system until something re-enables the icon. How long this takes depends on how much you know about the internals of the system . . . many users simply give up.
 
 ## User Protection  
 
@@ -68,7 +68,7 @@ Try searching google for “disable menu” and you will find thousands of messa
 *   “You can use system policies to disable menu commands and their corresponding toolbar buttons. When you disable a menu command and toolbar button through a policy, users cannot use that command or button.”
 *   “Does anybody knows how to disable the menu when you click the right button on your mouse? This is to control the desktop display for PCs meant for the public. Do we need special software?”
 *   “if there’s nothing in the clipboard (state), then the Paste command should be disabled (menu).”
-*   “if your program is in read-only mode, then commands that edit should be disabled…”
+*   “if your program is in read-only mode, then commands that edit should be disabled. . .”
 *   “Obviously, if there is no selected object at all, you’ll want to disable the menu item, thus reinforcing the connection between the item and its object.”
 *   “visually disable menu item(s) which the user not allow to activate.”
 *   KDE UI Guidelines: “If an action should not be executed (e. g. Cut when nothing is selected) then you should disable the entry in the menu.”

@@ -59,7 +59,7 @@ String sql =
 
 This latter query is dramatically easier to read and understand, especially if you know the actual table structure. You can easily see exactly what the table name is being manipulated, and what columns are involved. Go back to the original, and try looking up the values in the constants to arrive at the same understanding. And you HAVE to know the table structure because it is manipulated by other classes and other programs. Does anyone really believe that using constants as an extra level of symbol redirection in this way is a benefit?  
 
-Theoretically, if you decide to change a column name, then you go to one place, and it propagates through the entire code. Hey, that is cool, but how often do you do that? And it only changes this class … there are other classes and programs, some written in different languages, that manipulate the table. One change of the constant will never change everything.  
+Theoretically, if you decide to change a column name, then you go to one place, and it propagates through the entire code. Hey, that is cool, but how often do you do that? And it only changes this class . . . there are other classes and programs, some written in different languages, that manipulate the table. One change of the constant will never change everything.  
 
 Readability is important. Isn’t the ability to read, review, and quickly understand code by the programmers that are going to maintain the code more important than the rare convenience of changing a column? Consider code that lives for 10 years. How many new programmers will have to read this code? How many times will a column name change?  
 

@@ -6,15 +6,15 @@ I collect examples of poor error messages, and discuss why they are bad.  Today
 
 I would get a series of these.  Clicking “Try Again” or “Continue” simply caused the window to reappear (because presumably it was looking for the disk to come back on line.  Clicking “Cancel” allowed me to move forward, but sometimes I would have to click “Cancel” 5 or 6 times before they would finally go away.
 
-After a search on the web, I found out that this is caused by downloading to a removable disk, and of course removing the disk.  At startup time google has a list of previously downloaded files, and it tries to read something about them … maybe pick up an icon or something.  
+After a search on the web, I found out that this is caused by downloading to a removable disk, and of course removing the disk.  At startup time google has a list of previously downloaded files, and it tries to read something about them . . . maybe pick up an icon or something.  
 
-The solution was to clear the list.  However the error message did not give a clue to determine this.  I simply was starting the browser … I was not “doing anything” that from my view needed a disk, so there was no way to know what it was that caused the problem.  Starting the browser caused that every time.
+The solution was to clear the list.  However the error message did not give a clue to determine this.  I simply was starting the browser . . . I was not “doing anything” that from my view needed a disk, so there was no way to know what it was that caused the problem.  Starting the browser caused that every time.
 
 ## The Problem
 
 This error message was generated at a very low level: attempting to read the device it found out that the device is not on line.  However, there is NO indication of why it was trying to read the device.  This left me completely unable to do anything about the problem.  Clearly, I knew that the disk was not on line, and I had no intention of putting it back on line.  But how do I clear the error?  
 
-This is the classic mistake of trowing an exception, reporting an error, at too low a level, and not including context.  If the message had said: “Unable to display download list because no disk in drive…” the at least I would have had a clue to go look at the down load list.  
+This is the classic mistake of trowing an exception, reporting an error, at too low a level, and not including context.  If the message had said: “Unable to display download list because no disk in drive. . .” the at least I would have had a clue to go look at the down load list.  
 
 After all, it really was a failure to render the download list that was failing.  The disk being unavailable was a low level cause, but not really the problem from a user point of view.  I knew the disk was not there.  Why should I care that a disk is not there.  That, was the problem.
 

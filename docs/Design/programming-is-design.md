@@ -1,4 +1,4 @@
-#  We don't need Programmers … we only need Designers
+#  We don't need Programmers . . . we only need Designers
 
 Today’s post is a reflection on a classic misunderstanding often made by people who don’t understand how software is produced.  This misunderstanding can be particularly harmful when held by management making decisions on team structure.  The full quote is: “**We don’t need any programmers here.  There are plenty of programmers in India.  Here, we just need people who can tell programmers what to do.**”  Let me explain why this is a classic management mistake.
 
@@ -10,7 +10,7 @@ The problem with this model is that with software, there is no manufacturing.  
 
 In traditional manufacturing, you might have 10% of the people working on the design, and 90% then working at relatively unskilled positions in a factory putting the product together.  For mass production it might be 1% design, and 99% putting the product together.  
 
-Software, however, is 99% design, with maybe 1% in routine tasks which might be comparable to  manufacturing.  There are some routine tests that need to be run (largely automated) and there is some bookkeeping, but the vast bulk is simply _**deciding what the program should do**_.  Once the designer decides what the program should do, there is very little else to programming … you are essentially done, and the result can be instantly made available to the customers.  There simply is no manufacturing needed.
+Software, however, is 99% design, with maybe 1% in routine tasks which might be comparable to  manufacturing.  There are some routine tests that need to be run (largely automated) and there is some bookkeeping, but the vast bulk is simply _**deciding what the program should do**_.  Once the designer decides what the program should do, there is very little else to programming . . . you are essentially done, and the result can be instantly made available to the customers.  There simply is no manufacturing needed.
 
 ## A Specific Illustrative Example
 

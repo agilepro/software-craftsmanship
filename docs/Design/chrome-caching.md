@@ -34,7 +34,7 @@ The Cache-Control header can have a lot of values, and this can be in a list of 
 
 What I have found is that if you use Apache TomCat configured as it is out of the box, it does not send the must-revalidate values.  
 
-There does not seem to be any direct way to set default header on all responses across the entire server.  Instead, what you have to do is to introduce a Filter, which is a block of code that will set the header dynamically on every request.   Very strange that there is no setting for default headers … but that seems to be the case.  You need to create a class like this:
+There does not seem to be any direct way to set default header on all responses across the entire server.  Instead, what you have to do is to introduce a Filter, which is a block of code that will set the header dynamically on every request.   Very strange that there is no setting for default headers . . . but that seems to be the case.  You need to create a class like this:
 
 ```java
 public class HeaderCorrectingFilter implements Filter {
@@ -92,7 +92,7 @@ Different kinds of files have different risks.
 *   It can be very bad for a JavaScript file to be out of date.  One always tries to make changes to JavaScript that is contained in one file, but occasionally a change in one JavaScript file necessitates a change in another file.  If you get the new version of one, and the old version of the other, they could produce an ugly error message, or worse.
 *   CSS files fall in between these.  If a new CSS class is used in the page, and the CSS is out of date, the display can be pretty messed up, but most of the time a CSS change does not cause a problem if it is delivered slightly earlier or later.
 
-If you look at user behavior, there might still be some benefit.  Users are very “bursty” meaning that they access a site only occasionally, and when they do, they want a bunch of pages and they want the all as fast as possible.  The likelihood that a users will be actively browsing through pages when a server is updated is small.  Telling the browser to cache for 60 seconds seems harmless.  But … it depends on the number of users and how critical it is that they don’t see errors.
+If you look at user behavior, there might still be some benefit.  Users are very “bursty” meaning that they access a site only occasionally, and when they do, they want a bunch of pages and they want the all as fast as possible.  The likelihood that a users will be actively browsing through pages when a server is updated is small.  Telling the browser to cache for 60 seconds seems harmless.  But . . . it depends on the number of users and how critical it is that they don’t see errors.
 
 ## Implications on Application Structure
 
@@ -102,7 +102,7 @@ Images and icons might be static for years.  Often new images are added to appl
 
 Other folders would then contain more critical pieces.  Custom JavaScript for the application must be kept strictly up to date, and the only option is to revalidate the cached value every request. 
 
-Standard JavaScript libraries can be allowed to sit for longer, but usually the upgrade to a new library is done while maintaining a standard API … so the old library still functions until the new one is downloaded.
+Standard JavaScript libraries can be allowed to sit for longer, but usually the upgrade to a new library is done while maintaining a standard API . . . so the old library still functions until the new one is downloaded.
 
 ## More Information
 

@@ -87,7 +87,7 @@ public class User {
 ```
 
 
-The lean class has exactly the same functionality. It stores four values for the user. The getters and setters of the over-blown class allow immediate reading and updating of each data member … there are no restrictions. 
+The lean class has exactly the same functionality. It stores four values for the user. The getters and setters of the over-blown class allow immediate reading and updating of each data member . . . there are no restrictions. 
 
 The lean class is easier to read and understand. For the over-blown class you can’t scan it easily. More than this: to be assured that the getters and setters do not do anything complicated, you have to read each getter and each setter to check that all it does is a simple assignment. By simply allowing the members to be accessed, then you _know_ that there is no extra side effects. This is where the cost of maintenance comes from. 
 
@@ -99,7 +99,7 @@ The over-blown classes are larger, which takes more memory, but we should not be
 
 ## But what if you need a Setter!
 
-If you need the setter, implement it. Once you determine that you need to control the setting of a particular member, you change it to private, implement the getter/setter, and update all the places that call it. This is trivial to do with a reasonable IDE … or even with just a text editor. 
+If you need the setter, implement it. Once you determine that you need to control the setting of a particular member, you change it to private, implement the getter/setter, and update all the places that call it. This is trivial to do with a reasonable IDE . . . or even with just a text editor. 
 
 Because you can change the access from public to private, you have 100% confidence that the change is accomplished everywhere. Whether a member is public or private is a factor of the interface. Changing whether public or private is just an interface change like anything else.
 

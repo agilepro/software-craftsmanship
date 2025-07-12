@@ -29,7 +29,7 @@ The code to handle this complexity is embedded in the AuthRequest object,and all
 Both of these always have a final slash on them, so the path within the application should never start with a slash.  
 There are a couple more convenience functions on AuthRequest which have been modified to use baseURL and to always provide the correct, global, address. 
 
-**ar.getRequestURL()** – is a method that will return the proper, global URL to the current full page (not the tile). This does not include the query parameters. If a page that does not have any query parameters redirects the browser to this value, the user will not see any change … they will get the same page.  
+**ar.getRequestURL()** – is a method that will return the proper, global URL to the current full page (not the tile). This does not include the query parameters. If a page that does not have any query parameters redirects the browser to this value, the user will not see any change . . . they will get the same page.  
 
 **ar.getCompleteURL()** – is a method that will return the proper, global URL to the current page including the query parameters. Redirecting to this URL should always cause the current page to be redisplayed. Use this value when you need a URL “to get back to this page” after redirecting elsewhere. 
 

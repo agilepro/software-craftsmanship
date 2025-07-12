@@ -24,7 +24,7 @@ The purpose of encapsulation is virtually the same as above: to isolate the inte
 
 ## Effect of Good Abstraction / Encapsulation
 
-When abstraction and encapsulation is done well, objects have a clear but minimal interface.  Everything is kept internal as much as possible.  If I use an analogy to an automobile: think about the starter key.  You start the engine by twisting a key or pressing a button.  How the engine is started is immaterial.  It could be a diesel engine, a gasoline engine, and electric car, whatever … the driver does not need to be concerned about that. 
+When abstraction and encapsulation is done well, objects have a clear but minimal interface.  Everything is kept internal as much as possible.  If I use an analogy to an automobile: think about the starter key.  You start the engine by twisting a key or pressing a button.  How the engine is started is immaterial.  It could be a diesel engine, a gasoline engine, and electric car, whatever . . . the driver does not need to be concerned about that. 
 
 What if I asked you to do the worst possible job of abstraction and encapsulation?  What would you do?  You would expose unnecessary internal detail.Instead of a button to start the engine, you might have a bunch of knobs and levers to adjust the fuel/air mixture, the strength of the spark, the timing offset, and controls for the starter motor.  Understand, if you need those sorts of controls (like certain very high performance automobile situations) then by all means make them part of the API.  But a well designed car will not throw this complexity at the driver.  Also, once you make controls for adjusting fuel/air mixture, it becomes very hard to substitute a different engine — or electric motor — in place of the one you have. 
 

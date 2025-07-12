@@ -50,7 +50,7 @@ The proof is quite difficult, and nobody except a logician is interested in the 
 
 ## The Challenge
 
-This is the challenge that I have put forward to this organization:  Show me code that is too complex to do iteratively.  I will show you, that it can be maintained, and new features can be introduce, while at the same time making a release EVERY DAY that runs.  I will have every developer check in changes every day at least, and I will show how these changes never effect any other developer … in fact the amount of interruption will be smaller.  
+This is the challenge that I have put forward to this organization:  Show me code that is too complex to do iteratively.  I will show you, that it can be maintained, and new features can be introduce, while at the same time making a release EVERY DAY that runs.  I will have every developer check in changes every day at least, and I will show how these changes never effect any other developer . . . in fact the amount of interruption will be smaller.  
 
 The reason for making a release EVERY DAY is to make a point: the shorter your iteration, the easier the development become, and the faster you can move.  In reality, a release every 2 weeks is more appropriate for many reasons, but the reason is NOT complexity of the code.  The reason is NOT that developers will interrupt each other.  
 

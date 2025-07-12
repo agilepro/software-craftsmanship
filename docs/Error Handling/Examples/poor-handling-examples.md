@@ -66,7 +66,7 @@ More examples on another site, this is a classic:
 
 ![javased1](poor-handling-examples-img8.png)  
 
-The purpose of this method it to take a bunch of values and place them into a JSON object, and then return it as a string.  First, you should never convert to a string until you absolutely need it.  Return the object … you can convert to String later, however that is a choice.  The real problem is that while the values are being placed on the object, if an error occurs, then after catching and tracing, the partially built object is then returned _as if nothing happened_!  Again, it is crazy to return something when you have no idea if it is correct or not.  You want to return a value only when everything has worked properly.  This method should be declared to thrown an exception that says: Failed to construct the JSON object.
+The purpose of this method it to take a bunch of values and place them into a JSON object, and then return it as a string.  First, you should never convert to a string until you absolutely need it.  Return the object . . . you can convert to String later, however that is a choice.  The real problem is that while the values are being placed on the object, if an error occurs, then after catching and tracing, the partially built object is then returned _as if nothing happened_!  Again, it is crazy to return something when you have no idea if it is correct or not.  You want to return a value only when everything has worked properly.  This method should be declared to thrown an exception that says: Failed to construct the JSON object.
 
 ## Summary
 

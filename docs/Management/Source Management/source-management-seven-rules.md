@@ -31,7 +31,7 @@ After you have run the tests, and you are ready to commit your changes, do one m
 
 ## 6\. Only source, never check in generated files
 
-Source is source … it is the beginning point for making a product. You have no need to check in the class files, or the object files, or whatever the compiler generates. The source should give you everything you need to build the product, and nothing more.  
+Source is source . . . it is the beginning point for making a product. You have no need to check in the class files, or the object files, or whatever the compiler generates. The source should give you everything you need to build the product, and nothing more.  
 There are several problems you can run into if you fail to heed this. Checking in object code can ultimately lead you to losing the source. If someone checks in a class file, and the build starts using that class file, then the tests are testing the class file, not the source file. The source file could get changed and nobody would notice it. The source file might even be deleted as not being needed. Later, when you need to make a change, the source file is not there, or is not correct any more for the product. Avoid these problem by NEVER checking in the output of the compiler.
 
 ## 7\. Never build in the sandbox

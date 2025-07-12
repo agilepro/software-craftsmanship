@@ -8,7 +8,7 @@ With the advent of [PostHoc](posthoc) must of what is discussed here is no longe
 
 One of the most challenging aspects of implementing a real system which connects to the email system is being able to test sufficiently.  There is a simple trick which can be immensely helpful: email testing mode.  
 
-Email testing mode is nothing more than a single global setting that reroutes all email to a single fixed address, and it only change the to address in the message … all other aspects of the message remain unchanged.  This allows you to
+Email testing mode is nothing more than a single global setting that reroutes all email to a single fixed address, and it only change the to address in the message . . . all other aspects of the message remain unchanged.  This allows you to
 
 *   **create any number of users**, with any number of email addresses. Each user can have their own email address, and you can if you wish use the real email address of real people.  Encryption and settings that are user specific can be tested.  Email will never actually be set to those people from this server.
 *   **use realistic email addresses** instead of being stuck with “example.com” or other addresses that you know do not cause problems.

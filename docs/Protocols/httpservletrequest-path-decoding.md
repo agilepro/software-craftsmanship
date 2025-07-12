@@ -6,13 +6,13 @@
 The documentation on HttpServletRequest is very poor, and this fills in a critical set of facts that you need to know to write a TomCat application.  
 The HttpServletRequest object will return the path to the current request with the following methods:
 
-*   `**getContextPath**()`
-*   `**getPathInfo**()`
-*   `**getPathTranslated**()`
-*   `**getQueryString**()`
-*   `**getRequestURI**()`
-*   `**getRequestURL**()`
-*   `**getServletPath**()`
+*   `getContextPath()`
+*   `getPathInfo()`
+*   `getPathTranslated()`
+*   `getQueryString()`
+*   `getRequestURI()`
+*   `getRequestURL()`
+*   `getServletPath()`
 
 Imagine you have a tomcat server installed at **http://server:8080/**  
 Imagine you install an application in this server at “**myapp**”  

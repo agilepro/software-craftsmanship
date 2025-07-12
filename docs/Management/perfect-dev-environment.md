@@ -22,7 +22,7 @@ It would have the following capabilities
 *   Discussion Forum
 *   Automated build and test, developers can do their own build, but the automated continuous integrations builds would be on the server.
 *   Statistics on past commits, builds, test runs.  A place for testers to enter results of manual testing.
-*   Auto testing … local test runs would report results to the server statistics.
+*   Auto testing . . . local test runs would report results to the server statistics.
 *   Links for specialized tools
 *   DITA document generation from XML to PDF and web formats
 *   Configuration management

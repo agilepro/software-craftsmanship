@@ -104,14 +104,21 @@ To consider the list with and without the nulls is an invitation for bugs.  Havi
 
 In an environment where values are mapped to memory locations, some might argue that the list is actually four spaces long, and two of the spaces are empty.  What value is there of recording that the second space was null?  How is this different than no spaces being null?
 
-In JSON there is need to allocate a space for the nulls.  Elimination makes the message smaller and faster with no loss of information.  Beyond efficiency, the semantics are unclear as to what this null within a list _means_ and how to recipients of the message are expected to properly deal with it, which can lead to bugs and failures.
+In JSON there is no need to allocate a space for the nulls.  Elimination makes the message smaller and faster with no loss of information.  Beyond efficiency, the semantics are unclear as to what this null within a list _means_ and how to recipients of the message are expected to properly deal with it, which can lead to bugs and failures.
+
+## JavaScript and `undefined`
+
+JavaScript (and TypeScript) offer three possibilities for when you don't have a value like a phone number: (1) the key is missing from the map, (2) the value is "null", and (3) the value is is "undefined".  Once again, none of these represent a phone number, they all represent that you don't have a phone number. 
+
+Unless you have a really good reason, these three options should all be considered semantically exactly equivalent.  While there is a technical difference between these options, I don't know of any pre-defined semantic difference that would be meaningful in regular program logic.  Any decision made on the basis of one of these, should cause the same decision with the other two as well.  The value "undefined" means the value is not defined, while "null" means the value is defined as not being there.  I can't honestly imagine any reason you would want to treat those as different.  I you can imagine a difference, then be sure to document that exact semantic difference clearly.
+
 
 ## Additional Reasoning for the Hesitant
 
-Some will still claim that **null** is a different value than **omitting** the value. If you wish to implement a system this way, then you must also very clearly define the meaning of this difference. How will a phone number set to **null** be handled differently than **omitting** the phone number? After all, the **null** strictly means that we have no value, and that is exactly the same as not having a value.
+Some will still claim that **null** is a different value than **omitting** the value. If you wish to implement a system this way, then you must also very clearly define the meaning of this difference. How will a phone number set to null be handled differently than omitted the phone number? After all, the null strictly means that we have no value, and that is exactly the same as not having a value.
 
-I am not saying that such reasons don’t exist, but I have designed a lot of systems, and I have never seen the need to consider an **omitted** value as anything other than equivalent to receiving a **null**. When translating to Java, you should set the variable if no value for the variable is received.
+I am not saying that such reasons don’t exist, but I have designed a lot of systems, and I have never seen the need to consider an omitted value as anything other than equivalent to receiving a null. When translating to Java, you should set the variable if no value for the variable is received.
 
-However if you use a standard Map in Java to receive the JSON, then it is possible to make a map member with the value of **null**, and that is different from not having the map member. You can iterate the members of a map, and get a **null** value. In my Java code I have to be careful to check the value and ignore it if it is **null**, so that **null** and omitted values are treated the same. In other languages I have used maps where setting a member to **null** simply removed the member, thereby enforcing an exact equivalence.
+However if you use a standard Map in Java to receive the JSON, then it is possible to make a map member with the value of null, and that is different from not having the map member. You can iterate the members of a map, and get a null value. In my Java code I have to be careful to check the value and ignore it if it is null, so that null and omitted values are treated the same. In other languages I have used maps where setting a member to null simply removed the member, thereby enforcing an exact equivalence.
 
-It is possible thought that you have a good reason to considering a **null** value to be distinct from an **omitted** value, but if so it is imperative that you specify clearly how exactly each of these values differ in meaning and how they should be handled differently.
+It is possible thought that you have a good reason to considering a null value to be distinct from an omitted value, but if so it is imperative that you specify clearly how exactly each of these values differ in meaning and how they should be handled differently.

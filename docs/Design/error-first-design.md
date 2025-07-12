@@ -5,7 +5,7 @@ tags:
 - error first design
 - exceptions
 ---
-#  Error-First Design
+#  Error-First / Fail-First Design
 
 There is “mobile-first” when creating your UI, but there is something you should do before you start designing the UI:  you should design the error handling/display mechanism first.
 
@@ -31,7 +31,7 @@ Does it make sense to wait until the END of the project to implement the mechani
 
 Part of this is driven by the “fail-first” philosophy of development. Code should be explicit (as possible) in defining what it can and can not handle. A method method is passed something that it is not expecting, it should throw throw an exception. That is the easy case. If you are expecting an object, say a customer, which is a valid, current customer, then it is reasonable to test whether it is a real, valid customer and throw an exception if not. While it is not possible to validate all assumptions, having a few assumption tests that cause clear error indicating the assumption that is violated helps make the code reliable.  
 
-The opposite approach is the “try to make anything work” approach. If the method is expecting a valid object, but it gets a null, it simply returns as if nothing happened. If an object is in the wrong state, you write code to try to put it into that state, and then continue. This kind of code seems on the surface to be resilient, but it is not. It allows sloppy code to be written and to persist. You want code that acts predictably in a wide variety of inputs, but if the input falls outside of the expected range, you want it to fail completely with an exception. An exception stops all processing, and alerts the user and the programmer that something is wrong. Some programmers feel that this will expose them in some way. They feel that if their code throws an error, that the code is broken, and they will be blamed. It is the opposite. If their code is written to only accept valid values, and to clearly communicate nonsense input, then they will always get valid input …. eventually.
+The opposite approach is the “try to make anything work” approach. If the method is expecting a valid object, but it gets a null, it simply returns as if nothing happened. If an object is in the wrong state, you write code to try to put it into that state, and then continue. This kind of code seems on the surface to be resilient, but it is not. It allows sloppy code to be written and to persist. You want code that acts predictably in a wide variety of inputs, but if the input falls outside of the expected range, you want it to fail completely with an exception. An exception stops all processing, and alerts the user and the programmer that something is wrong. Some programmers feel that this will expose them in some way. They feel that if their code throws an error, that the code is broken, and they will be blamed. It is the opposite. If their code is written to only accept valid values, and to clearly communicate nonsense input, then they will always get valid input . . . eventually.
 
 ## How to Accomplish
 

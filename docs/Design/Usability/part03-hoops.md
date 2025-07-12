@@ -35,7 +35,7 @@ Clearly, the edit should accept the move.  The user obviously wanted that move.
 
 ## Preventing Saving
 
-Another problem was that these same programmers decided it was a good idea to force the model to be valid before you could save it to the DB.  (pause … think about this.)   This means that a user could spend several hours working on a model, but then suddenly need save the file (because the battery is dying) and is prevented from saving the work.  No (dammit) you have to get the syntax right before you can save your work!  The programmer thought that by preventing the file from being saved, he was somehow helping the user to get the model validated.  
+Another problem was that these same programmers decided it was a good idea to force the model to be valid before you could save it to the DB.  (pause . . . think about this.)   This means that a user could spend several hours working on a model, but then suddenly need save the file (because the battery is dying) and is prevented from saving the work.  No (dammit) you have to get the syntax right before you can save your work!  The programmer thought that by preventing the file from being saved, he was somehow helping the user to get the model validated.  
 
 This would be like a word-processor that did not allow files to be saved, when there were spelling error and grammatical errors!  In some small-minded way, this keeps the author from making mistakes — but in the bigger picture it just makes them go to another software.  Saving a file is a matter of preserving what you have done.  It should have no connection with model validation at all.  You should be able to save many times while you are on the road to making the model valid.
 
