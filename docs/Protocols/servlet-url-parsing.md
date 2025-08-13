@@ -41,7 +41,7 @@ Of this path:
 *   ccc/ddd/eee.ext can be interpreted by the servlet.  Imagine that ccc is the country code, ddd is the airport code, and eee.ext is a particular type of information about that airport.
 *   The query parameters can also be interpreted by the servlet.
 
-The value that is needed is “ccc/ddd/eee.ext?f=1&g=2” since this is the data that must be used to drive the REST response.  Ideally the rest should be eliminated, however the presence of ‘bbb’ is not a problem since the servlet might be programmed to know this value and it does not change from installation to installation.  In general the solution is to get this data in two strings  “ccc/ddd/eee.ext” and “f=1&g=2” since those are in any case already parsed into separate pieces.
+The value that is needed is “ccc/ddd/eee.ext?f=1&g=2” since this is the data that must be used to drive the REST response.  Ideally the rest should be eliminated, however the presence of 'bbb' is not a problem since the servlet might be programmed to know this value and it does not change from installation to installation.  In general the solution is to get this data in two strings  “ccc/ddd/eee.ext” and “f=1&g=2” since those are in any case already parsed into separate pieces.
 
 ## Analysis
 
@@ -87,7 +87,7 @@ That returns, for the example above, the array:
 
 
 That, in turn, is easy to interpret and use. Each value in the URL has to be properly decoded from UTL-8/URL encoding _after_ the parsing of the slashes or ampersands.  
-The query parameters have a name and value separated by an equals symbol. Technically, the name and value of the query parameters should be decoded _after_ splitting the name from the value, but for convenience I do both here. This works as long as (1) the name does not have any equals symbol in it, and (2) it is parsed considering only the first equals symbol. You see, the value might have equals symbols in it, and you must not be confused by that. (i.e. don’t use ‘split’ to separate name from value because it may split it too many times.)  
+The query parameters have a name and value separated by an equals symbol. Technically, the name and value of the query parameters should be decoded _after_ splitting the name from the value, but for convenience I do both here. This works as long as (1) the name does not have any equals symbol in it, and (2) it is parsed considering only the first equals symbol. You see, the value might have equals symbols in it, and you must not be confused by that. (i.e. don't use 'split' to separate name from value because it may split it too many times.)  
 This, then, is the proper way to parse the query value after URLDecoding:
 
 ```java

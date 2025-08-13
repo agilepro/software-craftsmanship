@@ -34,7 +34,7 @@ OK, so far so good, but lets consider that error message. Imagine that you know 
 Specify at least one activity to perform operation
 ```
 
-The first question you are going to have is: how do I specify at least one activity? It doesn’t tell you. Maybe you did specify the activities, but you mispelled “activities” (e.g. “actvities”) or maybe you thought the array was simply named “activity”. From your point of view, you _have_ specified at least one activity. The error message doesn’t really tell you what is wrong. It says what your goals was — and you might know that — but your failure in how to specify the activities is not clear. How frustrating.
+The first question you are going to have is: how do I specify at least one activity? It doesn't tell you. Maybe you did specify the activities, but you mispelled “activities” (e.g. “actvities”) or maybe you thought the array was simply named “activity”. From your point of view, you _have_ specified at least one activity. The error message doesn't really tell you what is wrong. It says what your goals was — and you might know that — but your failure in how to specify the activities is not clear. How frustrating.
 
 ## A Better Error Message
 
@@ -54,7 +54,7 @@ The old error message said you _need_ to specify at least one activity, without 
 
 The programmer was translating up to a _higher contextual level_. The operation needs to operate on a set of activities. There is a data member to represents those activities, so please be sure to deliver activities. However, this translation up to the meaning of the error does not help resolve the error. Because it implies something that it really does not test for, the error message can be confusing. One might even say deceptive. 
 
-It also made some assumptions about the problem. The error message made the assumption that if you did not include a data member named “activities” then the programmer simply didn’t know that activities needed to be specified. We don’t have enough evidence to conclude this. All we really know is that a specific data member with a specific name is missing.
+It also made some assumptions about the problem. The error message made the assumption that if you did not include a data member named “activities” then the programmer simply didn't know that activities needed to be specified. We don't have enough evidence to conclude this. All we really know is that a specific data member with a specific name is missing.
 
 ## Scenario 2
 
@@ -78,4 +78,4 @@ That is the true and accurate description of what actually happened.  Because th
 
 ## Conclusion
 
-The recommendation is to avoid generalizing, and abstracting to a different level of meaning. If you expect a field named “foo”, simply say that foo is needed and not found. If you a test that start date must be before end date fails, then don’t report that the duration must be a non-negative value! Simply say that start date must be before end date. 
+The recommendation is to avoid generalizing, and abstracting to a different level of meaning. If you expect a field named “foo”, simply say that foo is needed and not found. If you a test that start date must be before end date fails, then don't report that the duration must be a non-negative value! Simply say that start date must be before end date. 

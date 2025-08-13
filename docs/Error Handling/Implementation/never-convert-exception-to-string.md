@@ -3,7 +3,7 @@
 ---
 #  Never Convert Exception to String before Display Time
 
-Proper handling of exceptions means that you keep it as an Exception object through all processes, particularly wrapping with another exception.  A common error I see programmers doing is to convert the Exception to a String and use that as part of a new Exception for rethrowing.  Don’t do this.  Preserve the Exception as an object until you are ready to display it to the user.  
+Proper handling of exceptions means that you keep it as an Exception object through all processes, particularly wrapping with another exception.  A common error I see programmers doing is to convert the Exception to a String and use that as part of a new Exception for rethrowing.  Don't do this.  Preserve the Exception as an object until you are ready to display it to the user.  
 
 I have already covered details of exception handling in “[#3 Exception Catch Blocks](https://agiletribe.purplehillsbooks.com/2011/10/01/3-exception-catch-blocks/)“. In there, it will be common in routines at certain levels to catch an exception, and wrap that with another exception and throw the wrapper.  The wrapper will contain inside of it the original exception.  Ultimately when it comes time to display the error message to the user, the entire chain of exceptions is converted into a string form that can be displayed.
 
@@ -21,7 +21,7 @@ The problem here that the exception is converted to a string, and then concatena
 
 *   You lose all the stack trace information.  Preserving the exception as an object retains the stack trace and gives the option of displaying a full stack trace to the user later on.
 *   If the exception was translatable, it gets “fixed” into a single language value based on the local of the runtime environment, and not necessarily based on the local of the actual user.
-*   The two errors are concatenated into a single string, and it is not clear that this occurred at a combination of two places.  It is convenient in the final output to put these two different messages on different lines, but you can’t do that if they are combined into a single line.
+*   The two errors are concatenated into a single string, and it is not clear that this occurred at a combination of two places.  It is convenient in the final output to put these two different messages on different lines, but you can't do that if they are combined into a single line.
 
 ## Acceptable Form
 

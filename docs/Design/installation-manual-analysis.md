@@ -20,11 +20,11 @@ Some of the sentences are clearly necessary, and to those sentences there is usu
 
 In the case of the team in question, many sentences had little or no purpose, or the purpose could be eliminated.  We find that we can eliminate those lines in the manual, and the lines fall into one or more the following conditions:  
 
-1. **The line is meaningless.**  This is just poor writing.  There are a lot of sentences that don’t actually say anything that the reader does not already know.  What are the assumptions we can make about what the reader knows? These lines can simply be deleted:  a shorter manual is easier to read and that makes install easier.  (example sentences are self-referential sentences that add no value, like “The admin commands section contains the commands for admin.”)  
+1. **The line is meaningless.**  This is just poor writing.  There are a lot of sentences that don't actually say anything that the reader does not already know.  What are the assumptions we can make about what the reader knows? These lines can simply be deleted:  a shorter manual is easier to read and that makes install easier.  (example sentences are self-referential sentences that add no value, like “The admin commands section contains the commands for admin.”)  
 
 *2. *Manual steps that are unnecessary and can be eliminated.**  Instead of asking the user to copy a file from one location into the file structure, just put the file there in the first place.  Having a unix and a windows version of a text file is an unnecessary complication that can be eliminated.  
 
-3. **Manual steps that could be automated.**  Write a program to do the work, and then you don’t need to document and bother the user.  
+3. **Manual steps that could be automated.**  Write a program to do the work, and then you don't need to document and bother the user.  
 
 4. **Warnings of special conditions that could be automated.**  For example, WebLogic does not work correctly with a specific version of Java when a specific database JDBC driver is used.  Instead of putting this in the manual, test for this situation in the code, and produce a detailed warning ONLY if it is encountered.  
 
@@ -42,5 +42,5 @@ In the case of the team in question, many sentences had little or no purpose, or
 
 ## Conclusions
 
-**Caution:** the installation manual exposes only part of the difficulty of install, so we won’t find all the problems this way, but it is a good place to start.  
+**Caution:** the installation manual exposes only part of the difficulty of install, so we won't find all the problems this way, but it is a good place to start.  
 Because this team had a habit of writing up manual procedures for the user, to avoid limitations in the code, the manual itself was a mine of valuable suggestions on how to make the code more robust and secure.  Needless manual steps are eliminated, unnecessary parts of the product are eliminated, and conditions are built into the code to test for, and in some cases accommodate exceptional situations.

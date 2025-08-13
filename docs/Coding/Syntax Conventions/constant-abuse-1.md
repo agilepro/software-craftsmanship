@@ -46,7 +46,7 @@ String sql =
 ```
 
 
-Wouldn’t it be better to just use the real table names and the real column names directly? If you did so, the query would be in the code as:
+Wouldn't it be better to just use the real table names and the real column names directly? If you did so, the query would be in the code as:
 
 ```java
 String sql =
@@ -61,7 +61,7 @@ This latter query is dramatically easier to read and understand, especially if y
 
 Theoretically, if you decide to change a column name, then you go to one place, and it propagates through the entire code. Hey, that is cool, but how often do you do that? And it only changes this class . . . there are other classes and programs, some written in different languages, that manipulate the table. One change of the constant will never change everything.  
 
-Readability is important. Isn’t the ability to read, review, and quickly understand code by the programmers that are going to maintain the code more important than the rare convenience of changing a column? Consider code that lives for 10 years. How many new programmers will have to read this code? How many times will a column name change?  
+Readability is important. Isn't the ability to read, review, and quickly understand code by the programmers that are going to maintain the code more important than the rare convenience of changing a column? Consider code that lives for 10 years. How many new programmers will have to read this code? How many times will a column name change?  
 
 And, imagine that you do need to change a column name from hashed\_open\_id to standard\_user\_id is it really that hard to do a search and replace? You probably had to do the same thing in some SQL scripts used to create the table. The constant is not a universal symbol for the column name. The column name is a universal symbol for the column name. Why not use it directly everywhere? The point of a column name is to be a symbol for the data in the column.  
 

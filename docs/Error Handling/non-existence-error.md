@@ -35,7 +35,7 @@ Offering both options allows the caller to decide whether they are willing to ha
 
 ## Not Always That Luxury
 
-You don’t always have the option to offer two methods.   Which do you implement?  How confident are you that request for non existent will be a failure of the calling code. 
+You don't always have the option to offer two methods.   Which do you implement?  How confident are you that request for non existent will be a failure of the calling code. 
 
 Example: login session.  A request to the server will use a session id, and the code will ask to look up the session details.  If the session does not exist, then there is literally nothing else the code can to.  There is no point in keeping track of a session id. There is nothing that can be done with it ever in the future.  And there is really no point in handling anything further . . . the session is gone and you need to reestablish a new session. 
 

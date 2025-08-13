@@ -9,7 +9,7 @@ XML is the oldest format, invented in 1995.  XML can be parsed into a tree with
 
 ![](xml-vs-json-img1.png)
 
-This data was originally designed as XML because you can see that there is a “Pools” tag, and then inside that a set of “Pool” tags.  XML is weak on the concept of arrays.  You represent a set of values, you need a tag for each value, and then a tag containing them.  You will see that both JSON and YML don’t needs these, but this example has them because the data originally was designed to be expressed in XML
+This data was originally designed as XML because you can see that there is a “Pools” tag, and then inside that a set of “Pool” tags.  XML is weak on the concept of arrays.  You represent a set of values, you need a tag for each value, and then a tag containing them.  You will see that both JSON and YML don't needs these, but this example has them because the data originally was designed to be expressed in XML
 
 ## JSON
 
@@ -37,13 +37,13 @@ There are different places where the different formats are better
 *   JSON requires that quotes be used both in keys and values, and special characters need to be escaped with a backslash.
 *   YML does not have the syntax overhead and is far more forgiving.  Just about anything you type is a valid YML file, which means it almost never fails to be parsed.  That can be a problem as well since mistakes are less likely to be caught.
 *   YML is harder to parse.  For example neither numbers nor strings have quotes, and the parse has to identify things that look like numbers.
-*   XML is heavy and bloated.  Representing unusual characters uses something XML calls ‘entities’ which also have a significant overhead.
+*   XML is heavy and bloated.  Representing unusual characters uses something XML calls 'entities' which also have a significant overhead.
 *   XML does not have good support for arrays, specifically no way to denote an empty array, instead you just omit all the data.
 *   JSON accurately preserves string values exactly, every space, ever tab, everything.  YML and XML both treat white space as flexible and approximate, assuming implicitly that a bunch of spaces is equal to one space.  YML has an extra feature to quote strings and gain exact representation, but that means that YML has two ways to do the same thing.  XML has no way to represent white space reliably.
 *   YML allows comments to be included, which is useful for human use.  XML has comments which are klunky.  JSON has no way to do comments.
 *   XML has a strong namespace feature to allow identically named tags from different sources to be handled without confusion, however this creates a tremendous overhead that is almost never needed.
 *   XML has both attribute and tag content values, and it is ambiguous as to which to use in each case.  This arbitrary choice means different people will do the same thing differently, causing additional work.
-*   XML came from SGML which was designed as ‘markup’ for text, the way that HTML allows lots of text with tags sprinkled in.  XML really never was a data format, while both JSON and YML are designed as data format and can never be used as markup.
+*   XML came from SGML which was designed as 'markup' for text, the way that HTML allows lots of text with tags sprinkled in.  XML really never was a data format, while both JSON and YML are designed as data format and can never be used as markup.
 
 ## Conclusion
 

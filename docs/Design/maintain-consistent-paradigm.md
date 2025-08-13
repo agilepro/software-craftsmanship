@@ -64,4 +64,4 @@ I really found the first example unnecessarily hard to read.  It was hard to re
 
 That is what you are looking for in code.  Elegant code works in the same way that it is explained, and it fits with the way that the rest of the code works into a paradigm that supports understanding of the entire code.
 
-Avoid arbitrary differences in the way the algorithm is described, and the way it is implemented.  Be more transparent and clear.  Name variables accurately for the function they actually are used for.  Do the operations in an order that would be naturally be done in.  At the very least, don’t introduce arbitrary differences.  Be consistent.
+Avoid arbitrary differences in the way the algorithm is described, and the way it is implemented.  Be more transparent and clear.  Name variables accurately for the function they actually are used for.  Do the operations in an order that would be naturally be done in.  At the very least, don't introduce arbitrary differences.  Be consistent.

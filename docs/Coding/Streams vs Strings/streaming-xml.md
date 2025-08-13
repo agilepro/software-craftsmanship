@@ -12,7 +12,7 @@ Three main reasons:
 
 *   XML describes its own character set encoding
 *   Streams are far more memory efficient than working with strings
-*   You don’t really want to manipulate the encoded XML anyway
+*   You don't really want to manipulate the encoded XML anyway
 
 The Java DOM utilities will take a byte-oriented In/OutputStream, or it will take a character oriented Reader/Writer.  The simple rule is: always use a byte oriented stream into the parsing, and out of the rendering.  Get used to this, and you will avoid a number of problems, without losing anything of importance.
 
@@ -32,7 +32,7 @@ If you read the entire file into a string first, then that takes up the entire m
 
 This difference in memory is maybe a factor of two, and time might be less than a factor of two, but it is all a waste since it is entirely unnecessary.  The DOM parser will handle the byte oriented stream directly, converting to strings in a more efficient manner than reading the entire file as a string.  Converting to a string is entirely unnecessary and without benefit.
 
-## You don’t really want to manipulate the encoded version anyway
+## You don't really want to manipulate the encoded version anyway
 
 Some programmers fall into the trap of thinking they will do some quick-and-easy manipulation of the XML in the encoded form.  Something like:
 
@@ -53,7 +53,7 @@ myTag.setTextValue(recordValue);
 
 These operations will hold the recordValue unencoded, and then after the tree is completely built, encode all the values properly.  It does this without a lot of unnecessary combining of strings and moving the characters between blocks of allocated memory.  It also makes generation of XML more or less the same as consuming XML, because walking through the parsed tree is similarly to adding branches and leaves to that tree.  
 
-If you really don’t want to build the entire DOM tree (and this is not always possible because you are asked to work on a projects that already makes use of non-DOM techniques, you can always make an improvement over strings by using streams.  Consider this:
+If you really don't want to build the entire DOM tree (and this is not always possible because you are asked to work on a projects that already makes use of non-DOM techniques, you can always make an improvement over strings by using streams.  Consider this:
 
 ```java
 out.write("<mytag>");
@@ -70,7 +70,7 @@ int endPos = value.indexOf("</mytag>");
 String myValue = value.substring(startPos+7, endPos);
 ```
 
-This works for all the simple cases, but you probably already notices that myValue has not been decoded.  Simple XML doesn’t have any little obscure ‘entities’ in the value.  Programmers will write methods that convert “&lt;” into the corresponding less than character, as well as a bunch of common other entities.  However, there are a lot of them, and many obscure.  This is one of those things that works in development and debugging, but in the real world fails in unpredictable ways.  
+This works for all the simple cases, but you probably already notices that myValue has not been decoded.  Simple XML doesn't have any little obscure 'entities' in the value.  Programmers will write methods that convert “&lt;” into the corresponding less than character, as well as a bunch of common other entities.  However, there are a lot of them, and many obscure.  This is one of those things that works in development and debugging, but in the real world fails in unpredictable ways.  
 
 In the end, the problems that can be encountered manipulating XML in strings is simply not worth it.  It is quicker and easier to use a REAL parser, and a REAL generator, and to manipulate the string values in a DOM tree.
 

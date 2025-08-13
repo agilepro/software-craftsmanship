@@ -2,7 +2,7 @@
 
 Guideline #14 is “[Never Catch and Continue](https://agiletribe.purplehillsbooks.com/2011/10/18/14-never-catch-and-continue/)” referring to the bad habit of catching an exception and then continuing processing as if nothing ever happened.  I ran across some particularly bad examples in the example code at one of the Apache projects.  This is an example of what NOT to do.  
 
-The Adobe Chemistry project is an API for accessing CMIS repositories.  The API looks to be properly constructed at least at the basic level.  However they use particularly bad examples on the “[OpenCMIS Client API Developer’s Guide](http://chemistry.apache.org/java/developing/guide.html).”  They offer this as an example of a piece of code on how to use their API:
+The Adobe Chemistry project is an API for accessing CMIS repositories.  The API looks to be properly constructed at least at the basic level.  However they use particularly bad examples on the “[OpenCMIS Client API Developer's Guide](http://chemistry.apache.org/java/developing/guide.html).”  They offer this as an example of a piece of code on how to use their API:
 
 ```java
 final String textFileName = "test.txt";
@@ -26,7 +26,7 @@ In the middle you see the classic catch and continue pattern.  The getBytes met
 
 What this code achieves is the conversion of a meaningful exception (about the character encoding) into a non meaningful one (null pointer exception).   By continuing execution of the code, you risk producing multiple error messages.  Continuing to process after receiving an exception means that you continue to use of CPU time and stack memory when part of your data is missing.  This is risky because it is very difficult to predict what the following code will do in this situation.  The following code might update a persistent database with the wrong values.  To test this properly you have to cause an unexpected exception in the code, and that is exceedingly difficult.  The fact is that running this code after an exception is essentially never done, and therefor _extremely risky_ (in general) to allow to happen.  
 
-The proper response is simply to not catch the exception.  The amazing thing is that that is all it takes.  Just simply don’t put the catch block there.  The exception will stop the execution of the code, and nothing after that will be run.  At the rootmost level of the code, catch and print the exception (after all the rest of the processing has been skipped and all risk avoided).  You get an accurate error message of what happened, and you do not get a slew of bogus error messages that were caused by continuing with the null value.  
+The proper response is simply to not catch the exception.  The amazing thing is that that is all it takes.  Just simply don't put the catch block there.  The exception will stop the execution of the code, and nothing after that will be run.  At the rootmost level of the code, catch and print the exception (after all the rest of the processing has been skipped and all risk avoided).  You get an accurate error message of what happened, and you do not get a slew of bogus error messages that were caused by continuing with the null value.  
 
 I suspect that this gets added because the method was not declared with throws Exception.  That is also a bad practice.  Get over that, and declare the method with **throws Exception**.  
 

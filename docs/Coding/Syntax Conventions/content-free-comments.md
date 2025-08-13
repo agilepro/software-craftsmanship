@@ -46,13 +46,13 @@ public void sectionDisplayNewUI(AuthRequest ar, NGSection section,
 
 These descriptions are also entirely obvious to everyone, and of no value.  When the method is called “sectionDisplay” and the parameter is called “section” there is no point in adding that this parameter is “the section to display” — that is obvious and therefor of no value.  Describing the parameter “displayLevel” as “the level to display it at” similarly does not tell me anything I did not already know.
 
-## Tell Me Something I Don’t Already Know
+## Tell Me Something I Don't Already Know
 
-If the comment does not add value, it should be left out. A blank space tells you clearly that there is no information there, but a bunch text that contains no information is worse than a blank space, because you waste a reader’s time discovering that there is no information.  
-The test is: does this comment tell me something I don’t already know?  Every comment should do so, or it should be eliminated.  
+If the comment does not add value, it should be left out. A blank space tells you clearly that there is no information there, but a bunch text that contains no information is worse than a blank space, because you waste a reader's time discovering that there is no information.  
+The test is: does this comment tell me something I don't already know?  Every comment should do so, or it should be eliminated.  
 Robert Martin covers this suitably in his book “Clean Code”: [http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ "This link leads to an external page")  
 On page 63, he says “comments like this clutter up the code, propagate lies, and lend to general confusion and disorganization”.  
-If a method is implementing an interface, then it should NOT have any comment or java doc, and instead you should refer to the JavaDoc of the interface it is implementing. This helps to avoid having two (or more) copies of the same documentation in the code. If documentation is needed, simply refer to the documentation on the interface (don’t copy it) and then include any implementation specific details.
+If a method is implementing an interface, then it should NOT have any comment or java doc, and instead you should refer to the JavaDoc of the interface it is implementing. This helps to avoid having two (or more) copies of the same documentation in the code. If documentation is needed, simply refer to the documentation on the interface (don't copy it) and then include any implementation specific details.
 
 ## Another Example
 

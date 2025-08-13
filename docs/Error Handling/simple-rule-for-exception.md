@@ -14,10 +14,10 @@ A method is a block of code that does something for the programmer.  In a sense
 
 It is obvious that the interface makes a promise,a and the implementation should do exactly that.  But, if it is unable to do what it promises what should happen?  That is equally obvious: it should throw an exception.
 
-*   if it can’t convert the string to an integer, it should throw an exception.
-*   if it can’t write a data to disk, it should throw an exception.
-*   if it can’t add two numbers together, it should throw an exception.
-*   if it can’t calculate a checksum for a block of data, it should throw an exception
+*   if it can't convert the string to an integer, it should throw an exception.
+*   if it can't write a data to disk, it should throw an exception.
+*   if it can't add two numbers together, it should throw an exception.
+*   if it can't calculate a checksum for a block of data, it should throw an exception
 
 ## Programming Assumes that Each Step Works
 
@@ -30,9 +30,9 @@ The reason for this is simple.   If a programmer writes the following code:
 ```
 
 
-The programmer is expecting line 1 to work, and only if it works, the it should be written to disk.   If line 1 fails to calculate the checksum, then you don’t want line 2 to execute. You either want a checksum to be written to disk, or you want nothing written to disk.  What you don’t want, is for line 1 to fail, and for line 2 to go ahead and write the inaccurate number to disk.  
+The programmer is expecting line 1 to work, and only if it works, the it should be written to disk.   If line 1 fails to calculate the checksum, then you don't want line 2 to execute. You either want a checksum to be written to disk, or you want nothing written to disk.  What you don't want, is for line 1 to fail, and for line 2 to go ahead and write the inaccurate number to disk.  
 
-Similarly, if line 2 fails to write the value to disk, you don’t want line 3 to execute and delete the data. Or if line 1 fails, you don’t want line 3 to execute. 
+Similarly, if line 2 fails to write the value to disk, you don't want line 3 to execute and delete the data. Or if line 1 fails, you don't want line 3 to execute. 
 
 Not all code is this direct, but in general each line is written on the _assumption_ that the line before it did its job.
 
@@ -48,11 +48,11 @@ In the previous post, I pointed out some very poor exception handling examples I
 
 ![saveproperties](simple-rule-for-exception-img1.png)  
 
-This method promises to “save the properties to a file path.”   The implementation does that except if an exception is thrown.  If an exception is thrown, then some part of saving the properties did not work.  Maybe the exception happened before anything was written (e.g. a necessary class was missing) and the old properties file is still there.  Maybe it happened after the properties were written. Maybe if failed half way through, and half the file is there, and possible the file has a corrupted format.   We can’t know this at the time of writing the code what will cause the exception.  
+This method promises to “save the properties to a file path.”   The implementation does that except if an exception is thrown.  If an exception is thrown, then some part of saving the properties did not work.  Maybe the exception happened before anything was written (e.g. a necessary class was missing) and the old properties file is still there.  Maybe it happened after the properties were written. Maybe if failed half way through, and half the file is there, and possible the file has a corrupted format.   We can't know this at the time of writing the code what will cause the exception.  
 
 But this code catches the exception, writes it to a log file (which probably the user is unaware of) and then returns normally.  Let me say it again to impact:  the method fails to save the properties, but it returns completely normally as if nothing went wrong!  
 
-Is this important? Does it matter if the properties were not written? We can’t tell that either from the method, that depends on the code that was calling it.   It might be that writing these properties was missing critical.  We don’t know.  
+Is this important? Does it matter if the properties were not written? We can't tell that either from the method, that depends on the code that was calling it.   It might be that writing these properties was missing critical.  We don't know.  
 
 What we do know is that the method failed to guarantee that the file was written, and so it MUST throw an exception.
 
@@ -60,7 +60,7 @@ What we do know is that the method failed to guarantee that the file was written
 
 It should be obvious, that catching an exception and “swallowing” it is a bad programming pattern.  Swallowing is the term used when an exception is caught, but execution continues as if nothing happened.  Writing to a log file that the exception occurred is NOT an acceptable response because the following code will execute on the assumption that everything before it worked.  
 
-The try-block that throw the exception can not be assumed to have run correctly.  Something went wrong.  Even if we know the exact exception type, we can’t know how badly the block failed to achieve its mission.  What you do know is that it can not guarantee that it accomplished the mission.  So a good program assumes the worst and starts over again.
+The try-block that throw the exception can not be assumed to have run correctly.  Something went wrong.  Even if we know the exact exception type, we can't know how badly the block failed to achieve its mission.  What you do know is that it can not guarantee that it accomplished the mission.  So a good program assumes the worst and starts over again.
 
 ## The Rule in Summary
 

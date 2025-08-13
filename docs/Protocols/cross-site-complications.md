@@ -5,7 +5,7 @@ In making a simple authentication service, I ran into a myriad of strange, incom
 ## Setting
 
 We are making a lot more AngularJS client, and the client is doing a lot more integration directly in the browser.  This means that the JS client is accessing multiple servers.  This is a “cross-site-scripting” issue.  What I want is single sign on:  I launch a JS application, when then goes to an authentication server to find out who the logged in user is, and the user does not need to log in specifically for this particular application.  This way you can deploy dozens of little applications, and the user has a seamless experience.  
-The very purpose of the identity server is to tell applications who you are.  I realize that all such servers don’t play this role, but it is a reasonable and perfectly safe thing to do.
+The very purpose of the identity server is to tell applications who you are.  I realize that all such servers don't play this role, but it is a reasonable and perfectly safe thing to do.
 
 ## Discussion
 
@@ -19,7 +19,7 @@ Access-Control-Allow-Origin: *
 
 
 This says that Server C does not care about the origin of the JSApp that is running, but in fact will allow requests from ANY pages that were not sourced by this site.  This means that Server C does not have any expectation that its own JS code is the only code accessing it.  This means that it is expecting ANY call from any JS application anywhere, and it is suitably prepared to receive those calls.  The browser does not need to protect the server from those calls.  To  
-With this, the browser will allow an application, JSAppA to call server C.  However, it will not include the cookies in that browser has from server C.  This is rather strange because the cookies came from Server C in the first place, and server C has already said it is accepting calls from foreign code.  Someone must have had the theory that server might have it’s own code out there that it wants cookies back from, and other code that it allows to call it, but does not want the cookies in that case.  I can’t really imagine this.  In any case, an identity server needs a login screen (regular code) as well as applications asking who is logged in.  
+With this, the browser will allow an application, JSAppA to call server C.  However, it will not include the cookies in that browser has from server C.  This is rather strange because the cookies came from Server C in the first place, and server C has already said it is accepting calls from foreign code.  Someone must have had the theory that server might have it's own code out there that it wants cookies back from, and other code that it allows to call it, but does not want the cookies in that case.  I can't really imagine this.  In any case, an identity server needs a login screen (regular code) as well as applications asking who is logged in.  
 The browser will send the cookies if you add an attribute on the XmlHttpRequest object
 
 ```
@@ -41,14 +41,14 @@ Access-Control-Allow-Origin = {{copy from the Origin header in the request}}
 ```
 
 
-This is mind boggling.  I can’t even begin to understand why the asterisk should not work.  But that is not all.  Once you have the origin copied, and the flags above set, the browser will only allow GET requests.  So you have to send this in the response header:
+This is mind boggling.  I can't even begin to understand why the asterisk should not work.  But that is not all.  Once you have the origin copied, and the flags above set, the browser will only allow GET requests.  So you have to send this in the response header:
 
 ```
 Access-Control-Allow-Methods = "GET, POST, OPTIONS"
 ```
 
 
-This is ultra-bizarre, because if the server did not want to service POST operations, it would simply not service them.  I can’t fathom any reason that the server should tell the browser “ok, for these cases of foreign code that are giving me cookies, please make sure they don’t do any POST operations because it is really important that they don’t do a POST operation and I might fail to distinguish these.”  
+This is ultra-bizarre, because if the server did not want to service POST operations, it would simply not service them.  I can't fathom any reason that the server should tell the browser “ok, for these cases of foreign code that are giving me cookies, please make sure they don't do any POST operations because it is really important that they don't do a POST operation and I might fail to distinguish these.”  
 But it gets even worse.  When you enable POST, the browser will only allows post of plain text, form-url encoding, or form-mime encoding.  The browser will NOT allow the POST of a JSON data.   You must, in the JS set the request header to be:
 
 ```
@@ -57,7 +57,7 @@ Content-Type = text/plain
 
 
 and transfer the JSON anyway.  Someone, somewhere believes that JSON is a security risk, while plain text is not.  Some committee somewhere decided that even though the server has declared that it will allow access from any JS origin, that it will allow cookies, that it will allow POST, somehow it needs to be protected from getting a JSON formatted post.  The only way around this is to declare the post plain text, which actually rather breaks any convenience of having a mime type in the first place.  
-But that is not all.  The browser will LIMIT the headers that are allowed to pass.  Again: if the server does not want to receive any headers, it could just ignore them.  If the header does not want to send any headers, it should just not send them.  I can’t figure any reason that you would need this setting:
+But that is not all.  The browser will LIMIT the headers that are allowed to pass.  Again: if the server does not want to receive any headers, it could just ignore them.  If the header does not want to send any headers, it should just not send them.  I can't figure any reason that you would need this setting:
 
 ```
 Access-Control-Allow-Headers = "X_PingPing"
@@ -89,7 +89,7 @@ If you forget any of these, you get incomprehensible error messages.  For examp
 
 Actually, this has nothing to do with that value, and this misleading error message can take you down a path of trying to figure out why it is not getting the right header.  This is the same if you declare the POST to be a JSON data type, you will get this error message.  
 Some of the blockage is on receipt of the result.  For example, allow credentials, if the response header is not set correctly, the request will be made, but then the call will return with a zero length response.  No error, just an empty response, making you wonder if something is wrong with the network, or elsewhere.  
-The default values on all these settings are always the most disabled, as if to imply: “whoever wrote this server probably has no idea what they are doing, so we will cut off, and stop the communications, to protect them from what they can’t possible understand might hurt them.”  This was clearly designed by a committed, with individuals piping up:  “hey I have a server and I want to make sure that code that I did not write can not make a POST operation to my server.”
+The default values on all these settings are always the most disabled, as if to imply: “whoever wrote this server probably has no idea what they are doing, so we will cut off, and stop the communications, to protect them from what they can't possible understand might hurt them.”  This was clearly designed by a committed, with individuals piping up:  “hey I have a server and I want to make sure that code that I did not write can not make a POST operation to my server.”
 
 ## Comment
 

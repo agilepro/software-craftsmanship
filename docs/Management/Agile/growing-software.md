@@ -4,7 +4,7 @@ Maybe it is helpful to view the development of a software in using an Agile appr
 
 ## How Plants Grow
 
-The plant spreads the first two leaves, it starts to gather energy from the sun.  It starts to collect minerals and water from the soil.  It grows by adding to itself incrementally.  At every point in time, the leaves have to function.  At every point in time, the roots need to function.  And still, new leaves are added, new branches form, the parts get bigger.  As each leaf is added, it begins to function quickly after formation.  As the branches get bigger, they a filled in to support the rest of the plant.  They don’t immediately start out thick and stiff. 
+The plant spreads the first two leaves, it starts to gather energy from the sun.  It starts to collect minerals and water from the soil.  It grows by adding to itself incrementally.  At every point in time, the leaves have to function.  At every point in time, the roots need to function.  And still, new leaves are added, new branches form, the parts get bigger.  As each leaf is added, it begins to function quickly after formation.  As the branches get bigger, they a filled in to support the rest of the plant.  They don't immediately start out thick and stiff. 
 
 With a growing plant, it is always in a steady state of functionality.  If the weather is dry, it simply slows down growth a bit, but there is no dramatic change that has to be accommodated.  There is no real need to accurately anticipate the future, because the plant is in a steady state of functioning.  As the weather grows wet, the plant can grow faster, and there is no disruption.  
 
@@ -24,11 +24,11 @@ A growing plant is always functioning as a plant. The analogy for software is th
 
 Instead of adding leaves, a software codebase adds functionality.  Each function is added in such a way that it builds on the rest of the functionality, and it is buildable and testable right away.  Just like there is no need to stop the plant from functioning to add a leaf, there is no need to break the codebase to add a function.
 
-You don’t add a large chunk of functionality at one time, just like a tree does not add a thick branch at once.  Instead, the Agile developer add a small part of the functional, along with tests, and assures that no tests are broken.  The function is incorporated into the functioning code base, and you know that everything is working at all times.  Therefor, you have a solid basis to build more functions on.
+You don't add a large chunk of functionality at one time, just like a tree does not add a thick branch at once.  Instead, the Agile developer add a small part of the functional, along with tests, and assures that no tests are broken.  The function is incorporated into the functioning code base, and you know that everything is working at all times.  Therefor, you have a solid basis to build more functions on.
 
 The weather?  Development can either pickup or back off as as development resources are available.  Customers come and go, competitors come and go, and more important the technology is constantly changing.  As factors change in the market place, an Agile approach is better suited to take advantage of it.  If the iPhone OS is becoming less popular, and Android OS more popular, then like the project can shift resources and do more on Android.  There is no need to anticipate today exactly how the market will be 12 months from today.
 
-## Isn’t a Factory More Efficient?
+## Isn't a Factory More Efficient?
 
 This is what makes people think that waterfall is a better approach: it might seem to be more effective to have a “leaf expert” design and build all the leaves.  And a “root expert” design and build all the roots. 
 

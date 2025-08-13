@@ -13,7 +13,7 @@ I try to keep track of real-life situations where poor error messages appear.  T
 
 Use your imagination now (close your eyes if it helps).  The user has some data in an application — something called a project in this case — and wants to export it, but it fails.  He does it a few more times, and it fails every time.   The error message is the only clue as to what went wrong.   He takes a screen shot. The question is ask:  did the error message give enough details so that the user or the administrator could resolve the problem/  
 
-“**_An error occurred during the export process_**” – Not bad for setting the context.  I will at least give it good marks for clarifying what was happening at the time.  Surely the project being exported had a name.  Why didn’t it mention the name of the project?  That would help the admin know how to where to start looking.  
+“**_An error occurred during the export process_**” – Not bad for setting the context.  I will at least give it good marks for clarifying what was happening at the time.  Surely the project being exported had a name.  Why didn't it mention the name of the project?  That would help the admin know how to where to start looking.  
 
 “_**Details: The element not found.**_”  – This is ridiculous.  Why do programmers do this?  The message talks about _the element_.  Which element?   Out of everything in memory, how is the user or the adminstrator supposed to know what element caused the problem?  
 

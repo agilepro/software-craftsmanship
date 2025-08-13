@@ -101,6 +101,6 @@ authService.loginToServerStep3 = function(user, challenge, token) {
 ```
 
 
-The code does exactly the same thing. Well, actually, while doing this I found a bug in the original code which has been fixed. I can’t prove that this format made it easier to find the bug, but I believe this format clarifies the logic, and makes it easier to find such problems.
+The code does exactly the same thing. Well, actually, while doing this I found a bug in the original code which has been fixed. I can't prove that this format made it easier to find the bug, but I believe this format clarifies the logic, and makes it easier to find such problems.
 
 This entry was posted in [Uncategorized](https://agiletribe.purplehillsbooks.com/category/uncategorized/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2015/08/27/avoid-unnecessary-nesting/ "Permalink to Avoid Unnecessary Nesting").

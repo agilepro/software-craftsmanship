@@ -3,7 +3,7 @@
 ---
 #  Never Catch and Continue
 
-I ran across a body of code that is using a spectacularly evil coding pattern. This is not evil that presents itself as a devil with horns and pitchfork, but rather this is a wolf in sheep’s clothing. It is an evil pattern that looks so reasonable, and I bet most readers will look at it and initially ask “What is wrong with that?”  
+I ran across a body of code that is using a spectacularly evil coding pattern. This is not evil that presents itself as a devil with horns and pitchfork, but rather this is a wolf in sheep's clothing. It is an evil pattern that looks so reasonable, and I bet most readers will look at it and initially ask “What is wrong with that?”  
 Here is a sample block of code exhibiting the pattern:
 
 ```java
@@ -76,6 +76,6 @@ The setting is that there is a structure which has been locked for edit, represe
 
 It seems that the programmer who wrote this code felt that if anything goes wrong while trying to save the data, one should then attempt to RE-edit the structure again, and continue as if nothing had happened.  
 
-I can’t even begin to express how evil this is.  The exception might have been thrown because something in memory was corrupted.  For example, what if the exception was that the JVM ran out of heap space while attempting to transform the structure into the right shape for saving.  You could have a half-formed structure in memory, which you are then starting to edit again.  This might have the effect of permanently saving the corrupted structure at some point in the future!  A better approach would be to clear ALL global values and reinitialize the entire applications from the ground up.  Far safer than this approach which continues as if nothing happened.
+I can't even begin to express how evil this is.  The exception might have been thrown because something in memory was corrupted.  For example, what if the exception was that the JVM ran out of heap space while attempting to transform the structure into the right shape for saving.  You could have a half-formed structure in memory, which you are then starting to edit again.  This might have the effect of permanently saving the corrupted structure at some point in the future!  A better approach would be to clear ALL global values and reinitialize the entire applications from the ground up.  Far safer than this approach which continues as if nothing happened.
   
 The particular problem that allowed us to notice this, is that when the first method throws an exception, and the second one does as well, it is the second one that is reported to the user!  The first exception, the real cause of the problem is lost.  One should simply never do operations that might update the persistent state in a catch block.

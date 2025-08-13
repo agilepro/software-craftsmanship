@@ -117,7 +117,7 @@ Unless you have a really good reason, these three options should all be consider
 
 Some will still claim that **null** is a different value than **omitting** the value. If you wish to implement a system this way, then you must also very clearly define the meaning of this difference. How will a phone number set to null be handled differently than omitted the phone number? After all, the null strictly means that we have no value, and that is exactly the same as not having a value.
 
-I am not saying that such reasons don’t exist, but I have designed a lot of systems, and I have never seen the need to consider an omitted value as anything other than equivalent to receiving a null. When translating to Java, you should set the variable if no value for the variable is received.
+I am not saying that such reasons don't exist, but I have designed a lot of systems, and I have never seen the need to consider an omitted value as anything other than equivalent to receiving a null. When translating to Java, you should set the variable if no value for the variable is received.
 
 However if you use a standard Map in Java to receive the JSON, then it is possible to make a map member with the value of null, and that is different from not having the map member. You can iterate the members of a map, and get a null value. In my Java code I have to be careful to check the value and ignore it if it is null, so that null and omitted values are treated the same. In other languages I have used maps where setting a member to null simply removed the member, thereby enforcing an exact equivalence.
 

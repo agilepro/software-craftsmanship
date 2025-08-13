@@ -31,7 +31,7 @@ throw je;
 ```
 
 
-Conveniently there is an easy way to replace the stack trace on a Java Exception object.  It takes an array of StackTraceElement objects, each of which specifies a class, a method, a source file and a line number.  The stack trace on the originating side can be put into the JSON (See [JSON REST API – Exception Handling](https://agiletribe.purplehillsbooks.com/2015/09/16/json-rest-api-exception-handling/) for details on the syntax).  The receiving side converts the stack trace items back into [StackTraceElement](https://docs.oracle.com/javase/7/docs/api/java/lang/StackTraceElement.html) objects — using a simple ‘convertTrace’ method for the specific trace representation — and places them on the exception before throwing.
+Conveniently there is an easy way to replace the stack trace on a Java Exception object.  It takes an array of StackTraceElement objects, each of which specifies a class, a method, a source file and a line number.  The stack trace on the originating side can be put into the JSON (See [JSON REST API – Exception Handling](https://agiletribe.purplehillsbooks.com/2015/09/16/json-rest-api-exception-handling/) for details on the syntax).  The receiving side converts the stack trace items back into [StackTraceElement](https://docs.oracle.com/javase/7/docs/api/java/lang/StackTraceElement.html) objects — using a simple 'convertTrace' method for the specific trace representation — and places them on the exception before throwing.
 
 ## Chained Exceptions
 

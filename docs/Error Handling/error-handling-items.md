@@ -50,7 +50,7 @@ Knowing the exact exception that might be thrown is necessary only if you are ab
 
 Reference: [Bloch: Avoid unnecessary use of checked exceptions](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch10.xhtml#:-:text=Item%2071%3A%20Avoid%20unnecessary%20use%20of%20checked%20exceptions)
 
-Additional Detail: [Say ‘No’ to Checked Exceptions](https://agiletribe.purplehillsbooks.com/2023/07/13/say-no-to-checked-exceptions/)
+Additional Detail: [Say 'No' to Checked Exceptions](https://agiletribe.purplehillsbooks.com/2023/07/13/say-no-to-checked-exceptions/)
 
 ## Item E-5: Don't log anything at throw site
 
@@ -96,7 +96,7 @@ If you don't know what to do, then at least wrap and rethrow it.   This prevents
 
 There are cases where you know that a particular exception is being thrown when it should not be.  Some third party methods throw exceptions in situations that are not exceptional.  Sometimes the only solution is to wrap the method, and catch, and continue.  Remember this is a special case and you should document in a comment how you know this is appropriate.  You should catch only the exact class that is thrown in this case.  You should not have anything else in the try block that needs to be run.  Also, in most cases you should log the exception when you swallow and continue.
 
-Reference: [Bloch: Don’t ignore exceptions](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch10.xhtml#:-:text=Don%E2%80%99t%20ignore%20exceptions)
+Reference: [Bloch: Don't ignore exceptions](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch10.xhtml#:-:text=Don%E2%80%99t%20ignore%20exceptions)
 
 Additional Detail: [Never Catch and Continue](https://agiletribe.purplehillsbooks.com/2011/10/18/14-never-catch-and-continue/) and [Poor Exception Handling Examples](https://agiletribe.purplehillsbooks.com/2019/01/10/poor-exception-handling-examples/) and [Time Bombs](https://agiletribe.purplehillsbooks.com/2023/07/12/time-bombs/).
 

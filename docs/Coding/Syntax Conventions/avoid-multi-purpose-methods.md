@@ -68,7 +68,7 @@ createNamedView(account, pageId, ar,"download_document","Project Documents");
 createRedirectView(ar,"attachment.htm");
 ```
 
-The method name clearly says what is being done. You don’t have to look for the boolean parameter.  It is far clearer to name the method, than to have the meaning depend upon ‘true’ or ‘false’ at a point in the parameters.  The calls are shorted because there are fewer parameters, especially in the redirect case.  You don’t have to pass bogus values in some of the parameters because they are not needed. You don’t have to wonder what the fourth parameter is, because it is clear from the method name.  
+The method name clearly says what is being done. You don't have to look for the boolean parameter.  It is far clearer to name the method, than to have the meaning depend upon 'true' or 'false' at a point in the parameters.  The calls are shorted because there are fewer parameters, especially in the redirect case.  You don't have to pass bogus values in some of the parameters because they are not needed. You don't have to wonder what the fourth parameter is, because it is clear from the method name.  
 
 Breaking the one method into two is a win all the way around.
 

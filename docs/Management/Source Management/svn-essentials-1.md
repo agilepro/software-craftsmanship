@@ -74,7 +74,7 @@ Always refresh from the sandbox folder (the trunk folder if working on the trunk
 
 ## See What Needs Committing
 
-At any point in time, you can run the ‘status’ command to find out which files you have changed locally.  It is quick and harmless.
+At any point in time, you can run the 'status' command to find out which files you have changed locally.  It is quick and harmless.
 
 ```
 cd <playground>/<project>/trunk
@@ -130,20 +130,20 @@ svn resolve --accept=working <filename>
 
 ## Creating a New Project
 
-The best way to start is to go to the server, and create a new root level repository for the project.  There should be only a single folder which represents the project, and is also a complete repository.  Within that single project, there should be a ‘trunk’ project.  There might also be a ‘branches’ and a ‘tags’ folder, but those can be created later just as easily.  
+The best way to start is to go to the server, and create a new root level repository for the project.  There should be only a single folder which represents the project, and is also a complete repository.  Within that single project, there should be a 'trunk' project.  There might also be a 'branches' and a 'tags' folder, but those can be created later just as easily.  
 Pull the project working copy to your local working environment and everything is the same as normal:  add all of the source to the trunk folder and commit like normal.  You can use any project structure you need, but keep it all within the trunk folder, so that later, when you make a branch, the branch will be a virtual copy of the trunk and will be a complete virtual copy of the trunk.
 
 ## Checking out Part of a Project
 
-I looked into this, and it is ugly.  Don’t do this.  Always check out the entire trunk or branch of a project.
+I looked into this, and it is ugly.  Don't do this.  Always check out the entire trunk or branch of a project.
 
 ## Terms
 
-**playground** – this is a local-only folder that contains copies of projects from SVN server.  You can’t use any local SVN commands in this folder.  Generally, you can have as many playground folders that you want, or just one, it does not matter.  
+**playground** – this is a local-only folder that contains copies of projects from SVN server.  You can't use any local SVN commands in this folder.  Generally, you can have as many playground folders that you want, or just one, it does not matter.  
 **project folder** – this is a folder within the playground that represents the root of a project.  Inside this folder will be the sandboxes for the trunk or for the branches that you are working on.  
-**managed folder**  – this is any local folder that contains files which are managed by the SCMS.  Each file in a sandbox folder might have a matching file on the server which also contains all the old versions of that file.  Also known as a ‘working copy’.  
+**managed folder**  – this is any local folder that contains files which are managed by the SCMS.  Each file in a sandbox folder might have a matching file on the server which also contains all the old versions of that file.  Also known as a 'working copy'.  
 **sandbox** – this is the root-most managed folder that contains the root-most files from the repository.  This folder is special only in that it is the root-most level that you can refresh or use other SVN operations, and therefor it is the only place to get all the source from that particular source.  This is the folder that you want to do all **commit** and **update** operations in.  
 **repository** – this is a folder on the server that contains all the files that are versioned together.  When a commit is made, all of the files in a repository get tracked as belonging to a single version.  Things outside of the repository (in a different repository) will have a different version number.  
-**project** – the SVN documentation throws this term around: you are allowed to have multiple projects in a repository, but you really should not do this.  Each project (that is group of people coordinating work for a specific release) should have a repository.  It can be OK for a project to have deliverables from two repositories, and it is OK if two projects are in the same repository, so don’t sweat too much if it gets set up differently.  But in general every project should have one repository.  
-**trunk folder** – SVN is designed to have a specific folder named ‘trunk’ which contains all the source, documentation, and everything for the project.  The trunk folder should be within the single project/repository folder and the trunk folder should contain ALL of the artifacts for the project.  Never make any other source folders at this level, because it is the contents of the trunk folder that is copied for a branch, and you want everything to be in a branch.   This is the correct place to commit from.  
+**project** – the SVN documentation throws this term around: you are allowed to have multiple projects in a repository, but you really should not do this.  Each project (that is group of people coordinating work for a specific release) should have a repository.  It can be OK for a project to have deliverables from two repositories, and it is OK if two projects are in the same repository, so don't sweat too much if it gets set up differently.  But in general every project should have one repository.  
+**trunk folder** – SVN is designed to have a specific folder named 'trunk' which contains all the source, documentation, and everything for the project.  The trunk folder should be within the single project/repository folder and the trunk folder should contain ALL of the artifacts for the project.  Never make any other source folders at this level, because it is the contents of the trunk folder that is copied for a branch, and you want everything to be in a branch.   This is the correct place to commit from.  
 **branches/tags folder** – siblings to the trunk folder, contains folders that are essentially _copies_ of the trunk folder.  If you feel like you want to make a backup copy of the entire project, you should use the project SVN command to do that, and it should always be a copy of the trunk make into a folder in the branches or tags folders.

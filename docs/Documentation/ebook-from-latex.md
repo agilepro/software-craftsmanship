@@ -9,7 +9,7 @@ Having completely finished with the layout of my new book using XeLaTeX, I now w
 *   graphic file name has to have the extension.  Solution to this is involved because it involves creating a command for including the graphic file name that manipulates the name differently depending upon whether it is an eBook or not.  Throughout the whole book I have change every graphic include:
     *   used to be  \\includegraphics\[width=3in\]\{graphics/grfile01\}
     *   changed to \\includegraphics\[width=3in\]\{\\graphicFile\{grfile01\}\}
-*   Then I defined the new command graphicFile in the header for the versions of the book.  This gives a different folder for each version of the book, and it adds a ‘png’ extension for the eBook:
+*   Then I defined the new command graphicFile in the header for the versions of the book.  This gives a different folder for each version of the book, and it adds a 'png' extension for the eBook:
     *   for normal book: \\newcommand\{\\graphicFile\}\[1\]\{graphics/#1\}
     *   for eBook:  \\newcommand\{\\graphicFile\}\[1\]\{graphicht/#1.png\}
 *   All of the graphics need to be resized and converted to PNG format.

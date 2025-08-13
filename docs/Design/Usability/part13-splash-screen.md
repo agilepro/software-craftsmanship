@@ -23,9 +23,9 @@ Positive:  There is one good thing about it, and that is that it tells you that
 
 The way it makes this graphic appear is a violation of the whole concept of windows.  The graphic does not appear in a window, it is just a free floating graphic in the middle of the screen. It has no relationship to other windows.  In some cases it causes strange graphical anomalies, like a hole in screen where other windows can not display.  
 
-It have been use as a way for a program to unabashedly advertise “Hey look at me, I am starting up, isn’t that great!”   I am thrilled.  Every single day when I start that program, I get a thrill.  
+It have been use as a way for a program to unabashedly advertise “Hey look at me, I am starting up, isn't that great!”   I am thrilled.  Every single day when I start that program, I get a thrill.  
 
-Some programs take a long time to start up, like 30 seconds or 60 seconds or even more.  The designers of this feature apparently believe that: “you, tiny user, have got nothing better to do than to see my pretty picture so sit down, shut up, and watch the pretty picture.”   Try to use other software while this one is starting up, and sometimes you can’t:  there is a strange hole in the middle of your screen that does not act like a normal window.
+Some programs take a long time to start up, like 30 seconds or 60 seconds or even more.  The designers of this feature apparently believe that: “you, tiny user, have got nothing better to do than to see my pretty picture so sit down, shut up, and watch the pretty picture.”   Try to use other software while this one is starting up, and sometimes you can't:  there is a strange hole in the middle of your screen that does not act like a normal window.
 
 ## How This Should Have Been Done
 

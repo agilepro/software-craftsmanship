@@ -53,7 +53,7 @@ In these cases, the getters and setters actually cause a significant overhead. 
 
 In these cases, it is not only acceptable to use public members, but it is preferable.  
 
-Here is the class with getters and setters.  There is a lot more to maintain;  you can’t ignore that extra cost.  This is a simple class, but the getters and setters double the size of it.  What is the benefit of that increased maintenance cost?  Not enough to warrant it.
+Here is the class with getters and setters.  There is a lot more to maintain;  you can't ignore that extra cost.  This is a simple class, but the getters and setters double the size of it.  What is the benefit of that increased maintenance cost?  Not enough to warrant it.
 
 ```
 class Sample

@@ -32,7 +32,7 @@ It is the same with designing software: usability must be a consideration from t
 
 I was using a software recently that worked fine as long as you typed in the exact name of something correctly.  For 3-4 things that was not a problem, but when it got to hundreds of things, it was impossible to simply remember the names.  What the users desired was a way to type a few letters, and browse the matches, but the back-end server was not prepared to supply this information to the UI to enable browsing.  
 
-Another example was a system that allowed editing of a particular standard data structure represented with an XML file.  One important aspect of this was of course to assure that the data structure was ‘correct’.  However, users don’t always start and end work in a single session.  They want to start work, save a few times while it is incomplete, possibly stopping work, and restarting on a later date, only then to finish up with a complete, valid document.  The problem was that the engine designers would not allow an incomplete document to be saved!  Attempt to save incomplete work produced an error message, and saved nothing. Without the ability to save a partially complete document it is not possible to offer a usable editor. 
+Another example was a system that allowed editing of a particular standard data structure represented with an XML file.  One important aspect of this was of course to assure that the data structure was 'correct'.  However, users don't always start and end work in a single session.  They want to start work, save a few times while it is incomplete, possibly stopping work, and restarting on a later date, only then to finish up with a complete, valid document.  The problem was that the engine designers would not allow an incomplete document to be saved!  Attempt to save incomplete work produced an error message, and saved nothing. Without the ability to save a partially complete document it is not possible to offer a usable editor. 
 
 ## Function and Usability are Integrated
 
@@ -54,8 +54,8 @@ Just as flavor is not an “option” in a good meal, usability is not an option
 1.  Start a project with the design and requirements for the usability
 2.  Keep the usability in consideration at every step of planning, implementing, and testing
 3.  Train you programmers to understand what good usability is
-4.  Don’t talk yourself into thinking that after we get it working, we can work out the usability
-5.  Don’t think that anyone else can be responsible for the usability
+4.  Don't talk yourself into thinking that after we get it working, we can work out the usability
+5.  Don't think that anyone else can be responsible for the usability
 6.  If a programmer claims that they can not learn the rules of usability, find a different programmer.
 
 No cook would be foolish enough to think that they can cook a meal without any consideration of the flavor they are producing.

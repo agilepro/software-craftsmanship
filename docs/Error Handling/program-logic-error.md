@@ -10,7 +10,7 @@ An example is passing a null value to a method as a parameter that does not allo
 
 Once the calling code has been sorted out to check for null, and to only call for additional information when it has a non-null ID, then this exception will literally never happen in production.  The correctly constructed logic of the program prohibits the occurrence.  There is no possible user input that will cause a null to be passed as that parameter.  
 
-This error message is intended for the programmer.  If it ever occurs during development and testing, it should be fixed and completely eliminated.  Some error messages say “I can’t handle that input: I can’t find a corresponding information”  but ProgramLogicErrors say “the program is written incorrectly.”  Once the program logic is fixed, this error will never occur.
+This error message is intended for the programmer.  If it ever occurs during development and testing, it should be fixed and completely eliminated.  Some error messages say “I can't handle that input: I can't find a corresponding information”  but ProgramLogicErrors say “the program is written incorrectly.”  Once the program logic is fixed, this error will never occur.
 
 ### Why a Different Class?
 
@@ -24,7 +24,7 @@ Consider things that are not program logic errors:  The routine might not be ab
 
 ### When are they Used?
 
-But wait a minute: _I like methods that can handle null parameters_.  Don’t read too much into this example.  Some methods should be well behaved when a null is passed.  I am not saying here that no method should accept null values, and I am certainly not saying that in all cases passing a null value is necessarily a program logic error.  This is determined on a case by case basis.  This particular method, lookupCustomerData plays such a role that it logically makes no sense to pass a null, and there is no realistic reason that it ever should have to respond to this.  
+But wait a minute: _I like methods that can handle null parameters_.  Don't read too much into this example.  Some methods should be well behaved when a null is passed.  I am not saying here that no method should accept null values, and I am certainly not saying that in all cases passing a null value is necessarily a program logic error.  This is determined on a case by case basis.  This particular method, lookupCustomerData plays such a role that it logically makes no sense to pass a null, and there is no realistic reason that it ever should have to respond to this.  
 
 Whether or not a particular error is a program logic exception depends upon how reasonable it is to expect it will never be violated.  It is a value judgement of the architect. It is a mechanism that can be used to communicate this judgement to the other programmers.  My recommendation is to err on the side of having more of these, than less, because they help guide the shape of the calling code.  
 What other examples of program logic errors exist?:
@@ -36,7 +36,7 @@ What other examples of program logic errors exist?:
 In Java, a ProgramLogicError should:
 
 *   Take a string parameter for the message.  The message will be written in the programmers native language (i.e. English) and this will be sufficient for programmers working on the project.
-*   Does not need to nest an exception within it.  It all cases a ProgramLogicError is a test of a situation that is immediately occurring.  I can’t thikn of any situation where you would want to catch an exception in order to wrap it with a ProgramLogicError.
+*   Does not need to nest an exception within it.  It all cases a ProgramLogicError is a test of a situation that is immediately occurring.  I can't thikn of any situation where you would want to catch an exception in order to wrap it with a ProgramLogicError.
 *   Extend RuntimeException because it should be usable in places where exception throwing is not declared.  Code should never be written to catch and handle these exception — instead, if discovered the program logic should be altered so that they never occur.
 *   The error message should speak to programmers about the specific expectation that has been violated, in a manner that the programmer can respond to quickly.
 

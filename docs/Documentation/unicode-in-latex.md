@@ -16,7 +16,7 @@ You can enter Unicode code-point values (the number associated with a character)
 
 *   **^^41**  represents a capital A
 *   **^^25** represents a percent sign (%)
-*   **^^7e** represents a tilde (~) note that the ‘e’ must be lower case
+*   **^^7e** represents a tilde (~) note that the 'e' must be lower case
 
 The original version of TeX supported this for 255 characters.  XeLaTeX (or XeTeX) extended the TeX engine to support Unicode characters in general.   This is a format with four caret characters followed by four hexadecimal digits.
 
@@ -24,7 +24,7 @@ The original version of TeX supported this for 255 characters.  XeLaTeX (or XeT
 *   **^^^^0416**   represents the Cyrillic character Ж
 
 Apparently even larger numbered characters can be accessed using five/six carets and 5/6 hex digits.  
-Any character created this way is parsed at the very initial stage or parsing the file.  A character entered this way acts exactly as if it was typed in.  For example the command **\\textbf** could be equivalently entered **\\te^^78tbf** because the lower case x is at hex position 78.  I don’t recommend doing this, but I mention this just to make it clear that this syntax is converted to a character before it is interpreted by the TeX interpreter.  Any character entered this way is processed through the system exactly as if you typed the character into the source.
+Any character created this way is parsed at the very initial stage or parsing the file.  A character entered this way acts exactly as if it was typed in.  For example the command **\\textbf** could be equivalently entered **\\te^^78tbf** because the lower case x is at hex position 78.  I don't recommend doing this, but I mention this just to make it clear that this syntax is converted to a character before it is interpreted by the TeX interpreter.  Any character entered this way is processed through the system exactly as if you typed the character into the source.
 
 You can NOT use this to cause a special characters to appear in the output without using the normal escaping.  For example, if you want the book to have a backslash you can not simply put ^^5c — the hex value for backslash.  You will still need to use two backslashes (^^5c^^5c) to escape the backslash just like you were typing backslashes into the source.
 
@@ -40,7 +40,7 @@ There is (apparently) a hex version of this in XeTeX (and XeLaTeX) that allow yo
 *   **\\char”6771 \\char”4EAC**   represents the two Japanese characters 東京 for the name of Tokyo
 *   **\\char”0416**   represents the Cyrillic character Ж
 
-I have not yet found the documentation for this, so I don’t know the actual defined behavior.  These act like regular TeX commands, which means they consume the space after the command.  If you then want a space between two words, you need to use the regular trick of using another slash or using the two curley braces.
+I have not yet found the documentation for this, so I don't know the actual defined behavior.  These act like regular TeX commands, which means they consume the space after the command.  If you then want a space between two words, you need to use the regular trick of using another slash or using the two curley braces.
 
 *   **\\char”6771{} \\char”4EAC**   represents 東 京 with a space between them
 *   **\\char”6771\\ \\char”4EAC**   represents 東 京 with a space between them

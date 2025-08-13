@@ -1,6 +1,6 @@
 #  Checked Exception Guidelines
 
-Java has both checked and unchecked exceptions and their use debated.  It has come time to simply admit that checked exceptions don’t work, and it is superior for several reasons to go with unchecked exceptions.  Here is why.
+Java has both checked and unchecked exceptions and their use debated.  It has come time to simply admit that checked exceptions don't work, and it is superior for several reasons to go with unchecked exceptions.  Here is why.
 
 ## Definitions
 
@@ -42,11 +42,11 @@ For years I have recommended in this case to [simply declare `throws Exception`]
 
 Since then I am convinced that even this is needless bookkeeping that offers no value.  You must code as if every method can throw an exception — because it can.  If every method is annotated, then there is no value to the annotation.
 
-If you use **unchecked** exceptions, then you don’t need to declare anything.  There is less text on the screen, making it slightly easier to read.   Since the throws declaration offers no value, it is better to make the code easier to read.
+If you use **unchecked** exceptions, then you don't need to declare anything.  There is less text on the screen, making it slightly easier to read.   Since the throws declaration offers no value, it is better to make the code easier to read.
 
-If you are working with a library that uses checked exception, then you will need to wrap them at some point, and you can decide what the best point to do that, but once converted to an unchecked exception in `LibraryC` you don’t need to worry about flowing any particular exception through all the interfaces.  Since starting to code this way, I am finding that it is far nicer not to have to do this useless bookkeeping, but I have never missed the declarations that are not there.
+If you are working with a library that uses checked exception, then you will need to wrap them at some point, and you can decide what the best point to do that, but once converted to an unchecked exception in `LibraryC` you don't need to worry about flowing any particular exception through all the interfaces.  Since starting to code this way, I am finding that it is far nicer not to have to do this useless bookkeeping, but I have never missed the declarations that are not there.
 
-I am sorry to see a promising friend go, but it is time to say good-bye because exception declarations just don’t work on any level, and should be completely avoided.
+I am sorry to see a promising friend go, but it is time to say good-bye because exception declarations just don't work on any level, and should be completely avoided.
 
 ## References
 

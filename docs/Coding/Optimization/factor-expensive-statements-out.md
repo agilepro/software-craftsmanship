@@ -24,7 +24,7 @@ String nameOfObj = getTheObject().getName();
 ```
 
 
-One might argue that the style of the single line is a little simpler and thus easier to maintain, I don’t disagree, but it is important to remember that from a performance point of view, these run essentially the same.  The creation of a variable causes almost no overhead.  The variable memory is allocated by the compiler and takes NO time at runtime, and assigning the pointer into the variable is such a small expense compared to a method call, which cost 10 to 100 times more.  So for performance reasons, don’t worry about creating local variables.  
+One might argue that the style of the single line is a little simpler and thus easier to maintain, I don't disagree, but it is important to remember that from a performance point of view, these run essentially the same.  The creation of a variable causes almost no overhead.  The variable memory is allocated by the compiler and takes NO time at runtime, and assigning the pointer into the variable is such a small expense compared to a method call, which cost 10 to 100 times more.  So for performance reasons, don't worry about creating local variables.  
 
 The real benefit is in loops.  Here is a real example I found:
 
@@ -35,7 +35,7 @@ for (int i=0; i<= att.get("umember").size() -1; i++){
 }
 ```
 
-If this loop runs 100 times, then the att.get function is called 300 times, and the att.get().get(i) is called 200 times.  At design time, we don’t really know how expensive either of these calls are, but I have seen cases where such an operation required parsing and iteration of a large complex structure. As that structure gets bigger, this loop gets exponentially more expensive.  
+If this loop runs 100 times, then the att.get function is called 300 times, and the att.get().get(i) is called 200 times.  At design time, we don't really know how expensive either of these calls are, but I have seen cases where such an operation required parsing and iteration of a large complex structure. As that structure gets bigger, this loop gets exponentially more expensive.  
 and all for nothing!  It is trivial to include just a few local variables and eliminate the problem, and in many cases improve readability.  Here is the improved version.
 
 ```java

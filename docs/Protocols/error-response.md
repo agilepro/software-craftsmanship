@@ -14,7 +14,7 @@ For this discussion, **error** and **exception** will be considered equivalent.�
 
 ## Goals
 
-*   This is specifically for support of a JS user interface fetching and sending data. Clearly server to server might use something else, I don’t know.
+*   This is specifically for support of a JS user interface fetching and sending data. Clearly server to server might use something else, I don't know.
 *   Need to fit the style where JS works asynchronously: you make a request and register a call-back function to received the response when it is ready.
 *   We want to fulfill the design goals written in “[The Purpose of Error Reporting](https://agiletribe.purplehillsbooks.com/2013/02/14/the-purpose-of-error-reporting/)“.  Specifically, we need to be able to give enough information to allow the user to resolve the problem if there is one.
 *   We need to consider that an error message is not a simple short statement, as written in “[Gathering Error Report Information](https://agiletribe.purplehillsbooks.com/2013/02/15/gathering-error-report-information/).”  The system will often not know precisely how to instruct the user to resolve the situation, and so need to include detailed information along with contextual information which come from different parts of the system.  In short, you will have multiple separate messages to be taken together.
@@ -38,7 +38,7 @@ What about exceptions?  Your service may be designed to return a table of custo
 *   have the success response support one format, and the failure response a possibly different format
 *   make an “envelope” which has members for holding the response, and for holding the exception.  On success the response field is filled in.  On failure, the exception field is filled in.
 
-This is a tough decision.  The envelope design is clear and unambiguous, and the code for handling the exception will always find it in the same place in the envelope.  But the envelope adds some overhead, and must be introduced at the time the web service is first defined.  At least, adding an envelope later requires that all the clients of the API change.  Some programmers (and by some I mean most) do not think about exceptions until after the API is functional for a few normal situations.  Programmers don’t want to change at that time.  
+This is a tough decision.  The envelope design is clear and unambiguous, and the code for handling the exception will always find it in the same place in the envelope.  But the envelope adds some overhead, and must be introduced at the time the web service is first defined.  At least, adding an envelope later requires that all the clients of the API change.  Some programmers (and by some I mean most) do not think about exceptions until after the API is functional for a few normal situations.  Programmers don't want to change at that time.  
 
 Returning a different JSON structure between success and failure is relatively easy to handle as long as the return code is an indicator of the format of the data.  You should certainly only have one kind of error structure for each error code returned (otherwise how could you interpret it correctly?). So it seem reasonable to define each REST API call to have a structure that it returns on success (200) and another on failure (something other than 200).
 
@@ -81,7 +81,7 @@ The most common and sensible structure is something like this:
 ```
 
 
-The response itself is an object. It has a member named “error” which is a well defined error structure. The ‘details’ is an array, each object in the array has a code and a message. There is an optional “innererror” that can hold a stack trace. This is structured defined by the [OASIS OData standard](http://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940655). It seems to fit the need, and it is a standard, so let’s use that.  
+The response itself is an object. It has a member named “error” which is a well defined error structure. The 'details' is an array, each object in the array has a code and a message. There is an optional “innererror” that can hold a stack trace. This is structured defined by the [OASIS OData standard](http://docs.oasis-open.org/odata/odata-json-format/v4.0/errata02/os/odata-json-format-v4.0-errata02-os-complete.html#_Toc403940655). It seems to fit the need, and it is a standard, so let's use that.  
 
 This structure can be used with the envelope approach where every response has the same top level.  It also can be used as the structure only for error response.  This member could be added into almost any object that does not already have an errors member.  
 
@@ -96,9 +96,9 @@ Stack Overflow: All responses are wrapped in a envelope.  [Error handling Page]
 The book [Restful Web Services](https://books.google.de/books?id=XUaErakHsoAC&lpg=PP1&dq=restful+web+services&pg=PA197&hl=de#v=onepage&q=status%20code%20400&f=false) recommends using 400 for the error response in all cases.  
 Facebook, like Twitter, [defines a “error” member](https://developers.facebook.com/docs/graph-api/using-graph-api/v2.4), and that is an object with code, sub-code, type, message for developer, message for user, title for user.  It looks like you could use this member in any return object, or by itself.  They did not think about multiple errors.  They seem to believe that an error code and a subcode will describe everything.  
 
-Amazon, [defines error codes](http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html) as strings, and maps them to HTTP response codes. Their response is XML, but it has a member “error” with the fields code, message, request id, and resource.  They don’t seem to have a common envelope.  
+Amazon, [defines error codes](http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html) as strings, and maps them to HTTP response codes. Their response is XML, but it has a member “error” with the fields code, message, request id, and resource.  They don't seem to have a common envelope.  
 
-There is a proposal to extend HTTP to include more information, but we don’t need to wait for that.  It is likely to be “error code” based.  
+There is a proposal to extend HTTP to include more information, but we don't need to wait for that.  It is likely to be “error code” based.  
 
 The JSON API organization suggests to using a return code for failures, and suggests 400 might be suitable.  They recommends a top level member “errors” which is an array of objects. The error object is very detailed, but includes: id (unique for this instance), links (to explanations of the error), status (the http return code), code (application specific string value), title, detail, and some other unlikely details. 
 

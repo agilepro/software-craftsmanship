@@ -1,12 +1,12 @@
 #  Lambda vs. Loop
 
-There are two ways to walk through a list of values: one is the old-fashioned loop and the other is the new-fangled object streams which use a lambda to iterate through a list.  Which to use? Let’s explore the reasons for using one or the other.
+There are two ways to walk through a list of values: one is the old-fashioned loop and the other is the new-fangled object streams which use a lambda to iterate through a list.  Which to use? Let's explore the reasons for using one or the other.
 
 :::tip[Key Takeaway]
 
 Avoid Using a Lambda when a Loop would do
 
-Don’t use a complicated solution when a simple one would work better.
+Don't use a complicated solution when a simple one would work better.
 
 :::
 
@@ -32,7 +32,7 @@ This is a real case from a real project.  There is a list of decision objects, 
 
 ## Analysis
 
-One important guideline for software teams is ‘keep it simple’.  Don’t use ornate structures unless you need them and they provide an identifiable benefit.  We will naturally prefer the approach the accomplished the job with less elements.
+One important guideline for software teams is 'keep it simple'.  Don't use ornate structures unless you need them and they provide an identifiable benefit.  We will naturally prefer the approach the accomplished the job with less elements.
 
 **Size**: the lambda approach involves more lines and more elements. Not much more, but a little bit. More lines means more to maintain and that is bad. If the same thing can be said in a more terse form, it is generally easier to grasp and maintain.
 

@@ -7,7 +7,7 @@ title: LaTeX Essentials
 
 This post is for authors who choose a publisher who likes to use LaTeX for layout, and want to make changes to the marked up source directly.  It is quite easy to edit LaTeX files, as long as you just know a few things to avoid.  Here is the minimum you need to know to be effective at editing the content.  
 
-You are the author, and you are responsible for the content of the book.  You are not a LaTeX expert and you don’t need to be.  Mixed in with the content are a bunch of LaTeX command which will ultimately cause the book to be formatted properly.  Having someone else responsible for the layout is a good idea because LaTeX commands are capricious and there are a lot of esoteric rules you need to know to alter the way a particular publication will look.  But you can leave that to the LaTeX experts!  Your job is to focus on the content, and get the written word correct regardless of the formatting and style of the printed layout.
+You are the author, and you are responsible for the content of the book.  You are not a LaTeX expert and you don't need to be.  Mixed in with the content are a bunch of LaTeX command which will ultimately cause the book to be formatted properly.  Having someone else responsible for the layout is a good idea because LaTeX commands are capricious and there are a lot of esoteric rules you need to know to alter the way a particular publication will look.  But you can leave that to the LaTeX experts!  Your job is to focus on the content, and get the written word correct regardless of the formatting and style of the printed layout.
 
 ## Basics
 

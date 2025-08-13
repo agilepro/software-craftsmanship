@@ -44,20 +44,20 @@ But if we carefully break things apart to find the minimal exposure, you might g
 
 In this partitioning, only three links are exposed, and all the rest can be kept private.  We have managed to get five classes, each one smaller, and still we have very few connections between them.  This reduces the maintenance costs because each of the private connections can be easily modified as needed.  The code will be better because the programmer is not constrained to obeying public contracts.
 
-## Don’t
+## Don't
 
 Here are some patterns to avoid
 
-*   Don’t put all the constants in one class, and the use of those constants in another.  Put constants where they are used and try to make them private
-*   Don’t put all file operations in one class, with logic in another instead closely bind logic and the file access and hide the details.
-*   Don’t break functionality by data type, instead break by logical functionality
-*   Don’t expose utility routines in a utility class when it is used only by one place, instead put it close to the usage site.
+*   Don't put all the constants in one class, and the use of those constants in another.  Put constants where they are used and try to make them private
+*   Don't put all file operations in one class, with logic in another instead closely bind logic and the file access and hide the details.
+*   Don't break functionality by data type, instead break by logical functionality
+*   Don't expose utility routines in a utility class when it is used only by one place, instead put it close to the usage site.
 
 ## Conclusions: Encapsulate
 
 The rules of thumbs:
 
-*   Make as much private as you can.  If there is no good need for a public function, don’t make it public.
+*   Make as much private as you can.  If there is no good need for a public function, don't make it public.
 *   When reviewing code, always ask whether something can be converted back to private, and do it unless there is a good reason, do it.
 *   Always put methods together with the methods that call them if possible.
 *   Public methods should be made as abstract and general as possible, and avoid exposing specific aspects of their implementation.

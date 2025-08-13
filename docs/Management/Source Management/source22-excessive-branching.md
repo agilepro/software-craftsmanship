@@ -43,7 +43,7 @@ Once a large body of code goes down the path of implementing everything with Str
 
 ## Recency is Important
 
-It will always be the case that different programmers will create conflicting code, either bug or design issues.  They must be resolved.  It is quite easy to resolve a problem that is caught on the day it was created.  The developers involved have all the specifics about the implementation already in mind.   All the rational behind shy they took a certain approach are in memory.  It is easy to remember all the specifics about the changes that were made.  If the merge is made every day, then there is only one day’s worth of changes to remember. 
+It will always be the case that different programmers will create conflicting code, either bug or design issues.  They must be resolved.  It is quite easy to resolve a problem that is caught on the day it was created.  The developers involved have all the specifics about the implementation already in mind.   All the rational behind shy they took a certain approach are in memory.  It is easy to remember all the specifics about the changes that were made.  If the merge is made every day, then there is only one day's worth of changes to remember. 
 
 The problem with working on branches is that it moves the merge to be many days or weeks later than when the coding was done.  A programmer writes code on Aug 1, and merges on Sept 15, may have forgotten significant details about the changes by that time. It is far less likely to notice that a problem (unless a test fails) and even if the problem is found, it is far more likely that important details that are necessary to make the code correct would be forgotten.
 
@@ -67,7 +67,7 @@ Contrast this to the case where a programmer makes this change in one branch, an
 
 ## Isolation Solves Nothing
 
-This is the area of the biggest mistake of project leaders.  They fear that one programmer’s change will always be interrupting the code of others.  So they think that by isolating developers from each other will allow them to be more productive! 
+This is the area of the biggest mistake of project leaders.  They fear that one programmer's change will always be interrupting the code of others.  So they think that by isolating developers from each other will allow them to be more productive! 
 
 This is fed by an irrational assessment of the incident:  every programmer can remember times when someone else made a change that broke their code.  Those are dramatic events that stand out in memory.   But isolating programmers does nothing to reduce this?   All it does allow those problems to persist longer, to allow more to be built on the errant approaches, and to make the problem must greater at a time removed from when it is fresh in mind.
 
@@ -85,7 +85,7 @@ Even in the case where the programmer is working on a difficult problem that tak
 
 ## Coherence is a Benefit
 
-Leaders need to understand this.  It is possible to make small incremental changes that do not break other developer’s work.  Many incremental changes are additions: like adding new methods.  In general, additional changes do not cause any problems with others.  Adding new dialog windows, adding new fields on a screen, adding new class members, adding new methods, adding new data files, all of this does not generally break the work of another developer.  Changes can almost always be made a way that does not break previous functionality. 
+Leaders need to understand this.  It is possible to make small incremental changes that do not break other developer's work.  Many incremental changes are additions: like adding new methods.  In general, additional changes do not cause any problems with others.  Adding new dialog windows, adding new fields on a screen, adding new class members, adding new methods, adding new data files, all of this does not generally break the work of another developer.  Changes can almost always be made a way that does not break previous functionality. 
 
 This may be hard to understand, but it is important.  Adding a feature properly, by making small changes that are implemented completely, does not negatively effect other programmers.  If you need a new config parameter, it is possible to add a method for that value that supplies a default if it is not there.  Then, everything continues to work for programmers working in an environment without that config variable.  If you need to render output in a new way, it is possible to add the new way that does not break the old ways of rendering.  This is the whole point of abstraction and encapsulation that these changes can be made without violating the old contract, but simply by adding new things to the contact. 
 

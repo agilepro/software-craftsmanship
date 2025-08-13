@@ -6,7 +6,7 @@ Given a module that is designed to be re-used across many applications, what is 
 
 A developer, Carlos, has made use of the module version 5.0 and everything is running.  He wants to upgrade to the latest version 6.1 and does not want anything to break.  That means that the exact same initialization parameters from version 5.0 need to work in 6.1.  
 
-However, version 6 has some additional capabilities that can be specified.  Those capabilities are optional: if you don’t specify them, then suitable defaults are provided.  If new parameters are provided, it is OK for version 6.1 to have different behaviors.  Carlos’ application provides only parameters that were in version 5.0, and in that case the behavior of the module needs to be the same as 5.0.  
+However, version 6 has some additional capabilities that can be specified.  Those capabilities are optional: if you don't specify them, then suitable defaults are provided.  If new parameters are provided, it is OK for version 6.1 to have different behaviors.  Carlos' application provides only parameters that were in version 5.0, and in that case the behavior of the module needs to be the same as 5.0.  
 
 It may even be the case that an initialization parameter 5.0 needs to be slightly changed: that is there are new options, or old options for a value retired.  How do you allow new developers to use the new features, without breaking the old developers compatibility?
 

@@ -1,12 +1,12 @@
 #  Transparency Advantage
 
-This is an example of some open source software that I had difficulty using and how to improve it.  A common principle is that of transparency: when something goes wrong, don’t hide it.  Don’t cover it up.  Don’t attempt to continue as if nothing happened.  Report it properly and immediately.  A simple explanation of the situation will help a lot.  
+This is an example of some open source software that I had difficulty using and how to improve it.  A common principle is that of transparency: when something goes wrong, don't hide it.  Don't cover it up.  Don't attempt to continue as if nothing happened.  Report it properly and immediately.  A simple explanation of the situation will help a lot.  
 
 I am trying to talk to an NNTP server.  I would rather not write the entire protocol myself, so I make use of the Apache library for talking to NNTP. I start using it, and a few things work, but I got stuck in a situation where fetching a number of news articles would work the first time, but never the second time.  Clearly I have thing essentially correct, because otherwise it would not be working the first fetch, but something is wrong causing the second (and all subsequent fetches to fail. 
 
 The retrieveArticle method of class org.apache.commons.net.nntp.NNTPClient is defined to return a Reader: a null return means that something went wrong.  It was returning null, but not clear at all what was going wrong!  It worked the first time, so it is not an initialization problem.  Was it a problem cleaning up from the first call? 
 
-The problem was that there was a dependency between calls.  Certain calls had to be made in certain orders, and the code was written with this mind.  In fact, the code “knew” what was wrong.  That is: there was a specific problem with the sequence of calls, and the code detected this correctly.  Only it **didn’t communicate this to the programmer!**  
+The problem was that there was a dependency between calls.  Certain calls had to be made in certain orders, and the code was written with this mind.  In fact, the code “knew” what was wrong.  That is: there was a specific problem with the sequence of calls, and the code detected this correctly.  Only it **didn't communicate this to the programmer!**  
 
 Here is the code as written:
 

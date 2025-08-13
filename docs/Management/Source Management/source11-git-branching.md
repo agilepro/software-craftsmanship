@@ -9,7 +9,7 @@ I found a lot of the documentation is incomplete and only useful to those who al
 
 There are many ways to use branches, but let me be very specific on how I use them.  I have a development project and everyone uses the trunk.  At appointed times we make releases.  Occasionally, a couple of month after a release, a customer asks for a very minor revision to a release, at a time when development is heavy and the trunk is not in a state to release. 
  
-I make a branch from the version that was used for the release.  Then we put only the changes on that branch needed for patch releases.  We don’t do a lot of work there, and we only use it for small fixes on old builds.
+I make a branch from the version that was used for the release.  Then we put only the changes on that branch needed for patch releases.  We don't do a lot of work there, and we only use it for small fixes on old builds.
 
 ## Access a Branch
 

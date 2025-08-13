@@ -7,13 +7,13 @@ title: UI Guideline Resources
 
 Every good development team creates guideline for the implementation of the user interface, so that the implementation is consistent.  A consistent meaning helps users to understand more easily what is meant by a particular arrangement of UI elements.  
 
-## Don’t create your own!
+## Don't create your own!
 
 Many people have been down this road before, and millions have been spent developing such guidelines.  Many of these are readily available.  So use them.  Here are some resources:
 
 ### Books:
 
-*   [Don’t Make The User Think](http://rads.stackoverflow.com/amzn/click/0321344758) – Steven Krug’s well-reasoned instant classic.  
+*   [Don't Make The User Think](http://rads.stackoverflow.com/amzn/click/0321344758) – Steven Krug's well-reasoned instant classic.  
     
 *   [Designing Interfaces: Patterns for Effective Interaction Design](http://www.amazon.com/dp/0596008031/) – Jennifer Tidwell
 *   [A Pattern Language: Towns, Buildings, Construction](http://www.amazon.com/dp/0195019199/) – Christopher Alexander, from architecture, but it applied to good design in any domain.
@@ -52,7 +52,7 @@ The [Monster List of UI Guidelines](http://www.theuxbookmark.com/2010/08/interac
 *   [Windows User Experience](http://msdn.microsoft.com/en-us/windows/bb978520.aspx)
 *   [Windows User Experience Guidelines](http://www.microsoft.com/downloads/details.aspx?FamilyID=b996e1e7-a83a-4cae-936b-2a9d94b11bc5&displaylang=en)
 *   [Windows User Experience Interaction Guidelines](http://msdn.microsoft.com/en-us/library/aa511258.aspx)
-*   [Windows XP Visual Guidelines](http://www.microsoft.com/whdc/archive/XPguidelines.mspx) (There’s a download section to the right to download [WindowsXP DesignGuidelines](http://download.microsoft.com/download/whistler/xpv/1.0a/WXP/EN-US/WindowsXP_DesignGuidelines.exe))
+*   [Windows XP Visual Guidelines](http://www.microsoft.com/whdc/archive/XPguidelines.mspx) (There's a download section to the right to download [WindowsXP DesignGuidelines](http://download.microsoft.com/download/whistler/xpv/1.0a/WXP/EN-US/WindowsXP_DesignGuidelines.exe))
 *   [Yahoo! Design Pattern Library](http://developer.yahoo.com/ypatterns/)
 
 ### Organizations Dedicated To This
@@ -67,8 +67,8 @@ UI design guidelines are necessary to help communicate the intended meaning betw
 
 However, have a complete set of UI design guidelines will never assure that you have a good user interface.  This is the same as saying that a good dictionary does not guarantee that you are a good writer.  There is a skill to writing, and while a dictionary is critical to assure that you use the same words in the same way, it is also true that a good writer will violate rules, and use words in unusual ways all the time.  A writer describing a particular subject faces a challenge that possibly nobody has ever had to face before, and in any case they face problems not anticipated by the dictionary writer.   The skill lies in knowing what communicates to the user, and the acceptable language is based purely on whether it communicates and not whether it agrees with the dictionary.  The same is true in a user interface: the designer is facing a situation that possible nobody has ever had to face before, and therefor something that had not been anticipated by the people putting the Ui guideline together.  
 
-Making a good user interface is every developer’s responsibility.  It must be judged as a whole, purely based on whether the user finds it comfortable to use or not.  The guideline can help, but not guarantee, that.  Conversely, if you have bad UI, blaming this on the bad guidelines is like blaming a bad book on a bad dictionary.  There is a  UI design skill that is needed independent of the guidelines.  
+Making a good user interface is every developer's responsibility.  It must be judged as a whole, purely based on whether the user finds it comfortable to use or not.  The guideline can help, but not guarantee, that.  Conversely, if you have bad UI, blaming this on the bad guidelines is like blaming a bad book on a bad dictionary.  There is a  UI design skill that is needed independent of the guidelines.  
 
-So don’t expect too much from the guidelines.
+So don't expect too much from the guidelines.
 
 This entry was posted in [Design](https://agiletribe.purplehillsbooks.com/category/design/), [Resource](https://agiletribe.purplehillsbooks.com/category/resource/) and tagged [design](https://agiletribe.purplehillsbooks.com/tag/design/), [usability](https://agiletribe.purplehillsbooks.com/tag/usability/), [user interface](https://agiletribe.purplehillsbooks.com/tag/user-interface/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2013/01/22/ui-guideline-resources/ "Permalink to UI Guideline Resources").

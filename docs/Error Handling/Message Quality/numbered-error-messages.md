@@ -17,7 +17,7 @@ Many systems are designed to have a fixed list of error messages, typically keye
 
 > #15061 – Can not book trip
 
-This is too general to be useful. It doesn’t tell the user anything that can solve the problem.  The user will be forced to call support because they were not given the detail.
+This is too general to be useful. It doesn't tell the user anything that can solve the problem.  The user will be forced to call support because they were not given the detail.
 
 > #15832 – Can not parse date
 
@@ -29,9 +29,9 @@ There is no single error code, picked from a list of pre-defined error codes, th
 
 This is at some level so obvious it is hardly worth saying, but if a user make a bad request, it is because they did not know it was a bad request.  Nobody makes a bad request on purpose.
 
-A bad request is one that the system can’t handle.  It was designed to handle a lot of things, but somethings just can’t be handled.  Like a date structured “1111-22-33”.  Since it can’t handle it, it needs to give up processing.  But what it returns can make a big difference in how successful a user is at getting what they want.
+A bad request is one that the system can't handle.  It was designed to handle a lot of things, but somethings just can't be handled.  Like a date structured “1111-22-33”.  Since it can't handle it, it needs to give up processing.  But what it returns can make a big difference in how successful a user is at getting what they want.
 
-When a user makes a bad request, there is something wrong with the request that the user does not know.  Then why not tell them?  Consider this to be a kind of “just in time documentation”.  The user should have known that the request was bad, but they didn’t.  If the error message can explain what is wrong, they might learn, and not do it again.  Or better, they might solve the problem without help.
+When a user makes a bad request, there is something wrong with the request that the user does not know.  Then why not tell them?  Consider this to be a kind of “just in time documentation”.  The user should have known that the request was bad, but they didn't.  If the error message can explain what is wrong, they might learn, and not do it again.  Or better, they might solve the problem without help.
 
 ## The Good Error Message
 
@@ -53,7 +53,7 @@ Even if the thousands of combinations of problems could be successfully listed, 
 
 ## Too Costly is Prohibitive
 
-Consider the pragmatics.  Software is expensive, and most of the time is spent on getting the primary functionality to work.  That is where the real benefit.  A few users make bad requests is not big part of the business.  You can’t please everyone, so be sure that the main line good requests are right.
+Consider the pragmatics.  Software is expensive, and most of the time is spent on getting the primary functionality to work.  That is where the real benefit.  A few users make bad requests is not big part of the business.  You can't please everyone, so be sure that the main line good requests are right.
 
 Error message composition will get minimal effort, and it should.  You can not expect leading edge artificial intelligence to be applied to help answer why a request failed.  Instead go read the manual!
 

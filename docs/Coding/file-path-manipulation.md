@@ -3,7 +3,7 @@
 Three guidelines that make sense when handling files and paths.
 
 *   Never Use Backslash in File Paths  
-*   Don’t use File.pathSeparator
+*   Don't use File.pathSeparator
 *   Converting slashes from the user
 
 When writing software that is portable, you have to face the situation that file paths on windows are composed with backslashes, and file paths in Unix require forward slashes.  
@@ -22,11 +22,11 @@ The mistake behind attempting to make file paths fit the operating environment i
 
 All of this conversion is really silly: a distributed system should pick one format for the entire system, and use that everywhere on Windows, on Linux, and on Solaris.  The host of a piece of the distributed system does not matter: the entire system always uses forward slash.
 
-## Don’t use File.pathSeparator
+## Don't use File.pathSeparator
 
 This is a string provided by Java so that you can write code that checks either for a forward slash, or a backslash.  This of course tremendously complicates the code that manipulates paths, bloating the code with many lines, and slowing down the operation of such code.  
 
-Don’t use any of these:
+Don't use any of these:
 
 *   File.PathSeparator
 *   File.pathSeparatorChar
@@ -51,7 +51,7 @@ This is the fastest way to convert backslashes into forward slashes through the 
 
 ## Use the File object when possible
 
-Whenever possible, use a File object to carry a path around and manipulate.  If you have a method that is going to manipulate a folder, then the parameter to that method should be a File object, and not a string.  That allows for easy testing of whether the folder exists, and it helps assure that the path is of the right form.  It also does not matter whether the string passed in has forward or back slashes, so you don’t need to convert.
+Whenever possible, use a File object to carry a path around and manipulate.  If you have a method that is going to manipulate a folder, then the parameter to that method should be a File object, and not a string.  That allows for easy testing of whether the folder exists, and it helps assure that the path is of the right form.  It also does not matter whether the string passed in has forward or back slashes, so you don't need to convert.
 
 ```java
 File folder = new Folder( givenPath );

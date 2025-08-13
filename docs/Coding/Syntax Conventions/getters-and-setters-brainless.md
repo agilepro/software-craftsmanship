@@ -89,7 +89,7 @@ public class User {
 
 The lean class has exactly the same functionality. It stores four values for the user. The getters and setters of the over-blown class allow immediate reading and updating of each data member . . . there are no restrictions. 
 
-The lean class is easier to read and understand. For the over-blown class you can’t scan it easily. More than this: to be assured that the getters and setters do not do anything complicated, you have to read each getter and each setter to check that all it does is a simple assignment. By simply allowing the members to be accessed, then you _know_ that there is no extra side effects. This is where the cost of maintenance comes from. 
+The lean class is easier to read and understand. For the over-blown class you can't scan it easily. More than this: to be assured that the getters and setters do not do anything complicated, you have to read each getter and each setter to check that all it does is a simple assignment. By simply allowing the members to be accessed, then you _know_ that there is no extra side effects. This is where the cost of maintenance comes from. 
 
 The over-blown class does not allow for any additional safety. The password is not any more or any less protected. There is no additional security. There is no additional memory control. Nothing is changed in the over-blown class as far as run time functionality is concerned. There is no additional runtime benefit to unnecessary getters and setters. 
 
@@ -113,11 +113,11 @@ The idea that you need to fill in all aspects of a class that you might need is 
 
 ## Avoid Waste
 
-The idea of elaborating getters/setters for all data members is founded in the idea that you can not make changes later to the interface. However, Agile development say to implement only what you need now. If you need to make a change, do so, but don’t do it in advance. Thus creating all the getters and setters in advance is a waste, one that can TRIPLE the cost if maintaining a set of classes, for no benefit.  
+The idea of elaborating getters/setters for all data members is founded in the idea that you can not make changes later to the interface. However, Agile development say to implement only what you need now. If you need to make a change, do so, but don't do it in advance. Thus creating all the getters and setters in advance is a waste, one that can TRIPLE the cost if maintaining a set of classes, for no benefit.  
 Automatic brainless creation of getters and setters is a waste that can be easily and effectively avoided.
 
 ## References
 
 *   [The Magic Setter Antipattern](https://javax0.wordpress.com/2015/03/25/the-magic-setter-antipattern/) – Peter Verhas, March 25, 2015, Setters and getters are evil.
-*   [OOP Getters() And Setters() – A New Programmer’s Frustration](http://www.bennadel.com/blog/1377-oop-getters-and-setters---a-new-programmer-s-frustration.htm)
+*   [OOP Getters() And Setters() – A New Programmer's Frustration](http://www.bennadel.com/blog/1377-oop-getters-and-setters---a-new-programmer-s-frustration.htm)
 *   [Why bother Getters & Setters](http://cfrant.blogspot.com/2008/10/why-bother-getters-setters.html)

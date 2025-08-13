@@ -17,7 +17,7 @@ But what if the design is known to have a problem?  A proposal to address the d
 
 *   corresponding changes in other parts of the code
 *   changes in tests for that code
-*   re-run tests that have been run that don’t need changing
+*   re-run tests that have been run that don't need changing
 *   slips in the schedule & costs due to schedule changes
 *   potential new bugs due to the change
 

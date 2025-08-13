@@ -6,7 +6,7 @@ Never send a password through the email. There is never any need to do so. If yo
 
 People need to have passwords (technically: a shared secret) to prove who they are. Manually setting up and managing passwords is an administrative burden, and also potentially a security leak. So you want the ability for a user to request an automated password reset. This way the web site is self-service. Users can get this help at any time of the day without being a pointless drain of administration resources.  
 
-A password reset involves sending a message to the user’s email address to prove that the request came from that person. Whoever responds to that message clearly is the owner of the mailbox.
+A password reset involves sending a message to the user's email address to prove that the request came from that person. Whoever responds to that message clearly is the owner of the mailbox.
 
 ## The Wrong Way
 
@@ -32,7 +32,7 @@ The token can only be used for a period time, like 24 hours (or less). Any token
 
 The correct way is so simple.  Why implement any other pattern?  
 
-No matter what approach you take, a password reset requires secure access to a mailbox. If someone takes over a user’s mailbox, they can request undesired password resets. Given there always is this danger, sending a token that enables a password reset is superior in many way, and avoids a number of security problems, over sending a new password by email.  
+No matter what approach you take, a password reset requires secure access to a mailbox. If someone takes over a user's mailbox, they can request undesired password resets. Given there always is this danger, sending a token that enables a password reset is superior in many way, and avoids a number of security problems, over sending a new password by email.  
 
 The SSOFI open source identity server implements this protocol for you, so if you are looking for a freely available single sign-on service, consider this option.
 

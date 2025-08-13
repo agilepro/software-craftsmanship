@@ -49,7 +49,7 @@ Sometimes the parent class will have members that duplicate the child class. No 
 
 ### Never Remove anything until you know all use of it is eliminated
 
-This is pretty obvious, so I won’t belabor it. Old methods and members can be left to give you time to eliminate all use of them, before getting rid of them. But be sure to follow through.  
+This is pretty obvious, so I won't belabor it. Old methods and members can be left to give you time to eliminate all use of them, before getting rid of them. But be sure to follow through.  
 
 Once you know that a member is not being used anywhere, it should be removed immediately. If you ever run across a member that you know is not used anywhere in the program, you should immediately remove it. Leaving it in will cause others to believe that it is useful, and waste time maintaining the functionality. There is no danger in removing a function: if it is truely needed, it can be added back in quickly enough. But there is lots of danger in leaving it there.  
 
@@ -59,7 +59,7 @@ Similarly, anytime you see code that is commented out, and you know it has been 
 
 A special case of consideration around persistent classes, because you must assume that people will keep finding old versions of the class in database many many years in the future. Once a version of a class has been released, you can never simply delete it. This means for the most part that all preserved members must remain in the class, and must have a consistent meaning.  
 
-You can eliminate a member, or make a new member to carry that value, but you must include a conversion routine while reading the object. You must expect that forever you will see the old form, but if you convert while reading, and if that conversion remains in the object, it solves the problem. This assumes that the forms are similar enough that you can convert. If you can’t, then you need to use a whole new object.
+You can eliminate a member, or make a new member to carry that value, but you must include a conversion routine while reading the object. You must expect that forever you will see the old form, but if you convert while reading, and if that conversion remains in the object, it solves the problem. This assumes that the forms are similar enough that you can convert. If you can't, then you need to use a whole new object.
 
 Be sure to include plenty of comments on what the old form used to be, because the old form is no longer in the code. The conversion code must remain working for a long time.
 

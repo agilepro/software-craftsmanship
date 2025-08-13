@@ -57,18 +57,18 @@ First of all, developers get an **A+** for naming the directories logical names.
 
 ## Why Do You Make So Many Folders?
 
-“_Because it is more organized this way._” is the response. “_We have a folder for each main concept, and we put the file for those concepts in those folders.  All nice and neat.  Everything in it’s place._”  
+“_Because it is more organized this way._” is the response. “_We have a folder for each main concept, and we put the file for those concepts in those folders.  All nice and neat.  Everything in it's place._”  
 But listen carefully to what comes next:  “_When someone wants to find a file, they just remember the module that file is part of, open the folder, and read the file.  SO easy._”
 
 *   It is so easy only IF the person knows the mapping between the files and the module name they are in.  Case in point, you have to know that “userManager.js” is part of the interstage module (whatever that is).
-*   If you don’t know this, the folder in between is just a barrier to getting to the file!
+*   If you don't know this, the folder in between is just a barrier to getting to the file!
 *   To navigate this, you need to know more than just the file name, you have to know what module the file belongs to.
 *   To know this, yoe might need to know the logic behind why a particular file was associated, and when learning the code, when you have no idea what a particular file does, you have no basis to make a logical deduction about that!
 *   This is easy for the original designer to navigate these folder, because that designer used a logic that was familiar to them, but to a novice this is nothing but a barrier.
 *   New programmers need to find files by name while they don't have the knowledge of what module a file falls into.
 *   What is happening is that the programmer experienced with the project has forgotten what it is like to not know the logical structure of the project.  It might be easier for the experienced programmer, but an experienced programmer will already know where a file it.  It is the new programmer on the project who should be considered in terms of being able to find things. 
 
-Let’s consider the alternative, and lets put all the files into a single folder.  It would be like this:
+Let's consider the alternative, and lets put all the files into a single folder.  It would be like this:
 
 ```
 scripts\
@@ -97,10 +97,10 @@ scripts\
 Why is this any less organized?  Here are some points in favor of a single folder:
 
 *   If you know the name of a file, it is easy to scan and find it.  They are alphabetical so it is quite fast and easy.
-*   One doesn’t have to know the logical relationship between a file and the module.
-*   One doesn’t have to double click to navigate down into the folder.
+*   One doesn't have to know the logical relationship between a file and the module.
+*   One doesn't have to double click to navigate down into the folder.
 *   The modules are still quite organized:   The **requestList** module consists of the two files that start with **requestList**.  Putting them in a folder does not make this any clearer.
-*   There is no arbitrary forcing of a file to be in a module just because you have to pick one.  The file “jsonDataManager.js” was put in a module called “utils” which exists just to hold all the things that don’t belong in any specific module.
+*   There is no arbitrary forcing of a file to be in a module just because you have to pick one.  The file “jsonDataManager.js” was put in a module called “utils” which exists just to hold all the things that don't belong in any specific module.
 *   Fewer folders means fewer things in the project means easier to learn.  Really!
 
 The folder might help organize files that are poorly named for their module, but if that happens you just change the name of the file to be whatever module you want it part.  Changing the name is no harder than changing the folder the file is in, so just use the right names and everything is just as organized.
@@ -117,16 +117,16 @@ Making lots of files folders, and having only 1 or two files in each does NOT ma
 **Just go to the logical module and the file is there!** —  Only to those people who are previously familiar with the files or the logic used to organize the file.  If they are all in one list I do not need to know this.  
 **When you open the folder, all the files are there together! —**  If you name the file properly, they will all be together in the list, so there is no advantage to the folder.  
 **Sometimes you need to group files with different names! —**  Then rename them.  There are vanishingly few cases where you can not name the files properly.  
-**It is easy to open folders**. — Just a double click, but that requires extra work, and that is multiplied when you don’t know exactly which folder to open.  The point is that the folder adds nothing, so this effort is pure waste.  
+**It is easy to open folders**. — Just a double click, but that requires extra work, and that is multiplied when you don't know exactly which folder to open.  The point is that the folder adds nothing, so this effort is pure waste.  
 **With lots of files in a folder you have to scroll**. — Scrolling is far easier than opening several folders.  In any case if you kept to around 20 files per folder you would never have a scrolling problem.  
-**Use and IDE that reads and flattens the file list**. — OK, so you agree that a flat list is better, why not just make it that what actually exist?  Why make a structure that you then have to use a special tool to unscramble?  The real answer is that I don’t always have an IDE available, especially when working at a customer site or a developer who wants help.  
+**Use and IDE that reads and flattens the file list**. — OK, so you agree that a flat list is better, why not just make it that what actually exist?  Why make a structure that you then have to use a special tool to unscramble?  The real answer is that I don't always have an IDE available, especially when working at a customer site or a developer who wants help.  
 **You just need to do a search.** — It is well established that one can scan the list and find the file faster than you can enter the command to search.
 
 ## Conclusion
 
 :::tip[Key Takeaway]
 
-Don’t make lots of folder with only a couple files in each.  Worry more about your code structure and names, but put many files together in a single folder.
+Don't make lots of folder with only a couple files in each.  Worry more about your code structure and names, but put many files together in a single folder.
 
 :::
 

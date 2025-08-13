@@ -74,10 +74,10 @@ Should we worry?  Merging of code changes is absolutely necessary for any kind 
 The risk of merge caused bugs can be minimized by the following:
 
 *   **Merge as often as you can.**  If Alex and Betty merged their code every day, then the risk is reduced only to changes made on the same day.   Otherwise, they would see the change from the other and would not duplicate the fix.
-*   **Don’t wait a long time to merge.** If Alex and Betty worked for a month in isolation, there is a much greater chance that they both run across and fix the problem, and their fixes might be incompatible.
-*   **Make small changes and merge quickly.**  Don’t write huge blocks of code, but instead make small changes, get those small changes to “release quality” and merge them quickly.
-*   **Merge in and test the other guy’s code.**  Keep merging in changes from the other developers so that if there is any incompatibility you catch it early while you are still developing.
-*   **Don’t leave a long time before merging.**  If make a change and merge it today, and something goes wrong, it is probably something to do with the code you changed today.  If you wait a week before merging, the changes you made will not be fresh in mind, and this will take more effort to remember what was changed.
+*   **Don't wait a long time to merge.** If Alex and Betty worked for a month in isolation, there is a much greater chance that they both run across and fix the problem, and their fixes might be incompatible.
+*   **Make small changes and merge quickly.**  Don't write huge blocks of code, but instead make small changes, get those small changes to “release quality” and merge them quickly.
+*   **Merge in and test the other guy's code.**  Keep merging in changes from the other developers so that if there is any incompatibility you catch it early while you are still developing.
+*   **Don't leave a long time before merging.**  If make a change and merge it today, and something goes wrong, it is probably something to do with the code you changed today.  If you wait a week before merging, the changes you made will not be fresh in mind, and this will take more effort to remember what was changed.
 
 Those are all the same thing. The take-away is to develop a healthy **Urge to Merge** in your team:
 

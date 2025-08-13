@@ -4,9 +4,9 @@ The question is: should a program that reads a standard XML file format use XML 
 
 ## About Schema Validation
 
-The idea behind validating the schema is that it will warn you when someone submits a file that does not conform to the standard. If programmer A writes an importer for a file format, and programmer B uses it to read a file that is not of that format, then an error is likely. The validation will make it clear that it is B’s fault for submitting a file that is not correct.  
+The idea behind validating the schema is that it will warn you when someone submits a file that does not conform to the standard. If programmer A writes an importer for a file format, and programmer B uses it to read a file that is not of that format, then an error is likely. The validation will make it clear that it is B's fault for submitting a file that is not correct.  
 
-If you don’t do the validation, then the error that occurs may not be as clear. People might think it is A’s fault for writing a lousy importer. So that is the good thing about validation: it makes it clear when the input file is incorrectly formatted.
+If you don't do the validation, then the error that occurs may not be as clear. People might think it is A's fault for writing a lousy importer. So that is the good thing about validation: it makes it clear when the input file is incorrectly formatted.
 
 ## In case of a Standard Format with a Published XML Schema
 
@@ -26,11 +26,11 @@ I have always favored Using XML Schema in development to make sure that the code
 
 If you a specifying a format, you should understand that XML Schema can only represent certain kinds of XML instance documents.  
 
-For example, if you want to represent customer information (e.g. firstname, lastname, street, city, state, etc) as a block of XML but you don’t care which order these tags come in, there is no easy way to express that in XML Schema.  You can make tags optional, but if you have a specific set of tags, they must be in a specific order.  
+For example, if you want to represent customer information (e.g. firstname, lastname, street, city, state, etc) as a block of XML but you don't care which order these tags come in, there is no easy way to express that in XML Schema.  You can make tags optional, but if you have a specific set of tags, they must be in a specific order.  
 
 It is also very cumbersome to allow for the possibility that extra tags might be inserted in the future.  For example, if you anticipate that in the future a customer may have a new data field, such as a Twitter ID or maybe an Id for a service that has not been invented yet.  You must sprinkle the schema literally with a specific structure that matches any tag — literally every container must include this — and even then the order is constrained that they come only after the declared tags.  
 
-The XML Schema validation rules are often unnecessarily strict, with no way to loosen them, without completely loosening and losing all value of checks in the first place.  Often the kinds of checks you want to do on the file are simply not available using XML schema validation.  Enforcing consistency in a file can not be done with schema validation.  For example, if you have a number of groups, and a number of individuals, and you want to make sure that every individual is in at least one group, you can’t really enforce this at the schema level.  Also, of course, schema validation will not tell you is the data is meaningful either.  
+The XML Schema validation rules are often unnecessarily strict, with no way to loosen them, without completely loosening and losing all value of checks in the first place.  Often the kinds of checks you want to do on the file are simply not available using XML schema validation.  Enforcing consistency in a file can not be done with schema validation.  For example, if you have a number of groups, and a number of individuals, and you want to make sure that every individual is in at least one group, you can't really enforce this at the schema level.  Also, of course, schema validation will not tell you is the data is meaningful either.  
 
 The error messages you get from the schema validator are very difficult to interpret.  Every hard core XML experts often have to discuss and experiment to determine what about the file is at fault.  It is not really that the validator is poorly written, but that often the XML Schema itself must be very complicated, and a complicated schema produces complicated, and sometimes ambiguous, error messages.  
 

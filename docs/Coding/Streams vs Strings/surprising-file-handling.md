@@ -1,6 +1,6 @@
 #  File Handling Antipattern
 
-I don’t usually focus on bad examples of code (because there are so many ways to do it wrong they are rarely repeated) but here I found a particular pattern that was pernicious and repeated all through the code, indicating that at least one development thought this was a really good idea.  It isn’t.  
+I don't usually focus on bad examples of code (because there are so many ways to do it wrong they are rarely repeated) but here I found a particular pattern that was pernicious and repeated all through the code, indicating that at least one development thought this was a really good idea.  It isn't.  
 Here is the code, do you see the problems?
 
 ```java
@@ -34,7 +34,7 @@ A partially written file should never be preserved.
 
 :::
 
-If the file is not complete, whole, and well formed, it should be immediately discarded.  A malformed file is worse that no file.  In this case you don’t know for sure how much of the file was written.  It might be 100% written, it might be 0% written, but it is most likely somewhere between the two.  If you can not prove that the file is 100% correct, then you should you should take every step to eliminate the file!  
+If the file is not complete, whole, and well formed, it should be immediately discarded.  A malformed file is worse that no file.  In this case you don't know for sure how much of the file was written.  It might be 100% written, it might be 0% written, but it is most likely somewhere between the two.  If you can not prove that the file is 100% correct, then you should you should take every step to eliminate the file!  
 
 That is the way transactions work: either you get the entire desired change, or the entire thing is rolled back.  Your file handling should be the same.
 
@@ -65,7 +65,7 @@ This approach uses some key principles:
 *   the close in the catch block is there to make sure that the stream is finalized before we try to delete the file.
 *   The creation of the FileOutputStream is outside the try block because if that fails there is nothing to clean up.  The earlier code was rather silly to put it inside the try block because the finally block did not do anything if this failed anyway.
 
-Often, we are writing out a file over an existing file.  In that case we don’t want to destroy the former file until we are 100% assured that the new file is there.  This is done by writing to a temporary file, and then renaming the it to the file that you want.  Here is that code:
+Often, we are writing out a file over an existing file.  In that case we don't want to destroy the former file until we are 100% assured that the new file is there.  This is done by writing to a temporary file, and then renaming the it to the file that you want.  Here is that code:
 
 ```java
 // save to dest

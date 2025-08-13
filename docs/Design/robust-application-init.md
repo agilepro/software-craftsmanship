@@ -10,7 +10,7 @@ A web application runs in a web server, either a bard web server like Apache, or
 *   The application may not be correctly configured.  There may be settings that point to needed resources that
     *   are set incorrectly because they were left at default values
     *   are set properly but for some reason the application can not access the resources,
-    *   are set correctly but the resources don’t exist.
+    *   are set correctly but the resources don't exist.
     *   had been correct, but for some reason been moved, and the configuration was not updated.
 *   The application may depend upon other servers running, and those servers may not be running yet.  This is particularly important in a global reboot situation where multiple severs are restarted simultaneously and there is a race condition between which server starts up first.
 *   The application might be correctly installed and configured, but simply takes some time, and while that is happening it may start to receive web requests.  It must handle those correctly.
@@ -25,14 +25,14 @@ Developers tend to operate the server only in very special conditions: everythin
 
 This is part of what I call the “Simplified Turtle Shell Model” of server initialization.  It is pretty basic:
 
-*   make a global static variable that says whether the server is initialized or not.  That variable is initialized to ‘false’ during static initialization.  It is set to true ONLY when the initialize code concludes that it has been successful.
+*   make a global static variable that says whether the server is initialized or not.  That variable is initialized to 'false' during static initialization.  It is set to true ONLY when the initialize code concludes that it has been successful.
 *   make a global static variable to store the exception(s) that occur during initialization.  This will be null initially, but if any exception occurs, store it in this place for the rest of the program to see.
 *   make a page that displays the initialization error (ServerInitError page).  This is tricky, because you have to make sure that this page does not require anything about the system to be functional.  It must be bare bones HTML generation.  It must NOT attempt to authenticate because the subsystems required for that might not be operational.  If the server fails to start up, you simply display the error to anyone who accesses the server.  Once the server is running you will never see this.  If there is no recorded error, it should display simply that the server is “starting up”.
 *   make EVERY regular “controller” (those parts of the code that receive requests from the browser) check whether the server is initialized or not before attempting to do anything else.  Again, it must do this before it attempts to use any subsystem of the server.  If not initialized, it should redirect the browser to the ServerInitError page.
-*   make a specific global method to initialize the server, and call all other initialization functions from there.  This should start by checking that all the necessary files exist.  As much as possible, check that all the setting are correct.  If external servers are needed, ping them somehow to make sure they are up an running, and retry several times in case they are just slow.  If anything fails or throws an exception, record the exception.  when it determines that everything is OK, mark the initializes variable as ‘true’ and the application is ready to serve pages.
+*   make a specific global method to initialize the server, and call all other initialization functions from there.  This should start by checking that all the necessary files exist.  As much as possible, check that all the setting are correct.  If external servers are needed, ping them somehow to make sure they are up an running, and retry several times in case they are just slow.  If anything fails or throws an exception, record the exception.  when it determines that everything is OK, mark the initializes variable as 'true' and the application is ready to serve pages.
 
 It is called “Turtle Shell” because everything in the server remains protected from external requests until the initialization routine sees that everything is OK.  Only then, does it come out and serve requests.  
-This is the “Simplified Turtle Shell Model”  in the fully elaborated Turtle Shell model the server can return to protected mode over and over again as external conditions change, and it can asynchronously reinitialize itself.  You don’t always need this full model for all servers.
+This is the “Simplified Turtle Shell Model”  in the fully elaborated Turtle Shell model the server can return to protected mode over and over again as external conditions change, and it can asynchronously reinitialize itself.  You don't always need this full model for all servers.
 
 ## Testing
 

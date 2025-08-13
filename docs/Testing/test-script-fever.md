@@ -3,7 +3,7 @@
 ---
 #  Avoid "Test Script" Fever
 
-There is a strange propensity among developers to make tests more complicated than they need to be in the name of flexibility.  Tests don’t need to be flexible, they need to be reliable and maintainable.  I have seen this pattern so many times it is worth a mention here to avoid it.  To understand it, you have to consider a specific example.
+There is a strange propensity among developers to make tests more complicated than they need to be in the name of flexibility.  Tests don't need to be flexible, they need to be reliable and maintainable.  I have seen this pattern so many times it is worth a mention here to avoid it.  To understand it, you have to consider a specific example.
 
 ## Scenario
 
@@ -99,7 +99,7 @@ While it is true that you can add a test case without compiling, there is no rea
 
 ## Why Does This Occur?
 
-I don’t really know why this pattern is so common, but I can make some guesses.  First, it seems quite attractive to make such test drivers.  It is possible that making such a test driver is more enjoyable than writing the tests themselves.
+I don't really know why this pattern is so common, but I can make some guesses.  First, it seems quite attractive to make such test drivers.  It is possible that making such a test driver is more enjoyable than writing the tests themselves.
 
 I suspect that part of the desire is that there is some pressure on the programmer to make the set of tests complete, and they always worry about whether they have included all the tests.  By making it possible to add tests without recompiling they may hope that tests can be added by the QA team.  
 

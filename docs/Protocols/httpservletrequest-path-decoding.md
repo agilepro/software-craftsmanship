@@ -28,7 +28,7 @@ Here is the map of how the various functions decode this:
 
 ![HttpServletHelper](httpservletrequest-path-decoding-img1.png)  
 
-I won’t repeat what the documentation says — things like “use getContextPath to get the context path” without any explanation of what “context” we are talking about or how much of that context is included.  A simple map like this helps show all the relationships.  
+I won't repeat what the documentation says — things like “use getContextPath to get the context path” without any explanation of what “context” we are talking about or how much of that context is included.  A simple map like this helps show all the relationships.  
  
 
 This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/) and tagged [Java](https://agiletribe.purplehillsbooks.com/tag/java/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2016/02/23/httpservletrequest-path-decoding/ "Permalink to HttpServletRequest Path Decoding").

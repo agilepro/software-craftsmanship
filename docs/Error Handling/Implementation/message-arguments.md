@@ -16,7 +16,7 @@ throw je;
 ```
 
 
-The exception is created using the template, and then parameters are added.  This works but a couple problems.  The first is that you can’t just create the exception and throw it.  That is a big limitation, because you want exception handling to be quick and easy so that programmers are encouraged to use them correctly.  Having to assign the object into a local variable and then make a few more calls on it happens to increase the programming trouble.  You need four lines when you would like one line.
+The exception is created using the template, and then parameters are added.  This works but a couple problems.  The first is that you can't just create the exception and throw it.  That is a big limitation, because you want exception handling to be quick and easy so that programmers are encouraged to use them correctly.  Having to assign the object into a local variable and then make a few more calls on it happens to increase the programming trouble.  You need four lines when you would like one line.
 
 ## Data in one Parameter
 

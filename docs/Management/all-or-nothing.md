@@ -7,7 +7,7 @@ I work with a large development group.  Every 6 to 9 months we go through a pla
 
 ## The Rules of the Game
 
-Consider me to be an anthropologist studying the behaviors of a foreign culture.  I can observe the behaviors, and from those make some guesses as to the rules that participants are playing to.  I can’t be sure what the rules really are, but this is what it looks like:
+Consider me to be an anthropologist studying the behaviors of a foreign culture.  I can observe the behaviors, and from those make some guesses as to the rules that participants are playing to.  I can't be sure what the rules really are, but this is what it looks like:
 
 *   First, a schedule will be set, in this case about 6 months.
 *   Second, a list of requirements will be assembled from communications with customer from the previous year or so.
@@ -51,9 +51,9 @@ There is no pragmatic voice toward optimizing the work.  No compromises can be 
 
 The approach leads the team to “design by committee” (DBC).   DBC is a pattern that leads teams to over engineer specific capabilities.  What will happen is that when the design is going through review, someone will say something like: “What if the person has a 18GB video, and they want to upload it from their cell phone, while they a traveling across the arctic, and they lose connectivity, and their battery dies before they complete the upload, but they need to have someone else review the fraction of the video they uploaded before they get back online.”   Extremely unlikely error scenarios are considered, and nobody really can say how common a particular scenario is likely to be.    So the design tends to take in all possible failure conditions, and all possible extreme examples.  
 
-YAGNI;  Arguing that “You Aren’t Gonna Need It” sounds like you want to decrease quality.  This team is dedicated to high quality, and any work about not handling extreme situation is an argument for “low quality” in their eyes.  
+YAGNI;  Arguing that “You Aren't Gonna Need It” sounds like you want to decrease quality.  This team is dedicated to high quality, and any work about not handling extreme situation is an argument for “low quality” in their eyes.  
 
-What is really needed is the real voice of the customer, and this is best seen by asking customers to actually use the product in alpha and beta stages.  If they never run into the situation at all, then there is a good chance they don’t need it.  Furthermore, if you are in a situation to respond quickly, you can address the REAL situations they encounter, and not the imaginary situations dreamed up by the engineering design team.
+What is really needed is the real voice of the customer, and this is best seen by asking customers to actually use the product in alpha and beta stages.  If they never run into the situation at all, then there is a good chance they don't need it.  Furthermore, if you are in a situation to respond quickly, you can address the REAL situations they encounter, and not the imaginary situations dreamed up by the engineering design team.
 
 ## A Better Way
 

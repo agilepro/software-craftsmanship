@@ -4,7 +4,7 @@ Every software product needs to be built, and the script to build it is as much 
 
 It does not matter which technologies you use to automate a build: Ant, Maven, Make, Batch files, C shell scripts, and any number of others. You may have your favorite, and for good reasons, but no matter which one you use, there are some guidelines around how you structure the source and design the build:
 
-1.  Don’t pollute the source folders with derived output
+1.  Don't pollute the source folders with derived output
 2.  Build script only reads from the source folders
 3.  Keep things as simple as possible
 4.  Clearly report errors
@@ -14,7 +14,7 @@ It does not matter which technologies you use to automate a build: Ant, Maven, M
 8.  Automate as much as possible
 9.  Make it as fast as possible
 
-## Don’t pollute the source folders with derived output
+## Don't pollute the source folders with derived output
 
 Your source is checked into a source management system (SCMS), and they (usually) appear as a set of sandbox folders on your local disk.  The changes that a programmer makes within those folders should ONLY be changes to be preserved in the SCMS. 
 
@@ -86,12 +86,12 @@ This patterns can be used with Make, Maven, Ant, and any number of other build t
 
 There are some many way that a build can be done wrong, here are some common ones to avoid:
 
-*   Don’t ask the programmer to edit a settings file in the source sandbox, because it might accidentally get checked in, and write over other programmers settings.
-*   Don’t use the default mode of compilers that write the object code out into the same folder as the source file. This produces a large number of extra files that hide whether all the files are properly checked in or not.
-*   Don’t attempt to run programs directly from the sand box . . . for instance don’t configure a web server to serve JSP files and images directly from the source sandbox.  Server can and do write to some directories at some times, or they update some files.  The only updates in these folders should be one make on purpose by the programmer in the course of programming.
-*   Don’t write test output directly to the source sand box. There should be a manual step to copy the reference output, only when the programmer is assured that the results of the test are correct. Otherwise you run the risk that the invalid test output gets checked into the SCMS.
-*   Don’t require that some of the source folders be deleted or moved in order for the build to work.  The code should check out from the SCMS in exactly the format that is needed for the build to run.
-*   Don’t spread the settings for building inside the actual sizable build script, forcing the programmer to hunt for the place to make the change.  Deliberately identify all of the settings that the programmer needs to make, and put them all in one file that is copied to the build folder.
-*   Don’t put the build script into the build folder, or programmers run the risk that someone else will make an important change to the build script, and they will not get it.  The actual build script should remain in the SCMS sandbox folders, under version control.
-*   Don’t require the programmer to manually clean up after the last build in order to assure that the build is done correctly.  The build script should work repeatedly many times in a row without any other clean up than what is automated.
-*   Don’t build a bunch of folders that are exactly like the findal product, except that there are a couple of extra source folders in the middle that need to be removed.  Instead, think about making within the root source folder, a single folder that reflects the final product, and the folders outside this to hold things that are needed for the build, but not part of the delivered product.  For example, JSP files are shipped in the product directly without compiling, but JAVA files must be compiled and not included.  Do not mix JSP files together with JAVA files — keep the Java separate from the folder shaped like the product.
+*   Don't ask the programmer to edit a settings file in the source sandbox, because it might accidentally get checked in, and write over other programmers settings.
+*   Don't use the default mode of compilers that write the object code out into the same folder as the source file. This produces a large number of extra files that hide whether all the files are properly checked in or not.
+*   Don't attempt to run programs directly from the sand box . . . for instance don't configure a web server to serve JSP files and images directly from the source sandbox.  Server can and do write to some directories at some times, or they update some files.  The only updates in these folders should be one make on purpose by the programmer in the course of programming.
+*   Don't write test output directly to the source sand box. There should be a manual step to copy the reference output, only when the programmer is assured that the results of the test are correct. Otherwise you run the risk that the invalid test output gets checked into the SCMS.
+*   Don't require that some of the source folders be deleted or moved in order for the build to work.  The code should check out from the SCMS in exactly the format that is needed for the build to run.
+*   Don't spread the settings for building inside the actual sizable build script, forcing the programmer to hunt for the place to make the change.  Deliberately identify all of the settings that the programmer needs to make, and put them all in one file that is copied to the build folder.
+*   Don't put the build script into the build folder, or programmers run the risk that someone else will make an important change to the build script, and they will not get it.  The actual build script should remain in the SCMS sandbox folders, under version control.
+*   Don't require the programmer to manually clean up after the last build in order to assure that the build is done correctly.  The build script should work repeatedly many times in a row without any other clean up than what is automated.
+*   Don't build a bunch of folders that are exactly like the findal product, except that there are a couple of extra source folders in the middle that need to be removed.  Instead, think about making within the root source folder, a single folder that reflects the final product, and the folders outside this to hold things that are needed for the build, but not part of the delivered product.  For example, JSP files are shipped in the product directly without compiling, but JAVA files must be compiled and not included.  Do not mix JSP files together with JAVA files — keep the Java separate from the folder shaped like the product.

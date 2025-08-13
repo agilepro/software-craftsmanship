@@ -16,13 +16,13 @@ This is a real example I found that be illustrates the problem.  the method is 
 
 ![](time-bombs-img1.png)
 
-The empty string is not the value from the DB, but the calling code does not know any difference.  Later that value, a password, will be used, and the authentication will fail.  It will report something like ‘incorrect password’ and the application will then fail at that point.
+The empty string is not the value from the DB, but the calling code does not know any difference.  Later that value, a password, will be used, and the authentication will fail.  It will report something like 'incorrect password' and the application will then fail at that point.
 
 Returning the empty string is an example of a time bomb.  The method was supposed to return the password value, but in fact returned an empty string, which will later cause the application to fail.  There will of course be an entry in the log file, but how is one suppose to know that from all the entries that appear in a log file, that this DB failure was the failure that caused the problem?
 
 If the user is to fix the problem, the problem that needs to be fixed is the access to the DB.  That will be hard to know because that failure is not associated with the final inability to log in.
 
-This method should have thrown an exception and stopped the execution of the thread.  The method failed to accomplish it’s task, and so should not return a value.  Whatever line called this method, is expecting to be holding the proper value after the call, but in this case it might not be.  By returning an empty string, the code continued on the assumption that the value is valid, and the time bomb went off later, and reported the wrong problem.
+This method should have thrown an exception and stopped the execution of the thread.  The method failed to accomplish it's task, and so should not return a value.  Whatever line called this method, is expecting to be holding the proper value after the call, but in this case it might not be.  By returning an empty string, the code continued on the assumption that the value is valid, and the time bomb went off later, and reported the wrong problem.
 
 ## Example 2
 

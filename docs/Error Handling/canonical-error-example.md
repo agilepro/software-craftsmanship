@@ -13,7 +13,7 @@ Consider a program to book travel which is used by Alex for a trip to Washington
 
 ![](canonical-error-example-img1.png)
 
-Imagine at this point the code encounters an error: the string provided for the birth date is has the string “**1111-22-33**” in it, which does not map to any particular date.  We don’t know why that value has been supplied for a birth day, but what we know is that processing can not continue with this value, and must stop to avoid nonsense responses.
+Imagine at this point the code encounters an error: the string provided for the birth date is has the string “**1111-22-33**” in it, which does not map to any particular date.  We don't know why that value has been supplied for a birth day, but what we know is that processing can not continue with this value, and must stop to avoid nonsense responses.
 
 When an error occurs at this point, what must be returned and how this return value is generated? That is the topic of other blog posts.  In this post we simply define the specific scenario:  Alex wants a trip to Washington, which needs to determine if a car can be rented, which needs to know if he is over 25, which means it needs to calculate the age, which means the birth day must be converted from a string, but the string is improper.
 
@@ -67,9 +67,9 @@ The function to calculate whether age is greater than or less than a threshold v
 **Success Criterion**: From the information of a person, return a numeric age  
 **Failure Responsibility**: explain why numeric age can not be calculated
 
-Calculation of the age is a matter of subtracting the person’s birth date from today’s date.   Today’s date is presumably available.  The age calculator needs a binary date format for the birth day, which is available as a string, so it calls a date parser, passing the string form of the date.
+Calculation of the age is a matter of subtracting the person's birth date from today's date.   Today's date is presumably available.  The age calculator needs a binary date format for the birth day, which is available as a string, so it calls a date parser, passing the string form of the date.
 
-**Values Provided**: person information including birth date, today’s date
+**Values Provided**: person information including birth date, today's date
 
 **Unknown Context**: This method has no understand of why the age is needed.  It does not know about the trip, about any car rental, and it does not even know why the age has been requested.  It has logic to calculate an age, but nothing about the context.
 

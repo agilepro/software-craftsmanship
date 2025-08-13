@@ -8,7 +8,7 @@
 
 At some point you may be asked to implement a timer — something that displays the amount of time that is elapsing.  It can be a count-up timer showing the total times that something has been happening.  Or it might be a count-down timer showing the amount of time remaining to complete a particular task.  Most programmers will make some key mistakes the first time they attempt this.  I am rather shocked and amazed at how many incorrect examples you can find if you scan the internet.
 
-**Don’t track the current time** – The biggest mistake that programmers make is to think they need a variable to hold the current time and then to write code to increment that variable every second, e.g. something called “elapsedSeconds” which they maintain. The problem is that you can schedule code to be called every second, but there is no guarantee of exactly when that code will be called.  
+**Don't track the current time** – The biggest mistake that programmers make is to think they need a variable to hold the current time and then to write code to increment that variable every second, e.g. something called “elapsedSeconds” which they maintain. The problem is that you can schedule code to be called every second, but there is no guarantee of exactly when that code will be called.  
 Here is an example of the **wrong** way to do it:
 
 ```java
@@ -26,15 +26,15 @@ class MyTimerTask extends TimerTask {
 ```
 
 
-The above code attempts to increment a seconds counter every second.  The calling code would, presumably, check the ‘elapsedSeconds’ member to tell how many seconds had elapsed.  But actually, this effort to increment a variable at a fixed rate is pointless, a wast of CPU cycles, and also needlessly inaccurate.  This is all completely unnecessary because the OS _has a function to tell you the current time_. 
+The above code attempts to increment a seconds counter every second.  The calling code would, presumably, check the 'elapsedSeconds' member to tell how many seconds had elapsed.  But actually, this effort to increment a variable at a fixed rate is pointless, a wast of CPU cycles, and also needlessly inaccurate.  This is all completely unnecessary because the OS _has a function to tell you the current time_. 
 
-**Don’t Expect Scheduled Events to be On Time** – You can ask for a timer task to be run every second, but the OS makes no guarantee that the code will be called exactly on the second.  If a number of threads all happen to collide, asking for the same moment, there will be give and take.  Other threads may hog the CPU, causing your particular event to come milliseconds, or even in drastic cases seconds, late.  
+**Don't Expect Scheduled Events to be On Time** – You can ask for a timer task to be run every second, but the OS makes no guarantee that the code will be called exactly on the second.  If a number of threads all happen to collide, asking for the same moment, there will be give and take.  Other threads may hog the CPU, causing your particular event to come milliseconds, or even in drastic cases seconds, late.  
 
-**Don’t expect Threads to Sleep Exact Amounts of Time** – Code that uses the `Thread.sleep(1000)` function to loop every second will find that the error builds up over time.  Just like the scheduled events above, if a bunch of threads collide by trying to wake up at the same time, there will be give and take.  Again, if the system is significantly busy, sleep may return late.   If sleep returns 300ms late one time, that error is compounded into your calculation of what time it is.  
+**Don't expect Threads to Sleep Exact Amounts of Time** – Code that uses the `Thread.sleep(1000)` function to loop every second will find that the error builds up over time.  Just like the scheduled events above, if a bunch of threads collide by trying to wake up at the same time, there will be give and take.  Again, if the system is significantly busy, sleep may return late.   If sleep returns 300ms late one time, that error is compounded into your calculation of what time it is.  
 
-**Don’t forget to Compensate for Processing Time** – the second problem with using a loop with `Thread.sleep(1000)` is that your own code does not take 0 milliseconds to run.  This loop, including the sleep, will take slightly more than a second to run, and your timer value will drift by that amount.  During testing, this drift may be quite small, but in heavily loaded environments the drift may suddenly be quite large.  
+**Don't forget to Compensate for Processing Time** – the second problem with using a loop with `Thread.sleep(1000)` is that your own code does not take 0 milliseconds to run.  This loop, including the sleep, will take slightly more than a second to run, and your timer value will drift by that amount.  During testing, this drift may be quite small, but in heavily loaded environments the drift may suddenly be quite large.  
 
-**Assume that your code will be called at random times** – While timers and events on a fast computer are quite accurate and reliable, you must not make the accuracy of your timer depend upon that, because there is no guarantee. The error might be small and unnoticeable in testing, but you don’t want to discover this sort of thing in production.  Always assume that your code will be called at random times.  Based on this assumption, _you will not code any timing dependencies into the code, and you will not have timer drift problems._  
+**Assume that your code will be called at random times** – While timers and events on a fast computer are quite accurate and reliable, you must not make the accuracy of your timer depend upon that, because there is no guarantee. The error might be small and unnoticeable in testing, but you don't want to discover this sort of thing in production.  Always assume that your code will be called at random times.  Based on this assumption, _you will not code any timing dependencies into the code, and you will not have timer drift problems._  
 
 **Record the start time of a count-up timer** – All you need to do, is to record the starting time for a timer that is going to count up.  This is recorded at the moment that the start-button is pressed, or on whatever other event starts the timer.  It is written once, and does not change after that.
 
@@ -104,7 +104,7 @@ while (System.currentTimeMillis() < endTime) {
 ```
 
 
-It should be obvious that scheduling a time to set a boolean, and then writing a loop to test that boolean is far less efficient than just putting the test into the loop.  I think some programmers don’t realize that a timer requires a complete thread to be allocated in order to call the timer task.  Even though that task is just to set a boolean at a particular time, the allocation of a complete thread for the purpose of setting a boolean is a huge overhead.
+It should be obvious that scheduling a time to set a boolean, and then writing a loop to test that boolean is far less efficient than just putting the test into the loop.  I think some programmers don't realize that a timer requires a complete thread to be allocated in order to call the timer task.  Even though that task is just to set a boolean at a particular time, the allocation of a complete thread for the purpose of setting a boolean is a huge overhead.
 
 ## When are Timers a Good Idea?
 
@@ -158,7 +158,7 @@ Refreshing the screen: if you are displaying the timer value on the screen, then
 
 ## Summary
 
-*   Don’t make a timer task to just keep track of the current time
+*   Don't make a timer task to just keep track of the current time
 *   Use the current time to determine if enough time has passed.
 *   Separate the calculation of the elapsed time, from the performance of the code that is displaying it. These are different things.
-*   Assume that code executes at random times, and don’t make your timer accuracy depend upon the operating environment calling the code at the right time.
+*   Assume that code executes at random times, and don't make your timer accuracy depend upon the operating environment calling the code at the right time.

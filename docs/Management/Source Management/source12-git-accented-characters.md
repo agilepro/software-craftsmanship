@@ -24,7 +24,7 @@ The e with an ague accent is non-ASCII and so it will be treated specially.  Wh
 ```
 
 
-This is called ‘quoting the paths’ and the values are in octal.  The “\\303\\251” is the UTF-8 encoding of the characters displayed in octal.
+This is called 'quoting the paths' and the values are in octal.  The “\\303\\251” is the UTF-8 encoding of the characters displayed in octal.
 
 ## Turning Path Quoting OFF
 
@@ -45,6 +45,6 @@ new file: Rules/Québec TaxRate.2/Taux du Québec.dt
 
 Much nicer.  It does include this warning:  
 
-_Warning: Your console font probably doesn’t support Unicode. If you experience strange characters in the output, consider switching to a TrueType font such as Consolas!_  
+_Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, consider switching to a TrueType font such as Consolas!_  
 
 I followed this with a commit, and everything was committed correctly to the repository.  It seems this would be the case whether you have this setting on or off.  The setting seems to just effect the way that paths are displayed on the screen when running commands.

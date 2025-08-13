@@ -41,7 +41,7 @@ cd {project}
 ```
 
 
-(– Right now I don’t have details of how to access a branch –)
+(– Right now I don't have details of how to access a branch –)
 
 ## Refresh Your Sandbox
 
@@ -71,7 +71,7 @@ This will pull all changes from others into your sandbox, and then merge your ch
 
 ## See What Needs Pushing to Server
 
-At any point in time, you can run the ‘status’ command to find out which files you have changed locally. It is quick and harmless.
+At any point in time, you can run the 'status' command to find out which files you have changed locally. It is quick and harmless.
 
 ```
 cd {playground}/{project}
@@ -139,23 +139,23 @@ Some source management systems allow you to branch on the server, but not all th
 
 ## Terms
 
-**playground** – this is a local-only folder that contains copies of projects from SVN server. You can’t use any local SVN commands in this folder. Generally, you can have as many playground folders that you want, or just one, it does not matter.  
+**playground** – this is a local-only folder that contains copies of projects from SVN server. You can't use any local SVN commands in this folder. Generally, you can have as many playground folders that you want, or just one, it does not matter.  
 **project folder** – this is a folder within the playground that represents the root of a project. Inside this folder will be the sandboxes for the trunk or for the branches that you are working on.  
-**managed folder** – this is any local folder that contains files which are managed by the SCMS. Each file in a sandbox folder might have a matching file on the server which also contains all the old versions of that file. Also known as a ‘working copy’.  
+**managed folder** – this is any local folder that contains files which are managed by the SCMS. Each file in a sandbox folder might have a matching file on the server which also contains all the old versions of that file. Also known as a 'working copy'.  
 **sandbox** – this is the root-most managed folder that contains the root-most files from the repository. This folder is special only in that it is the root-most level that you can refresh or use other SVN operations, and therefor it is the only place to get all the source from that particular source. This is the folder that you want to do all **commit** and **update** operations in.  
 **repository** – this is a folder on the server that contains all the files that are versioned together. When a commit is made, all of the files in a repository get tracked as belonging to a single version. Things outside of the repository (in a different repository) will have a different version number.  
-**project** – the SVN documentation throws this term around: you are allowed to have multiple projects in a repository, but you really should not do this. Each project (that is group of people coordinating work for a specific release) should have a repository. It can be OK for a project to have deliverables from two repositories, and it is OK if two projects are in the same repository, so don’t sweat too much if it gets set up differently. But in general every project should have one repository.  
+**project** – the SVN documentation throws this term around: you are allowed to have multiple projects in a repository, but you really should not do this. Each project (that is group of people coordinating work for a specific release) should have a repository. It can be OK for a project to have deliverables from two repositories, and it is OK if two projects are in the same repository, so don't sweat too much if it gets set up differently. But in general every project should have one repository.  
 **trunk folder** – Git does not map versions into local file folders, so there is no specific local trunk folder.  
 **branches/tags folder** – Git does not map versions into local file folders, so there is no specific local branch or tag folder.
 
 ## Things to Avoid
 
-*   Never check in part of a sandbox, never add some files leaving others unadded.  The reason is obvious: if your build requires a file, and you don’t check it in, you might be breaking the build for everyone else.  The only way you can prove that the collection of files checked in is always buildable is to build before checking in, and checking in all the files in your build.
+*   Never check in part of a sandbox, never add some files leaving others unadded.  The reason is obvious: if your build requires a file, and you don't check it in, you might be breaking the build for everyone else.  The only way you can prove that the collection of files checked in is always buildable is to build before checking in, and checking in all the files in your build.
 *   Never go a long time between commits – The longer you wait, the greater chance of a conflict.  Linus Torvolds says you should not go more than a few hours of programming between checkins.  I agree.
-*   Don’t mix generated files with source files – your source tree should be pristine and only have things that are source.  Generated files should be written to a different folder so that they are never confused with the source, and accidentally checked in.
+*   Don't mix generated files with source files – your source tree should be pristine and only have things that are source.  Generated files should be written to a different folder so that they are never confused with the source, and accidentally checked in.
     * Actually the current trend with maven, npm, and other package/build tools is that they generate the build in special folders in the repository, and they then use ".gitignore" to exclude them.  I don't like this approach because it depends on keeping your .gitignore file accurate, and accounting for all the possible new files that come along.  Generating in a different location would be less error prone, but unfortunately these trends are impossible to oppose.
-*   Don’t check in generated files, because it would be possible to get a generated file that does not match the source because someone only checked in the generated file, and failed to check in the source.  Instead build for source every time.  (Exceptions are made if the builder is very rare, esoteric, or expensive.)
-*   Don’t give meaningless messages with commit: When people look at the commit, they will get a list of files, so you don’t need to put the list of files in the message.  Don’t just say “fixing bugs” since that is most of the time true.  The message should be something specific that will allow you 6 months from now to locate the work that you did.
+*   Don't check in generated files, because it would be possible to get a generated file that does not match the source because someone only checked in the generated file, and failed to check in the source.  Instead build for source every time.  (Exceptions are made if the builder is very rare, esoteric, or expensive.)
+*   Don't give meaningless messages with commit: When people look at the commit, they will get a list of files, so you don't need to put the list of files in the message.  Don't just say “fixing bugs” since that is most of the time true.  The message should be something specific that will allow you 6 months from now to locate the work that you did.
 
 ## Colors
 

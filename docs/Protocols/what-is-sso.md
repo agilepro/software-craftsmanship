@@ -52,13 +52,13 @@ If you are developing 3 applications, and you allow for SSO access to those thre
 
 It is clear: SSO does not simply mean you use an SSO mechanism, but you must also allow a user to use a Global ID when logging in.  
 
-OpenID allows a way for a user to bring their own ID to any application.  To allow the user to really log in once, and access all applications, those applications must be written to accept the ID that the user brings!  The application needs to let go of control of the ID, and accept whatever ID the user wants to use. In today’s hyper connected overlapped world, no single authority can hope to enforce a consistent ID on all users of all applications.  And there is no need to enforce a centralized ID system. All you really want is for a user to be able to prove they are who they say they are — the form of the ID should not matter.
+OpenID allows a way for a user to bring their own ID to any application.  To allow the user to really log in once, and access all applications, those applications must be written to accept the ID that the user brings!  The application needs to let go of control of the ID, and accept whatever ID the user wants to use. In today's hyper connected overlapped world, no single authority can hope to enforce a consistent ID on all users of all applications.  And there is no need to enforce a centralized ID system. All you really want is for a user to be able to prove they are who they say they are — the form of the ID should not matter.
 
 ## The Surprising Conclusion:
 
 :::tip[Key Takeaway]
 
-In today’s hyper connected world, to implement SSO, the application **must** allow the user to bring their own ID to the application, and to use whatever ID they bring.  Otherwise, you fail to provide “single sign on”.
+In today's hyper connected world, to implement SSO, the application **must** allow the user to bring their own ID to the application, and to use whatever ID they bring.  Otherwise, you fail to provide “single sign on”.
 
 :::
 

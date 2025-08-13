@@ -10,14 +10,14 @@ The static method Integer.toString(i) is more efficient than concatenating to a 
 
 A question was asked on [StackOverflow](http://stackoverflow.com/questions/14712693/best-practices-for-converting-from-int-to-string/14713021):
 
-_I’m working on a project where all conversions from `int` to `String` are done like this:_
+_I'm working on a project where all conversions from `int` to `String` are done like this:_
 
 ```
 int i =5;
 String strI = "" + i;
 ```
 
-_I’m not familiar with Java. Is this usual practice or is something wrong, as I suppose?_
+_I'm not familiar with Java. Is this usual practice or is something wrong, as I suppose?_
 
 ## The Answer
 

@@ -4,7 +4,7 @@ Some of our development is done by outside contractors, and they have a long lis
 
 ## Setting
 
-The development team had received a set of code (about 10 classes of source) from an outside source. The first thing that any development team does is to go about ‘cleaning up’ the code.  The reason for putting ‘cleaning up’ in quotes is because what this really means is to transform the code into a more familiar form.  Using your team’s variable naming conventions, indenting style, coding patterns, etc.  This can make the code more ‘readable’ to someone accustomed to that style.  
+The development team had received a set of code (about 10 classes of source) from an outside source. The first thing that any development team does is to go about 'cleaning up' the code.  The reason for putting 'cleaning up' in quotes is because what this really means is to transform the code into a more familiar form.  Using your team's variable naming conventions, indenting style, coding patterns, etc.  This can make the code more 'readable' to someone accustomed to that style.  
 The code had an abstract Interface, and three concrete implementation classes:
 
 *   Interface: AuthStyle
@@ -46,7 +46,7 @@ This is 9 lines of code.  It creates one of the three concrete implementation c
 
 Above are the kinds of questions that should be asked.  In general, if 9 lines of code can be written in place of a new class, you should simply take the 9 lines of code.  There is always the change that in the future you will have more classes.  When that future comes, change this code into a factory class, but not any earlier.  
 
-YAGNI – This is a classic case of “**You Aren’t Going to Need It** (YAGNI)”.  The most common design mistake is building int he possibility for flexibility when the need has not been demonstrated.  This is implemented “just in case” but many times our intuition of what we will need is wrong.  There is no need to implement anything in sfotware BEFORE you need it.  If a factory class is needed later, then you can implement it later.  There is NO savings in implementing it ahead of the need.  In fact, if the need never occurs, then this work is a waste.
+YAGNI – This is a classic case of “**You Aren't Going to Need It** (YAGNI)”.  The most common design mistake is building int he possibility for flexibility when the need has not been demonstrated.  This is implemented “just in case” but many times our intuition of what we will need is wrong.  There is no need to implement anything in sfotware BEFORE you need it.  If a factory class is needed later, then you can implement it later.  There is NO savings in implementing it ahead of the need.  In fact, if the need never occurs, then this work is a waste.
 
 ## Contractors
 
@@ -58,4 +58,4 @@ None of the coding authorities have a really good answer on when to create a cla
 
 If you find that a lot of your methods have this if statement, then maybe you should consider a subclass.  But, if only one method has it, then juse keep the branch statement.  The overhead of a class is not worth it. 
  
-And remember, never make the change to separate classes, until you have a demonstrable need and benefit that will come from it.  Don’t create classes “just in case”.
+And remember, never make the change to separate classes, until you have a demonstrable need and benefit that will come from it.  Don't create classes “just in case”.

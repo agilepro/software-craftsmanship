@@ -10,7 +10,7 @@ F:\GitHub\software-craftsmanship\docs\Coding\checked-exceptions.md
 The java class must:
 
 *   Extend java.lang.RuntimeException so that is can be used anywhere an exception can be used and functions as an [unchecked exception](../../Coding/checked-exceptions).
-*   Have the ability to chain together, each exception carrying a ’cause’ exception
+*   Have the ability to chain together, each exception carrying a 'cause' exception
 *   Has templates and a variable number of parameter data values to substitute in to explain the problem to allow localization.  (See [Translatable Error Messages](https://agiletribe.purplehillsbooks.com/2019/01/05/translatable-error-messages/) )
 *   Has constructors with variable parameters to make it easy to construct with the template and parameters (See [Variable Arguments for Messages](https://agiletribe.purplehillsbooks.com/2019/01/07/variable-arguments-for-messages/) )
 *   Can be serialized to JSON together with other exception classes that might be in the chain. (See [JSON Translatable Error Messages](https://agiletribe.purplehillsbooks.com/2019/01/06/json-translatable-error-messages/) )

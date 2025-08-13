@@ -7,7 +7,7 @@ When people first learn object oriented programming (is there any other way) the
 
 ## An Example
 
-A common problem is reading and parsing a file with properties in it. The properties class has a pretty mechanism to parse such a file, but it requires a couple of lines of code to set it up properly. You don’t want to duplicate those lines all over the place, and you are not 100% sure that requirements for the format won’t change.  
+A common problem is reading and parsing a file with properties in it. The properties class has a pretty mechanism to parse such a file, but it requires a couple of lines of code to set it up properly. You don't want to duplicate those lines all over the place, and you are not 100% sure that requirements for the format won't change.  
 This is a case where you really do want a simple static function, that takes the file as a parameter, and returns the properties object.
 
 ```java
@@ -34,9 +34,9 @@ class Utilities {
 ```
 
 
-Don’t get hung up on the specific implementation of this example, but focus only on the fact that it is a method that takes a value in and returns a value back. There is nothing really to hold on to after the method is finished, and there is nothing really that needs to be set up in advance.  
+Don't get hung up on the specific implementation of this example, but focus only on the fact that it is a method that takes a value in and returns a value back. There is nothing really to hold on to after the method is finished, and there is nothing really that needs to be set up in advance.  
 
-The clearly good thing is that you have this code encapsulated into one place, and you don’t have this copied dozens of times in your code. From the code, you call getPropsFromFile and you don’t have to worry about the details of the input stream or exception handling.
+The clearly good thing is that you have this code encapsulated into one place, and you don't have this copied dozens of times in your code. From the code, you call getPropsFromFile and you don't have to worry about the details of the input stream or exception handling.
 
 ```java
 Properties myProps = Utilities.getPropsFromFile(file);

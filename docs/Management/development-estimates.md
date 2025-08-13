@@ -13,8 +13,8 @@ There is a better and more pragmatic approach.  Generally the department has a 
 2.  Meet weekly to review all running projects, and whether they are providing value.
 3.  Work to prioritize projects that are just about to complete.  Get projects finished if at all possible, so that people can move on to other things.
 4.  Shut down the projects that are dragging on and not producing any visible results.
-5.  Don’t start any new projects while you have a specified number of running projects.  You should never have more projects than you have people in the department, and it probably should be some fraction of that number.   Decide on what the maximum number of fixed projects will be, and don’t start new ones when you have reached that number.
-6.  Don’t attempt to schedule anything more than a week or two in advance.  If you have a forced schedule (such as a trade show or some other event that must be fixed in time) then that is a goal to work for, and be sure to leave plenty of buffer for unexpected things.
+5.  Don't start any new projects while you have a specified number of running projects.  You should never have more projects than you have people in the department, and it probably should be some fraction of that number.   Decide on what the maximum number of fixed projects will be, and don't start new ones when you have reached that number.
+6.  Don't attempt to schedule anything more than a week or two in advance.  If you have a forced schedule (such as a trade show or some other event that must be fixed in time) then that is a goal to work for, and be sure to leave plenty of buffer for unexpected things.
 
 It is not about planning things perfectly in advance, but instead it is about optimizing resource within the highest priority projects that you are currently running.  
 

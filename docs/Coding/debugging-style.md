@@ -19,7 +19,7 @@ for (SyncStatus docStat : docsNeedingDown) {
 ```
 
 
-The loop streams the document down, and then sets the timestamp.  What could possibly be wrong?  We don’t know at this point, so I need a little more information about what is actually going on in this loop at run time.  Is the docStat.timeRemote set incorrectly, or is for some reason setModifiedDate not working.  To get more information at run time, I am going to add some debug code.
+The loop streams the document down, and then sets the timestamp.  What could possibly be wrong?  We don't know at this point, so I need a little more information about what is actually going on in this loop at run time.  Is the docStat.timeRemote set incorrectly, or is for some reason setModifiedDate not working.  To get more information at run time, I am going to add some debug code.
 
 ## The Sloppy Way
 
@@ -46,7 +46,7 @@ if (docStat.timeRemote==0) {
 }
 ```
 
-This does not printout what is happening on all the normal loops, but it does print out what is happening if the error situation occurs.  Into the exception, you should include as much information as possible; don’t be stingy.  If the error situation occurs, you will need the context, so go ahead and include it.
+This does not printout what is happening on all the normal loops, but it does print out what is happening if the error situation occurs.  Into the exception, you should include as much information as possible; don't be stingy.  If the error situation occurs, you will need the context, so go ahead and include it.
 
 ## Comparison
 
@@ -56,7 +56,7 @@ The two styles are not interchangeable in 100% of the situations.  I encourage 
 *   Very low overhead: the integer compare is so fast that one does not need to worry about it.  The building of the debug string is done ONLY if the test fails.  The standard debug output string slows down the code on every loop, while this does it only when there is an error, so there is essentially no overhead on the successfully running code.
 *   To debug, you make a guess as to what is going wrong, and you test for that condition, which is a more active approach to debugging
 *   It exposes assumptions in the code.  In the above code, we are assuming that docStat.timeRemote is set to the correct timestamp for the remote file.  I suspect that it might instead be set to zero, so this test is put into the code.  Because this assumption is implicit in the code, adding the explicit test makes it clear.
-*   There is far less output to dig through: if an error condition occurs you are immediately aware of that condition.  You don’t have to look through all the output to find the one where the assumption is violated: the program is doing the testing for you.
+*   There is far less output to dig through: if an error condition occurs you are immediately aware of that condition.  You don't have to look through all the output to find the one where the assumption is violated: the program is doing the testing for you.
 *   Fail fast: if the program hits the error condition that violates the assumption, throwing the exception stop execution immediately, allowing other, non-violating processing to continue.  I have seen systems where a logic error causes the system to occasionally go into extremely heavy processing bringing the server to its knees for no good purpose making it harder to find the error.  If you can find one error condition, it is better to expose that quickly, and get that fixed, than to go on processing.
 *   This is an incremental way to create code that assures that all assumptions are correct.  Some might say you should always test all assumptions, but actually testing all assumptions at all points creates a lot of pointless code.  Instead, there are some places were the logic is less clear, and assumption violations more likely, and you want to cover those places first.  Those are the places where bugs appear.  So using a current bug as an indicator of a place where assumptions should be tested is a very efficient heuristic.
 *   Forced to fix all violations:  With “println” style debug statements, you only notice a problem if you are looking for it, and this looking takes a lot of effort.  Instead, if you build in tests for assumptions, the execution stops whenever a violation is found.  The programmer is forced to fix the problem.  You can not ignore problems, and leave them in the code to fix later.  This assures a higher quality of code at release time.

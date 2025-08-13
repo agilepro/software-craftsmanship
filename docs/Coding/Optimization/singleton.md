@@ -59,7 +59,7 @@ class UserManager {
 ```
 
 
-A couple of things to notice immediately: you don’t need a constructor, and you you don’t need the getInstance method.  You also don’t need a variable to hold the instance.  There is no particular advantage in holding the user table as a member of a singleton instance, you might as well simply declare it as static data member.  In a moderately complex class, these savings are a pretty small part of the class.  The real benefit comes from how you use it.  It takes only one line to look up a user:
+A couple of things to notice immediately: you don't need a constructor, and you you don't need the getInstance method.  You also don't need a variable to hold the instance.  There is no particular advantage in holding the user table as a member of a singleton instance, you might as well simply declare it as static data member.  In a moderately complex class, these savings are a pretty small part of the class.  The real benefit comes from how you use it.  It takes only one line to look up a user:
 
 ```java
 User user = UserManager.findUSerById("A2R3T1F3");
@@ -108,17 +108,17 @@ In my experience, programmers tend to dislike using static methods.  I believe 
 
 Some programmers feel that if they implement the singleton pattern, it will give the option in the future to make a different implementation and slip it in easily.  This is sort-of true, because the call sites already have the “getInstance” call.  Note that this is not really true because the singleton pattern with multiple implementations requires an interface and a factory class — if you have not provided those you really can not swap in another implementation without reworking all the code.  
 
-If you did implement the interface and the factory just in case you need it, I must response with “**YAGNI**” in the loudest possible voice.  (You Aren’t Gonna Need It)  It is a very bad programming practice to slip architectural features in that you don’t need today, and might never need in the future.  These kinds of embellishments clutter the code, and create extra work, without providing any value.  If in the future you find you really do need the singleton pattern, it is not hard to find and replace all the call sites with the appropriate code; this is a mechanical change which the compiler will find for you.  
+If you did implement the interface and the factory just in case you need it, I must response with “**YAGNI**” in the loudest possible voice.  (You Aren't Gonna Need It)  It is a very bad programming practice to slip architectural features in that you don't need today, and might never need in the future.  These kinds of embellishments clutter the code, and create extra work, without providing any value.  If in the future you find you really do need the singleton pattern, it is not hard to find and replace all the call sites with the appropriate code; this is a mechanical change which the compiler will find for you.  
 
-Based on the principle of “Keep It Simple” you should always use static members if possible (that is if you need only one instance) and you should use static methods if possible (because they don’t need any data beyond static data).  If all you need is a set of static methods, then you should implement a set of static methods.  Embellishing it to make it look more elegant as a singleton class is just a waste of effort that complicates the code unnecessarily.
+Based on the principle of “Keep It Simple” you should always use static members if possible (that is if you need only one instance) and you should use static methods if possible (because they don't need any data beyond static data).  If all you need is a set of static methods, then you should implement a set of static methods.  Embellishing it to make it look more elegant as a singleton class is just a waste of effort that complicates the code unnecessarily.
 
 ## How should a Singleton be called?
 
 Imagine that you have a class where the Singleton Pattern is justified.  How, then should it be called?  As a client of the class, you have to get a pointer to an instance. You have only four options:
 
-1.  Hold a reference in a static variable and initialize by ‘lazy evaluation’ that is, test for null, and then initialize when null. After that the value is set.
+1.  Hold a reference in a static variable and initialize by 'lazy evaluation' that is, test for null, and then initialize when null. After that the value is set.
 2.  Hold a reference in a static variable and initialize at static initialization time. Are you sure that the singleton it ready at that time? This is a concern.
 3.  Hold reference in local variable, and initialize every time with call to getInstance().
-4.  Don’t use a variable at all and call in the method chain. If only one reference for one call is needed, this is fine.
+4.  Don't use a variable at all and call in the method chain. If only one reference for one call is needed, this is fine.
 
-In general, **getInstance()** should be quite efficient, and there should be little reason to hold a copy of the reference in your own static. In a sense, your static is duplicating the job of the singleton class which also has to have a static. A single shouldn’t ever change, but if it ever did, you would be left holding a stale reference. Option 4 is OK if you need only one call, but this pattern encourages inefficiency when multiple calls are needed. So, for all these reasons I believe you should use option 3 and get the instance every time.
+In general, **getInstance()** should be quite efficient, and there should be little reason to hold a copy of the reference in your own static. In a sense, your static is duplicating the job of the singleton class which also has to have a static. A single shouldn't ever change, but if it ever did, you would be left holding a stale reference. Option 4 is OK if you need only one call, but this pattern encourages inefficiency when multiple calls are needed. So, for all these reasons I believe you should use option 3 and get the instance every time.

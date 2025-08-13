@@ -1,6 +1,6 @@
 #  Reflecting State in the URL
 
-Consider an Angular-JS page that accepts a query value as a parameter, but also allows the user to modify the query value. If you update the page’s address, then bookmarks by the user will always bring them back to the same place/mode.  
+Consider an Angular-JS page that accepts a query value as a parameter, but also allows the user to modify the query value. If you update the page's address, then bookmarks by the user will always bring them back to the same place/mode.  
 
 Here is the implementation for quick reference:
 

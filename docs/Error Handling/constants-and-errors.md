@@ -1,6 +1,6 @@
 #  Constants and Errors
 
-Still reviewing that code base and finding more bad patterns for use of constants, this time for error messages.   This is another “don’t do this” post.
+Still reviewing that code base and finding more bad patterns for use of constants, this time for error messages.   This is another “don't do this” post.
 
 ## Error Reporting
 
@@ -43,7 +43,7 @@ This point is that “portal256” is a meaningless value.  Why use an arbitrar
 The next problem is more subtle.  The actual problem was that the “appinfo.xml” file was missing from the archive.  That is actually what the code was testing for, and that is actually what it should be reporting.  
 The error message reports something else:  it _interprets_ the problem.  It takes the fact that the file is missing, and concludes that “the archive is invalid”.   This is poor error reporting.  The code should always report exactly the problem that was found, because code can evolve, and this may later be called by something else that is using it for a different reason, and this conclusion (which depends on the context it is being called in) may no longer be correct. 
 
-I always have to remind programmers like the Detective Joe Friday on Dragnet:  “Just the facts.   Just report the facts that you found.”   Don’t jump to unfounded conclusions.
+I always have to remind programmers like the Detective Joe Friday on Dragnet:  “Just the facts.   Just report the facts that you found.”   Don't jump to unfounded conclusions.
 
 ## Failure #2
 

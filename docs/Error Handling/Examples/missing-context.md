@@ -1,6 +1,6 @@
 #  Poor Error Msg – Missing Context
 
-I collect examples of poor error messages, and discuss why they are bad.  Today’s example comes from Chrome, Google’s browser.  I have been using it a lot recently.  But rather suddenly, it starts popping up an error window when I start it up.  Here is what the error window looks like:  
+I collect examples of poor error messages, and discuss why they are bad.  Today's example comes from Chrome, Google's browser.  I have been using it a lot recently.  But rather suddenly, it starts popping up an error window when I start it up.  Here is what the error window looks like:  
 
 ![](missing-context-img1.png)  
 

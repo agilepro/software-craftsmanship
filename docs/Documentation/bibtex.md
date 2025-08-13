@@ -84,7 +84,7 @@ It does not matter what the key is, but by combining author name, with the year 
 ```
 
 
-The key is the word after the first open brace: “agostini2007deserted.”  The author’s last name is Augostini, and this article was published in 2007.   That gets pretty close to unique, but Augustini might have published two thing in 2007.  To get a unique key, we add the first word of the title “deserted.”  It is unlikely that there are two works published in 2007 by someone named Augustini that have “deserted” as the beginning of the title, so this is unique enough.   If the title starts with quite common words, you might need to include several of them — enough to make the result unique for that reference entry.
+The key is the word after the first open brace: “agostini2007deserted.”  The author's last name is Augostini, and this article was published in 2007.   That gets pretty close to unique, but Augustini might have published two thing in 2007.  To get a unique key, we add the first word of the title “deserted.”  It is unlikely that there are two works published in 2007 by someone named Augustini that have “deserted” as the beginning of the title, so this is unique enough.   If the title starts with quite common words, you might need to include several of them — enough to make the result unique for that reference entry.
 
 ## Author Names
 

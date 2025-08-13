@@ -26,7 +26,7 @@ if (task.getDueDate()==0) {
 ```
 
 
-Obviously, the first form is written in a single line, making it more compact.  Sometimes being more compact is good, and sometimes it can be bad, so I don’t want to focus on that at this time.  Instead, please note that when the due date is zero, it makes a completely unnecessary call to the write method, with a null string which produces no output.  It is far better to not call that at all.  This is better way to write this:
+Obviously, the first form is written in a single line, making it more compact.  Sometimes being more compact is good, and sometimes it can be bad, so I don't want to focus on that at this time.  Instead, please note that when the due date is zero, it makes a completely unnecessary call to the write method, with a null string which produces no output.  It is far better to not call that at all.  This is better way to write this:
 
 ```java
 if (task.getDueDate()!=0) {
@@ -55,7 +55,7 @@ if (task.getDueDate()!=0) {
 ```
 
 
-The point being of course that you do not need to call format date if you already know that the due date is zero, and you don’t need to call write value if the know that the due date is zero.  The above, of course, can not be accomplished with the ternary conditional expression, and that is the second problem: programmers who use the ternary form believe that because it is visually compact, that the resulting code is compact, and don’t see the big picture.  
+The point being of course that you do not need to call format date if you already know that the due date is zero, and you don't need to call write value if the know that the due date is zero.  The above, of course, can not be accomplished with the ternary conditional expression, and that is the second problem: programmers who use the ternary form believe that because it is visually compact, that the resulting code is compact, and don't see the big picture.  
 There is one more improvement that I will include, because the above code requires two calls to the getDueDate function, and it would be better to have one and save the result in a local variable.  Here is the best form:
 
 ```java

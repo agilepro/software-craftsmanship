@@ -42,17 +42,17 @@ thisPage + "?go="+go;
 
 ### Opaqueness
 
-The go parameter should be considered an “opaque” value. That is, never lookedc at the value and write logic to deduce things from that. One page, should never make conclusions about another page, from it’s address. Any attempt to look at the go address, and manipulate it, will cause convoluted spaghetti logic eventually. 
+The go parameter should be considered an “opaque” value. That is, never lookedc at the value and write logic to deduce things from that. One page, should never make conclusions about another page, from it's address. Any attempt to look at the go address, and manipulate it, will cause convoluted spaghetti logic eventually. 
 
 Consider that the user is in a domestic product page which the system does not know whether it is a domestic or international product. The page may start up, realize that it needs more information, and redirect to a page that asks the user to clarify whether this is domestic or international. the user fills in a form clarifying that it is international, and controller handles the form post, but then at the end of the controller, it should NOT look at the URL and try to figure if you were on a domestic page, and change that to the address for the international. Instead, the controller should redirect to the address specified in the go parameter, and then let the domestic page have the logic to redirect once again to the international page.
 
-I know this seems like a violation of MVC it actually isn’t. The domestic page is not a pure view: it actually has some controller logic to decide to redirect to the clarification form in the first place. It would actually be the address of that controller that we are redirecting back to. The point is that the logic of what the domestic page can and can not display should be in one place, and not split between the domestic page controller, and the form response controller which handled the user input.
+I know this seems like a violation of MVC it actually isn't. The domestic page is not a pure view: it actually has some controller logic to decide to redirect to the clarification form in the first place. It would actually be the address of that controller that we are redirecting back to. The point is that the logic of what the domestic page can and can not display should be in one place, and not split between the domestic page controller, and the form response controller which handled the user input.
 
 ### Wrong Ways to do this
 
 There are a lot of ways to do this incorrectly:
 
-*   Use a session variable: this is wrong because you can have multiple browser windows open at the same time on the same session. One window might write over the other window’s return value, and they both end up going back to the same page. Or worse.
+*   Use a session variable: this is wrong because you can have multiple browser windows open at the same time on the same session. One window might write over the other window's return value, and they both end up going back to the same page. Or worse.
 *   Use a cookie: same problem as a session variable
 *   Use a static variable: same problem, but this time across all users of the server.
 *   Save in user profile: same problem, but this time across all browsers logged in as that user, regardless of the client machine.

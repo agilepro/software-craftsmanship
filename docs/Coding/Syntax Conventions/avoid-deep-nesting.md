@@ -29,7 +29,7 @@ if (year % 4 == 0) {
 
 You might recognize that as the formula to calculate the number of days in February. Most of the time February has 28 days, but sometimes, on a leap year it has 29.  
 
-The above conditional expression is correct. However, it is a bit tricky to read, particularly inside the century test level, to notice that there is a condition where nothing is set. (There is no ‘else’ on the year % 100 condition.)  
+The above conditional expression is correct. However, it is a bit tricky to read, particularly inside the century test level, to notice that there is a condition where nothing is set. (There is no 'else' on the year % 100 condition.)  
 
 The same expression can be rewritten in this form:
 
@@ -51,7 +51,7 @@ else
 ```
 
 
-Even though the logic is exactly the same — all we have done is transform according to DeMorgan’s laws into another form and rearranged — this form is easier to decode. You can handle one thing at a time. Each steps gets one step more refined. As you eliminate the earlier conditions, there is less complexity you have to hold in your head to remember what all the remaining possibilities are.  
+Even though the logic is exactly the same — all we have done is transform according to DeMorgan's laws into another form and rearranged — this form is easier to decode. You can handle one thing at a time. Each steps gets one step more refined. As you eliminate the earlier conditions, there is less complexity you have to hold in your head to remember what all the remaining possibilities are.  
 
 More important, it is easy to see that there are really only four cases: two with February at 28 days, and two with February at 29 days. That is much harder to see in the original formulation.  
 

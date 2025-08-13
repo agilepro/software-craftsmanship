@@ -6,7 +6,7 @@ Some programmers have their own favorite ways to run the software they are worki
 
 ### Examples
 
-If you are working on a server, it is pretty clear that the customer will want to run that software as a service.  Some developers don’t want to run the software as a service, so they run it in a different manner.  
+If you are working on a server, it is pretty clear that the customer will want to run that software as a service.  Some developers don't want to run the software as a service, so they run it in a different manner.  
 
 Generally a customer does not run software in a debugger.  Some developers like to always run in a debugger, because it is more convenient for them. 
 
@@ -50,7 +50,7 @@ Running how the customer runs it should be the BEST way to find and fix problems
 
 :::
 
-I don’t know how to emphasize this more.  If the programmers use a crutch, then they will naturally make the software work better with the crutch.  Take the crutch away, and the program is worse.
+I don't know how to emphasize this more.  If the programmers use a crutch, then they will naturally make the software work better with the crutch.  Take the crutch away, and the program is worse.
 
 ### Quite Obvious, Really
 
@@ -58,11 +58,11 @@ If the programmers would run the server as a service, then they would add in the
 
 If the programmers ran with the same amount of memory that the customer is expected to have, then critical dependencies on memory will be found and fixed before it gets to the customer. 
 
-If the programmers don’t use command line arguments, then they will find a way to control what they need without using command line arguments, and that same mechanism will work for customers.  
+If the programmers don't use command line arguments, then they will find a way to control what they need without using command line arguments, and that same mechanism will work for customers.  
 
 The thing you need to remember is that programmers are **_designers_**.  At every moment, they are looking at the product, and determining how to make it best for the customer.  They can only do this if they are actually in touch with the way that the customer does.  
 
-They may believe that is “doesn’t matter” but they will never know for sure.  A careful programmer always runs the software in a way that is as close as possible to the customer, so that they really know what the customer is experiencing.
+They may believe that is “doesn't matter” but they will never know for sure.  A careful programmer always runs the software in a way that is as close as possible to the customer, so that they really know what the customer is experiencing.
 
 :::tip[Key Takeaway]
 

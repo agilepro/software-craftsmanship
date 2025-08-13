@@ -41,7 +41,7 @@ This post is really about recognizing parallel domains: places where you have th
 
 Bad examples abound, and it is interesting that the reason for the inconsistency is often because someone tried to improve things:  
 
-In one project all the resource files were in a particular pattern, but the developer of the Eclipse-based studio didn’t like the way they were organized, and tried to improve on it by displaying them to the user in a different organization.  They implemented some folders in the UI that did not exist on disk.  This caused no end of confusion as developers learned the way files were organized in the UI, and could not find files on the disk because they were organized differently.  
+In one project all the resource files were in a particular pattern, but the developer of the Eclipse-based studio didn't like the way they were organized, and tried to improve on it by displaying them to the user in a different organization.  They implemented some folders in the UI that did not exist on disk.  This caused no end of confusion as developers learned the way files were organized in the UI, and could not find files on the disk because they were organized differently.  
 
 The question was: “should I keep them the same, or should I improve they way they are organized.”  The developer honestly thought that the new organization was better, and it probably would have been if implemented everywhere.  But implementing an improvement in one place and NOT everywhere means that you are creating a difference, which often defeats all the benefit of the improvement.  
 

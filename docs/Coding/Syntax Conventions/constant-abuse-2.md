@@ -33,9 +33,9 @@ This difference may seem slight, but it adds a lot of complexity in reading and 
 ## Arbitrary Differences
 
 There was some attempt to make the constants similar to the values they represent, but there are many arbitrary differences that I highlighted.  
-For instance in the code you read “db\_dbadminpassord”  but the config file will have “db\_admin\_password”.   A small difference, but that difference means you can’t search for it without going to the constants file and mapping the identifier to the value.  
+For instance in the code you read “db\_dbadminpassord”  but the config file will have “db\_admin\_password”.   A small difference, but that difference means you can't search for it without going to the constants file and mapping the identifier to the value.  
 
-Another example is the constant “db\_home” which translated to “db\_database\_home”.  Remember, in the Java code, you can change the name of constants any time you want.   Why wasn’t the constant (and all 3 to 4 places it is used) changed to be called “db\_database\_home”.   If it had been, then the Java code readibility would be greatly improved.  
+Another example is the constant “db\_home” which translated to “db\_database\_home”.  Remember, in the Java code, you can change the name of constants any time you want.   Why wasn't the constant (and all 3 to 4 places it is used) changed to be called “db\_database\_home”.   If it had been, then the Java code readibility would be greatly improved.  
 
 Imagine instead the situation where constants are named EXACTLY after the value they represent.  Like this:  
 
@@ -53,7 +53,7 @@ The property names can never be changed, but the Java constant identifier can be
 
 Look at that!  Compare to the code at the top.  The code contains the EXACT string that you will look for in the configuration file!  This is easy to read.  It is clear what the code is doing.  And you can read and understand it faster without involved an arbitrary look up in between.  
 
-Some programmers recoil:  what if you have to change them.  First of all, you can’t change them because of all the config files that already are deployed, however it is trivial to do a search and replace for “db\_driver\_class\_name” with any other value.
+Some programmers recoil:  what if you have to change them.  First of all, you can't change them because of all the config files that already are deployed, however it is trivial to do a search and replace for “db\_driver\_class\_name” with any other value.
 
 ## Encapsulation
 
@@ -62,7 +62,7 @@ The opposite of encapsulation is called spaghetti-code.  Anything that a class 
 
 ## Conclusion
 
-Every step that slows down the ability to understand and read the code, increases the cost of maintaining the code.  Creating constants with names that different slightly from their value, that are defined in a separate package, that can never be changed add a cost to maintaining the code which can not be justified.  Using string literals would be superior from a cost of maintenance point of view.  I can’t think of any advantage of using the constants because they never can be changed.  
+Every step that slows down the ability to understand and read the code, increases the cost of maintaining the code.  Creating constants with names that different slightly from their value, that are defined in a separate package, that can never be changed add a cost to maintaining the code which can not be justified.  Using string literals would be superior from a cost of maintenance point of view.  I can't think of any advantage of using the constants because they never can be changed.  
 See an earlier post on a similar topic:  [Constant Abuse 1](https://agiletribe.purplehillsbooks.com/2016/03/09/constant-abuse/)
 
 This entry was posted in [Coding](https://agiletribe.purplehillsbooks.com/category/coding/) and tagged [constants](https://agiletribe.purplehillsbooks.com/tag/constants/), [Java](https://agiletribe.purplehillsbooks.com/tag/java/), [maintenance](https://agiletribe.purplehillsbooks.com/tag/maintenance/), [programming](https://agiletribe.purplehillsbooks.com/tag/programming/). Bookmark the [permalink](https://agiletribe.purplehillsbooks.com/2018/11/14/constant-abuse-2/ "Permalink to Constant Abuse 2").

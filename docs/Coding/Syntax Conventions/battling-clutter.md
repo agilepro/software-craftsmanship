@@ -25,7 +25,7 @@ However this clutter is a kind of technical debt.  As the number of lines incre
 
 ## Conclusion
 
-One must always diligently fight against clutter.  Don’t leave it in “just in case”. Unused code is a liability, not an asset.
+One must always diligently fight against clutter.  Don't leave it in “just in case”. Unused code is a liability, not an asset.
 
 :::tip[Key Takeaway]
 

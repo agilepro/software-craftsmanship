@@ -8,7 +8,7 @@ tags:
 
 #  Caching for Chrome
 
-One of the biggest questions I see posted on internet discussion boards is “Why didn’t Chrome get the recent file?”  By default, Chrome is more aggressive on it’s caching than either Mozilla or IE.  Here are some answers to these questions.
+One of the biggest questions I see posted on internet discussion boards is “Why didn't Chrome get the recent file?”  By default, Chrome is more aggressive on it's caching than either Mozilla or IE.  Here are some answers to these questions.
 
 ## Cache Management
 
@@ -92,7 +92,7 @@ Different kinds of files have different risks.
 *   It can be very bad for a JavaScript file to be out of date.  One always tries to make changes to JavaScript that is contained in one file, but occasionally a change in one JavaScript file necessitates a change in another file.  If you get the new version of one, and the old version of the other, they could produce an ugly error message, or worse.
 *   CSS files fall in between these.  If a new CSS class is used in the page, and the CSS is out of date, the display can be pretty messed up, but most of the time a CSS change does not cause a problem if it is delivered slightly earlier or later.
 
-If you look at user behavior, there might still be some benefit.  Users are very “bursty” meaning that they access a site only occasionally, and when they do, they want a bunch of pages and they want the all as fast as possible.  The likelihood that a users will be actively browsing through pages when a server is updated is small.  Telling the browser to cache for 60 seconds seems harmless.  But . . . it depends on the number of users and how critical it is that they don’t see errors.
+If you look at user behavior, there might still be some benefit.  Users are very “bursty” meaning that they access a site only occasionally, and when they do, they want a bunch of pages and they want the all as fast as possible.  The likelihood that a users will be actively browsing through pages when a server is updated is small.  Telling the browser to cache for 60 seconds seems harmless.  But . . . it depends on the number of users and how critical it is that they don't see errors.
 
 ## Implications on Application Structure
 

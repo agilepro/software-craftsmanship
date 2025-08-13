@@ -6,7 +6,7 @@ How does one politely say that someone obviously has no understanding of how Agi
 
 ## Agile keeps the Team in Sync
 
-The point about rapid cycles, rapid check in, continual build, and continual test, is to keep all members of the team synchronized.  Your goal is to minimize the amount of technical debt.  You can’t keep the team in sync, while having half the team working in a waterfall approach.  
+The point about rapid cycles, rapid check in, continual build, and continual test, is to keep all members of the team synchronized.  Your goal is to minimize the amount of technical debt.  You can't keep the team in sync, while having half the team working in a waterfall approach.  
 
 When an Agile team member makes a change to the code, it is quickly communicated to all other members.  For example, if programmer A adds a variable named “x1” that line declaring that variable is synchronized to all other programmers on a daily basis.  If programmer B adds another variable named “x1” the compiler immediately warns of the problem, and programmer B can immediately address the problem.  One problem with the waterfall approach is the idea that programmers A and B can go and work for 3 to 6 months on their own copy of the code, and merge it all at the end.  This is a trivial example, but still it illustrates the problem:  by the time programmers A and B notice they have used the same variable name, they have already committed large bodies of code to that name, and it requires a significant re-write.
 
@@ -14,9 +14,9 @@ When an Agile team member makes a change to the code, it is quickly communicated
 
 When using an Agile approach, you approach the entire product being released in a holistic manner.  Every day the entire product is built.  Every day, all the tests are run. If any code change breaks a test, that is immediately fixed.  You do not let tests remain broken for long periods of time.  The code is kept in a “release ready” state at all times.  
 
-Because the entire team is in the practice of running the tests every day, if one person makes a change, that effects another programmer’s area, it is detected that day, and not 2 months later.  By addressing the problem when it is small, it is addressed BEFORE a large amount of other code comes to depend upon it.  
+Because the entire team is in the practice of running the tests every day, if one person makes a change, that effects another programmer's area, it is detected that day, and not 2 months later.  By addressing the problem when it is small, it is addressed BEFORE a large amount of other code comes to depend upon it.  
 
-The waterfall approach is often sloppy about built and test practices.  Tests don’t always run all the time.  Tests often require a special setup which must be manually and tediously constructed.  Some tests are not resilient enough to run in any order, and tend to fail when other tests are added.  Some waterfall situations are set up such that when tests fail, they have an expert who evaluates whether the failure was really a failure, and if not simply runs the test again until it succeeds.  
+The waterfall approach is often sloppy about built and test practices.  Tests don't always run all the time.  Tests often require a special setup which must be manually and tediously constructed.  Some tests are not resilient enough to run in any order, and tend to fail when other tests are added.  Some waterfall situations are set up such that when tests fail, they have an expert who evaluates whether the failure was really a failure, and if not simply runs the test again until it succeeds.  
 
 In order for an Agile approach to work, the tests must be made robust and resilient.  They must be reliable.  It is not possible for one part of the team to go and work in an Agile approach, unless ALL of the tests are made reliable.  Those parts of the team working ont he waterfall approach have no incentive to fix the tests, but they are planning to run the test once, at the end, and on a specially prepared machine.
 

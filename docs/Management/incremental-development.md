@@ -1,6 +1,6 @@
 #  Incremental Development
 
-I happened across this excellent and perfect depiction of incremental development.  The image addresses on of the key flaws in thinking that lead some agile projects to fail.  So let’s discuss a bit.  
+I happened across this excellent and perfect depiction of incremental development.  The image addresses on of the key flaws in thinking that lead some agile projects to fail.  So let's discuss a bit.  
 
 ![6a00d8341ca4d953ef01a511e114a3970c](incremental-development-img1.png) 
  
@@ -12,9 +12,9 @@ The image makes these points clear:
 *   The final product  — a convertible — was not known at the start, but was discovered in the agile approach, while the other was locked into a design from the beginning.
 *   Each step does not perfectly anticipate the final product.  For example, the skateboard wheels are quite small, the bicycle redesigns those wheels, which are redesigned again for the car.  It is OK to implement something early on, which needs a redesign later.
 
-The most important is this last point:  In traditional development rework of components is viewed as a waste:  you implemented the wheels three times!  What a waste! Some people will claim that very first thing to build is a data store that can hold a billion records and perform well, even though for the coming year or two you don’t expect more than a few thousand records.  The principle of YAGNI says not implement anything until you need it.  For the skateboard, all you needed was little wheels, so only implement that.  As the need changed, you go back and redesign larger (or more) wheels. 
+The most important is this last point:  In traditional development rework of components is viewed as a waste:  you implemented the wheels three times!  What a waste! Some people will claim that very first thing to build is a data store that can hold a billion records and perform well, even though for the coming year or two you don't expect more than a few thousand records.  The principle of YAGNI says not implement anything until you need it.  For the skateboard, all you needed was little wheels, so only implement that.  As the need changed, you go back and redesign larger (or more) wheels. 
 
-It isn’t a waste in the case of a software product.  Software does not behave like physical world, and it is often quite easy to take a product that stores all its data in CSV files, and replace the data store with a high performance database.  Even if you had no idea in advance that X would be needed, generally such a restructuring to re-implement X is possible if you have modestly good encapsulation of code. 
+It isn't a waste in the case of a software product.  Software does not behave like physical world, and it is often quite easy to take a product that stores all its data in CSV files, and replace the data store with a high performance database.  Even if you had no idea in advance that X would be needed, generally such a restructuring to re-implement X is possible if you have modestly good encapsulation of code. 
 
 The traditional approach is actually the most wasteful because of something we call “technical debt”.  Technical debt is amount of work that is remaining to get to a customer ready state.  In the agile approach each release is customer ready . . . it can be used by the customer.  But in the traditional approach, there is a large amount of technical debt — a large amount that needs to be completed before the customer can use it — in each release.  That costs you, because you can not get customer feedback.  Also, if you decide to make a convertible, it is too late, because you are locked into the design that was made before you got any customer feedback. The technical debt prevented you from finding the best product. 
 

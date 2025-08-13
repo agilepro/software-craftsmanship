@@ -28,7 +28,7 @@ There are five kinds of values that are important for handling dates and times.
 
 The “epoch time value” represents a given point in time on a given day is just a point on the timeline.  There are points in time before that point, and points after that point.  This timeline is independent of any time zones.
 
-The most common timeline (Unix) counts the number of seconds since Jan 1, 1970 UTC as an integer value.  Java and JavaScript count the number of milliseconds since Jan 1, 1970 UTC as a long integer value.   Let’s call this the “epoch” value.
+The most common timeline (Unix) counts the number of seconds since Jan 1, 1970 UTC as an integer value.  Java and JavaScript count the number of milliseconds since Jan 1, 1970 UTC as a long integer value.   Let's call this the “epoch” value.
 
 Consider the following table:
 
@@ -41,7 +41,7 @@ Consider the following table:
 
 This is, of course, the same instant of time.  As you can see, the epoch value is the same in every case.   The display of date/time is of course different, because that is what a timezone is:  it is a way of localizing an epoch value to/from the way that locals in that timezone want to see it.  But no matter where you are, no matter what timezone you are in, the epoch value is the same all around the world.  
 
-It is not correct to say that the epoch value is in UTC timezone.  It is a value that simply does not have a timezone.  It is just a point on the timeline, and there is one epoch value for the entire world.  (On the surface of the earth we don’t need to worry about relativistic time dilation.)
+It is not correct to say that the epoch value is in UTC timezone.  It is a value that simply does not have a timezone.  It is just a point on the timeline, and there is one epoch value for the entire world.  (On the surface of the earth we don't need to worry about relativistic time dilation.)
 
 ## Timezone is for Input/Display but not Storage
 
@@ -49,7 +49,7 @@ Timezone is only needed when presenting a date to a user, because different user
 
 It is possible for a baby born in 2012 to be older than (born before) another baby born in 2011.
 
-Calculations in time-zone dependent values get very complicated.  You can’t assume two times are on the same day, or month, or even year.   Sorting of time-zone dependent values is not a useful order at all.   However, for the epoch timeline values, the calculations are not complicated because they are simply integer arithmetic which is both fast and convenient.
+Calculations in time-zone dependent values get very complicated.  You can't assume two times are on the same day, or month, or even year.   Sorting of time-zone dependent values is not a useful order at all.   However, for the epoch timeline values, the calculations are not complicated because they are simply integer arithmetic which is both fast and convenient.
 
 It is a mistake to think that a timezone is a fixed offset from UTC.  That is not true for locations that shift between standard and daylight times twice a year.  New York for instance is on EST part of the year, and EDT the rest.  The specific date that different locations shift between summer and winter time is different.  Southern hemisphere countries do it the opposite way from the northern hemisphere.
 
@@ -64,7 +64,7 @@ All time values within the system should be expressed as epoch time values.  The
 
 ![](date0-date-value-types-img1.png)
 
-A date/time value should be converted to a time zone ONLY in the user’s browser.  The browser knows the time zone that it is situated in, and the JavaScript within the browser can convert the epoch value to a string that can be displayed to the user.   Similarly, when a user enters a date/time value, they should do so according to their timezone, but it should be converted immediately to an epoch value for sending to the server.
+A date/time value should be converted to a time zone ONLY in the user's browser.  The browser knows the time zone that it is situated in, and the JavaScript within the browser can convert the epoch value to a string that can be displayed to the user.   Similarly, when a user enters a date/time value, they should do so according to their timezone, but it should be converted immediately to an epoch value for sending to the server.
 
 There is no reason then that a server ever needs to handle a timezone.
 
@@ -108,13 +108,13 @@ JSON has no specific support for date/time values.  Sending epoch values as an i
 
 Databases offer a timestamp value which is again an epoch value.   All date/time values should be stored in this integer format, because sorting by date, and searching for a date range, will work on values from all over the world equally well.  There is no reason to store a timezone setting with the date/time value because that would simply complicate searching and sorting.
 
-Java offers some timezone specific classes, such as LocalDateTime, ZonedDateTime, LocalTime, LocalDate, and a bunch of new classes designed by people who don’t appear to have experience with a globally-scaled system before.  Time-zone specific classes should ONLY be used in a user interface, such as code that is generating a string for display to a specific person, or accept input from a specific person.  Most of the complexity of dealing with time zones is eliminated by always using epoch values, and then converting to the timezone of the user at the very last moment.  There is zero concern about timezone offsets between different users.  Each user sees the time in the way that makes sense to them.  And every server delivers a consistent value no matter where the server is located.
+Java offers some timezone specific classes, such as LocalDateTime, ZonedDateTime, LocalTime, LocalDate, and a bunch of new classes designed by people who don't appear to have experience with a globally-scaled system before.  Time-zone specific classes should ONLY be used in a user interface, such as code that is generating a string for display to a specific person, or accept input from a specific person.  Most of the complexity of dealing with time zones is eliminated by always using epoch values, and then converting to the timezone of the user at the very last moment.  There is zero concern about timezone offsets between different users.  Each user sees the time in the way that makes sense to them.  And every server delivers a consistent value no matter where the server is located.
 
 ## Calculations on Date/Time
 
 If you need to know the day or the week, day of the month, or hour of the day, etc.  then in Java use a Calendar object.  Or use the Moment package in JavaScript.  Remember, the length of the day depends on the day of the year, so there are no short cuts.  
 
-To format a date for user viewing in the user interface code, use a DateFormat object in Java.  Or use the Moment package in JavaScript.  This should always be done in the user’s browser.
+To format a date for user viewing in the user interface code, use a DateFormat object in Java.  Or use the Moment package in JavaScript.  This should always be done in the user's browser.
 
-If you are sending email to a user, then you are formatting text to be seen by that user.  In this case, you must know the timezone that the user is in.   Or you must assume a timezone.  You unfortunately do not have any way to know.  Also, most email clients do not support execution of javascript, so you can’t calculate it in the user’s email client.  But again, this formatting to a timezone is done at the time you are generating the display for a particular user.
+If you are sending email to a user, then you are formatting text to be seen by that user.  In this case, you must know the timezone that the user is in.   Or you must assume a timezone.  You unfortunately do not have any way to know.  Also, most email clients do not support execution of javascript, so you can't calculate it in the user's email client.  But again, this formatting to a timezone is done at the time you are generating the display for a particular user.
 

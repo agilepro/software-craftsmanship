@@ -1,6 +1,6 @@
 #  Code Copy Guidelines 
 
-This post presents some guideline reduce duplicates in the code. Whenever you notice that you’re writing blocks of code that are substantially similar, try to make a routine (method) that embodies that code and call it from all the places. This reduces the amount of code.  Furthermore, if there is a bug in the approach, or the approach needs to be changed, there is one place to change it, instead of many.  
+This post presents some guideline reduce duplicates in the code. Whenever you notice that you're writing blocks of code that are substantially similar, try to make a routine (method) that embodies that code and call it from all the places. This reduces the amount of code.  Furthermore, if there is a bug in the approach, or the approach needs to be changed, there is one place to change it, instead of many.  
 Duplication (inadvertent or purposeful duplication) can lead to maintenance nightmares, poor factoring, and logical contradictions. Every line of code that goes into an application must be maintained, and is a potential source of future bugs. Duplication needlessly expands codebase, resulting in more opportunities for bugs and adding accidental complexity to the system.
 
 **Principle of abstraction**:  the is the basic design principle that has the purpose to reduce duplication of information in a program

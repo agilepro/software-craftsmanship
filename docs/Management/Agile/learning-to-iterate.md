@@ -1,6 +1,6 @@
 #  Learning to Iterate
 
-I work with a large team in Japan that develops software.  The software produced is late, out of date, falling behind the competition, and is filled serious usability problems.  The software is of high quality from a Japanese point of view: the products do exactly what they say they will do.  Certainly no less, and generally no more, than advertised.  The development is expensive, and the product is falling behind the competition.  It is clear to everyone, even the team itself, that something needs to be done to ‘fix’ the development methodology. 
+I work with a large team in Japan that develops software.  The software produced is late, out of date, falling behind the competition, and is filled serious usability problems.  The software is of high quality from a Japanese point of view: the products do exactly what they say they will do.  Certainly no less, and generally no more, than advertised.  The development is expensive, and the product is falling behind the competition.  It is clear to everyone, even the team itself, that something needs to be done to 'fix' the development methodology. 
 
 I have been advocating the simplest of Agile principles, oriented along the philosophy of Kan-ban development.  These principles:
 
@@ -26,7 +26,7 @@ Keep in mind that this group of people have been working together with the same 
 
 > They believe that if the software came out bad, it is because the design spec was not complete!
 
-Every single person I have talked to in the group reiterated this to me.  Sometimes they say the problem is that the do not have good ‘architects’ and would like to have an architect to create the proper design up front.  It all depends on having a perfect spec.  
+Every single person I have talked to in the group reiterated this to me.  Sometimes they say the problem is that the do not have good 'architects' and would like to have an architect to create the proper design up front.  It all depends on having a perfect spec.  
 
 What you need to understand is that the product (in my estimation) do not fail because of their architecture.  The products, as I mentioned before, actually work as advertised.  The problem instead is that the usability is so poor that customers simply reject the product.  Anyone who has developed real software knows that usability is NOT addressed by writing good specifications.  It is impossible to really understand what is and is not going to be convenient before you have a running product to try.  Usability is enhanced by actually letting people try to use it, and observing what they do well.  Address those problems and do it again.  Only if you go through many iterations of testing, observing, and improving do get to the point of having something that really pleases the user.  
 
@@ -42,9 +42,9 @@ It does not matter how complex the code is, changes can be always be incremental
 
 ## Where is the Evidence?
 
-All this time, I am told opinions about what can and can not be done, by people who have _never actually tried it_.  They are completely convinced that it is impossible, so they don’t try.  If they were to try, they would fail, because they — and everyone they work with — knows that it can’t work.  
+All this time, I am told opinions about what can and can not be done, by people who have _never actually tried it_.  They are completely convinced that it is impossible, so they don't try.  If they were to try, they would fail, because they — and everyone they work with — knows that it can't work.  
 
-Yet I am waiting for an example of code so complex that it can’t be developed iteratively.  I documented that the most complex code I can find, going through the most difficult change, can be done iteratively.  
+Yet I am waiting for an example of code so complex that it can't be developed iteratively.  I documented that the most complex code I can find, going through the most difficult change, can be done iteratively.  
 
 The proof is quite difficult, and nobody except a logician is interested in the proof.  They will readily admit that it is theoretically possible, but they believe that if they were to do it, it would involve so much extra work, that they would never get anything done.  This is quite amusing, because we have ample evidence that using the waterfall method with 6 month iterations they are getting almost nothing done.  In spite of all this evidence, they are sure that going to rapid iterations will increase the amount of work.  If they have never seen a frozen lake, how can you expect them to believe people can skate?
 

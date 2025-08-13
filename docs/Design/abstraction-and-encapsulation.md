@@ -44,7 +44,7 @@ One problem of the data-only class is that the calling code is required to call 
 
 ## Summary
 
-What I say to motivate these things:  if you have a constant that is only used by one class, put it inside the class, and make it private.  If you have methods that you don’t think are needed, make them private.  Don’t go and define public setter and accessor methods for all the internal member unless you know they will be needed.   Expose only the accessor methods that you are sure there is a need for. 
+What I say to motivate these things:  if you have a constant that is only used by one class, put it inside the class, and make it private.  If you have methods that you don't think are needed, make them private.  Don't go and define public setter and accessor methods for all the internal member unless you know they will be needed.   Expose only the accessor methods that you are sure there is a need for. 
 
 If the object is persisted, then try to hid that persistence mechanism internally as much as possible 
 

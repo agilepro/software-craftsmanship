@@ -39,17 +39,17 @@ Everything else derives from this.  This become the driving principle, and the 
 *   You make daily builds,
 *   On every build you run the tests.  You will need to do some work to get the tests to run reliably every day.
 *   You ask every developer to run the tests BEFORE they check in.  You will need to do some work so that the tests can be run by every developer.
-*   You don’t estimate how long it takes to implement a feature – you just don’t need to know that.  Instead take the first step.
+*   You don't estimate how long it takes to implement a feature – you just don't need to know that.  Instead take the first step.
 *   If you see bugs that you did not expect, you fix them.  You do it before you implement anything else.  When the product is release, it has no bugs in it.
 *   You update the documentation to match the code changes that have been made.  The ENTIRE job is done on each cycle.
 *   You update the installer, the upgrade path, the sample data, everything and anything necessary for the change.
 *   You do code reviews on the small step that has been implemented, all code reviews for all changes must be completed within the two week cycle.
 *   You do not implement anything part-way.  You do not implement something that prevents you from accessing another feature or another section – that would be considered “breakage” (a.k.a. level-down)
-*   Once the step is completed, you can go on to the next step. Once you know for sure that the quality is already in the code, you don’t need to go back to it.
+*   Once the step is completed, you can go on to the next step. Once you know for sure that the quality is already in the code, you don't need to go back to it.
 *   You do not build up “technical debt” in the code base.  You do not leave things in that you know has to be fixed later.  You make small steps, but each step is done completely.
 *   At any point in time you can simply decide that it is time to ship one to a customer, and pull that build and ship it.  You might not do that more than few times a year.  But the point is: you need to approach this as if any build could be shipped at any time.
 
-Switching to Agile requires that someone is able to MAKE A DECISION to switch to Agile.  Perhaps this is difficult in your organization to do.  I understand that much is decided by consensus, but since nobody has any experience with Agile, you will not get consensus.  If you cannot make this decision and commit to it for more than 1 year, _then don’t even try._ 
+Switching to Agile requires that someone is able to MAKE A DECISION to switch to Agile.  Perhaps this is difficult in your organization to do.  I understand that much is decided by consensus, but since nobody has any experience with Agile, you will not get consensus.  If you cannot make this decision and commit to it for more than 1 year, _then don't even try._ 
 
 
 Get on the bike, and pick up your feet.

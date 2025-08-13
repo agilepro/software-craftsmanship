@@ -8,7 +8,7 @@ Assuming there is some sort of collection, and there is a getter method to retri
 
 When you are **not sure** whether the object exists, you want a null back.  Imagine that the id was input by the user.  It might be correct, it might be wrong.  If it is wrong, you want to do something friendly, like ask the user to enter the value again.  The null return allows the calling code to branch, and to do one thing if the object exists, and something else if the object does not exist.
 
-When you are **confident** that it exists, then an exception is preferred.  Consider code that just got a list of all the objects of concern, and you have an iterator fetching the details.  In this case, virtually all the objects are going to be there.  In some cases it is absolutely guaranteed (for example using a memory structure that is transaction locked).  In these cases, adding code to check for null is a waste.  There is no conceivable chance that it will fail to find the object, and there is no utility is writing code to handle the null.   In the infinitesimally small chance that you can’t find the object, you just want a reasonable error message thrown, and you want everything to stop processing and leave.  You have hit a chance that is unlikely and unimportant, just show an error to the user.
+When you are **confident** that it exists, then an exception is preferred.  Consider code that just got a list of all the objects of concern, and you have an iterator fetching the details.  In this case, virtually all the objects are going to be there.  In some cases it is absolutely guaranteed (for example using a memory structure that is transaction locked).  In these cases, adding code to check for null is a waste.  There is no conceivable chance that it will fail to find the object, and there is no utility is writing code to handle the null.   In the infinitesimally small chance that you can't find the object, you just want a reasonable error message thrown, and you want everything to stop processing and leave.  You have hit a chance that is unlikely and unimportant, just show an error to the user.
 
 ## Implement for Both Cases
 
@@ -47,15 +47,15 @@ public String findStudentName(String newId) throws Exception {
 ```
 
 
-I don’t have to test for null, and I will never get a NullPointerException.  I am super confident that this will never happen, but if it does happen the method will send a nice exception explaining that the user can not be found, instead of the rather opaque NullPointerException.
+I don't have to test for null, and I will never get a NullPointerException.  I am super confident that this will never happen, but if it does happen the method will send a nice exception explaining that the user can not be found, instead of the rather opaque NullPointerException.
 
 ## A Third Option
 
 The third choice is a special object that represents a non-existing student, or a NullStudent object which is an instance of Student but also has some way to distinguish it from a real student.
 
-I won’t go into a lot of detail on this because I don’t think this pattern is good in general.  I have used it a couple times, and it can be helpful when you have a data structure with a lot of optional parts.  But in general I find that if you do this, then ANYWHERE you work with an object, you are always having to test if it is the null object.  You have to write special cases into most routines to handle the NullStudent object differently.  It is much faster to test for null directly, and it wastes no memory.  Since there is really nothing to know about the student you did not find, I find simply returning null to be the best response in the case where the calling code wants to handle situations where the object can not be found.
+I won't go into a lot of detail on this because I don't think this pattern is good in general.  I have used it a couple times, and it can be helpful when you have a data structure with a lot of optional parts.  But in general I find that if you do this, then ANYWHERE you work with an object, you are always having to test if it is the null object.  You have to write special cases into most routines to handle the NullStudent object differently.  It is much faster to test for null directly, and it wastes no memory.  Since there is really nothing to know about the student you did not find, I find simply returning null to be the best response in the case where the calling code wants to handle situations where the object can not be found.
 
-## Don’t Catch the Exception
+## Don't Catch the Exception
 
 One thing you should NOT do is to implement only the exception returning version, and then catch the exception to return null.   For example: 
 

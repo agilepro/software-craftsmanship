@@ -36,7 +36,7 @@ I hate to think of all the poor code out there, since most of the examples are w
 
 This method is asked to take a JSON representation of an event, and return another class object that represents that event.  If there is any problem at all parsing the JSON — for example data members are missing or are the wrong type, it traces to the log, and then returns whatever value it has gotten.  It could be an incomplete object.  It could be a completely empty object.  There is no guarantee that the returned object represent the “event” that it is supposed to .   The calling program is not given any idea that there is a problem!  
 
-Solution: this method should be declared to thrown an exception that says “Unable to convert JSON to an Event object” so that the calling routine does not continue to try to process based on the partial data.  I don’t understand why anyone would write a routine that when it fails, it simply returns whatever it has as if nothing went wrong!  
+Solution: this method should be declared to thrown an exception that says “Unable to convert JSON to an Event object” so that the calling routine does not continue to try to process based on the partial data.  I don't understand why anyone would write a routine that when it fails, it simply returns whatever it has as if nothing went wrong!  
 
 ![programcreek5](poor-handling-examples-img5.png)  
 
@@ -72,8 +72,8 @@ The purpose of this method it to take a bunch of values and place them into a JS
 
 The rules are simple:
 
-*   return a value from a method ONLY if you know it is correct.  Returning a value that might be incorrect is just a waste of everyone’s time.
-*   If an exception was thrown, then it is an indication that something was not right.  You can’t trust data constructed in try block that an exception was thrown from.
+*   return a value from a method ONLY if you know it is correct.  Returning a value that might be incorrect is just a waste of everyone's time.
+*   If an exception was thrown, then it is an indication that something was not right.  You can't trust data constructed in try block that an exception was thrown from.
 *   Never catch an exception and continue as everything was the same.
 *   Use you exception capability.  If there is a possibility that the routine might not be able to do what it is supposed to do, then declare andthrow an exception to let the caller know not to continue like normal.
 

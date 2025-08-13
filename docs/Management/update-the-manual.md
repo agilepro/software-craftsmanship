@@ -9,7 +9,7 @@ Every question you get is an opportunity to improve the product or improve the m
 
 ### 1\. Could the product be improved?
 
-Did the user run into a problem that could be avoided by improving the program?  Every problem is the result of no quite understanding how the program works.  Could we make the product run more like people expect, so they would not hit this problem?  This way you don’t need to write documentation at all — people use it naturally and without noticing any conflict.  This is not always possible because there are some thing that must be done a certain way and they are inherent to application domain.
+Did the user run into a problem that could be avoided by improving the program?  Every problem is the result of no quite understanding how the program works.  Could we make the product run more like people expect, so they would not hit this problem?  This way you don't need to write documentation at all — people use it naturally and without noticing any conflict.  This is not always possible because there are some thing that must be done a certain way and they are inherent to application domain.
 
 ### 2\. Does the manual describe how to avoid the problem?
 
@@ -19,9 +19,9 @@ If you have to approach doing things a certain way, does the manual explain how 
 
 Is the manual difficult to read?  Or is the information buried in a place they would not expect it?  If problem, fix the manual and send it to them as the answer.
 
-### 4\. If clear in manual, is there something I don’t understand?
+### 4\. If clear in manual, is there something I don't understand?
 
-If no improvement to the manual seems obvious, then send the manual as it is, and ask the person whether the manual is sufficient.  It is possible that they just didn’t read the manual.  It is also possible that the manual is jargon laden, or there are people from a particular culture, and the manual just does not get to them.
+If no improvement to the manual seems obvious, then send the manual as it is, and ask the person whether the manual is sufficient.  It is possible that they just didn't read the manual.  It is also possible that the manual is jargon laden, or there are people from a particular culture, and the manual just does not get to them.
 
   By following this method on every question, we get a chance to either improve the product, or improve the manual or both — and this help to reduce the amount of support questions in the future.  
 This drives the manual to be optimized for support.  We fill int he answers that get the most questions first.  It is responsive, and it is Agile.

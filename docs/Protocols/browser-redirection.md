@@ -14,7 +14,7 @@ While we usually test in the simplest situation, we need to think about the most
 
 All of these cause different changes to the reqeust.getContextPath() depending on how you set it up. It truns out is is impossible for the TomCat to really know what URL the browser as to use in order to access the application, and that is what must be sent to the browser.  
 
-Another situations is that we may be generating a static copy of the site, and in this case all of the links between pages have to be relative links so that the resulting html files can be hosted anywhere, and don’t make absolute links to a particular site.  
+Another situations is that we may be generating a static copy of the site, and in this case all of the links between pages have to be relative links so that the resulting html files can be hosted anywhere, and don't make absolute links to a particular site.  
 
 Another situation is URLs that are sent by email in messages, these must always be global (non relative).
 
@@ -24,7 +24,7 @@ The code to handle this complexity is embedded in the AuthRequest object,and all
 
 **ar.retPath** – This is the path that gets to the base of the application, from the browser point of view, and should be used for all normal static browsing URLs. Thus page to page links within the application should start with ar.retPath. 
 
-**ar.baseURL** – This is the path to the base of the application that is a complete URL with global scope for using whenever the url will be sent in an email address, when stored anyplace, and when the URL is passed as a ‘go’ parameter to another page which might use it in a slightly different context than the page sending the parameter.  
+**ar.baseURL** – This is the path to the base of the application that is a complete URL with global scope for using whenever the url will be sent in an email address, when stored anyplace, and when the URL is passed as a 'go' parameter to another page which might use it in a slightly different context than the page sending the parameter.  
 
 Both of these always have a final slash on them, so the path within the application should never start with a slash.  
 There are a couple more convenience functions on AuthRequest which have been modified to use baseURL and to always provide the correct, global, address. 
@@ -37,7 +37,7 @@ That is pretty much all you need. All the rest of the URL methods (e.g. ar.getRe
 
 ## How to Configure This
 
-The global absolute URL is read from a system configuration variable “baseURL”. If you have a complex configuration, you must set up baseURL to be the URL of the base of the application, the way that the user’s browser would see it. 
+The global absolute URL is read from a system configuration variable “baseURL”. If you have a complex configuration, you must set up baseURL to be the URL of the base of the application, the way that the user's browser would see it. 
  
 Unfortunately, if you have users accessing the server from two different environments that require two different URLs, there is no way to do this. If that requirement comes up, we will have to come up with a solution at that time.
 

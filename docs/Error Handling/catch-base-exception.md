@@ -20,9 +20,9 @@ Some guidelines say that instead you should list all the exceptions classes that
 
 This is a bad idea because you can not know all of the possible exceptions classes that you will receive.  If an exception is thrown that is not in your list, it will fly out of the method without the necessary processing.
 
-Most catch block don’t care at all about what kind of exception was thrown, because they are simply responding to the fact that the method did not complete.
+Most catch block don't care at all about what kind of exception was thrown, because they are simply responding to the fact that the method did not complete.
 
-Java method signatures list some exceptions that are thrown, but unchecked exceptions that extend RuntimeException do not appear in the signature.  Even if you analysize of all the code to determine what can be thrown, that might change in the future.  You will never know you failed to catch an exception until your system has crashed and you don’t have the information you need about why it did.
+Java method signatures list some exceptions that are thrown, but unchecked exceptions that extend RuntimeException do not appear in the signature.  Even if you analysize of all the code to determine what can be thrown, that might change in the future.  You will never know you failed to catch an exception until your system has crashed and you don't have the information you need about why it did.
 
 Listing the actual classes that you expect takes extra effort, provides no additional benefit, and exposes you to the risk that there might be an exception thrown that you did not include.  It is far easier to catch the base class, and then you are assured at run time that all catchable exceptions are caught.
 
@@ -30,19 +30,19 @@ Listing the actual classes that you expect takes extra effort, provides no addit
 
 Some expert recommend the opposite.  For example, MITRE [recommends the following](https://cwe.mitre.org/data/definitions/396.html):
 
-> Multiple catch blocks can get ugly and repetitive, but “condensing” catch blocks by catching a high-level class like Exception can obscure exceptions that deserve special treatment or that should not be caught at this point in the program. Catching an overly broad exception essentially defeats the purpose of Java’s typed exceptions, and can become particularly dangerous if the program grows and begins to throw new types of exceptions. The new exception types will not receive any attention.
+> Multiple catch blocks can get ugly and repetitive, but “condensing” catch blocks by catching a high-level class like Exception can obscure exceptions that deserve special treatment or that should not be caught at this point in the program. Catching an overly broad exception essentially defeats the purpose of Java's typed exceptions, and can become particularly dangerous if the program grows and begins to throw new types of exceptions. The new exception types will not receive any attention.
 
 The new Java 7 syntax that allows multiple types to be declared resolves the ugly multiple repetitively defined blocks.  Indeed the suggestion was much more onerous in the past.  Now you simply have a number of class names and a single block.  That is clearly an improvements, but you still have the risk that you will miss a class.
 
-Consider: “_Catching an overly broad exception essentially defeats the purpose of Java’s typed exceptions_”
+Consider: “_Catching an overly broad exception essentially defeats the purpose of Java's typed exceptions_”
 
-First of all, Java had some goals that turn out to be unworkable.  Indeed, there was an idea that including a declaration of what a method will throw looked like a great idea for keeping track of every kind of exception that might come out of a routine.  Unfortunately, it does not work, and I have documented the reasons in a longer post on “[Method Exception Signatures](https://agiletribe.purplehillsbooks.com/2013/04/04/method-exception-signature/).”  It turns out to be impossible to track all the possible exceptions when one package calls another package that calls a third package.  Adding one line of code can cause the method to change exception signature, which changes the signature of all the methods that use it, and then all the methods that use that, and so on.   The cascade of signature changes is quickly unmanageable.  But wrapping and rethrowing with a package specific exception JUST to conform to a static signature also defeats the purpose of Java’s typed exceptions as well.  If you analyze this in depth, you find that exception signatures just can’t work in a real system.
+First of all, Java had some goals that turn out to be unworkable.  Indeed, there was an idea that including a declaration of what a method will throw looked like a great idea for keeping track of every kind of exception that might come out of a routine.  Unfortunately, it does not work, and I have documented the reasons in a longer post on “[Method Exception Signatures](https://agiletribe.purplehillsbooks.com/2013/04/04/method-exception-signature/).”  It turns out to be impossible to track all the possible exceptions when one package calls another package that calls a third package.  Adding one line of code can cause the method to change exception signature, which changes the signature of all the methods that use it, and then all the methods that use that, and so on.   The cascade of signature changes is quickly unmanageable.  But wrapping and rethrowing with a package specific exception JUST to conform to a static signature also defeats the purpose of Java's typed exceptions as well.  If you analyze this in depth, you find that exception signatures just can't work in a real system.
 
 Even if the signatures worked, there are exceptions that simply do not need to be included in the signature.  This is by design, because if all possible exceptions had to be reported from all methods, the list would include dozens or hundreds of exception types for every possible method.  Because of the signature problem, Java developers created the RuntimeException and all classes that extend it, and they do not need to be included in the signature.  An IllegalArgumentException can always be thrown, and it will unwind the stack, and there is no way to anticipate whether it will or not.
 
 Consider: “_can become particularly dangerous if the program grows and begins to throw new types of exceptions._”
 
-New exceptions certainly will be invented and thrown.  But the danger is when you don’t catch them!  The situations given above, where all exceptions must be caught, listing what you believe to be the list of all classes will fail to include the new exception type.  Failing to include this new type in the list will cause your thread to die when one is thrown, and you will have no logging that it occurred.  Or it will cause the exception to proceed without the additional context information added to it.
+New exceptions certainly will be invented and thrown.  But the danger is when you don't catch them!  The situations given above, where all exceptions must be caught, listing what you believe to be the list of all classes will fail to include the new exception type.  Failing to include this new type in the list will cause your thread to die when one is thrown, and you will have no logging that it occurred.  Or it will cause the exception to proceed without the additional context information added to it.
 
 Consider: “_The new exception types will not receive any attention._”
 
@@ -62,7 +62,7 @@ This is pure speculation, but some things can be assumed from the way this is pr
 
 The MITRE document gives this explanation further down:
 
-> However, if \[called method\] is modified to throw a new type of exception that should be handled in some different kind of way, the broad catch block will prevent the compiler from pointing out the situation. Further, the new catch block will now also handle exceptions derived from RuntimeException such as ClassCastException, and NullPointerException, which is not the programmer’s intent.
+> However, if \[called method\] is modified to throw a new type of exception that should be handled in some different kind of way, the broad catch block will prevent the compiler from pointing out the situation. Further, the new catch block will now also handle exceptions derived from RuntimeException such as ClassCastException, and NullPointerException, which is not the programmer's intent.
 
 What is the likelihood that different processing is needed?  It is possible, but exceedingly unlikely that the calling method will want to do something different because of the new exception.   Also, how do they conclude that the programmer does not intend to catch RuntimeExceptions?  In all of the cases I give, it is absolutely critical that all failures are caught and logged, reported to user, and wrapped with context. They seem to be out of touch with actual programming experience.
 
@@ -72,7 +72,7 @@ If you think that method signatures work, then you think you can know about all 
 
 They seem to think that every time a new exception class is created, that programmers should manually check thousands of methods to see if special processing is needed.  In almost all cases no change will be needed, because the catch block is just compensating for the fact that the current method did not complete.
 
-They seem to be oblivious of the cases were it is important that you catch all exceptions.  When handling a web request, you can only send an error back if you catch all exceptions.  If you miss one, then nothing is returned, and the caller has no idea why the call failed.  It seems that the small programs written by the language theorists don’t need to ever reliably deliver an error message.
+They seem to be oblivious of the cases were it is important that you catch all exceptions.  When handling a web request, you can only send an error back if you catch all exceptions.  If you miss one, then nothing is returned, and the caller has no idea why the call failed.  It seems that the small programs written by the language theorists don't need to ever reliably deliver an error message.
 
 Finally: they have no vision for how effective exception handling can improve error reporting.  It is a fact that error message deliver is rarely a computing example used in programming classes.
 
@@ -86,7 +86,7 @@ There are special situations where an exception is thrown and is of such a natur
 
 While it is rare, there are times when the catch block will do something specific to the kind of exception received. If this is the case, then it is critical that the exact specific exception type is detected, before responding.
 
-Example: If you are using the Java method to convert a string to a number, it will throw an exception if the format is not correct.  Quite often the method trying to do the convert doesn’t know whether it is a number either, so the only convenient way to know is to catch the exception if it is thrown.  For this, you absolutely must catch NumberFormatException so that your code is only responding to that specific situation.  Often the response is to return a default value instead of the converted string.
+Example: If you are using the Java method to convert a string to a number, it will throw an exception if the format is not correct.  Quite often the method trying to do the convert doesn't know whether it is a number either, so the only convenient way to know is to catch the exception if it is thrown.  For this, you absolutely must catch NumberFormatException so that your code is only responding to that specific situation.  Often the response is to return a default value instead of the converted string.
 
 In the above example, if you catch all exceptions and return the default, you might be doing this on an OutOfMemory exception.  Returning a default value because of an OutOfMemory error is a very bad idea.
 

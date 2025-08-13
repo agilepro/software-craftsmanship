@@ -8,7 +8,7 @@ tags:
 ---
 #  Usability Means Well-Behaved, even when the User Isn't
 
-Users of a program found that sometimes, when they went to log in, they did not get a place to enter the username & password.  Instead of the normal login prompt, they got a blank screen, and it was completely impossible to login. Sounds like a bad bug that needs to be fixed immediately, but the development team response was even more surprising: this was the user’s fault!  
+Users of a program found that sometimes, when they went to log in, they did not get a place to enter the username & password.  Instead of the normal login prompt, they got a blank screen, and it was completely impossible to login. Sounds like a bad bug that needs to be fixed immediately, but the development team response was even more surprising: this was the user's fault!  
 
 :::tip[Key Takeaway]
 
@@ -39,7 +39,7 @@ Actually, it is not clear at all.  It says that it will look proper at that wid
 
 Our goal is **good usability**.  That means, that anything the user does, the program should behave in a reasonable manner.  This does not mean that it has to look perfect in all situations, and it does not even mean that it has to be usable in all situations.  It is reasonable to assume that there are “extreme situations” that the program can not support.  But it has to be clear what the problem is in those extreme situations — there has to be a clear way for the user to recover from extreme situations.  
 
-As for the actual handling of browser width, is it reasonable to make a minimum width for the page, and force the user to scroll when the browser gets too narrow.  In certain situations it might even be acceptable to simply display a message saying that the browser is too narrow — although I really can’t imagine any situation that this would be better than scrolling that all browsers naturally support.  
+As for the actual handling of browser width, is it reasonable to make a minimum width for the page, and force the user to scroll when the browser gets too narrow.  In certain situations it might even be acceptable to simply display a message saying that the browser is too narrow — although I really can't imagine any situation that this would be better than scrolling that all browsers naturally support.  
 
 It was pointed out that this was really not a question of user violating any agreement, but in fact this is a very serious usability problem that makes the product look bad.  The response from the development team was:  
 

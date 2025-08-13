@@ -8,7 +8,7 @@ The best place to start is “The Not So Short Introduction to LATEX2” by Tobi
 
 Another starter reference is [http://en.wikibooks.org/wiki/LaTeX/](http://en.wikibooks.org/wiki/LaTeX/)  
 
-So much of the documentation lacks clear details on exactly how to do things. I have come to the conclusion that this is because nobody actually knows. The LaTeX system is very extensible, and this is the power of LaTeX. Anything can modify anything. Sounds like a nightmare, but actually it all works quite well. I am quite convinced that a small script might be able to make it so that every other page is printed upside down and mirror imaged. Most of the documentation describes parameters saying “enter an appropriate command” without listing the commands, because the authors have no idea what commands are available to you in your environment. This is so frustrating. They will provide an “example” of a setting that works . . . but if you don’t need that exact example, there is no way to know what other things you might need. however, if you dig far enough, there is tons of documentation, and somewhere in the mess you will find it. I hope to give you some short cuts below.
+So much of the documentation lacks clear details on exactly how to do things. I have come to the conclusion that this is because nobody actually knows. The LaTeX system is very extensible, and this is the power of LaTeX. Anything can modify anything. Sounds like a nightmare, but actually it all works quite well. I am quite convinced that a small script might be able to make it so that every other page is printed upside down and mirror imaged. Most of the documentation describes parameters saying “enter an appropriate command” without listing the commands, because the authors have no idea what commands are available to you in your environment. This is so frustrating. They will provide an “example” of a setting that works . . . but if you don't need that exact example, there is no way to know what other things you might need. however, if you dig far enough, there is tons of documentation, and somewhere in the mess you will find it. I hope to give you some short cuts below.
 
 ## Which Engine
 
@@ -20,7 +20,7 @@ I started using **pdflatex** because somewhere it said this was good for making 
 
 The short intro document covers this well. You are working in text. Take your word document, and export to text, and use your favorite text editor. it MUST have the filename suffix “.tex”. 
 
-Some character have a special meaning. On freshly exported text, do a global search and replace: 1) replace all existing backslashes with ‘\\textbackslash’ 2) Replace all occurrences of # $ % & \_ \{ or \} with \\# \\$ \\% \\& \\\_ \\\{ or \\\} Now you have a text file ready for marking up. 
+Some character have a special meaning. On freshly exported text, do a global search and replace: 1) replace all existing backslashes with '\\textbackslash' 2) Replace all occurrences of # $ % & \_ \{ or \} with \\# \\$ \\% \\& \\\_ \\\{ or \\\} Now you have a text file ready for marking up. 
 
 Paragraphs are simply separated by a blank line. If the export did not put blank lines between paragraphs, you should do that now. I use a small macro that adds a return at the beginning of a line, and then moves to the next line.  
 
@@ -30,7 +30,7 @@ All commands start with a backslash, and usually consume the space after the com
 
 You tex file must start with the document class command. This defines what you can and can not do in the document, which is kind of important. Some classes will allow you to have chapters, other document classes will not allow you to have chapters. I have not found anyplace that tells you exactly what a document class can and can not do. I suspect nobody knows. The Short Introduction document gives a list of document types and a short description. (`article`, `proc`, `minimal`, `report`, `book`, `slides`) Forget all that.  
 
-If you want to control the size and shape of the text in the way you are used to, you have to use `scrartcl`, `scrreprt`, `scrbook`, or `scrlettr`. These are called the KOMA classes, because calling them the “scr” classes would be _waaay_ too logical. I can’t for the life of me figure out why they didn’t name the classes starting with ‘koma’ but then LaTeX is filled with all sorts of random inconsistencies like this. 
+If you want to control the size and shape of the text in the way you are used to, you have to use `scrartcl`, `scrreprt`, `scrbook`, or `scrlettr`. These are called the KOMA classes, because calling them the “scr” classes would be _waaay_ too logical. I can't for the life of me figure out why they didn't name the classes starting with 'koma' but then LaTeX is filled with all sorts of random inconsistencies like this. 
 
 These KOMA classes allow you to control the margins and the fonts within the document you are writing, in a way that is vaguely reminiscent of the way you word-processor does.  
 

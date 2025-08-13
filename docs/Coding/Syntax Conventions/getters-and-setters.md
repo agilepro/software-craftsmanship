@@ -5,11 +5,11 @@
 
 Getter and setters (also called accessors and mutators) are small pieces of code that run to provide a value stored in the object instead of accessing it directly.  Sometimes they are good, sometimes bad, this post explores which is which.
 
-Some people find this topic so close to a religious one that I am right now fearing the blowback.  How can I consider the heresy of not implementing getters and setters?  Well, sometimes you don’t need them, and you should never implement what you don’t need.
+Some people find this topic so close to a religious one that I am right now fearing the blowback.  How can I consider the heresy of not implementing getters and setters?  Well, sometimes you don't need them, and you should never implement what you don't need.
 
 ## Need for Change
 
-Why do we have getters and setters? The common answer is: in case you want to change the implementation in the future you will have that ability to.  Also used to prevent update to values that should be read-only, although here we focus on the ‘change’ reason.
+Why do we have getters and setters? The common answer is: in case you want to change the implementation in the future you will have that ability to.  Also used to prevent update to values that should be read-only, although here we focus on the 'change' reason.
 
 Pay close attention to this:  there is a _**potential**_ that we might need to change in the future, so we are going to _**pay now**_ some amount, so that the potential future change is less expensive.  If you never end up changing things, then your payment now is completely a waste.
 
@@ -17,7 +17,7 @@ The agile principle of YAGNI suggest this can be a waste.   In a recent post �
 
 1.  It is a waste if you never get around to needing to make a change.
 2.  It adds cost to maintaining the current code whether you need it or not.
-3.  If you don’t anticipate the exact change you need, you will have to redo it.
+3.  If you don't anticipate the exact change you need, you will have to redo it.
 
 ## Historical Origin
 
@@ -37,11 +37,11 @@ Runtime type checking is used far more often to assure that the right thing gets
 
 Modern languages compile tremendously faster than the old one, and even very large systems can be built in a few minutes.  So you can make a change in a class structure which required recompilation, and in many cases the recompilation takes care of any possible code problem quickly and easily.
 
-Modern IDEs automate the kinds of changes that you might need to make, finding and fixing all the points that are accessing the changed class. If they can’t automate the change, they can easily list them all for you, and global search/replace can make a lot of changes really easy.  Once you know exactly what the change is, you can then make the change exactly, and end up with code that works exactly as you need it to.
+Modern IDEs automate the kinds of changes that you might need to make, finding and fixing all the points that are accessing the changed class. If they can't automate the change, they can easily list them all for you, and global search/replace can make a lot of changes really easy.  Once you know exactly what the change is, you can then make the change exactly, and end up with code that works exactly as you need it to.
 
 ## Not Really Needed in Many Cases
 
-Adding a getter and setter doesn’t actually solve anything.   Consider for example changing the internal implementation of a Point class from _float_ to _double_.
+Adding a getter and setter doesn't actually solve anything.   Consider for example changing the internal implementation of a Point class from _float_ to _double_.
 
 If your getter is declared as a float, then you probably want to change the getter to be a double. This exposes your class to all the incompatibility
 
@@ -77,9 +77,9 @@ Another cost is runtime overhead: a method has to be called after looking up the
 
 ## Just Make the Change
 
-The whole point of getters and setters is to make change easy, so let’s consider a change.
+The whole point of getters and setters is to make change easy, so let's consider a change.
 
-Let’s consider two cases: a change where the getters and setters are changed, and a case where they are not.  Consider that you want more resolution on the Point class, and you decide to change from float to double.   The modified simple class would look like this:
+Let's consider two cases: a change where the getters and setters are changed, and a case where they are not.  Consider that you want more resolution on the Point class, and you decide to change from float to double.   The modified simple class would look like this:
 
 ![](getters-and-setters-img5.png)
 
@@ -87,7 +87,7 @@ With modern programming languages, that is pretty much all you have to do.  the
 
 If this change would cause a compatibility problem, it would be found by the compiler.  the IDE is likely to have mechanisms to find and sometimes even fix the incompatibilities that this change makes.  There is a strong argument that you should “bite the bullet” make the change to what you need, let the IDE and compiler sort of the consequences of the change, and then get on to correct code that has the advantage of higher resolution points.
 
-Don’t protect callers from change, just make the change and deal with it.  In many many cases it is easy or automatic.  Plus the implementation is more transparent and correct without the class pretending to be something it is not.
+Don't protect callers from change, just make the change and deal with it.  In many many cases it is easy or automatic.  Plus the implementation is more transparent and correct without the class pretending to be something it is not.
 
 ## Failure to Protect from Change
 
@@ -105,7 +105,7 @@ To allow the object to participate precisely with earlier uses of the class, you
 
 ![](getters-and-setters-img7.png)
 
-This of course preserves the contract with the callers, accepting float values and returning float values.  Sit back and admire how pointless this change would be in this case.  Although the point class defines higher resolution objects in the interior, it can’t use them, because all the values coming in and out are reduced to the resolution of a float.
+This of course preserves the contract with the callers, accepting float values and returning float values.  Sit back and admire how pointless this change would be in this case.  Although the point class defines higher resolution objects in the interior, it can't use them, because all the values coming in and out are reduced to the resolution of a float.
 
 To get high resolution advantages, without breaking the low resolution usage, you might provide BOTH the double accessors and the float accessors so that old code uses the float, and new code uses the double and benefits.  This is an important legitimate use of accessors which I will mention below.
 
@@ -121,9 +121,9 @@ Quite often changes need to be more than this which are less likely to be automa
 *   Methods that you know will be specialized in derived classes.  If the meaning of the method changes across different subclasses then of course use a method. For example a writer object may have a byte stream embedded in it, but a specialized version of Writer might embed a StringBuilder instead.  Different sub-classes have different implementations and so exposing these details would be a problem.
 *   The class wants to control the range of values that can be set on a member, and so will validate set values (must within a range or whatever) and thrown an exception if an invalid value is set.
 
-Most classes don’t fit in this category. The real thing is to not simply assume that all members need getters and setters.  If you have a clear need, implement them, but if not, the expressions using the data members directly are more convenient.
+Most classes don't fit in this category. The real thing is to not simply assume that all members need getters and setters.  If you have a clear need, implement them, but if not, the expressions using the data members directly are more convenient.
 
-**Don’t use getters/setters when:**
+**Don't use getters/setters when:**
 
 *   They simply reflect the exact same values or types as on the basic object and those members are unlikely to change.
 *   Class is mainly just a data storage without a lot of complex interactions, like the data members in the Point class above.
@@ -135,7 +135,7 @@ For most classes in routine programming, if you need to change the internals of 
 
 ## You Can Add Them When You Need Them
 
-There is a principle in agile development known as YAGNI (You Aren’t Gonna Need It).  This principle is to avoid adding things to code that might be used in the future, because you can add them in the future if the need arises.  On average, the effort you save by not defining things you don’t need pays for the effort of adding them later when you do.
+There is a principle in agile development known as YAGNI (You Aren't Gonna Need It).  This principle is to avoid adding things to code that might be used in the future, because you can add them in the future if the need arises.  On average, the effort you save by not defining things you don't need pays for the effort of adding them later when you do.
 
 For this Point class, imagine you implement the simple, directly accessed members.  This case:
 
@@ -161,6 +161,6 @@ I am against the automatic generation of getters and setters for ALL data member
 
 ## References
 
-*   [Getters/Setters.  Evil. Period.](https://www.javacodegeeks.com/2014/09/getterssetters-evil-period.html) – Yegor Bugayenko argues the extreme position that no getter and setter should ever be used, not ever because getters and setters don’t actually mimic behavior of real objects.
-*   “[Why getter and setter methods are evil – Make your code more maintainable by avoiding accessors](https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)” – 2003 article by Allen Holub from JavaWorld in InfoWorld argues that getter/setters don’t actually hide the implementation of the object because “.x” and “.getX()” expose the exact same amount of internal details.
+*   [Getters/Setters.  Evil. Period.](https://www.javacodegeeks.com/2014/09/getterssetters-evil-period.html) – Yegor Bugayenko argues the extreme position that no getter and setter should ever be used, not ever because getters and setters don't actually mimic behavior of real objects.
+*   “[Why getter and setter methods are evil – Make your code more maintainable by avoiding accessors](https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)” – 2003 article by Allen Holub from JavaWorld in InfoWorld argues that getter/setters don't actually hide the implementation of the object because “.x” and “.getX()” expose the exact same amount of internal details.
 *   “[Are Getters And Setters an Anti-Pattern?](https://levelup.gitconnected.com/are-getters-and-setters-an-anti-pattern-c8cb5625ca8c)” – More discussion of Yegor Bugayenko scandalous suggestion that all getter/setters should be eliminated.

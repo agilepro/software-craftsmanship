@@ -4,7 +4,7 @@ A “best practice” is a heuristic which is used to guide early stages of a pr
 
 Best practices, also known as “rules of thumb,”  are heuristics.  That means they offer some general guidelines on the principle that you need to start with some basic guides. They are abstracted away from the specific situation, in an attempt to generalize design practices. 
 
-Best practices are not laws on what you can and can’t do.  They are not requirements that must be met.  They not even hard and fast rules to be followed.  They can’t be, because they are generalized and can not account for the specific situation. As a heuristic, they offer no definitive unambiguous answers. 
+Best practices are not laws on what you can and can't do.  They are not requirements that must be met.  They not even hard and fast rules to be followed.  They can't be, because they are generalized and can not account for the specific situation. As a heuristic, they offer no definitive unambiguous answers. 
 
 There is an appropriate time and place. But real design is about judgement around the specifics of the situation.  A designer may choose to follow a best practice, or to go a different way.  In general, if you have no particular reason to not follow a best practice, then you should probably do so.  If nothing else, it makes the world more consistent.  But it does not take a large reason to go in a different direction.
 
@@ -52,7 +52,7 @@ Sometimes best practices swing back and forth.  Early programming languages off
 
 Sometimes there are _best practice police_ who feel it is their duty to root out and eliminate the code that does not follow best practice.  Cleaning code is usually a very honorable thing.  This can result in code that is less costly to maintain.  But one must be careful, and assure that the cost of the refactoring is really going to be paid back in the saving of maintenance.  In most cases, refactoring just to refactor will not pay off. 
 
-Good advice is: “if it ain’t broken, don’t fix it.”  Refactoring running code to match a best practice should ONLY be attempted when the maintenance of that code is so troublesome and expensive that you need to overhaul the code to prevent problems. 
+Good advice is: “if it ain't broken, don't fix it.”  Refactoring running code to match a best practice should ONLY be attempted when the maintenance of that code is so troublesome and expensive that you need to overhaul the code to prevent problems. 
 
 This is particularly important when you consider that best practices change over time.  Sometimes a body of code is written before a best practice comes into use.  If the code is running well, then rewriting it to conform to the best practice is an almost complete waste.  Best practices are useful before you code to give you default patterns, but should almost never be used to retroactively change existing code.
 

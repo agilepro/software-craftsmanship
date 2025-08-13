@@ -36,7 +36,7 @@ public boolean equals (Object o) {
 *   The big if statement has a small else statement. State the logic the other way, and the if part will be small, and the else large.
 *   The if part then does a return, so there is no need for the else block.
 *   Get rid of the do-while statement, it does not do anything. Instead of using a break statement to skip the second condition, just go ahead and return the result.
-*   You don’t really need the ‘res’ temp variable.
+*   You don't really need the 'res' temp variable.
 
 Here is the result. It has been reduced from 21 lines down to 10. Each if condition has an immediate effect on the result value. There is no indirection of placing the result in a variable and then returning the variable. This version will run a very slight bit faster, but that is not the point. It keeps the condition close to the effect in order to reduce the cognitive load on the reader.
 
@@ -64,7 +64,7 @@ public boolean equals (Object o) {
 ```
 
 
-It is not just that it is shorter (which always helps) but that each condition works more or less immediately.  If the condition is true, it takes action, and returns, getting that branch completely out of the way.  When reading the code, you can consider the condition, and the put it out of mind, knowing that all the following statements are for the case that the condition does not exist.  Generally, the ‘easy’ cases are tested first, and the conditions get more specialized further down.  It is easier to keep track of the conditions on a particular line. 
+It is not just that it is shorter (which always helps) but that each condition works more or less immediately.  If the condition is true, it takes action, and returns, getting that branch completely out of the way.  When reading the code, you can consider the condition, and the put it out of mind, knowing that all the following statements are for the case that the condition does not exist.  Generally, the 'easy' cases are tested first, and the conditions get more specialized further down.  It is easier to keep track of the conditions on a particular line. 
 
 Also in the transformation, we eliminated a local variable or two. Reduced the number of blocks.  Simplified some of the complex expressions.  All of this helps make the code more readable and maintainable.
 

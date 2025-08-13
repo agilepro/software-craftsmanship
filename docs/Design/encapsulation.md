@@ -62,15 +62,15 @@ Another example is [location of constants](../Coding/Syntax%20Conventions/consta
 
 Joshua Bloch speaks about encapsulation his book titled [Effective Java](https://www.amazon.com/dp/0321356683):
 
-> [Item 15: Minimize the accessibility of classes and members.](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch4.xhtml#lev15)  The single most important factor that distinguishes a well-designed component from a poorly designed one is the degree to which the component hides its internal data and other implementation details from other components. A well-designed component hides all its implementation details, cleanly separating its API from its implementation. Components then communicate only through their APIs and are oblivious to each others’ inner workings. This concept, known as information hiding or encapsulation, is a fundamental tenet of software design
+> [Item 15: Minimize the accessibility of classes and members.](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch4.xhtml#lev15)  The single most important factor that distinguishes a well-designed component from a poorly designed one is the degree to which the component hides its internal data and other implementation details from other components. A well-designed component hides all its implementation details, cleanly separating its API from its implementation. Components then communicate only through their APIs and are oblivious to each others' inner workings. This concept, known as information hiding or encapsulation, is a fundamental tenet of software design
 
 He touches on this again in [Document and Thread Safety](https://learning.oreilly.com/library/view/effective-java-3rd/9780134686097/ch11.xhtml#lev82) 
 
-> Because the private lock object is inaccessible outside the class, it is impossible for clients to interfere with the object’s synchronization. In effect, we are applying the advice of Item 15 by encapsulating the lock object in the object it synchronizes.
+> Because the private lock object is inaccessible outside the class, it is impossible for clients to interfere with the object's synchronization. In effect, we are applying the advice of Item 15 by encapsulating the lock object in the object it synchronizes.
 
 Removing constants from a module is mentioned as an anti-pattern in the this page on “[Constants in Java: Patterns and Anti-Patterns](https://www.baeldung.com/java-constants-good-practices)” at Baelding:
 
-> In addition to the logistics of maintaining the Constants class itself, we’re also inviting other maintainability problems by encouraging too much interdependency with this one global constants class and various other parts of our application.
+> In addition to the logistics of maintaining the Constants class itself, we're also inviting other maintainability problems by encouraging too much interdependency with this one global constants class and various other parts of our application.
 
 There is a stack exchange answer on “[Good practice to hold Constants in their own file?](https://softwareengineering.stackexchange.com/questions/290006/good-practice-to-hold-constants-in-their-own-file)“:
 

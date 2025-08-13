@@ -13,7 +13,7 @@ I wrote up these cheat notes years ago, and they are still helpful today if you 
 
 These notes are short, brief, introductory instructions to using the CVS source management system.  Essentials that you need to get started.
 
-## 1\. I don’t have any source and I need to get it.
+## 1\. I don't have any source and I need to get it.
 
 This is where you use the GET command. Go to the directory that you want the tree to be built under. Run the command:
 
@@ -53,7 +53,7 @@ This gives you a report of what it does, the first letter indicate the category:
 *   **C** Uh-oh, it tried to merge the changes, but found a merge conflict. The conflicts are marked in the source file; you must go edit. Usually it will not build until you do so.
 *   **M** a file that you have modified, but did not receive any merged changes.
 
-If you get and U or C reports, then you must rebuild and make sure that the tests run (you have new source so you don’t want to check in something that might be broken). After the build and all tests pass you do UPDATE again. Repeat until you do an UPDATE and there are no U or C reports.  
+If you get and U or C reports, then you must rebuild and make sure that the tests run (you have new source so you don't want to check in something that might be broken). After the build and all tests pass you do UPDATE again. Repeat until you do an UPDATE and there are no U or C reports.  
 Now you can commit. Go to a directory that is above all of the changes you have made, again for the example “Terminator” will do.
 
 ```
@@ -79,7 +79,7 @@ cvs –n update
 ```
 
 
-Occasionally you will notice a file in the list that you don’t think that you changed. See the changes that you have made in this file by going to that directory and typing:
+Occasionally you will notice a file in the list that you don't think that you changed. See the changes that you have made in this file by going to that directory and typing:
 
 ```
 cvs diff file.ext
