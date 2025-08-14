@@ -12,10 +12,11 @@ In short, **if a method signature must declare a throws clause, it should always
 
 The argumentation below is going to get a little complicated because you are going to have to consider not just your code today, but how code bases _change over time_.  We will have to weigh the benefit of strongly typing the method interface with the cost of maintaining it.  The conclusion will be quite simple:
 
+*   If a method throws only unchecked exceptions, do not include a throws signature.
 *   If a method throws any checked exception, always declare it to throw `java.lang.Exception`.
-*   Even if it actually throws a specialized exception class, you should not declare the method to throw that specialized class.
+*   Even if it actually throws a specialized exception class, you should never declare the method to throw that specialized class.
 
-This is not being lazy, this is instead focusing effective use of developer time on functionality of the code, and not on wasteful syntactic busywork.  You will probably encounter many people who believe that being more specific produces better, tighter code, and you will have to refer them to this long and arduous argument.
+This is not being lazy, this is instead focusing effective use of developer time on functionality of the code, and not on wasteful syntactic busywork.  You will probably encounter many people who believe that being more specific produces better, tighter code, and you will have to refer them to the following long and arduous argument.
 
 ## Historical Purpose
 
@@ -33,7 +34,7 @@ A method will construct and return a value, and the method has complete control 
 
 Thrown exceptions do not behave like returned values.  The possible exceptions that a method might throw is the UNION of all the types of exceptions that can be thrown from all the methods it calls, and all the methods those call, ad nauseam.  Let me give a clear example:
 
-Say you have a method `a1` which calls methods `b1` through `b9`.  Then consider method b1 which calls methods `c1` through `c9`.  And consider method `c1` which calls `d1` through `d9`.  If `d9` throws an exception, if might fly all the way out of method `a1`.  (There are ways to eliminate this which I will discuss later, but in general, method `c1` might thrown any exception that any method `d1` through `d9` throws.  And `b1` throws anything that `c1` through `c9` might throw. And so on, such that `a1` might throw any exception from all of the `b` methods, all of the `c` methods, and all of the `d` methods.
+Say you have a method `a1` which calls methods `b1` through `b9`.  Then consider method `b1` which calls methods `c1` through `c9`.  And consider method `c1` which calls `d1` through `d9`.  If `d9` throws an exception, if might fly all the way out of method `a1`.  (There are ways to eliminate this which I will discuss later, but in general, method `c1` might thrown any exception that any method `d1` through `d9` throws.  And `b1` throws anything that `c1` through `c9` might throw. And so on, such that `a1` might throw any exception from all of the `b` methods, all of the `c` methods, and all of the `d` methods.
 
 ## Just calculate the closure!
 
@@ -41,7 +42,7 @@ If you have all the methods at levels `a`, `b`, `c`, and `d`, all you need to do
 
 Recursively, you make `b1` declare all the exception types that `c1` through `c9` declare.
 
-And so on, just do the bookkeeping, and reflect all the correct classes out to the outermost level.  Wouldn't this be great! because you would know all the possible exception classes that a1 might throw!  Two problems:
+And so on, just do the bookkeeping, and reflect all the correct classes out to the outermost level.  Wouldn't this be great!  You would know all the possible exception classes that a1 might throw!  Two problems:
 
 **Dynamic libraries**: You don't know at compile time the complete contents of all the libraries you will be using at run time. The whole point of Java is to allow for classes that can be transported and reused easily.  There are JAR files with libraries of classes.  At compile time you list all the libraries you depend upon, but at run time you are likely to be using a different set of libraries with different code.
 
@@ -89,7 +90,7 @@ Not only does the exception wrapper have no meaning, but it creates extra work: 
 
 All of this overhead for absolutely no value, because the MyFooException object does not tell you anything about the problems that might be encountered nor what you might have to respond to.  _You must understand this point before continuing._
 
-## The reason for using `java.lang.Exception` or nothing
+## The reason for using java.lang.Exception or nothing
 
 Consider the above example with wrapped code, and compare with the following, similar example:
 

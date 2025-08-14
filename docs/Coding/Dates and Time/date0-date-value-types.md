@@ -32,14 +32,14 @@ The most common timeline (Unix) counts the number of seconds since Jan 1, 1970 U
 
 Consider the following table:
 
-| Epoch Value | Display Value | Location
-| ----------  | ------------  | --------------
-| 1667860895| Monday, November 7, 2022 10:41:35 PM| UTC
-| 1667860895| Monday, November 7, 2022 02:41:35 PM| California
-| 1667860895| Tuesday November 8, 2022 07:41:35 AM| Japan
-| 1667860895| Tuesday November 8, 2022 04:11:35 AM| India
+| Epoch Value | Display Value | Location | ISO8601 String
+| ----------  | ------------  | -------------- | --------------
+| 1667860895| Monday, November 7, 2022 10:41:35 PM| UTC | 2022-11-07T22:41:35Z
+| 1667860895| Monday, November 7, 2022 02:41:35 PM| California | 2022-11-07T22:41:35Z
+| 1667860895| Tuesday November 8, 2022 07:41:35 AM| Japan | 2022-11-07T22:41:35Z
+| 1667860895| Tuesday November 8, 2022 04:11:35 AM| India | 2022-11-07T22:41:35Z
 
-This is, of course, the same instant of time.  As you can see, the epoch value is the same in every case.   The display of date/time is of course different, because that is what a timezone is:  it is a way of localizing an epoch value to/from the way that locals in that timezone want to see it.  But no matter where you are, no matter what timezone you are in, the epoch value is the same all around the world.  
+This is, of course, the same instant of time.  As you can see, the epoch value is the same in every case, and so is the ISO8601 format string representation.   The display of date/time is of course different, because that is what a timezone is:  it is a way of localizing an epoch value to/from the way that locals in that timezone want to see it.  But no matter where you are, no matter what timezone you are in, the epoch value is the same all around the world.  
 
 It is not correct to say that the epoch value is in UTC timezone.  It is a value that simply does not have a timezone.  It is just a point on the timeline, and there is one epoch value for the entire world.  (On the surface of the earth we don't need to worry about relativistic time dilation.)
 
@@ -86,7 +86,7 @@ ISO 8601 format allows for different time zones.   So the values in the table at
 2022-11-07T04:11:35.000IST
 ```
 
-Notice that values in different timezones will not sort properly.  To assure consistency with internal communications, the UTC time should always be used.  The “Z” above is a shortcut for universal time, which is UTC.   While “-0000” is an offset that is equivalent to UTC, the “Z” notation should be preferred, and offset notation avoided.
+Notice that values in different timezones will not sort properly.  To assure consistency with internal communications, the UTC time should always be used.  The “Z” above is a shortcut for universal time, which is UTC.   While “-0000” is an offset that is equivalent to UTC, the “Z” notation should be preferred, and offset notation avoided for internal communications protocols.
 
 Missing timezone:  2022-11-07T22:41:35.000
 
