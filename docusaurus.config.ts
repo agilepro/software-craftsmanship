@@ -10,7 +10,8 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://agiletribe.purplehillsbooks.com/',
+  // it must NOT have a slash on the end!
+  url: 'https://agiletribe.purplehillsbooks.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',

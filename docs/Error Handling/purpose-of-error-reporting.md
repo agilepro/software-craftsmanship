@@ -2,6 +2,14 @@
 
 Error messages are part of every user experience, but too often these messages are poor, cryptic, and insulting.   Too often programmers do a half-hearted attempt at writing error messages, mostly because they mistakenly assume that users will never see them.  Too often programmers misunderstand the potential that results from writing correct error message.  Error messages can be the key to usability.  Error messages can help train users, and guide administrator.  All you have to do is understand the _purpose_ of error reporting.
 
+:::tip [Key Takeaway]
+
+The purpose of error reporting is to help users or administrators to resolve the problems that the system encounters, either by helping to train the user to avoid mistakes, or to help the administrator to get the system properly implemented.
+
+:::
+
+A "mistake" might be any aspect of a request that can not be handled, whether reasonable or not, and whether intentional or not.  "Implemented" might involve changing configuration settings, changing the design, or fixing bugs in the code.
+
 ## Reducing cost, and improving friendliness
 
 Support costs can sink a product faster anything else. All of the most successful products are there because the cost to support them is far less than the price of the product. The most important element in reducing support costs, is to provide a means that users can solve the problems themselves. To do this, we need accurate information about a problem that needs attending to.  
